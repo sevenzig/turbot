@@ -1,16 +1,16 @@
 # React + Vite **Business Website Template**
 # Turbot 🤖 AI-Powered Business Website Suite
 
-[![Build Status](https://github.com/YOUR_GH_USERNAME/REPO_NAME/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_GH_USERNAME/REPO_NAME/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/github/v/release/YOUR_GH_USERNAME/REPO_NAME?logo=github)](https://github.com/YOUR_GH_USERNAME/REPO_NAME/releases)
-[![License](https://img.shields.io/github/license/YOUR_GH_USERNAME/REPO_NAME?color=blue)](LICENSE)
+[![Build Status](https://github.com/sevenzig/turbot/actions/workflows/ci.yml/badge.svg)](https://github.com/sevenzig/turbot/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/sevenzig/turbot?logo=github)](https://github.com/sevenzig/turbot/releases)
+[![License](https://img.shields.io/github/license/sevenzig/turbot?color=blue)](LICENSE)
 [![Cursor Ready](https://img.shields.io/badge/Cursor-AI%20Ready-00D4FF?logo=cursor)](https://cursor.sh)
-[![Stars](https://img.shields.io/github/stars/YOUR_GH_USERNAME/REPO_NAME?style=social)](https://github.com/YOUR_GH_USERNAME/REPO_NAME/stargazers)
+[![Stars](https://img.shields.io/github/stars/sevenzig/turbot?style=social)](https://github.com/sevenzig/turbot/stargazers)
 
 > 🤖 **AI-powered React development suite** — Template + intelligent rules for consistent, high-quality business websites  
 > React 19 • TypeScript • Vite • **AI Development Rules** • Automated setup & deploy
 
-[**📺 Watch AI Demo →**](https://youtu.be/DEMO_VIDEO)  •  [**🌐 Live Preview**](https://YOUR_GH_USERNAME.github.io/REPO_NAME)  •  [**🤖 Try with Cursor**](cursor://clone?url=https://github.com/YOUR_GH_USERNAME/REPO_NAME)
+[**📺 Watch AI Demo →**](https://youtu.be/DEMO_VIDEO)  •  [**🌐 Live Preview**](https://sevenzig.github.io/turbot)  •  [**🤖 Try with Cursor**](cursor://clone?url=https://github.com/sevenzig/turbot)
 
 <p align="center">
   <img src=".github/assets/demo.gif" alt="Animated preview" width="100%"/>
@@ -23,7 +23,7 @@
 ### Option&nbsp;1: Full AI Development Suite *(Recommended)*
 ```bash
 # Clone with AI development rules
-git clone https://github.com/YOUR_GH_USERNAME/REPO_NAME my-business-site
+git clone https://github.com/sevenzig/turbot my-business-site
 cd my-business-site
 
 # Interactive setup wizard + AI rules activation
@@ -84,9 +84,9 @@ npm run dev
 | 💬 AI Prompts Library | Common tasks & ready-made prompts | [AI-Prompts.md](docs/AI-Prompts.md) |
 | 🎨 Design System | Tokens & patterns enforced by AI | [Design-System.md](docs/Design-System.md) |
 | 🏗️ Architecture Guide | Component & folder conventions | [Architecture.md](docs/Architecture.md) |
-| 🐛 Issues | Bug reports & feature requests | [Issues](https://github.com/YOUR_GH_USERNAME/REPO_NAME/issues) |
-| 💬 Discussions | Community Q&A & AI prompt sharing | [Discussions](https://github.com/YOUR_GH_USERNAME/REPO_NAME/discussions) |
-| 🔄 Changelog | Version history | [Releases](https://github.com/YOUR_GH_USERNAME/REPO_NAME/releases) |
+| 🐛 Issues | Bug reports & feature requests | [Issues](https://github.com/sevenzig/turbot/issues) |
+| 💬 Discussions | Community Q&A & AI prompt sharing | [Discussions](https://github.com/sevenzig/turbot/discussions) |
+| 🔄 Changelog | Version history | [Releases](https://github.com/sevenzig/turbot/releases) |
 
 ---
 
@@ -94,9 +94,9 @@ npm run dev
 
 | Demo | URL | Branch |
 |------|-----|--------|
-| Generic Business | `https://YOUR_GH_USERNAME.github.io/REPO_NAME/` | `main` |
-| Brewery Example | `https://YOUR_GH_USERNAME.github.io/REPO_NAME/brewery/` | `example/brewery` |
-| Restaurant Example | `https://YOUR_GH_USERNAME.github.io/REPO_NAME/restaurant/` | `example/restaurant` |
+| Generic Business | `https://sevenzig.github.io/turbot/` | `main` |
+| Brewery Example | `https://sevenzig.github.io/turbot/brewery/` | `example/brewery` |
+| Restaurant Example | `https://sevenzig.github.io/turbot/restaurant/` | `example/restaurant` |
 
 > **Tip:** Push to any `example/*` branch and GitHub Pages auto-publishes a demo.
 
@@ -104,8 +104,8 @@ npm run dev
 
 ## 🔄 Quality Assurance
 
-[![Tests](https://github.com/YOUR_GH_USERNAME/REPO_NAME/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_GH_USERNAME/REPO_NAME/actions/workflows/ci.yml)
-[![Code Quality](https://sonarcloud.io/api/project_badges/measure?project=REPO_NAME&metric=alert_status)](https://sonarcloud.io/summary/overall?id=REPO_NAME)
+[![Tests](https://github.com/sevenzig/turbot/actions/workflows/ci.yml/badge.svg)](https://github.com/sevenzig/turbot/actions/workflows/ci.yml)
+[![Code Quality](https://sonarcloud.io/api/project_badges/measure?project=turbot&metric=alert_status)](https://sonarcloud.io/summary/overall?id=turbot)
 
 - ✅ Vitest unit tests (>80 % coverage) on every commit
 - ✅ ESLint, Prettier & TypeScript strict mode
@@ -130,10 +130,10 @@ npm run dev
 
 We ❤️ contributions! Feel free to:
 
-- ⭐ [Star](https://github.com/YOUR_GH_USERNAME/REPO_NAME/stargazers) to support the project
-- 🍴 [Fork](https://github.com/YOUR_GH_USERNAME/REPO_NAME/fork) and build your own
-- 🐛 [Report issues](https://github.com/YOUR_GH_USERNAME/REPO_NAME/issues/new)
-- 💡 [Request features](https://github.com/YOUR_GH_USERNAME/REPO_NAME/discussions/new?category=ideas)
+- ⭐ [Star](https://github.com/sevenzig/turbot/stargazers) to support the project
+- 🍴 [Fork](https://github.com/sevenzig/turbot/fork) and build your own
+- 🐛 [Report issues](https://github.com/sevenzig/turbot/issues/new)
+- 💡 [Request features](https://github.com/sevenzig/turbot/discussions/new?category=ideas)
 - 🔀 Submit PRs — read the [Contributing Guide](CONTRIBUTING.md)
 
 Community guidelines: [Code of Conduct](CODE_OF_CONDUCT.md) • [Security Policy](SECURITY.md)
