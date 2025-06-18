@@ -1,0 +1,283 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+ # Performance & Error Handling - ESSENTIAL PATTERNS
+
+## React Performance Essentials
+
+### Basic Memoization - ONLY When Needed
+```typescript
+// ✅ CORRECT - Simple memoization for expensive calculations
+import { useMemo, useCallback, memo } from 'react';
+
+const ExpensiveComponent = memo<ComponentProps>(({ data, onSelect }) => {
+  // Only memoize if calculation is actually expensive
+  const filteredData = useMemo(() => {
+    return data.filter(item => item.isActive);
+  }, [data]);
+  
+  // Memoize callbacks passed to child components
+  const handleSelect = useCallback((item: DataItem) => {
+    onSelect(item);
+  }, [onSelect]);
+  
+  return (
+    <div>
+      {filteredData.map(item => (
+        <DataItem key={item.id} item={item} onSelect={handleSelect} />
+      ))}
+    </div>
+  );
+});
+
+// ❌ WRONG - Over-memoizing everything
+const OverOptimized = memo(({ title }) => {
+  const memoizedTitle = useMemo(() => title, [title]); // Unnecessary!
+  return <h1>{memoizedTitle}</h1>;
+});
+```
+
+### Essential State Management
+```typescript
+// ✅ CORRECT - Group related state, separate unrelated state
+const Component: FC = () => {
+  // Group form-related state
+  const [formState, setFormState] = useState({
+    values: {},
+    errors: {},
+    isSubmitting: false
+  });
+  
+  // Separate loading state
+  const [loading, setLoading] = useState(false);
+  
+  // Use functional updates for dependent state
+  const updateField = useCallback((field: string, value: string) => {
+    setFormState(prev => ({
+      ...prev,
+      values: { ...prev.values, [field]: value },
+      errors: { ...prev.errors, [field]: '' } // Clear error
+    }));
+  }, []);
+  
+  return <form>{/* Form content */}</form>;
+};
+```
+
+## Essential Code Splitting
+
+### Page-Level Splitting ONLY
+```typescript
+// ✅ CORRECT - Split by pages, not components
+import { lazy, Suspense } from 'react';
+
+const HomePage = lazy(() => import('@pages/HomePage'));
+const AboutPage = lazy(() => import('@pages/AboutPage'));
+const ContactPage = lazy(() => import('@pages/ContactPage'));
+
+export const AppRoutes: FC = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/about" element={<AboutPage />} />
+      <Route path="/contact" element={<ContactPage />} />
+    </Routes>
+  </Suspense>
+);
+
+// ❌ WRONG - Over-splitting small components
+const LazyButton = lazy(() => import('./Button')); // Unnecessary!
+```
+
+### Simple Bundle Optimization
+```typescript
+// ✅ CORRECT - Tree-shakable imports
+import { debounce } from 'lodash-es';
+import { format } from 'date-fns';
+
+// ❌ WRONG - Full library imports
+import _ from 'lodash';
+import * as dateFns from 'date-fns';
+```
+
+## Error Handling Essentials
+
+### Simple Error Boundary
+```typescript
+// ✅ CORRECT - Simple, practical error boundary
+import { Component, ReactNode } from 'react';
+
+interface ErrorBoundaryProps {
+  children: ReactNode;
+  fallback?: ReactNode;
+}
+
+interface ErrorBoundaryState {
+  hasError: boolean;
+  error: Error | null;
+}
+
+export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+  constructor(props: ErrorBoundaryProps) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+  
+  static getDerivedStateFromError(error: Error): ErrorBoundaryState {
+    return { hasError: true, error };
+  }
+  
+  componentDidCatch(error: Error, errorInfo: any) {
+    console.error('Error caught by boundary:', error, errorInfo);
+  }
+  
+  render() {
+    if (this.state.hasError) {
+      return this.props.fallback || (
+        <div style={{ padding: '2rem', textAlign: 'center' }}>
+          <h3>Something went wrong</h3>
+          <p>Please refresh the page or try again later.</p>
+          <button onClick={() => window.location.reload()}>
+            Refresh Page
+          </button>
+        </div>
+      );
+    }
+    
+    return this.props.children;
+  }
+}
+```
+
+### Async Error Handling
+```typescript
+// ✅ CORRECT - Simple async error handling
+export const useApi = <T>(url: string) => {
+  const [data, setData] = useState<T | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        
+        const result = await response.json();
+        setData(result);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Something went wrong');
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    fetchData();
+  }, [url]);
+  
+  return { data, loading, error };
+};
+```
+
+### Form Validation Errors
+```typescript
+// ✅ CORRECT - Simple form error handling
+interface ValidationResult {
+  isValid: boolean;
+  errors: Record<string, string>;
+}
+
+export const validateContactForm = (data: ContactFormData): ValidationResult => {
+  const errors: Record<string, string> = {};
+  
+  if (!data.name.trim()) {
+    errors.name = 'Name is required';
+  }
+  
+  if (!data.email.trim()) {
+    errors.email = 'Email is required';
+  } else if (!data.email.includes('@')) {
+    errors.email = 'Please enter a valid email address';
+  }
+  
+  if (!data.message.trim()) {
+    errors.message = 'Message is required';
+  }
+  
+  return {
+    isValid: Object.keys(errors).length === 0,
+    errors
+  };
+};
+```
+
+## Loading States
+
+### Simple Loading Pattern
+```typescript
+// ✅ CORRECT - Simple loading states
+interface LoadingStateProps {
+  loading: boolean;
+  error: string | null;
+  children: ReactNode;
+}
+
+export const LoadingState: FC<LoadingStateProps> = ({ loading, error, children }) => {
+  if (loading) {
+    return (
+      <div style={{ padding: '2rem', textAlign: 'center' }}>
+        <div>Loading...</div>
+      </div>
+    );
+  }
+  
+  if (error) {
+    return (
+      <div style={{ padding: '2rem', textAlign: 'center', color: 'red' }}>
+        <p>Error: {error}</p>
+        <button onClick={() => window.location.reload()}>
+          Try Again
+        </button>
+      </div>
+    );
+  }
+  
+  return <>{children}</>;
+};
+```
+
+## Essential Performance Rules
+
+### DO Use These Patterns
+- ✅ `memo()` for components that receive complex props
+- ✅ `useMemo()` for expensive calculations (filtering large arrays, complex math)
+- ✅ `useCallback()` for functions passed to child components
+- ✅ Lazy loading for page-level routes
+- ✅ Error boundaries around major sections
+- ✅ Loading states for async operations
+
+### DON'T Over-Optimize
+- ❌ Don't memoize every component
+- ❌ Don't lazy load small components
+- ❌ Don't use complex custom comparisons in memo()
+- ❌ Don't over-split your bundle
+- ❌ Don't optimize before you have performance problems
+
+## Quick Performance Checklist
+
+Before optimizing, ask:
+- [ ] Is this component actually slow?
+- [ ] Is this calculation actually expensive?
+- [ ] Will users notice the difference?
+- [ ] Is the optimization worth the complexity?
+
+**Remember**: Most business websites don't need complex performance optimizations. Focus on **correct functionality first**, then optimize only where needed.
+
+This streamlined guide covers the essential performance and error handling patterns every business website actually needs.

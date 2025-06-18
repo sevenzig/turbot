@@ -1,0 +1,249 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Responsive Design Breakpoint Standards
+
+## MANDATORY Breakpoint Structure
+Use these EXACT breakpoints consistently across all components:
+
+```css
+/* Mobile Portrait - 320px to 480px */
+@media (max-width: 480px) {
+  /* Single column, touch-optimized */
+}
+
+/* Mobile Landscape / Small Tablet - 481px to 768px */  
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Still mobile layout but slightly larger */
+}
+
+/* Tablet - 769px to 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Desktop-style header, multi-column content */
+}
+
+/* Desktop Small - 1025px to 1200px */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  /* Full desktop layout */
+}
+
+/* Desktop Large - 1201px+ */
+@media (min-width: 1201px) {
+  /* Maximum width containers, optimal spacing */
+}
+```
+
+## CSS Custom Properties for Breakpoints
+```css
+/* globals.css */
+:root {
+  /* Breakpoint values */
+  --breakpoint-mobile: 480px;
+  --breakpoint-mobile-landscape: 768px;
+  --breakpoint-tablet: 1024px;
+  --breakpoint-desktop: 1200px;
+  
+  /* Container widths */
+  --container-max-width: 1200px;
+  --container-padding-mobile: 1rem;
+  --container-padding-tablet: 2rem;
+  --container-padding-desktop: 2rem;
+  
+  /* Touch targets */
+  --touch-target-min: 44px;
+}
+```
+
+## Layout Behavior Rules
+
+### Header Component Breakpoints
+```css
+/* Mobile header (≤ 768px) */
+@media (max-width: 768px) {
+  .headerDesktop {
+    display: none;
+  }
+  
+  .headerMobile {
+    display: block;
+  }
+}
+
+/* Desktop header (≥ 769px) */
+@media (min-width: 769px) {
+  .headerDesktop {
+    display: block;
+  }
+  
+  .headerMobile {
+    display: none;
+  }
+}
+```
+
+### Mobile Action Buttons
+```css
+/* Show only on mobile and small tablet */
+@media (max-width: 768px) {
+  .mobileActionButtons {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--container-padding-mobile);
+  }
+}
+
+/* Hide on tablet and desktop */
+@media (min-width: 769px) {
+  .mobileActionButtons {
+    display: none;
+  }
+}
+```
+
+### Content Grid Patterns
+```css
+/* Base mobile layout */
+.contentGrid {
+  display: grid;
+  gap: var(--spacing-md);
+  grid-template-columns: 1fr;
+  padding: 0 var(--container-padding-mobile);
+}
+
+/* Mobile landscape - still single column */
+@media (min-width: 481px) and (max-width: 768px) {
+  .contentGrid {
+    padding: 0 var(--container-padding-tablet);
+  }
+}
+
+/* Tablet - 2-3 columns */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .contentGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding-tablet);
+  }
+}
+
+/* Desktop - 3-4 columns */
+@media (min-width: 1025px) {
+  .contentGrid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding-desktop);
+  }
+}
+```
+
+## Component Container Pattern
+```css
+/* Standard full-width section with centered content */
+.section {
+  width: 100%;
+  padding: var(--spacing-xl) 0;
+}
+
+.sectionContent {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding-mobile);
+}
+
+@media (min-width: 769px) {
+  .sectionContent {
+    padding: 0 var(--container-padding-tablet);
+  }
+}
+
+@media (min-width: 1025px) {
+  .sectionContent {
+    padding: 0 var(--container-padding-desktop);
+  }
+}
+```
+
+## Typography Scaling
+```css
+.title {
+  font-size: var(--font-size-xl);
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: var(--font-size-lg);
+  }
+}
+
+@media (min-width: 1025px) {
+  .title {
+    font-size: var(--font-size-xxl);
+  }
+}
+```
+
+## Touch Target Requirements
+```css
+/* Ensure minimum touch targets on mobile */
+@media (max-width: 768px) {
+  .button,
+  .clickableElement {
+    min-height: var(--touch-target-min);
+    min-width: var(--touch-target-min);
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+}
+```
+
+## Navigation Patterns
+```css
+/* Mobile navigation */
+@media (max-width: 768px) {
+  .navigation {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  .navigationItem {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--color-border);
+  }
+}
+
+/* Desktop navigation */
+@media (min-width: 769px) {
+  .navigation {
+    flex-direction: row;
+    gap: var(--spacing-lg);
+  }
+  
+  .navigationItem {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+}
+```
+
+## Critical Breakpoint Rules
+1. **Mobile-First Approach:** Always start with mobile styles, enhance upward
+2. **768px Cutoff:** Mobile vs Desktop header behavior
+3. **Touch Targets:** Minimum 44px on mobile devices
+4. **Container Max-Width:** 1200px with auto margins for centering
+5. **Consistent Padding:** Use CSS custom properties for container padding
+6. **Grid Columns:** 1 → 2-3 → 3-4 as screen size increases
+
+## Code Review Checklist
+- [ ] Uses exact breakpoint values specified
+- [ ] Mobile-first CSS approach
+- [ ] Header switches at 768px/769px boundary
+- [ ] Mobile action buttons hidden on tablet+
+- [ ] Touch targets ≥ 44px on mobile
+- [ ] Content grids scale appropriately
+- [ ] Container max-width and centering applied
+- [ ] CSS custom properties used for breakpoints
+- [ ] No hardcoded breakpoint values
+
+- [ ] Consistent spacing scale across breakpoints

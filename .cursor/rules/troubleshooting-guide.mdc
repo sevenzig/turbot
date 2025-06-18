@@ -1,0 +1,322 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Troubleshooting Guide - Business Website Development
+
+## Quick Problem Solver
+
+### 🚨 **URGENT: Site Won't Build/Start**
+```bash
+# Try these in order:
+npm install          # Fix dependency issues
+npm run dev         # Start development server
+npm run build       # Test production build
+
+# Still broken? Check:
+- Node.js version (need 18+)
+- TypeScript errors in terminal
+- Missing environment variables
+```
+
+### 🔧 **COMMON: TypeScript Errors**
+```typescript
+// ❌ PROBLEM: "Cannot find module '@/data/businessInfo'"
+// ✅ SOLUTION: Check file exists and export is correct
+export const businessInfo = {
+  name: "Your Business Name",
+  // ... rest of business data
+};
+
+// ❌ PROBLEM: "Property 'name' does not exist on type"
+// ✅ SOLUTION: Import businessInfo properly
+import { businessInfo } from '@/data/businessInfo';
+const title = businessInfo.name; // Now TypeScript knows the type
+```
+
+### 🎨 **STYLING: CSS Not Working**
+```css
+/* ❌ PROBLEM: Styles not applying */
+/* ✅ SOLUTION: Use CSS Modules correctly */
+
+/* In ComponentName.module.css */
+.card {
+  padding: var(--spacing-md);
+  background: var(--color-background);
+}
+
+/* In ComponentName.tsx */
+import styles from './ComponentName.module.css';
+<div className={styles.card}>Content</div>
+```
+
+---
+
+## Problem Categories
+
+### 1. 🏢 Business Data Issues
+
+#### **Problem**: Hard-coded business details everywhere
+```typescript
+// ❌ WRONG - Hard-coded
+const header = <h1>Joe's Pizza Shop</h1>;
+
+// ✅ RIGHT - Use businessInfo
+import { businessInfo } from '@/data/businessInfo';
+const header = <h1>{businessInfo.name}</h1>;
+```
+
+#### **Problem**: BusinessInfo file missing or broken
+```typescript
+// ✅ SOLUTION: Create/fix businessInfo.ts
+export const businessInfo = {
+  name: "Your Business Name",
+  tagline: "Your Business Tagline", 
+  description: "What your business does",
+  contact: {
+    phone: "555-0123",
+    email: "hello@yourbusiness.com"
+  },
+  address: {
+    street: "123 Main St",
+    city: "Your City",
+    state: "ST",
+    zip: "12345"
+  }
+};
+```
+
+### 2. ⚛️ Component Issues
+
+#### **Problem**: Component not rendering
+```typescript
+// ❌ COMMON MISTAKES:
+export default MyComponent;     // Wrong - use named exports
+function myComponent() {}       // Wrong - PascalCase naming
+const MyComponent = () => {};   // Wrong - no TypeScript interface
+
+// ✅ CORRECT PATTERN:
+interface MyComponentProps {
+  className?: string;
+  children?: React.ReactNode;
+}
+
+export const MyComponent: React.FC<MyComponentProps> = ({ 
+  className, 
+  children 
+}) => {
+  return (
+    <div className={`${styles.component} ${className || ''}`}>
+      {children}
+    </div>
+  );
+};
+```
+
+#### **Problem**: CSS Modules not working
+```bash
+# File structure should be:
+src/components/ContactForm/
+├── ContactForm.tsx
+├── ContactForm.module.css  # ← Must end in .module.css
+└── index.ts
+```
+
+### 3. 🎨 Styling Problems
+
+#### **Problem**: Design tokens not working
+```css
+/* ❌ WRONG - Hard-coded values */
+.button {
+  color: #blue;
+  padding: 16px;
+  font-size: 18px;
+}
+
+/* ✅ RIGHT - Use design tokens from globals.css */
+.button {
+  color: var(--color-primary);
+  padding: var(--spacing-md);
+  font-size: var(--font-size-lg);
+}
+```
+
+#### **Problem**: Responsive design broken
+```css
+/* ✅ SOLUTION: Use mobile-first approach */
+.card {
+  padding: var(--spacing-sm);    /* Mobile default */
+}
+
+@media (min-width: 768px) {      /* Tablet and up */
+  .card {
+    padding: var(--spacing-lg);
+  }
+}
+```
+
+### 4. 🔒 Security & Error Handling
+
+#### **Problem**: Forms submitting without validation
+```typescript
+// ✅ SOLUTION: Always validate and handle errors
+const ContactForm = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  
+  const handleSubmit = async (data: FormData) => {
+    setIsSubmitting(true);
+    setError(null);
+    
+    try {
+      // Validate input
+      if (!data.email || !data.message) {
+        throw new Error('Email and message are required');
+      }
+      
+      // Submit form
+      await submitForm(data);
+      
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+  
+  return (
+    <form onSubmit={handleSubmit}>
+      {error && <div className={styles.error}>{error}</div>}
+      {/* Form fields */}
+      <button disabled={isSubmitting}>
+        {isSubmitting ? 'Sending...' : 'Send Message'}
+      </button>
+    </form>
+  );
+};
+```
+
+---
+
+## Rule Conflict Resolution
+
+### **When Business Needs Override Technical Rules**
+```typescript
+// Document the override clearly
+const BusinessHeader = () => {
+  // RULE OVERRIDE: css-design-system.mdc
+  // REASON: Client requires specific brand colors that aren't in design tokens
+  // APPROVED BY: Business owner
+  // DATE: 2025-01-27
+  const brandColor = businessInfo.brandColors?.primary || '#default';
+  
+  return (
+    <header style={{ backgroundColor: brandColor }}>
+      {businessInfo.name}
+    </header>
+  );
+};
+```
+
+### **When You Can't Follow a Rule**
+1. **Document why** in code comments
+2. **Use business data** when possible (businessInfo.brandColors vs hard-coded)
+3. **Keep it simple** - don't over-engineer the solution
+4. **Ask for help** if you're stuck in a loop
+
+---
+
+## Getting Unstuck
+
+### **TypeScript Errors You Can't Fix**
+```typescript
+// Temporary workaround (document it!)
+/* TODO-RULE-VIOLATION: 
+ * Violating: typescript-standards.mdc (any usage)
+ * Reason: Third-party library lacks proper types
+ * Fix by: 2025-02-15
+ * Ticket: #123
+ */
+const thirdPartyData: any = externalLibrary.getData();
+```
+
+### **CSS Not Behaving**
+1. Check browser dev tools - are styles loading?
+2. Verify CSS Module import: `import styles from './Component.module.css'`
+3. Use design tokens: `var(--color-primary)` not hard-coded colors
+4. Check responsive breakpoints in dev tools
+
+### **Component Not Working**
+1. Check console for JavaScript errors
+2. Verify proper TypeScript interfaces
+3. Ensure business data is imported correctly
+4. Test with simple hardcoded data first, then add businessInfo
+
+### **Build Failing**
+1. Run `npm run build` to see specific errors
+2. Fix TypeScript errors first
+3. Check all imports are correct
+4. Verify all required files exist
+5. Run `npm run validate-rules:quick` to check rule compliance
+
+---
+
+## Emergency Fixes
+
+### **Site Down - Quick Fixes**
+```bash
+# 1. Revert to last working version
+git log --oneline -10        # See recent commits
+git checkout [commit-hash]   # Go back to working version
+
+# 2. Quick component fix
+# Comment out broken component temporarily
+// import { BrokenComponent } from './BrokenComponent';
+// <BrokenComponent />
+
+# 3. Build and deploy
+npm run build
+npm run deploy
+```
+
+### **Can't Figure Out the Rules**
+1. **Check section 1.1** of README.md for quick reference
+2. **Look at existing components** for patterns
+3. **Use businessInfo** for any business-specific data
+4. **Document overrides** if you must break rules
+5. **Ask for help** - don't spend hours stuck
+
+---
+
+## Prevention Tips
+
+### **Before You Code**
+- [ ] Import businessInfo for any business data
+- [ ] Use TypeScript interfaces for props
+- [ ] Plan component structure (ComponentName/ComponentName.tsx)
+- [ ] Check existing components for similar patterns
+
+### **Before You Commit**
+- [ ] Run `npm run build` successfully
+- [ ] Test component in browser
+- [ ] Check TypeScript errors are resolved
+- [ ] Verify business data comes from businessInfo.ts
+
+### **Before You Deploy**
+- [ ] Test on mobile and desktop
+- [ ] Check all forms work properly
+- [ ] Verify business contact info is correct
+- [ ] Test error states (network failures, etc.)
+- [ ] Run `npm run validate-rules:summary` for full system check
+
+---
+
+**Remember**: The goal is building websites that help businesses succeed. When in doubt, choose the solution that best serves the business and their customers, even if it means bending a technical rule.
+
+**Last Updated**: 2025-01-27  
+**Version**: 1.0.0 - Practical Troubleshooting Guide
+
+
+
+

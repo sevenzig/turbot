@@ -1,0 +1,788 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# React Component Standards - STREAMLINED FOR ANY BUSINESS
+
+## Component Creation Template - MANDATORY
+
+### Standard Component Structure
+```typescript
+// ✅ CORRECT - Standard component template with named exports
+import type { FC, ReactNode, MouseEvent } from 'react';
+import { useState, useCallback, useEffect, useMemo } from 'react';
+import { Button } from '@components/Button';
+import styles from './ComponentName.module.css';
+
+// Props interface - ALWAYS required
+interface ComponentNameProps {
+  // Required props first
+  title: string;
+  
+  // Optional props with defaults documented
+  variant?: 'primary' | 'secondary';
+  isLoading?: boolean;
+  
+  // Event handlers
+  onAction?: (data: ActionData) => void;
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
+  
+  // React-specific props
+  children?: ReactNode;
+  className?: string;
+}
+
+// Component implementation with named export
+export const ComponentName: FC<ComponentNameProps> = ({
+  title,
+  variant = 'primary',
+  isLoading = false,
+  onAction,
+  onClick,
+  children,
+  className
+}) => {
+  // State declarations
+  const [data, setData] = useState<DataType | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  // Event handlers - use useCallback for performance
+  const handleAction = useCallback((actionData: ActionData) => {
+    onAction?.(actionData);
+  }, [onAction]);
+
+  const handleClick = useCallback((event: MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    onClick?.(event);
+  }, [onClick]);
+
+  // Effects
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await getData();
+        setData(result);
+        setError(null);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Unknown error');
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // Conditional rendering
+  if (isLoading) {
+    return <div className={styles.loading}>Loading...</div>;
+  }
+
+  if (error) {
+    return <div className={styles.error}>Error: {error}</div>;
+  }
+
+  // Main render
+  return (
+    <div className={`${styles.container} ${className || ''}`}>
+      <h2 className={styles.title}>{title}</h2>
+      
+      <div className={styles.actions}>
+        <Button
+          variant={variant}
+          onClick={handleClick}
+          disabled={isLoading}
+        >
+          Action Button
+        </Button>
+      </div>
+      
+      {children && (
+        <div className={styles.children}>
+          {children}
+        </div>
+      )}
+    </div>
+  );
+};
+
+// Always export types explicitly
+export type { ComponentNameProps };
+```
+
+## Component Architecture Rules - MANDATORY
+
+### Directory Structure
+```
+src/components/
+├── ComponentName/
+│   ├── ComponentName.tsx          ← Main component file
+│   ├── ComponentName.module.css   ← Styles
+│   ├── ComponentName.test.tsx     ← Tests
+│   └── index.ts                   ← Barrel export
+```
+
+### Index File Pattern
+```typescript
+// components/ComponentName/index.ts
+export { ComponentName } from './ComponentName';
+export type { ComponentNameProps } from './ComponentName';
+```
+
+### Component Prop Patterns
+
+#### Required vs Optional Props
+```typescript
+interface ComponentProps {
+  // Required props - no defaults, no ?
+  id: string;
+  title: string;
+  onSave: (data: FormData) => void;
+  
+  // Optional props with ? and default values documented
+  variant?: 'small' | 'medium' | 'large'; // default: 'medium'
+  isDisabled?: boolean;                    // default: false
+  
+  // React-specific props
+  children?: ReactNode;
+  className?: string;
+  'data-testid'?: string;
+}
+```
+
+#### Event Handler Props
+```typescript
+interface ComponentProps {
+  // Mouse events
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
+  
+  // Form events
+  onSubmit?: (event: FormEvent<HTMLFormElement>) => void;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  
+  // Custom events with typed data
+  onUserSelect?: (user: User) => void;
+  onDataUpdate?: (data: UpdateData) => void;
+  
+  // Async event handlers
+  onAsyncAction?: (data: ActionData) => Promise<void>;
+}
+```
+
+### State Management Patterns
+
+#### Local State Best Practices
+```typescript
+// ✅ CORRECT - Group related state
+const [formState, setFormState] = useState<FormState>({
+  values: {},
+  errors: {},
+  isSubmitting: false,
+  isValid: false
+});
+
+// ✅ CORRECT - Individual state for unrelated concerns
+const [user, setUser] = useState<User | null>(null);
+const [loading, setLoading] = useState<boolean>(false);
+const [error, setError] = useState<Error | null>(null);
+```
+
+#### State Update Patterns
+```typescript
+// ✅ CORRECT - Functional updates for dependent values
+setCount(prevCount => prevCount + 1);
+setItems(prevItems => [...prevItems, newItem]);
+
+// ✅ CORRECT - Complex state updates
+const updateFormField = useCallback((field: string, value: string) => {
+  setFormState(prev => ({
+    ...prev,
+    values: { ...prev.values, [field]: value },
+    errors: { ...prev.errors, [field]: '' } // Clear error
+  }));
+}, []);
+```
+
+### Hook Usage Patterns
+
+#### useEffect Best Practices
+```typescript
+// ✅ CORRECT - Separate effects for separate concerns
+useEffect(() => {
+  // Data fetching effect
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      const result = await apiCall();
+      setData(result);
+    } catch (err) {
+      setError(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchData();
+}, [apiCall]); // Dependencies array
+
+useEffect(() => {
+  // Event listener effect
+  const handleResize = () => setWindowWidth(window.innerWidth);
+  window.addEventListener('resize', handleResize);
+  
+  return () => window.removeEventListener('resize', handleResize);
+}, []); // Empty dependencies for mount/unmount only
+```
+
+#### useMemo and useCallback Optimization
+```typescript
+// ✅ CORRECT - useMemo for expensive calculations
+const expensiveValue = useMemo(() => {
+  return items.reduce((sum, item) => sum + item.value, 0);
+}, [items]);
+
+// ✅ CORRECT - useCallback for event handlers passed as props
+const handleItemClick = useCallback((item: Item) => {
+  onItemSelect?.(item);
+  setSelectedItem(item);
+}, [onItemSelect]);
+```
+
+### Custom Hook Patterns
+
+```typescript
+// ✅ CORRECT - Custom hook with proper TypeScript
+interface UseApiReturn<T> {
+  data: T | null;
+  loading: boolean;
+  error: Error | null;
+  refetch: () => Promise<void>;
+}
+
+export const useApi = <T>(url: string): UseApiReturn<T> => {
+  const [data, setData] = useState<T | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<Error | null>(null);
+
+  const fetchData = useCallback(async () => {
+    setLoading(true);
+    setError(null);
+    
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      
+      const result = await response.json();
+      setData(result);
+    } catch (err) {
+      setError(err instanceof Error ? err : new Error('Unknown error'));
+    } finally {
+      setLoading(false);
+    }
+  }, [url]);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
+  return { data, loading, error, refetch: fetchData };
+};
+```
+
+## Business Component Patterns
+
+### Business Header Component
+```typescript
+// ✅ CORRECT - Business header integrating with businessInfo
+import type { BusinessInfo } from '@data/businessInfo';
+
+interface BusinessHeaderProps {
+  businessInfo: BusinessInfo;
+  showContact?: boolean;
+  className?: string;
+}
+
+export const BusinessHeader: FC<BusinessHeaderProps> = ({
+  businessInfo,
+  showContact = true,
+  className
+}) => {
+  return (
+    <header className={`${styles.header} ${className || ''}`}>
+      <div className={styles.businessInfo}>
+        <h1 className={styles.businessName}>{businessInfo.name}</h1>
+        {businessInfo.tagline && (
+          <p className={styles.tagline}>{businessInfo.tagline}</p>
+        )}
+      </div>
+      
+      {showContact && businessInfo.contact.phone && (
+        <div className={styles.contactInfo}>
+          <a 
+            href={`tel:${businessInfo.contact.phone}`}
+            className={styles.phone}
+            aria-label={`Call ${businessInfo.name}`}
+          >
+            {businessInfo.contact.phone}
+          </a>
+        </div>
+      )}
+    </header>
+  );
+};
+
+export type { BusinessHeaderProps };
+```
+
+### Generic Contact Form
+```typescript
+// ✅ CORRECT - Generic contact form for any business
+interface ContactFormData {
+  name: string;
+  email: string;
+  phone?: string;
+  subject: string;
+  message: string;
+  preferredContact: 'email' | 'phone';
+}
+
+interface ContactFormProps {
+  onSubmit: (data: ContactFormData) => Promise<void>;
+  className?: string;
+}
+
+export const ContactForm: FC<ContactFormProps> = ({ onSubmit, className }) => {
+  const [formData, setFormData] = useState<ContactFormData>({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: '',
+    preferredContact: 'email'
+  });
+  
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    
+    // Validation
+    const newErrors: Record<string, string> = {};
+    if (!formData.name.trim()) newErrors.name = 'Name is required';
+    if (!formData.email.trim()) newErrors.email = 'Email is required';
+    if (!formData.subject.trim()) newErrors.subject = 'Subject is required';
+    if (!formData.message.trim()) newErrors.message = 'Message is required';
+    
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      await onSubmit(formData);
+      // Reset form on success
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: '',
+        preferredContact: 'email'
+      });
+      setErrors({});
+    } catch (error) {
+      setErrors({ submit: 'Failed to send message. Please try again.' });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className={`${styles.form} ${className || ''}`}>
+      <div className={styles.fieldGroup}>
+        <FormField
+          label="Name"
+          type="text"
+          value={formData.name}
+          onChange={(value) => setFormData(prev => ({ ...prev, name: value }))}
+          error={errors.name}
+          required
+        />
+        
+        <FormField
+          label="Email"
+          type="email"
+          value={formData.email}
+          onChange={(value) => setFormData(prev => ({ ...prev, email: value }))}
+          error={errors.email}
+          required
+        />
+        
+        <FormField
+          label="Phone (Optional)"
+          type="tel"
+          value={formData.phone}
+          onChange={(value) => setFormData(prev => ({ ...prev, phone: value }))}
+          error={errors.phone}
+        />
+      </div>
+
+      <FormField
+        label="Subject"
+        type="text"
+        value={formData.subject}
+        onChange={(value) => setFormData(prev => ({ ...prev, subject: value }))}
+        error={errors.subject}
+        required
+      />
+
+      <FormField
+        label="Message"
+        type="textarea"
+        value={formData.message}
+        onChange={(value) => setFormData(prev => ({ ...prev, message: value }))}
+        error={errors.message}
+        required
+      />
+
+      {errors.submit && (
+        <div className={styles.error} role="alert">
+          {errors.submit}
+        </div>
+      )}
+
+      <Button
+        type="submit"
+        variant="primary"
+        loading={isSubmitting}
+        disabled={isSubmitting}
+        className={styles.submitButton}
+      >
+        {isSubmitting ? 'Sending...' : 'Send Message'}
+      </Button>
+    </form>
+  );
+};
+
+export type { ContactFormProps, ContactFormData };
+```
+
+### Generic Business Card
+```typescript
+// ✅ CORRECT - Generic card component for any business content
+interface BusinessCardProps {
+  title: string;
+  subtitle?: string;
+  content?: ReactNode;
+  actions?: ReactNode;
+  imageUrl?: string;
+  imageAlt?: string;
+  href?: string;
+  onClick?: () => void;
+  className?: string;
+}
+
+export const BusinessCard: FC<BusinessCardProps> = ({
+  title,
+  subtitle,
+  content,
+  actions,
+  imageUrl,
+  imageAlt,
+  href,
+  onClick,
+  className
+}) => {
+  const CardWrapper = href ? 'a' : 'div';
+  
+  return (
+    <CardWrapper
+      href={href}
+      onClick={onClick}
+      className={`${styles.card} ${className || ''}`}
+      role={onClick ? 'button' : undefined}
+      tabIndex={onClick ? 0 : undefined}
+    >
+      {imageUrl && (
+        <div className={styles.imageContainer}>
+          <img src={imageUrl} alt={imageAlt || title} className={styles.image} />
+        </div>
+      )}
+      
+      <div className={styles.cardContent}>
+        <header className={styles.cardHeader}>
+          <h3 className={styles.cardTitle}>{title}</h3>
+          {subtitle && (
+            <p className={styles.cardSubtitle}>{subtitle}</p>
+          )}
+        </header>
+        
+        {content && (
+          <div className={styles.cardBody}>
+            {content}
+          </div>
+        )}
+        
+        {actions && (
+          <footer className={styles.cardActions}>
+            {actions}
+          </footer>
+        )}
+      </div>
+    </CardWrapper>
+  );
+};
+
+export type { BusinessCardProps };
+```
+
+## Error Handling and Loading States
+
+### Error Boundary Integration
+```typescript
+// ✅ CORRECT - Component with error boundary
+import { ErrorBoundary } from '@components/ErrorBoundary';
+
+export const DataDrivenComponent: FC<DataDrivenComponentProps> = (props) => {
+  return (
+    <ErrorBoundary
+      fallback={({ error }) => (
+        <div className={styles.errorState}>
+          <h3>Something went wrong</h3>
+          <p>We're sorry, but we couldn't load this content.</p>
+          <Button onClick={() => window.location.reload()}>
+            Try Again
+          </Button>
+        </div>
+      )}
+      onError={(error, errorInfo) => {
+        console.error('Component error:', error, errorInfo);
+      }}
+    >
+      <ActualComponent {...props} />
+    </ErrorBoundary>
+  );
+};
+```
+
+### Loading States
+```typescript
+// ✅ CORRECT - Comprehensive loading states
+interface LoadingStateProps {
+  loading: boolean;
+  error: Error | null;
+  data: any;
+  children: ReactNode;
+  loadingComponent?: ReactNode;
+  errorComponent?: ReactNode;
+}
+
+export const LoadingState: FC<LoadingStateProps> = ({
+  loading,
+  error,
+  data,
+  children,
+  loadingComponent,
+  errorComponent
+}) => {
+  if (loading) {
+    return loadingComponent || (
+      <div className={styles.loading} aria-live="polite">
+        <div className={styles.spinner} aria-hidden="true" />
+        <span>Loading...</span>
+      </div>
+    );
+  }
+
+  if (error) {
+    return errorComponent || (
+      <div className={styles.error} role="alert">
+        <h3>Error loading content</h3>
+        <p>{error.message}</p>
+      </div>
+    );
+  }
+
+  if (!data) {
+    return (
+      <div className={styles.noData}>
+        <p>No data available</p>
+      </div>
+    );
+  }
+
+  return <>{children}</>;
+};
+
+export type { LoadingStateProps };
+```
+
+## Accessibility Standards
+
+### Focus Management
+```typescript
+// ✅ CORRECT - Modal with proper focus management
+export const Modal: FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (isOpen && modalRef.current) {
+      modalRef.current.focus();
+    }
+  }, [isOpen]);
+
+  if (!isOpen) return null;
+
+  return (
+    <div className={styles.modalOverlay} onClick={onClose}>
+      <div
+        ref={modalRef}
+        className={styles.modal}
+        onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+        tabIndex={-1}
+      >
+        <header className={styles.modalHeader}>
+          <h2 id="modal-title" className={styles.modalTitle}>
+            {title}
+          </h2>
+          <button
+            onClick={onClose}
+            className={styles.closeButton}
+            aria-label="Close modal"
+          >
+            ×
+          </button>
+        </header>
+        
+        <div className={styles.modalContent}>
+          {children}
+        </div>
+      </div>
+    </div>
+  );
+};
+```
+
+## Performance Optimization
+
+### React.memo and Optimization
+```typescript
+// ✅ CORRECT - Memoized component
+export const OptimizedComponent = memo<ComponentProps>(
+  ({ data, onAction, filters }) => {
+    const filteredData = useMemo(() => {
+      return data.filter(item => matchesFilters(item, filters));
+    }, [data, filters]);
+
+    const handleAction = useCallback((item: DataItem) => {
+      onAction(item);
+    }, [onAction]);
+
+    return (
+      <div>
+        {filteredData.map(item => (
+          <DataItem
+            key={item.id}
+            item={item}
+            onAction={handleAction}
+          />
+        ))}
+      </div>
+    );
+  }
+);
+```
+
+## Testing Integration
+
+### Component Testing Setup
+```typescript
+// ✅ CORRECT - Testable component with proper test attributes
+interface TestableComponentProps {
+  title: string;
+  onAction: () => void;
+  'data-testid'?: string;
+}
+
+export const TestableComponent: FC<TestableComponentProps> = ({
+  title,
+  onAction,
+  'data-testid': testId = 'testable-component'
+}) => {
+  return (
+    <div data-testid={testId} className={styles.container}>
+      <h2 data-testid={`${testId}-title`}>{title}</h2>
+      <button
+        data-testid={`${testId}-action-button`}
+        onClick={onAction}
+        aria-label={`Action for ${title}`}
+      >
+        Take Action
+      </button>
+    </div>
+  );
+};
+```
+
+## Forbidden Patterns - DO NOT USE
+
+```typescript
+// ❌ NEVER use default exports
+export default Component; // WRONG
+
+// ❌ NEVER use inline styles
+<div style={{ color: 'red' }} /> // WRONG
+
+// ❌ NEVER use any type
+const handleEvent = (event: any) => { ... }; // WRONG
+
+// ❌ NEVER use function declarations for components
+function Component() { ... } // WRONG - use const with FC
+
+// ❌ NEVER use useEffect without dependencies array
+useEffect(() => { ... }); // WRONG - missing dependencies
+
+// ❌ NEVER mutate props directly
+props.data.push(newItem); // WRONG - props are immutable
+
+// ❌ NEVER use array index as key in dynamic lists
+{items.map((item, index) => <Item key={index} />)} // WRONG
+
+// ❌ NEVER ignore accessibility
+<div onClick={handleClick}>Clickable</div> // WRONG - should use button
+
+// ❌ NEVER hardcode business data
+<h1>My Business Name</h1> // WRONG - use businessInfo.name
+```
+
+## Development Checklist
+
+### Before Creating Components:
+- [ ] Business data imported from `businessInfo.ts`
+- [ ] Component follows naming conventions
+- [ ] Props interface defined with TypeScript
+- [ ] Error handling strategy planned
+- [ ] Accessibility requirements identified
+
+### Before Committing Components:
+- [ ] Named exports used consistently
+- [ ] Props properly typed with interfaces
+- [ ] Event handlers use useCallback
+- [ ] Performance optimizations applied (memo, useMemo)
+- [ ] Error states handled gracefully
+- [ ] Loading states implemented
+- [ ] Accessibility attributes added
+- [ ] Test IDs included for testing
+- [ ] CSS Modules used for styling
+- [ ] No hardcoded business data
+- [ ] Responsive design verified
+
+This streamlined React Component Standards guide ensures consistent, accessible, and performant component development for any small-medium business website.
+
+
+
+

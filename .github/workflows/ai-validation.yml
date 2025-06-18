@@ -1,0 +1,30 @@
+name: AI Rules Validation
+
+on:
+  pull_request:
+    branches: ["**"]
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install deps
+        run: npm ci
+      - name: Validate Cursor Rules
+        run: |
+          echo "⚙️  Validating .cursor rules..."
+          # Placeholder for actual validation script, e.g. npx cursor rules:test
+          if [ -d ".cursor/rules" ]; then
+            echo "Found rules directory✅";
+          else
+            echo "Rules directory missing ❌" && exit 1;
+          fi
+      - name: Vitest
+        run: npm run test -- --run 

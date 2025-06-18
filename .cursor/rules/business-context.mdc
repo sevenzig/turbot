@@ -1,0 +1,247 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Business Context Rules - STREAMLINED FOR ANY BUSINESS
+
+## Rule Intent
+Enable Cursor to recognize basic business patterns and inject appropriate terminology and components based on available business data from `businessInfo.ts`.
+
+## Trigger Conditions
+- Component creation requests for business functionality
+- Content generation requests for business sections
+- SEO or schema markup generation
+
+## Expected Behavior
+
+### Business Data Integration
+Always reference data from `businessInfo.ts`:
+```typescript
+// ✅ CORRECT - Uses actual business data
+const heroTitle = `${businessInfo.name} - ${businessInfo.tagline}`;
+const contactInfo = businessInfo.contact;
+
+// ❌ WRONG - Hard-coded values
+const heroTitle = "Welcome to Our Business";
+```
+
+### Generic Business Components
+Suggest business-agnostic components that work for any SMB:
+
+#### Universal Business Patterns
+- **Components**: `BusinessHeader`, `ContactForm`, `BusinessCard`, `BusinessInfo`
+- **Terminology**: "services", "contact", "about", "location", "hours"
+- **CTAs**: "Contact Us", "Learn More", "Get Started", "Call Now"
+- **Schema**: `LocalBusiness`, `Organization`, `ContactPoint`
+
+### Content Generation Guidelines
+
+#### Professional Business Language
+- **Professional Tone**: Clear, trustworthy, customer-focused
+- **Action-Oriented**: Strong CTAs that drive business goals
+- **Local Focus**: Emphasize local service and community connection
+- **Benefit-Focused**: What customers gain, not just what you do
+
+#### Business-Specific SEO
+Generate meta descriptions using business context:
+```typescript
+`${businessInfo.name} in ${businessInfo.address.city}. ${businessInfo.description}`
+```
+
+### Component Suggestions
+
+#### When creating business components:
+1. **Props interface** with business-relevant fields from businessInfo
+2. **Accessibility** features for customer usability
+3. **SEO considerations** for business visibility
+4. **Mobile-first design** for customer accessibility
+
+#### Example - Generic Contact Component:
+```typescript
+interface ContactSectionProps {
+  businessInfo: BusinessInfo;
+  showHours?: boolean;
+  showMap?: boolean;
+}
+```
+
+### Error Prevention
+- Validate that business data exists before generating components
+- Provide fallbacks for missing business information
+- Suggest updating `businessInfo.ts` if required fields are missing
+
+## Business Data Structure
+
+### Core Business Information
+```typescript
+interface BusinessInfo {
+  // Essential business identity
+  name: string;
+  tagline?: string;
+  description: string;
+  
+  // Contact information
+  contact: {
+    phone: string;
+    email: string;
+  };
+  
+  // Location information
+  address: {
+    street: string;
+    city: string;
+    state: string;
+    zip: string;
+    full: string;
+  };
+  
+  // Business operations
+  hours: BusinessHours;
+  services?: string[];
+  
+  // Online presence
+  website?: string;
+  social?: {
+    facebook?: string;
+    instagram?: string;
+    linkedin?: string;
+  };
+}
+
+interface BusinessHours {
+  monday: string;
+  tuesday: string;
+  wednesday: string;
+  thursday: string;
+  friday: string;
+  saturday: string;
+  sunday: string;
+}
+```
+
+### Business Status Integration
+```typescript
+interface BusinessStatus {
+  isOpen: boolean;
+  message: string;
+  nextOpenTime?: Date;
+  nextCloseTime?: Date;
+}
+```
+
+## Component Integration Examples
+
+### Business Header Pattern
+```typescript
+// ✅ CORRECT - Generic business header
+export const BusinessHeader: FC<BusinessHeaderProps> = ({ businessInfo }) => {
+  return (
+    <header>
+      <h1>{businessInfo.name}</h1>
+      {businessInfo.tagline && <p>{businessInfo.tagline}</p>}
+      <a href={`tel:${businessInfo.contact.phone}`}>
+        {businessInfo.contact.phone}
+      </a>
+    </header>
+  );
+};
+```
+
+### Contact Section Pattern
+```typescript
+// ✅ CORRECT - Generic contact information
+export const ContactSection: FC<ContactSectionProps> = ({ 
+  businessInfo,
+  showHours = true 
+}) => {
+  return (
+    <section>
+      <h2>Contact {businessInfo.name}</h2>
+      <div>
+        <p>Phone: {businessInfo.contact.phone}</p>
+        <p>Email: {businessInfo.contact.email}</p>
+        <p>Address: {businessInfo.address.full}</p>
+      </div>
+      
+      {showHours && (
+        <div>
+          <h3>Hours</h3>
+          {Object.entries(businessInfo.hours).map(([day, hours]) => (
+            <div key={day}>
+              <span>{day}: </span>
+              <span>{hours}</span>
+            </div>
+          ))}
+        </div>
+      )}
+    </section>
+  );
+};
+```
+
+### Generic Business Card Pattern
+```typescript
+// ✅ CORRECT - Flexible business content card
+export const BusinessCard: FC<BusinessCardProps> = ({ 
+  title,
+  content,
+  ctaText = "Learn More",
+  onCTAClick 
+}) => {
+  return (
+    <div className={styles.card}>
+      <h3>{title}</h3>
+      <div>{content}</div>
+      <button onClick={onCTAClick}>
+        {ctaText}
+      </button>
+    </div>
+  );
+};
+```
+
+## SEO and Schema Integration
+
+### Local Business Schema
+```typescript
+// ✅ CORRECT - Generic local business schema
+export const generateBusinessSchema = (businessInfo: BusinessInfo) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": businessInfo.name,
+    "description": businessInfo.description,
+    "telephone": businessInfo.contact.phone,
+    "email": businessInfo.contact.email,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": businessInfo.address.street,
+      "addressLocality": businessInfo.address.city,
+      "addressRegion": businessInfo.address.state,
+      "postalCode": businessInfo.address.zip
+    },
+    "openingHours": Object.entries(businessInfo.hours).map(([day, hours]) => 
+      `${day.slice(0, 2).toUpperCase()} ${hours}`
+    )
+  };
+};
+```
+
+## Business Impact
+- Reduces manual content editing after generation
+- Ensures consistent business voice across components
+- Improves SEO with business-specific schema markup
+- Accelerates business component development
+
+## Integration Guidelines
+- Works with `companyInformationIntegration.mdc` for data sourcing
+- Follows `react-component-standards.mdc` for structure
+- Applies `css-design-system.mdc` for styling
+- Uses `typescript-standards.mdc` for type safety
+
+This streamlined business context focuses on universal patterns that work for any small-medium business without industry-specific complexity.
+
+
+
+

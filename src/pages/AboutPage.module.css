@@ -1,0 +1,106 @@
+.aboutPage {
+  width: 100%;
+}
+
+.aboutSection {
+  padding: var(--spacing-xl) 0;
+}
+
+.aboutContent {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding-mobile);
+}
+
+.aboutTitle {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  color: var(--color-text);
+}
+
+.aboutDescription {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  text-align: center;
+  margin-bottom: var(--spacing-xxl);
+  color: var(--color-text-secondary);
+}
+
+.sectionTitle {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-text);
+}
+
+.featuresGrid,
+.servicesGrid {
+  margin-bottom: var(--spacing-xxl);
+}
+
+.featuresList,
+.servicesList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+.featureItem,
+.serviceItem {
+  background: var(--color-surface);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  border: var(--border-width) solid var(--color-border);
+  text-align: center;
+  transition: all var(--transition-speed) var(--transition-timing);
+}
+
+.featureItem:hover,
+.serviceItem:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+
+.featureTitle,
+.serviceTitle {
+  margin: 0;
+  color: var(--color-text);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Mobile Landscape / Small Tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+  .aboutContent {
+    padding: 0 1.5rem;
+  }
+
+  .featuresList,
+  .servicesList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) {
+  .aboutContent {
+    padding: 0 var(--container-padding-tablet);
+  }
+
+  .featuresList,
+  .servicesList {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .aboutContent {
+    padding: 0 var(--container-padding-desktop);
+  }
+
+  .featuresList,
+  .servicesList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

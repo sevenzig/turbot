@@ -1,0 +1,108 @@
+.servicesSection {
+  padding: var(--spacing-xxl) 0;
+}
+
+.servicesContent {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding-mobile);
+}
+
+.sectionTitle {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-text);
+}
+
+.sectionDescription {
+  text-align: center;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--spacing-xl);
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+.serviceCard {
+  background: var(--color-surface);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius-lg);
+  border: var(--border-width) solid var(--color-border);
+  transition: all var(--transition-speed) var(--transition-timing);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.serviceCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+
+.serviceTitle {
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text);
+  font-weight: var(--font-weight-semibold);
+}
+
+.serviceDescription {
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-lg);
+  flex: 1;
+}
+
+.serviceLink {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  transition: color var(--transition-speed) var(--transition-timing);
+  align-self: center;
+}
+
+.serviceLink:hover {
+  color: var(--color-primary-hover);
+}
+
+/* Mobile Landscape / Small Tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+  .servicesContent {
+    padding: 0 1.5rem;
+  }
+
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) {
+  .servicesContent {
+    padding: 0 var(--container-padding-tablet);
+  }
+
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .servicesContent {
+    padding: 0 var(--container-padding-desktop);
+  }
+
+  .servicesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

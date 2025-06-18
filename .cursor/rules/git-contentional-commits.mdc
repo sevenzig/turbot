@@ -1,0 +1,170 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: Rule for automatically committing changes made by CursorAI using conventional commits format.
+globs: 
+alwaysApply: false
+---
+# Git Conventional Commits
+
+Rule for automatically committing changes made by CursorAI using conventional commits format.
+
+<rule>
+name: conventional_commits
+description: Automatically commit changes made by CursorAI using conventional commits format
+filters:
+  - type: event
+    pattern: "build_success"
+  - type: file_change
+    pattern: "*"
+
+actions:
+  - type: execute
+    command: |
+      # Extract the change type and scope from the changes
+      CHANGE_TYPE=""
+      case "$CHANGE_DESCRIPTION" in
+        *"add"*|*"create"*|*"implement"*) CHANGE_TYPE="feat";;
+        *"fix"*|*"correct"*|*"resolve"*) CHANGE_TYPE="fix";;
+        *"refactor"*|*"restructure"*) CHANGE_TYPE="refactor";;
+        *"test"*) CHANGE_TYPE="test";;
+        *"doc"*|*"comment"*) CHANGE_TYPE="docs";;
+        *"style"*|*"format"*) CHANGE_TYPE="style";;
+        *"perf"*|*"optimize"*) CHANGE_TYPE="perf";;
+        *"component"*) CHANGE_TYPE="feat";;
+        *"snippet"*|*"render"*) CHANGE_TYPE="feat";;
+        *"rune"*|*"state"*) CHANGE_TYPE="feat";;
+        *"type"*|*"interface"*) CHANGE_TYPE="chore";;
+        *) CHANGE_TYPE="chore";;
+      esac
+
+      # More specific scope extraction based on project structure
+      if [[ "$FILE" == *"/lib/components/"* ]]; then
+        SCOPE="components"
+      elif [[ "$FILE" == *"/lib/types/"* ]]; then
+        SCOPE="types"
+      elif [[ "$FILE" == *"/lib/services/"* ]]; then
+        SCOPE="services"
+      elif [[ "$FILE" == *"/lib/utils/"* ]]; then
+        SCOPE="utils"
+      elif [[ "$FILE" == *"/routes/"* ]]; then
+        # Extract route name
+        SCOPE="route-$(echo $FILE | sed -n 's/.*\/routes\/\([^\/]*\)\/.*/\1/p')"
+      elif [[ "$FILE" == *".cursor/rules/"* ]]; then
+        SCOPE="docs"
+      elif [[ "$FILE" == *"/scss/"* ]]; then
+        SCOPE="styles"
+      else
+        # Default to directory-based scope
+        SCOPE=$(dirname "$FILE" | tr '/' '-')
+      fi
+
+      # Detect breaking changes
+      if [[ "$CHANGE_DESCRIPTION" == *"breaking"* ]] || 
+         [[ "$CHANGE_DESCRIPTION" == *"BREAKING CHANGE"* ]]; then
+        COMMIT_MSG="$CHANGE_TYPE($SCOPE)!: $CHANGE_DESCRIPTION"
+      else
+        COMMIT_MSG="$CHANGE_TYPE($SCOPE): $CHANGE_DESCRIPTION"
+      fi
+
+      # Check for svelte5 specific changes
+      if [[ "$FILE" == *".svelte" ]]; then
+        if [[ "$CHANGE_DESCRIPTION" == *"snippet"* ]] || 
+           [[ "$CHANGE_DESCRIPTION" == *"render"* ]] || 
+           [[ "$CHANGE_DESCRIPTION" == *"rune"* ]]; then
+          COMMIT_MSG="$COMMIT_MSG [svelte5]"
+        fi
+      fi
+
+      # Commit the changes
+      git add "$FILE"
+      git commit -m "$COMMIT_MSG"
+
+  - type: suggest
+    message: |
+      Changes should be committed using conventional commits format:
+
+      Format: <type>(<scope>): <description>
+
+      Types:
+      - feat: A new feature
+      - fix: A bug fix
+      - docs: Documentation only changes
+      - style: Changes that do not affect the meaning of the code
+      - refactor: A code change that neither fixes a bug nor adds a feature
+      - perf: A code change that improves performance
+      - test: Adding missing tests or correcting existing tests
+      - chore: Changes to the build process or auxiliary tools
+
+      Project-Specific Types:
+      - feat: Component creation, Snippet implementation, Rune state changes
+      - chore: TypeScript type/interface updates
+
+      Scopes by Directory:
+      - components: Changes to reusable UI components
+      - types: Changes to TypeScript type definitions
+      - services: Changes to data services
+      - utils: Changes to utility functions
+      - route-*: Changes to specific routes
+      - docs: Documentation updates
+      - styles: SCSS style changes
+
+      Breaking Changes:
+      - Add ! after the scope for breaking changes: feat(components)!: 
+
+      Svelte 5 Tag:
+      - Add [svelte5] tag for changes using Svelte 5 specific features (snippets, render tags, runes)
+
+      The description should be clear and concise, written in imperative mood.
+
+examples:
+  - input: |
+      # After adding a new function
+      CHANGE_DESCRIPTION="add user authentication function"
+      FILE="src/auth/login.ts"
+    output: "feat(src-auth): add user authentication function"
+
+  - input: |
+      # After fixing a bug
+      CHANGE_DESCRIPTION="fix incorrect date parsing"
+      FILE="lib/utils/date.js"
+    output: "fix(utils): fix incorrect date parsing"
+    
+  - input: |
+      # After adding a Svelte 5 component with snippets
+      CHANGE_DESCRIPTION="implement product card with render tags"
+      FILE="src/lib/components/ProductCard.svelte"
+    output: "feat(components): implement product card with render tags [svelte5]"
+    
+  - input: |
+      # After updating TypeScript types
+      CHANGE_DESCRIPTION="update user interface with new preferences"
+      FILE="src/lib/types/user.ts"
+    output: "chore(types): update user interface with new preferences"
+    
+  - input: |
+      # After making a breaking change
+      CHANGE_DESCRIPTION="refactor button API with breaking parameter changes"
+      FILE="src/lib/components/Button.svelte"
+    output: "feat(components)!: refactor button API with breaking parameter changes [svelte5]"
+    
+  - input: |
+      # After updating a documentation rule
+      CHANGE_DESCRIPTION="improve TypeScript best practices documentation"
+      FILE=".cursor/rules/typescript-best-practices.mdc"
+    output: "docs(docs): improve TypeScript best practices documentation"
+
+metadata:
+  priority: high
+  version: 1.1
+</rule>
+
+
+<!--
+ Copyright (c) 2025 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
+ SPDX-License-Identifier: Proprietary
+
+-->

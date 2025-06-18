@@ -1,0 +1,39 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  width: 100%;
+}
+
+/* Layout variants */
+.default {
+  /* Standard layout */
+}
+
+.wide {
+  /* Wide layout for full-width content */
+}
+
+.wide .main {
+  max-width: none;
+}
+
+.narrow {
+  /* Narrow layout for focused content */
+}
+
+.narrow .main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding-mobile);
+}
+
+@media (min-width: 769px) {
+  .narrow .main {
+    padding: 0 var(--container-padding-tablet);
+  }
+}

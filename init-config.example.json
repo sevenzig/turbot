@@ -1,0 +1,202 @@
+{
+  "//": "=== REACT + VITE TEMPLATE CONFIGURATION ===",
+  "//1": "Copy this file and customize with your project details",
+  "//2": "Usage: node init-template.js --config your-config.json",
+  "//3": "All fields marked with [PLACEHOLDER] will be replaced in template files",
+
+  "//REQUIRED": "=== REQUIRED FIELDS (Must be provided) ===",
+  "projectName": "my-business-website",
+  "authorName": "Your Full Name",
+  "authorEmail": "your.email@example.com",
+  "githubUsername": "yourusername",
+
+  "//BASIC": "=== BASIC PROJECT SETTINGS ===",
+  "description": "A modern business website built with React and Vite",
+  "license": "MIT",
+  "repositoryUrl": "https://github.com/yourusername/my-business-website",
+
+  "//BUSINESS": "=== BUSINESS INFORMATION ===",
+  "businessName": "Your Business Name",
+  "businessShortName": "Your Business",
+  "businessTagline": "Your compelling business tagline",
+  "businessDescription": "A comprehensive description of your business, what you do, your mission, and what makes you unique. This will be used throughout the website and for SEO purposes.",
+  "businessShortDescription": "Brief description for cards, previews, and meta tags",
+
+  "//CONTACT": "=== CONTACT INFORMATION ===",
+  "businessPhone": "(555) 123-4567",
+  "businessPhoneRaw": "5551234567",
+  "businessPhoneFormatted": "(555) 123-4567",
+  "businessPhoneLink": "tel:+15551234567",
+  "businessEmail": "contact@yourbusiness.com",
+
+  "//ADDRESS": "=== BUSINESS ADDRESS ===",
+  "businessStreet": "123 Main Street",
+  "businessCity": "Your City",
+  "businessState": "Your State",
+  "businessZip": "12345",
+  "businessAddressFull": "123 Main Street, Your City, Your State 12345",
+  "businessLatitude": 40.7128,
+  "businessLongitude": -74.006,
+
+  "//WEBSITE": "=== WEBSITE & BRANDING ===",
+  "websiteUrl": "https://yourbusiness.com",
+  "websiteDomain": "yourbusiness.com",
+  "siteTitle": "Your Business Name - Professional Services",
+  "siteDescription": "Professional business services in Your City. Contact us today for expert solutions tailored to your needs.",
+  "faviconUrl": "/favicon.svg",
+
+  "//COLORS": "=== BRAND COLORS ===",
+  "primaryColor": "#2563eb",
+  "primaryColorHover": "#1d4ed8",
+  "primaryColorLight": "#dbeafe",
+  "secondaryColor": "#f59e0b",
+  "secondaryColorHover": "#d97706",
+  "secondaryColorLight": "#fef3c7",
+
+  "//SOCIAL": "=== SOCIAL MEDIA LINKS ===",
+  "socialFacebookUrl": "https://facebook.com/yourbusiness",
+  "socialInstagramUrl": "https://instagram.com/yourbusiness",
+  "socialTwitterUrl": "https://twitter.com/yourbusiness",
+  "socialLinkedinUrl": "https://linkedin.com/company/yourbusiness",
+
+  "//HOURS": "=== BUSINESS HOURS ===",
+  "hoursMonday": "9:00 AM - 5:00 PM",
+  "hoursTuesday": "9:00 AM - 5:00 PM",
+  "hoursWednesday": "9:00 AM - 5:00 PM",
+  "hoursThursday": "9:00 AM - 5:00 PM",
+  "hoursFriday": "9:00 AM - 5:00 PM",
+  "hoursSaturday": "10:00 AM - 4:00 PM",
+  "hoursSunday": "Closed",
+
+  "//FEATURES": "=== BUSINESS FEATURES (What makes you special) ===",
+  "businessFeature1": "Professional Service",
+  "businessFeature2": "Expert Team",
+  "businessFeature3": "Quality Results",
+  "businessFeature4": "Customer Focused",
+
+  "//SERVICES": "=== BUSINESS SERVICES (What you offer) ===",
+  "businessService1": "Consulting Services",
+  "businessService2": "Strategic Planning",
+  "businessService3": "Implementation Support",
+  "businessService4": "Ongoing Maintenance",
+
+  "//CONTENT": "=== WEBSITE CONTENT & COPY ===",
+  "heroTitlePrefix": "Welcome to",
+  "ctaPrimaryText": "Get Started",
+  "ctaSecondaryText": "Learn More",
+
+  "featuresSectionTitle": "Why Choose Us?",
+  "featuresDescriptionTemplate": "Discover what makes us different in delivering exceptional results for our clients.",
+
+  "servicesSectionTitle": "Our Services",
+  "servicesSectionDescription": "Explore what we offer to help you achieve your goals.",
+  "servicesDescriptionTemplate": "Professional service tailored to your specific needs and requirements.",
+  "servicesCTAText": "Learn More",
+
+  "aboutPageTitle": "About Our Company",
+  "aboutFeaturesTitle": "What Makes Us Special",
+  "aboutServicesTitle": "Our Services",
+
+  "contactPageTitle": "Contact Us",
+  "contactPageDescription": "Get in touch with us. We'd love to hear from you!",
+  "contactInfoTitle": "Get In Touch",
+  "contactPhoneLabel": "Phone",
+  "contactEmailLabel": "Email",
+  "contactAddressLabel": "Address",
+  "contactDirectionsText": "Get Directions",
+  "contactHoursLabel": "Business Hours",
+
+  "contactFormTitle": "Send us a Message",
+  "formNameLabel": "Name",
+  "formEmailLabel": "Email",
+  "formSubjectLabel": "Subject",
+  "formMessageLabel": "Message",
+  "formSubmitText": "Send Message",
+  "formSendingText": "Sending...",
+  "formSuccessMessage": "Message sent successfully!",
+  "formErrorMessage": "Failed to send message. Please try again.",
+
+  "error404Code": "404",
+  "error404Title": "Page Not Found",
+  "error404Message": "Sorry, the page you are looking for doesn't exist or has been moved.",
+  "error404HomeButton": "Go to Home",
+  "error404BackButton": "Go Back",
+
+  "//TECHNICAL": "=== TECHNICAL CONFIGURATION ===",
+  "deploymentPlatform": "vercel",
+  "includePWA": false,
+  "cssApproach": "css-modules",
+
+  "//FEATURES": "=== FEATURE FLAGS ===",
+  "features": {
+    "analytics": false,
+    "seo": true,
+    "darkMode": false,
+    "contactForm": true,
+    "socialLinks": true,
+    "businessHours": true,
+    "testimonials": false,
+    "blog": false
+  },
+
+  "//DEPLOYMENT": "=== DEPLOYMENT SETTINGS ===",
+  "deployment": {
+    "vercel": {
+      "buildCommand": "npm run build",
+      "outputDirectory": "dist",
+      "installCommand": "npm install"
+    },
+    "netlify": {
+      "buildCommand": "npm run build",
+      "publishDirectory": "dist"
+    },
+    "githubPages": {
+      "branch": "gh-pages",
+      "folder": "dist"
+    }
+  },
+
+  "//PWA": "=== PWA CONFIGURATION (if includePWA: true) ===",
+  "pwa": {
+    "name": "Your Business Name",
+    "shortName": "Your Business",
+    "description": "Professional business services",
+    "themeColor": "#2563eb",
+    "backgroundColor": "#ffffff",
+    "display": "standalone",
+    "orientation": "portrait"
+  },
+
+  "//ANALYTICS": "=== ANALYTICS CONFIGURATION (if features.analytics: true) ===",
+  "analytics": {
+    "googleAnalyticsId": "GA_MEASUREMENT_ID",
+    "googleTagManagerId": "GTM_CONTAINER_ID"
+  },
+
+  "//SEO": "=== SEO CONFIGURATION ===",
+  "seo": {
+    "keywords": [
+      "business services",
+      "professional consulting",
+      "your city",
+      "your industry"
+    ],
+    "ogImage": "/images/og-image.jpg",
+    "twitterCard": "summary_large_image",
+    "canonicalUrl": "https://yourbusiness.com"
+  },
+
+  "//EXAMPLES": "=== EXAMPLE CONFIGURATIONS FOR DIFFERENT BUSINESS TYPES ===",
+  "//RESTAURANT": "For restaurants, update services to: ['Dine-In', 'Takeout', 'Catering', 'Private Events']",
+  "//CONSULTING": "For consulting, update services to: ['Strategy', 'Implementation', 'Training', 'Support']",
+  "//RETAIL": "For retail, update services to: ['Online Store', 'In-Store Shopping', 'Custom Orders', 'Delivery']",
+  "//MEDICAL": "For medical, update services to: ['Consultations', 'Treatments', 'Emergency Care', 'Follow-up']",
+
+  "//NOTES": "=== CONFIGURATION NOTES ===",
+  "//NOTE1": "Colors must be valid CSS hex codes (e.g., #2563eb)",
+  "//NOTE2": "Phone links should include country code (e.g., tel:+15551234567)",
+  "//NOTE3": "All URLs should include protocol (https://)",
+  "//NOTE4": "Coordinates should be decimal degrees (latitude, longitude)",
+  "//NOTE5": "Business hours use 12-hour format with AM/PM",
+  "//NOTE6": "Empty strings '' will remove optional features/content"
+}

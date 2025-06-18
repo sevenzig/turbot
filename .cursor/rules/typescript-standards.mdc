@@ -1,0 +1,529 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# TypeScript Standards - STREAMLINED FOR ANY BUSINESS
+
+## Core TypeScript Rules - MANDATORY
+
+### 1. Interface and Type Definitions
+- **ALWAYS** define interfaces for component props
+- **ALWAYS** define interfaces for data structures  
+- **PREFER** interfaces over types for object shapes
+- **USE** types for unions, primitives, and computed types
+
+```typescript
+// ✅ CORRECT - Component Props Interface
+interface ComponentProps {
+  title: string;
+  subtitle?: string;
+  isActive?: boolean;
+  onAction?: () => void;
+  children?: React.ReactNode;
+  className?: string;
+}
+
+// ✅ CORRECT - Data Interface
+interface BusinessInfo {
+  name: string;
+  contact: ContactInfo;
+  address: AddressInfo;
+}
+
+// ✅ CORRECT - Union Type
+type ButtonVariant = 'primary' | 'secondary' | 'outline';
+type LoadingState = 'idle' | 'loading' | 'success' | 'error';
+```
+
+### 2. Named Exports Only - MANDATORY
+
+```typescript
+// ✅ CORRECT - Named exports for all components and utilities
+export interface ComponentProps {
+  title: string;
+  variant?: 'primary' | 'secondary';
+}
+
+export const Component: React.FC<ComponentProps> = ({ title, variant = 'primary' }) => {
+  return <div>{title}</div>;
+};
+
+// Export types explicitly
+export type { ComponentProps };
+
+// ❌ WRONG - Default exports
+// export default Component;
+```
+
+### 3. Type-Only Imports - MANDATORY
+
+```typescript
+// ✅ CORRECT - Type-only imports
+import type { User, ApiResponse } from '@types/api';
+import type { ComponentProps } from './Component';
+import type { BusinessInfo } from '@data/businessInfo';
+
+// ✅ CORRECT - Mixed imports with type keyword
+import { Button, type ButtonProps } from '@components/Button';
+
+// ❌ WRONG - Importing types as values
+import { User } from '@types/user'; // Don't do this for type-only usage
+```
+
+### 4. React Component Typing - REQUIRED
+
+```typescript
+// ✅ CORRECT - Functional Component with Props
+interface ComponentProps {
+  title: string;
+  variant?: 'default' | 'large';
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+}
+
+export const Component: React.FC<ComponentProps> = ({ 
+  title, 
+  variant = 'default',
+  onClick 
+}) => {
+  return (
+    <button onClick={onClick}>
+      {title}
+    </button>
+  );
+};
+
+export type { ComponentProps };
+```
+
+### 5. State Management Typing
+
+```typescript
+// ✅ CORRECT - useState with explicit types
+const [user, setUser] = useState<User | null>(null);
+const [loading, setLoading] = useState<boolean>(false);
+const [data, setData] = useState<ApiResponse<User[]>>([]);
+
+// ✅ CORRECT - Complex state with interface
+interface FormState {
+  values: Record<string, string>;
+  errors: Record<string, string>;
+  isSubmitting: boolean;
+}
+
+const [formState, setFormState] = useState<FormState>({
+  values: {},
+  errors: {},
+  isSubmitting: false
+});
+```
+
+### 6. API and Data Fetching Types
+
+```typescript
+// ✅ CORRECT - API Response Types
+interface ApiResponse<T> {
+  data: T;
+  status: 'success' | 'error';
+  message?: string;
+}
+
+interface User {
+  id: string;
+  name: string;
+  email: string;
+  createdAt: Date;
+}
+
+// ✅ CORRECT - Async Function Typing
+export const fetchUser = async (id: string): Promise<ApiResponse<User>> => {
+  const response = await fetch(`/api/users/${id}`);
+  return response.json();
+};
+
+// ✅ CORRECT - Error Handling with Types
+interface ApiError {
+  code: string;
+  message: string;
+  details?: Record<string, any>;
+}
+```
+
+### 7. Custom Hook Typing
+
+```typescript
+// ✅ CORRECT - Custom Hook with Return Type
+interface UseLocalStorageReturn<T> {
+  value: T;
+  setValue: (value: T) => void;
+  removeValue: () => void;
+}
+
+export const useLocalStorage = <T>(
+  key: string, 
+  initialValue: T
+): UseLocalStorageReturn<T> => {
+  const [value, setValue] = useState<T>(initialValue);
+  
+  const setStorageValue = useCallback((newValue: T) => {
+    setValue(newValue);
+    localStorage.setItem(key, JSON.stringify(newValue));
+  }, [key]);
+  
+  const removeValue = useCallback(() => {
+    setValue(initialValue);
+    localStorage.removeItem(key);
+  }, [key, initialValue]);
+  
+  return { value, setValue: setStorageValue, removeValue };
+};
+```
+
+## Advanced TypeScript Patterns
+
+### 8. Utility Types Usage
+
+```typescript
+// ✅ CORRECT - Using utility types
+interface User {
+  id: string;
+  name: string;
+  email: string;
+  password: string;
+}
+
+// Create types from existing interfaces
+export type PublicUser = Omit<User, 'password'>;
+export type UserUpdate = Partial<Pick<User, 'name' | 'email'>>;
+export type UserCreation = Omit<User, 'id'>;
+
+// ✅ CORRECT - Record types for key-value pairs
+export type ErrorMessages = Record<string, string>;
+```
+
+### 9. Generic Constraints
+
+```typescript
+// ✅ CORRECT - Generic with constraints
+interface Identifiable {
+  id: string;
+}
+
+export const updateItem = <T extends Identifiable>(
+  items: T[], 
+  updatedItem: T
+): T[] => {
+  return items.map(item => 
+    item.id === updatedItem.id ? updatedItem : item
+  );
+};
+```
+
+### 10. Form and Event Handling
+
+```typescript
+// ✅ CORRECT - Form event typing
+export const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  event.preventDefault();
+  const formData = new FormData(event.currentTarget);
+  // Process form data...
+};
+
+// ✅ CORRECT - Input change handler
+export const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const { name, value } = event.target;
+  // Handle change...
+};
+```
+
+## Error Handling with Types
+
+### 11. Result Pattern
+
+```typescript
+// ✅ CORRECT - Result type for error handling
+export type Result<T, E = Error> = 
+  | { success: true; data: T }
+  | { success: false; error: E };
+
+export const safeApiCall = async <T>(
+  url: string
+): Promise<Result<T, ApiError>> => {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return { success: true, data };
+  } catch (error) {
+    return { success: false, error: error as ApiError };
+  }
+};
+
+// Usage
+const result = await safeApiCall<User[]>('/api/users');
+if (result.success) {
+  console.log(result.data); // TypeScript knows this is User[]
+} else {
+  console.error(result.error); // TypeScript knows this is ApiError
+}
+```
+
+### 12. Type Guards
+
+```typescript
+// ✅ CORRECT - Type guard functions
+export const isUser = (obj: unknown): obj is User => {
+  return (
+    typeof obj === 'object' &&
+    obj !== null &&
+    'id' in obj &&
+    'name' in obj &&
+    'email' in obj
+  );
+};
+
+// Usage
+if (isUser(data)) {
+  // TypeScript now knows data is User
+  console.log(data.name);
+}
+```
+
+## Component Props Best Practices
+
+### 13. Extending HTML Element Props
+
+```typescript
+// ✅ CORRECT - Extending button props
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'primary' | 'secondary';
+  loading?: boolean;
+}
+
+export const Button: React.FC<ButtonProps> = ({ 
+  variant = 'primary', 
+  loading = false, 
+  children,
+  className,
+  ...props 
+}) => {
+  return (
+    <button 
+      className={`btn btn-${variant} ${className}`}
+      disabled={loading}
+      {...props}
+    >
+      {loading ? 'Loading...' : children}
+    </button>
+  );
+};
+
+export type { ButtonProps };
+```
+
+## Business Data Integration Typing - MANDATORY
+
+### 14. Business Information Types
+
+```typescript
+// ✅ CORRECT - Business data types
+import type { BusinessInfo } from '@data/businessInfo';
+
+interface BusinessComponentProps {
+  // Always use business data types
+  businessInfo: BusinessInfo;
+  showContact?: boolean;
+  showHours?: boolean;
+}
+
+// ✅ CORRECT - Business hours typing
+interface BusinessHours {
+  monday: string;
+  tuesday: string;
+  wednesday: string;
+  thursday: string;
+  friday: string;
+  saturday: string;
+  sunday: string;
+}
+
+interface BusinessStatus {
+  isOpen: boolean;
+  message: string;
+  nextOpenTime?: Date;
+  nextCloseTime?: Date;
+}
+
+// ✅ CORRECT - Contact form types
+interface ContactFormData {
+  name: string;
+  email: string;
+  phone?: string;
+  subject: string;
+  message: string;
+  preferredContact: 'email' | 'phone';
+}
+```
+
+## Error Handling Patterns
+
+### 15. Error Boundary Types
+
+```typescript
+// ✅ CORRECT - Error boundary types
+interface ErrorInfo {
+  componentStack: string;
+}
+
+interface ErrorBoundaryState {
+  hasError: boolean;
+  error?: Error;
+  errorInfo?: ErrorInfo;
+}
+
+interface ErrorBoundaryProps {
+  children: React.ReactNode;
+  fallback?: React.ComponentType<{ error: Error; errorInfo?: ErrorInfo }>;
+  onError?: (error: Error, errorInfo: ErrorInfo) => void;
+}
+```
+
+### 16. Form Validation Types
+
+```typescript
+// ✅ CORRECT - Form validation
+interface ValidationResult {
+  isValid: boolean;
+  errors: Record<string, string[]>;
+}
+
+type ValidatorFunction<T> = (value: T) => string | null;
+
+const validateContactForm = (data: ContactFormData): ValidationResult => {
+  const errors: Record<string, string[]> = {};
+  
+  if (!data.name.trim()) {
+    errors.name = ['Name is required'];
+  }
+  
+  if (!data.email.includes('@')) {
+    errors.email = ['Valid email is required'];
+  }
+  
+  return {
+    isValid: Object.keys(errors).length === 0,
+    errors
+  };
+};
+```
+
+## Testing Types
+
+### 17. Test Utilities
+
+```typescript
+// ✅ CORRECT - Test utilities
+interface TestComponentProps {
+  'data-testid'?: string;
+  'aria-label'?: string;
+}
+
+interface MockApiResponse<T> {
+  data: T;
+  status: number;
+  headers: Record<string, string>;
+}
+```
+
+## Forbidden Patterns - DO NOT USE
+
+```typescript
+// ❌ NEVER use 'any' type
+const data: any = fetchData(); // WRONG
+
+// ❌ NEVER use non-null assertion without good reason
+const user = getUser()!; // WRONG - could crash
+
+// ❌ NEVER use 'as any' to bypass types
+const result = (data as any).someProperty; // WRONG
+
+// ❌ NEVER ignore TypeScript errors with @ts-ignore
+// @ts-ignore
+const broken = someFunction(); // WRONG
+
+// ❌ NEVER use Function type
+const callback: Function = () => {}; // WRONG - too loose
+
+// ❌ NEVER use object type
+const config: object = {}; // WRONG - too vague
+
+// ❌ NEVER use default exports
+export default Component; // WRONG - use named exports
+```
+
+## Strict Mode Requirements - MANDATORY
+
+### 18. Null Safety
+
+```typescript
+// ✅ CORRECT - Null checks
+const getUserName = (user: User | null): string => {
+  return user?.name ?? 'Anonymous';
+};
+
+// ✅ CORRECT - Optional chaining
+const userCity = user?.address?.city;
+
+// ✅ CORRECT - Nullish coalescing
+const displayName = user.name ?? user.email ?? 'Unknown User';
+```
+
+### 19. Type Narrowing
+
+```typescript
+// ✅ CORRECT - Type narrowing with guards
+const processUserData = (data: unknown) => {
+  if (isUser(data)) {
+    // TypeScript knows data is User here
+    console.log(data.name);
+  }
+  
+  if (typeof data === 'string') {
+    // TypeScript knows data is string here
+    console.log(data.toUpperCase());
+  }
+};
+```
+
+## Development Environment
+
+### 20. TSConfig Requirements
+- **ENABLE** `strict: true` in tsconfig.json
+- **ENABLE** `noUnusedLocals` and `noUnusedParameters`
+- **ENABLE** `noImplicitReturns`
+- **USE** path mapping for clean imports
+
+### 21. ESLint TypeScript Rules
+- **ENFORCE** `@typescript-eslint/no-explicit-any`
+- **ENFORCE** `@typescript-eslint/no-unused-vars`
+- **ENFORCE** `@typescript-eslint/prefer-as-const`
+- **ENFORCE** `@typescript-eslint/no-non-null-assertion`
+
+## Error Prevention Checklist
+
+Before committing code, verify:
+- [ ] All components have properly typed props interfaces
+- [ ] No usage of `any`, `object`, or `Function` types
+- [ ] All async functions have proper Promise return types
+- [ ] Event handlers have correct event types
+- [ ] Form data has validation interfaces
+- [ ] API responses have typed interfaces
+- [ ] Error states are properly typed
+- [ ] Business data uses `businessInfo` types
+- [ ] All exports are named exports
+- [ ] Type-only imports use `import type`
+
+This streamlined TypeScript Standards file provides essential type safety patterns for any small-medium business website without industry-specific bloat.
+
+
+
+
