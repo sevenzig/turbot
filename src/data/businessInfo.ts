@@ -60,75 +60,75 @@ export interface BusinessInfo {
 
 export const businessInfo: BusinessInfo = {
   // Basic Information - REPLACE WITH YOUR BUSINESS INFO
-  name: '[BUSINESS_NAME]',
-  shortName: '[BUSINESS_SHORT_NAME]',
-  tagline: '[BUSINESS_TAGLINE]',
-  description: '[BUSINESS_DESCRIPTION]',
-  shortDescription: '[BUSINESS_SHORT_DESCRIPTION]',
+  name: 'Your Business Name',
+  shortName: 'Business',
+  tagline: 'Professional Services & Solutions',
+  description: 'We provide exceptional services tailored to meet your unique needs. Our experienced team is dedicated to delivering high-quality solutions that drive results for your business.',
+  shortDescription: 'Professional services & solutions tailored to your business needs.',
 
   // Address Information - REPLACE WITH YOUR ACTUAL ADDRESS
   address: {
-    street: '[BUSINESS_STREET]',
-    city: '[BUSINESS_CITY]',
-    state: '[BUSINESS_STATE]',
-    zip: '[BUSINESS_ZIP]',
-    full: '[BUSINESS_ADDRESS_FULL]',
+    street: '123 Main Street',
+    city: 'Your City',
+    state: 'State',
+    zip: '12345',
+    full: '123 Main Street, Your City, State 12345',
     coordinates: {
-      latitude: 40.7128, // [BUSINESS_LATITUDE] Replace with your actual coordinates
-      longitude: -74.006, // [BUSINESS_LONGITUDE] Replace with your actual coordinates
+      latitude: 40.7128, // Replace with your actual coordinates
+      longitude: -74.006, // Replace with your actual coordinates
     },
   },
 
   // Contact Information - REPLACE WITH YOUR CONTACT INFO
   contact: {
     phone: {
-      raw: '[BUSINESS_PHONE_RAW]',
-      formatted: '[BUSINESS_PHONE_FORMATTED]',
-      link: '[BUSINESS_PHONE_LINK]',
+      raw: '555-123-4567',
+      formatted: '(555) 123-4567',
+      link: 'tel:+15551234567',
     },
-    email: '[BUSINESS_EMAIL]',
+    email: 'info@yourbusiness.com',
   },
 
   // Social Media - ADD YOUR SOCIAL MEDIA LINKS
   social: {
-    facebook: '[SOCIAL_FACEBOOK_URL]',
-    instagram: '[SOCIAL_INSTAGRAM_URL]',
-    twitter: '[SOCIAL_TWITTER_URL]',
-    linkedin: '[SOCIAL_LINKEDIN_URL]',
+    facebook: 'https://facebook.com/yourbusiness',
+    instagram: 'https://instagram.com/yourbusiness',
+    twitter: 'https://twitter.com/yourbusiness',
+    linkedin: 'https://linkedin.com/company/yourbusiness',
     // Remove any platforms you don't use
   },
 
   // Website Information - UPDATE WITH YOUR DOMAIN
   website: {
-    domain: '[WEBSITE_DOMAIN]',
-    baseUrl: '[WEBSITE_URL]',
+    domain: 'yourbusiness.com',
+    baseUrl: 'https://yourbusiness.com',
   },
 
   // Business Hours - UPDATE WITH YOUR ACTUAL HOURS
   hours: {
-    monday: '[HOURS_MONDAY]',
-    tuesday: '[HOURS_TUESDAY]',
-    wednesday: '[HOURS_WEDNESDAY]',
-    thursday: '[HOURS_THURSDAY]',
-    friday: '[HOURS_FRIDAY]',
-    saturday: '[HOURS_SATURDAY]',
-    sunday: '[HOURS_SUNDAY]',
+    monday: '9:00 AM - 5:00 PM',
+    tuesday: '9:00 AM - 5:00 PM',
+    wednesday: '9:00 AM - 5:00 PM',
+    thursday: '9:00 AM - 5:00 PM',
+    friday: '9:00 AM - 5:00 PM',
+    saturday: '10:00 AM - 3:00 PM',
+    sunday: 'Closed',
   },
 
   // Business Features - CUSTOMIZE FOR YOUR BUSINESS
   features: [
-    '[BUSINESS_FEATURE_1]',
-    '[BUSINESS_FEATURE_2]',
-    '[BUSINESS_FEATURE_3]',
-    '[BUSINESS_FEATURE_4]',
+    'Professional Expertise',
+    'Reliable Service',
+    'Customer-First Approach',
+    '24/7 Support Available',
   ],
 
   // Services Offered - CUSTOMIZE FOR YOUR BUSINESS
   services: [
-    '[BUSINESS_SERVICE_1]',
-    '[BUSINESS_SERVICE_2]',
-    '[BUSINESS_SERVICE_3]',
-    '[BUSINESS_SERVICE_4]',
+    'Consulting Services',
+    'Project Management',
+    'Custom Solutions',
+    'Support & Maintenance',
   ],
 };
 

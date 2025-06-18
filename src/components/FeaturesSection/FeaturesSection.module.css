@@ -1,12 +1,16 @@
 .featuresSection {
   background: var(--color-background-secondary);
-  padding: var(--spacing-xxl) 0;
+  padding: var(--spacing-xl) 0 var(--spacing-xxl) 0;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .featuresContent {
   max-width: var(--container-max-width);
   margin: 0 auto;
   padding: 0 var(--container-padding-mobile);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .sectionTitle {
@@ -19,15 +23,22 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-lg);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .featureCard {
   background: var(--color-surface);
-  padding: var(--spacing-xl);
+  padding: var(--spacing-lg);
   border-radius: var(--border-radius-lg);
   text-align: center;
   border: var(--border-width) solid var(--color-border);
   transition: all var(--transition-speed) var(--transition-timing);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .featureCard:hover {
@@ -40,12 +51,14 @@
   margin-bottom: var(--spacing-md);
   color: var(--color-text);
   font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-lg);
 }
 
 .featureDescription {
   color: var(--color-text-secondary);
   line-height: var(--line-height-relaxed);
   margin: 0;
+  font-size: var(--font-size-base);
 }
 
 /* Mobile Landscape / Small Tablet */
@@ -61,6 +74,10 @@
 
 /* Tablet */
 @media (min-width: 769px) {
+  .featuresSection {
+    padding: var(--spacing-xxl) 0;
+  }
+
   .featuresContent {
     padding: 0 var(--container-padding-tablet);
   }
@@ -78,6 +95,10 @@
   }
 
   .featuresGrid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .featureCard {
+    padding: var(--spacing-xl);
   }
 }

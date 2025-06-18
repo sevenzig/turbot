@@ -5,10 +5,13 @@
     var(--color-primary-hover) 100%
   );
   color: var(--color-text-light);
-  padding: var(--spacing-xxl) 0;
+  padding: var(--spacing-xl) 0 var(--spacing-xxl) 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+  min-height: 60vh; /* Ensure minimum viewport height */
+  display: flex;
+  align-items: center;
 }
 
 .heroContent {
@@ -17,26 +20,28 @@
   padding: 0 var(--container-padding-mobile);
   position: relative;
   z-index: 2;
+  width: 100%;
 }
 
 .heroTitle {
-  font-size: var(--font-size-4xl);
+  font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--spacing-md);
   color: var(--color-text-light);
+  line-height: var(--line-height-tight);
 }
 
 .heroTagline {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-lg);
   font-weight: var(--font-weight-medium);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
   color: var(--color-text-light);
   opacity: 0.9;
 }
 
 .heroDescription {
-  font-size: var(--font-size-lg);
-  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
   margin-bottom: var(--spacing-xl);
   color: var(--color-text-light);
   opacity: 0.8;
@@ -67,6 +72,7 @@
   align-items: center;
   justify-content: center;
   min-width: 160px;
+  border: none;
 }
 
 .primaryButton {
@@ -105,12 +111,25 @@
     flex-direction: row;
     justify-content: center;
   }
+
+  .heroTitle {
+    font-size: var(--font-size-4xl);
+  }
+
+  .heroTagline {
+    font-size: var(--font-size-xl);
+  }
+
+  .heroDescription {
+    font-size: var(--font-size-lg);
+  }
 }
 
 /* Tablet */
 @media (min-width: 769px) {
   .heroSection {
-    padding: var(--spacing-xxxl) 0;
+    padding: var(--spacing-xxl) 0 var(--spacing-xxxl) 0;
+    min-height: 70vh;
   }
 
   .heroContent {
@@ -128,6 +147,10 @@
 
 /* Desktop */
 @media (min-width: 1025px) {
+  .heroSection {
+    min-height: 80vh;
+  }
+
   .heroContent {
     padding: 0 var(--container-padding-desktop);
   }
