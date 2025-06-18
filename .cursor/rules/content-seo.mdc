@@ -1,5 +1,370 @@
 ---
-description:
-globs:
+description: 
+globs: 
 alwaysApply: false
 ---
+# Content & SEO Rules
+
+## Rule Intent
+Produce brand-consistent, SEO-optimized content using business data from `businessInfo.ts`. Ensure all content follows SEO best practices and maintains consistent brand voice across the website.
+
+## Trigger Conditions
+- Page content generation requests
+- Meta tag creation or updates
+- Heading structure modifications
+- Schema markup implementation
+- Content writing for business sections
+
+## Expected Behavior
+
+### Content Generation Standards
+
+#### Brand Voice Consistency
+Generate content that matches the business type and target audience using available business data:
+
+```typescript
+// Use business data for personalized content
+import { businessInfo, generateSEOData } from '@/data/businessInfo';
+
+const generatePageContent = (pageType: string) => {
+  const baseContent = {
+    businessName: businessInfo.name,
+    location: businessInfo.address.city,
+    services: businessInfo.services,
+    features: businessInfo.features
+  };
+
+  switch (pageType) {
+    case 'home':
+      return `Welcome to ${baseContent.businessName}, your trusted partner in ${baseContent.location}. 
+              We specialize in ${baseContent.services.join(', ')} with ${baseContent.features.join(', ')}.`;
+    
+    case 'about':
+      return `${baseContent.businessName} has been serving ${baseContent.location} with 
+              exceptional ${baseContent.services[0]}. ${businessInfo.description}`;
+              
+    case 'contact':
+      return `Ready to get started with ${baseContent.businessName}? Contact us today at 
+              ${businessInfo.contact.phone.formatted} or visit us at ${businessInfo.address.full}.`;
+  }
+};
+```
+
+#### Industry-Appropriate Tone
+Adapt content tone based on business context:
+
+**Professional Services**
+- Formal, authoritative tone
+- Focus on expertise and results
+- Include credentials and experience
+
+**Restaurants/Hospitality**
+- Warm, welcoming tone
+- Focus on experience and atmosphere
+- Include sensory descriptions
+
+**Retail/E-commerce**
+- Helpful, solution-oriented tone
+- Focus on product benefits
+- Include social proof and guarantees
+
+**Healthcare/Medical**
+- Compassionate, trustworthy tone
+- Focus on patient care and outcomes
+- Include qualifications and certifications
+
+### SEO Optimization Requirements
+
+#### Meta Tags Generation
+Generate SEO-optimized meta tags using business data:
+
+```typescript
+const generateMetaTags = (pageTitle?: string, pageDescription?: string) => {
+  const seoData = generateSEOData(pageTitle);
+  
+  return {
+    title: seoData.title,
+    description: pageDescription || seoData.description,
+    keywords: [
+      businessInfo.name,
+      businessInfo.shortName,
+      ...businessInfo.services,
+      businessInfo.address.city,
+      businessInfo.address.state,
+      // Add industry-specific keywords
+      'professional services',
+      'local business'
+    ].join(', '),
+    openGraph: {
+      title: seoData.ogTitle,
+      description: seoData.ogDescription,
+      url: seoData.ogUrl,
+      image: seoData.ogImage,
+      type: 'website',
+      siteName: businessInfo.name
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: seoData.ogTitle,
+      description: seoData.ogDescription,
+      image: seoData.ogImage
+    }
+  };
+};
+```
+
+#### Heading Structure Validation
+Enforce proper heading hierarchy for SEO:
+
+```typescript
+// Good heading structure
+const PageContent: React.FC = () => (
+  <main>
+    <h1>{businessInfo.name} - {businessInfo.tagline}</h1>
+    
+    <section>
+      <h2>Our Services</h2>
+      {businessInfo.services.map((service) => (
+        <div key={service}>
+          <h3>{service}</h3>
+          <p>Professional {service.toLowerCase()} services...</p>
+        </div>
+      ))}
+    </section>
+    
+    <section>
+      <h2>Why Choose {businessInfo.shortName}</h2>
+      {businessInfo.features.map((feature) => (
+        <div key={feature}>
+          <h3>{feature}</h3>
+          <p>We pride ourselves on {feature.toLowerCase()}...</p>
+        </div>
+      ))}
+    </section>
+  </main>
+);
+
+// Bad - Multiple H1s and poor hierarchy
+const BadPageContent = () => (
+  <div>
+    <h1>Welcome</h1>
+    <h1>Our Services</h1>  {/* Second H1 - BAD */}
+    <h4>Service Details</h4>  {/* Skips H2, H3 - BAD */}
+  </div>
+);
+```
+
+#### Local SEO Optimization
+Leverage business location data for local SEO:
+
+```typescript
+const generateLocalSEOContent = () => ({
+  businessName: businessInfo.name,
+  address: businessInfo.address.full,
+  city: businessInfo.address.city,
+  state: businessInfo.address.state,
+  coordinates: businessInfo.address.coordinates,
+  phone: businessInfo.contact.phone.formatted,
+  email: businessInfo.contact.email,
+  
+  // Generate location-based content
+  localContent: {
+    heroText: `Serving ${businessInfo.address.city}, ${businessInfo.address.state} and surrounding areas`,
+    serviceAreas: `We provide ${businessInfo.services[0]} throughout ${businessInfo.address.city}`,
+    contactCTA: `Call your local ${businessInfo.address.city} team at ${businessInfo.contact.phone.formatted}`
+  }
+});
+```
+
+### Schema Markup Implementation
+
+#### Business Schema
+Generate appropriate schema.org markup:
+
+```typescript
+const generateBusinessSchema = () => {
+  const baseSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness", // Default type
+    "name": businessInfo.name,
+    "description": businessInfo.description,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": businessInfo.address.street,
+      "addressLocality": businessInfo.address.city,
+      "addressRegion": businessInfo.address.state,
+      "postalCode": businessInfo.address.zip
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": businessInfo.address.coordinates.latitude,
+      "longitude": businessInfo.address.coordinates.longitude
+    },
+    "telephone": businessInfo.contact.phone.raw,
+    "email": businessInfo.contact.email,
+    "url": businessInfo.website.baseUrl,
+    "openingHours": Object.entries(businessInfo.hours)
+      .filter(([_, hours]) => hours !== 'Closed')
+      .map(([day, hours]) => `${day.substring(0, 2).toUpperCase()} ${hours}`)
+  };
+
+  // Industry-specific schema types
+  const getSchemaType = () => {
+    // This would be enhanced with business type detection
+    if (businessInfo.services.some(s => s.toLowerCase().includes('restaurant'))) {
+      return { ...baseSchema, "@type": "Restaurant" };
+    }
+    if (businessInfo.services.some(s => s.toLowerCase().includes('consulting'))) {
+      return { ...baseSchema, "@type": "ProfessionalService" };
+    }
+    return baseSchema;
+  };
+
+  return getSchemaType();
+};
+```
+
+#### Service Schema
+Generate service-specific schema:
+
+```typescript
+const generateServiceSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": businessInfo.name
+  },
+  "serviceType": businessInfo.services,
+  "areaServed": {
+    "@type": "City",
+    "name": businessInfo.address.city
+  }
+});
+```
+
+### Content Templates
+
+#### Service Page Template
+```typescript
+const generateServicePageContent = (serviceName: string) => {
+  const isServiceOffered = businessInfo.services.includes(serviceName);
+  
+  if (!isServiceOffered) {
+    throw new Error(`Service "${serviceName}" not found in business services`);
+  }
+
+  return {
+    title: `${serviceName} Services - ${businessInfo.name}`,
+    description: `Professional ${serviceName} services in ${businessInfo.address.city}. Contact ${businessInfo.name} for expert ${serviceName} solutions.`,
+    
+    heroContent: {
+      heading: `Expert ${serviceName} in ${businessInfo.address.city}`,
+      subheading: `${businessInfo.name} provides professional ${serviceName} services with ${businessInfo.features.join(', ')}.`,
+      cta: `Get ${serviceName} Quote`
+    },
+    
+    benefitsSection: {
+      heading: `Why Choose Our ${serviceName} Services?`,
+      benefits: businessInfo.features.map(feature => ({
+        title: feature,
+        description: `Our ${serviceName} services feature ${feature.toLowerCase()} to ensure the best results for your business.`
+      }))
+    },
+    
+    ctaSection: {
+      heading: `Ready to Get Started with ${serviceName}?`,
+      description: `Contact ${businessInfo.name} today to discuss your ${serviceName} needs.`,
+      primaryCTA: {
+        text: `Call ${businessInfo.contact.phone.formatted}`,
+        href: businessInfo.contact.phone.link
+      },
+      secondaryCTA: {
+        text: 'Request Quote',
+        href: '/contact'
+      }
+    }
+  };
+};
+```
+
+#### About Page Template
+```typescript
+const generateAboutPageContent = () => ({
+  title: `About ${businessInfo.name} - ${businessInfo.address.city} ${businessInfo.services[0]} Experts`,
+  description: `Learn about ${businessInfo.name}, your trusted ${businessInfo.services[0]} provider in ${businessInfo.address.city}. ${businessInfo.shortDescription}`,
+  
+  content: {
+    mainHeading: `About ${businessInfo.name}`,
+    introduction: businessInfo.description,
+    
+    featuresSection: {
+      heading: `What Makes ${businessInfo.shortName} Different`,
+      features: businessInfo.features.map(feature => ({
+        title: feature,
+        description: `We believe ${feature.toLowerCase()} is essential to providing exceptional service to our ${businessInfo.address.city} clients.`
+      }))
+    },
+    
+    servicesSection: {
+      heading: `Our ${businessInfo.address.city} Services`,
+      description: `${businessInfo.name} offers comprehensive services to meet all your needs:`,
+      services: businessInfo.services
+    },
+    
+    contactSection: {
+      heading: `Contact ${businessInfo.shortName}`,
+      description: `Ready to work with ${businessInfo.address.city}'s trusted ${businessInfo.services[0]} experts?`,
+      contactInfo: {
+        phone: businessInfo.contact.phone.formatted,
+        email: businessInfo.contact.email,
+        address: businessInfo.address.full
+      }
+    }
+  }
+});
+```
+
+### Content Quality Standards
+
+#### Readability Requirements
+- Use clear, concise language appropriate for target audience
+- Keep sentences under 20 words when possible
+- Use active voice over passive voice
+- Include bullet points and numbered lists for easy scanning
+
+#### SEO Content Guidelines
+- Target keyword density: 1-2% for primary keywords
+- Include location-based keywords naturally
+- Use semantic keywords and synonyms
+- Write for users first, search engines second
+
+#### Business-Specific Content Rules
+- Always include business name and location
+- Reference actual services from `businessInfo.services`
+- Use business features from `businessInfo.features`
+- Include proper contact information and CTAs
+- Maintain consistent terminology across all pages
+
+## Quality Metrics
+- Lighthouse SEO score ≥ 95
+- Proper heading hierarchy (single H1, logical H2-H6 structure)
+- Meta descriptions between 150-160 characters
+- Schema markup validation passes
+- Local SEO elements properly implemented
+- Brand voice consistency across all content
+
+## Error Prevention
+- Validate that referenced services exist in `businessInfo.services`
+- Ensure all business data is properly sourced from `businessInfo.ts`
+- Check that contact information is current and properly formatted
+- Verify schema markup syntax and required properties
+- Test meta tag character limits and display
+
+## Integration Requirements
+- Use `generateSEOData()` for consistent meta tag generation
+- Reference `businessInfo` data for all business-specific content
+- Apply `business-context.mdc` rules for industry-appropriate language
+- Follow `accessibility-ux.mdc` for content accessibility
+- Ensure content works with `design-system-enforcement.mdc` layouts
+

@@ -1,5 +1,459 @@
 ---
-description:
-globs:
+description: 
+globs: 
 alwaysApply: false
 ---
+# Import/Export Standards - UNIFIED RULES
+
+## Import Order Standards - MANDATORY
+
+### Required Import Sequence
+Follow this EXACT order for all imports:
+
+```typescript
+// 1. React and React ecosystem imports
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import { createPortal } from 'react-dom';
+
+// 2. Third-party libraries (alphabetical)
+import { clsx } from 'clsx';
+import { format } from 'date-fns';
+import { useQuery } from '@tanstack/react-query';
+
+// 3. Internal imports - Types ONLY (with type keyword)
+import type { User, ApiResponse } from '@types/api';
+import type { ComponentProps } from './types';
+
+// 4. Internal imports - Hooks
+import { useLocalStorage } from '@hooks/useLocalStorage';
+import { useApi } from '@hooks/useApi';
+
+// 5. Internal imports - Components
+import { Button } from '@components/Button';
+import { Modal } from '@components/Modal';
+import { LoadingSpinner } from '@components/LoadingSpinner';
+
+// 6. Internal imports - Utils and Services
+import { formatDate } from '@utils/dateUtils';
+import { userService } from '@services/userService';
+
+// 7. Internal imports - Constants and Config
+import { API_ENDPOINTS } from '@constants/api';
+import { BREAKPOINTS } from '@constants/design';
+
+// 8. Styles (ALWAYS LAST)
+import styles from './Component.module.css';
+```
+
+## Export Patterns - STANDARDIZED (Conflicts Resolved)
+
+### Named Exports Only - MANDATORY
+```typescript
+// ✅ CORRECT - Named exports (resolves all conflicts)
+export interface ComponentProps {
+  title: string;
+  children?: React.ReactNode;
+}
+
+export const Component: React.FC<ComponentProps> = ({ title, children }) => {
+  return <div>{title}</div>;
+};
+
+// Export utilities with named exports
+export const componentUtils = {
+  formatTitle: (title: string) => title.toUpperCase(),
+  validateProps: (props: ComponentProps) => !!props.title
+};
+
+// Always export types explicitly
+export type { ComponentProps };
+
+// ❌ WRONG - Default exports (conflicts resolved)
+// export default Component;
+```
+
+### Index File Patterns - STANDARDIZED
+```typescript
+// components/Button/index.ts
+export { Button } from './Button';
+export type { ButtonProps } from './Button';
+
+// components/index.ts - Barrel export
+export { Button } from './Button';
+export { Modal } from './Modal';
+export { LoadingSpinner } from './LoadingSpinner';
+
+// Re-export types
+export type { ButtonProps } from './Button';
+export type { ModalProps } from './Modal';
+export type { LoadingSpinnerProps } from './LoadingSpinner';
+```
+
+### Service and Utility Exports
+```typescript
+// services/userService.ts
+export const getUser = async (id: string): Promise<User> => { ... };
+export const updateUser = async (id: string, data: Partial<User>): Promise<User> => { ... };
+export const deleteUser = async (id: string): Promise<void> => { ... };
+
+// Group related functions
+export const userService = {
+  getUser,
+  updateUser,
+  deleteUser
+};
+
+// Export types
+export type { User, UserUpdateData, UserCreateData };
+
+// utils/index.ts
+export { dateUtils } from './dateUtils';
+export { stringUtils } from './stringUtils';
+export { validationUtils } from './validationUtils';
+
+// Conditional exports for different environments
+export const devUtils = process.env.NODE_ENV === 'development' 
+  ? { debugLog: console.log, debugError: console.error }
+  : {};
+```
+
+## Type-Only Imports - MANDATORY
+
+### When to Use Type-Only Imports
+```typescript
+// ✅ CORRECT - Type-only imports
+import type { User } from '@types/user';
+import type { ComponentProps } from './Component';
+import type { ApiResponse } from '@types/api';
+
+// ✅ CORRECT - Mixed imports with type keyword
+import { Button, type ButtonProps } from '@components/Button';
+import { userService, type UserService } from '@services/userService';
+
+// ❌ INCORRECT - Importing types as values
+import { User } from '@types/user'; // Don't do this for type-only usage
+```
+
+### Type Import Best Practices
+```typescript
+// ✅ CORRECT - Separate type and value imports for clarity
+import type { User, ApiResponse, FormData } from '@types/api';
+import { validateUser, formatResponse } from '@utils/userUtils';
+
+// ✅ CORRECT - Mixed imports when both needed
+import { userService, type UserServiceConfig } from '@services/userService';
+
+// ✅ CORRECT - Component with type imports
+import type { FC, ReactNode, MouseEvent } from 'react';
+import { useState, useCallback } from 'react';
+```
+
+## Dynamic Imports - LAZY LOADING
+
+### Route-Based Code Splitting
+```typescript
+// ✅ CORRECT - Lazy loading pages with named exports
+import { lazy } from 'react';
+
+export const HomePage = lazy(() => 
+  import('@pages/HomePage').then(module => ({
+    default: module.HomePage
+  }))
+);
+
+export const AboutPage = lazy(() => 
+  import('@pages/AboutPage').then(module => ({
+    default: module.AboutPage
+  }))
+);
+
+export const ContactPage = lazy(() => 
+  import('@pages/ContactPage').then(module => ({
+    default: module.ContactPage
+  }))
+);
+
+// Usage with error boundaries
+const LazyPageWrapper: FC<{ children: ReactNode }> = ({ children }) => (
+  <Suspense fallback={<LoadingSpinner />}>
+    <ErrorBoundary>
+      {children}
+    </ErrorBoundary>
+  </Suspense>
+);
+```
+
+### Feature-Based Dynamic Loading
+```typescript
+// ✅ CORRECT - Conditional feature loading
+export const loadAnalytics = async () => {
+  if (process.env.NODE_ENV === 'production') {
+    const { analytics } = await import('@services/analytics');
+    return analytics;
+  }
+  return null;
+};
+
+// ✅ CORRECT - Feature flags with dynamic imports
+export const loadFeature = async (featureName: string) => {
+  switch (featureName) {
+    case 'advanced-editor':
+      const { AdvancedEditor } = await import('@features/AdvancedEditor');
+      return AdvancedEditor;
+    case 'data-visualization':
+      const { DataVisualization } = await import('@features/DataVisualization');
+      return DataVisualization;
+    default:
+      return null;
+  }
+};
+```
+
+## Path Resolution Standards
+
+### Absolute Imports Configuration
+```typescript
+// vite.config.ts
+import { defineConfig } from 'vite';
+import { resolve } from 'path';
+
+export const config = defineConfig({
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, './src'),
+      '@components': resolve(__dirname, './src/components'),
+      '@hooks': resolve(__dirname, './src/hooks'),
+      '@utils': resolve(__dirname, './src/utils'),
+      '@types': resolve(__dirname, './src/types'),
+      '@styles': resolve(__dirname, './src/styles'),
+      '@data': resolve(__dirname, './src/data'),
+    },
+  },
+});
+
+export default config;
+```
+
+### Using Absolute Imports
+```typescript
+// ✅ CORRECT - Absolute imports for distant files
+import { Button } from '@components/Button';
+import { useLocalStorage } from '@hooks/useLocalStorage';
+import { formatDate } from '@utils/dateUtils';
+import type { User } from '@types/user';
+import '@styles/globals.css';
+
+// ❌ INCORRECT - Relative imports for distant files
+import { Button } from '../../../components/Button';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
+
+// ✅ CORRECT - Relative imports for nearby files
+import { ComponentHelper } from './ComponentHelper';
+import type { LocalProps } from './types';
+```
+
+## Namespace Imports - LIMITED USE
+
+### When to Use Namespace Imports
+```typescript
+// ✅ CORRECT - Namespace imports for utilities with many functions
+import * as dateUtils from '@utils/dateUtils';
+import * as stringUtils from '@utils/stringUtils';
+import * as validationUtils from '@utils/validationUtils';
+
+// Usage
+const formattedDate = dateUtils.format(new Date());
+const isValid = validationUtils.isEmail(email);
+
+// ✅ CORRECT - Namespace for constants
+import * as ROUTES from '@constants/routes';
+import * as COLORS from '@constants/colors';
+
+// Usage
+navigate(ROUTES.HOME);
+const primaryColor = COLORS.PRIMARY;
+```
+
+### Avoid Namespace Imports For
+```typescript
+// ❌ INCORRECT - Don't namespace React
+import * as React from 'react'; // Use: import React from 'react';
+
+// ❌ INCORRECT - Don't namespace single exports
+import * as Button from '@components/Button'; // Use: import { Button }
+
+// ❌ INCORRECT - Don't namespace types
+import * as Types from '@types/user'; // Use: import type { User }
+```
+
+## Re-Export Patterns
+
+### Component Libraries
+```typescript
+// components/ui/index.ts
+export { Button } from './Button';
+export { Input } from './Input';
+export { Modal } from './Modal';
+export { Tooltip } from './Tooltip';
+
+// Re-export types
+export type { ButtonProps } from './Button';
+export type { InputProps } from './Input';
+export type { ModalProps } from './Modal';
+export type { TooltipProps } from './Tooltip';
+
+// Grouped exports for convenience
+export const FormComponents = {
+  Button,
+  Input,
+  Select: Input, // Alias example
+} as const;
+```
+
+### Feature Modules
+```typescript
+// features/user-management/index.ts
+export { UserList } from './components/UserList';
+export { UserForm } from './components/UserForm';
+export { UserProfile } from './components/UserProfile';
+
+export { useUsers } from './hooks/useUsers';
+export { useUserForm } from './hooks/useUserForm';
+
+export { userService } from './services/userService';
+export { userUtils } from './utils/userUtils';
+
+export type { 
+  User, 
+  UserFormData, 
+  UserListProps,
+  UserFormProps,
+  UserProfileProps 
+} from './types';
+```
+
+## Import Aliasing
+
+### Resolving Name Conflicts
+```typescript
+// ✅ CORRECT - Aliasing imports
+import { Button as UIButton } from '@components/ui/Button';
+import { Button as CustomButton } from './CustomButton';
+
+// ✅ CORRECT - Aliasing for clarity
+import { format as formatDate } from 'date-fns';
+import { format as formatCurrency } from '@utils/currency';
+
+// ✅ CORRECT - Aliasing long names
+import { VeryLongComponentNameThatIsHardToType as ShortName } from './VeryLongComponent';
+
+// ✅ CORRECT - Aliasing type conflicts
+import type { User as ApiUser } from '@types/api';
+import type { User as DatabaseUser } from '@types/database';
+```
+
+## Performance Considerations
+
+### Tree Shaking Optimization
+```typescript
+// ✅ CORRECT - Tree-shakable imports
+import { debounce } from 'lodash-es';
+import { format } from 'date-fns';
+import { clsx } from 'clsx';
+
+// ❌ INCORRECT - Imports entire library
+import _ from 'lodash';
+import * as dateFns from 'date-fns';
+
+// ✅ CORRECT - Specific imports from libraries
+import { pick, omit } from 'lodash-es';
+import { startOfDay, endOfDay } from 'date-fns';
+```
+
+### Avoiding Circular Dependencies
+```typescript
+// ❌ INCORRECT - Circular dependency
+// fileA.ts
+import { functionB } from './fileB';
+export const functionA = () => functionB();
+
+// fileB.ts
+import { functionA } from './fileA';
+export const functionB = () => functionA();
+
+// ✅ CORRECT - Extract shared logic
+// shared.ts
+export const sharedFunction = () => { /* shared logic */ };
+
+// fileA.ts
+import { sharedFunction } from './shared';
+export const functionA = () => sharedFunction();
+
+// fileB.ts
+import { sharedFunction } from './shared';
+export const functionB = () => sharedFunction();
+```
+
+## Validation and Error Prevention
+
+### Common Import Mistakes
+```typescript
+// ❌ INCORRECT - Missing type keyword
+import { User, ApiResponse } from '@types/api'; // Should use type keyword
+
+// ❌ INCORRECT - Mixing default and named imports inconsistently
+import Component, { ComponentProps } from './Component'; // Choose named only
+
+// ❌ INCORRECT - Deep relative imports
+import { util } from '../../../utils/helper'; // Use absolute imports
+```
+
+### Import Validation Checklist
+```typescript
+// ✅ CORRECT - Complete import example
+import type { FC, ReactNode } from 'react';
+import { useState, useCallback, useEffect } from 'react';
+import type { User, ApiResponse } from '@types/api';
+import { Button, type ButtonProps } from '@components/Button';
+import { userService } from '@services/userService';
+import { formatDate } from '@utils/dateUtils';
+import styles from './Component.module.css';
+```
+
+## Mandatory Checklist
+
+Before committing code, verify:
+- [ ] Import order follows specified sequence
+- [ ] Type-only imports use `type` keyword  
+- [ ] Named exports used consistently (no default exports)
+- [ ] No circular dependencies
+- [ ] Tree-shakable imports for large libraries
+- [ ] Absolute imports for distant files
+- [ ] Proper re-exports in index files
+- [ ] No unused imports
+- [ ] Consistent naming conventions
+- [ ] Performance implications considered
+
+## Forbidden Patterns
+
+- ❌ Default exports for any module
+- ❌ Importing entire libraries when only parts needed
+- ❌ Circular dependencies
+- ❌ Deep relative imports (../../../)
+- ❌ Importing types as values
+- ❌ Inconsistent import order
+- ❌ Unused imports
+
+## Required Patterns
+
+- ✅ Named exports for all modules
+- ✅ Type-only imports with `type` keyword
+- ✅ Consistent import order
+- ✅ Absolute imports for distant files
+- ✅ Proper re-exports in index files
+- ✅ Tree-shakable imports
+- ✅ Clear separation of concerns
+- ✅ Performance-optimized imports
+
+**Remember**: Consistency in import/export patterns makes codebases more maintainable, enables better tooling support, and improves developer experience. Always use **named exports** and **type-only imports** for clarity.
+

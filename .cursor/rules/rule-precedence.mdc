@@ -1,5 +1,139 @@
 ---
-description:
-globs:
+description: 
+globs: 
 alwaysApply: false
 ---
+# Rule Precedence and Conflict Resolution
+
+## Rule Hierarchy - STRICT ORDER
+
+When conflicts arise between rules, follow this precedence order:
+
+### 1. **`.cursorrules`** (Highest Priority)
+- **Scope**: High-level business context and project architecture
+- **Authority**: Final say on business requirements and project direction
+- **Overrides**: All other rules when business needs conflict with technical patterns
+
+### 2. **`typescript-standards.mdc`** 
+- **Scope**: TypeScript language patterns, type safety, and interfaces
+- **Authority**: Type definitions, generics, and TS-specific patterns
+- **Overrides**: Framework patterns when type safety is at stake
+
+### 3. **`react-component-standards.mdc`**
+- **Scope**: React framework patterns, hooks, and component lifecycle
+- **Authority**: Component architecture, state management, and React-specific patterns
+- **Overrides**: General code organization when React patterns are involved
+
+### 4. **`import-export-standards.mdc`**
+- **Scope**: Module organization, code splitting, and dependency management
+- **Authority**: Import order, export patterns, and module structure
+- **Overrides**: Generic patterns when module organization is critical
+
+### 5. **`css-design-system.mdc`**
+- **Scope**: Styling, design tokens, and visual consistency
+- **Authority**: Design system enforcement and CSS implementation
+- **Overrides**: Component styling when design system consistency is required
+
+## Conflict Resolution Process
+
+### When Rules Conflict:
+1. **Check Precedence**: Apply higher-priority rule
+2. **Business Context**: Consider `.cursorrules` business requirements
+3. **Type Safety**: Prefer TypeScript-safe patterns
+4. **Maintainability**: Choose pattern that aids long-term maintenance
+5. **Consistency**: Prefer patterns already established in codebase
+
+### Common Conflict Scenarios:
+
+#### Export Pattern Conflicts
+**Resolution**: Always use **Named Exports** (typescript-standards.mdc precedence)
+```typescript
+// ✅ CORRECT - Named exports only
+export const ComponentName: React.FC<Props> = ({ ... }) => { ... };
+export type { ComponentNameProps };
+
+// ❌ WRONG - Default exports
+export default ComponentName;
+```
+
+#### Type vs Runtime Import Conflicts  
+**Resolution**: Use **Type-Only Imports** when possible (typescript-standards.mdc precedence)
+```typescript
+// ✅ CORRECT - Type-only imports
+import type { User, ApiResponse } from '@types/api';
+import { Button, type ButtonProps } from '@components/Button';
+
+// ❌ WRONG - Mixed without type keyword
+import { User, ApiResponse } from '@types/api';
+```
+
+#### CSS Methodology Conflicts
+**Resolution**: **Design System Tokens** take precedence over hard-coded values
+```css
+/* ✅ CORRECT - Design tokens */
+.component { background: var(--color-primary); }
+
+/* ❌ WRONG - Hard-coded values */
+.component { background: #2563eb; }
+```
+
+#### Component Structure Conflicts
+**Resolution**: **React patterns** take precedence over generic architecture
+```typescript
+// ✅ CORRECT - React-specific structure
+const Component: React.FC<Props> = ({ prop1, prop2 }) => {
+  const [state, setState] = useState();
+  const handleEvent = useCallback(() => {}, []);
+  
+  return <div>{content}</div>;
+};
+```
+
+## Rule Update Protocol
+
+### When Updating Rules:
+1. **Check Dependencies**: Review which rules reference the updated rule
+2. **Maintain Precedence**: Ensure changes don't violate hierarchy
+3. **Test Conflicts**: Verify no new conflicts are introduced
+4. **Update Cross-References**: Maintain consistency across rule files
+5. **Document Changes**: Update this precedence file if hierarchy changes
+
+### Exceptions to Precedence:
+- **Security Requirements**: Always take highest priority regardless of hierarchy
+- **Accessibility Standards**: WCAG compliance overrides styling preferences  
+- **Performance Critical**: Core Web Vitals requirements override convenience patterns
+- **Legal/Compliance**: Regulatory requirements override all technical patterns
+
+## Quick Reference Decision Tree
+
+```
+Conflict Detected
+    ↓
+Is it a business requirement? (.cursorrules)
+    ↓ YES → Use .cursorrules guidance
+    ↓ NO
+Is type safety involved? (typescript-standards.mdc)
+    ↓ YES → Use TypeScript-safe pattern
+    ↓ NO
+Is it React-specific? (react-component-standards.mdc)
+    ↓ YES → Use React pattern
+    ↓ NO
+Is it module organization? (import-export-standards.mdc)
+    ↓ YES → Use import/export standard
+    ↓ NO
+Use css-design-system.mdc guidance
+```
+
+## Validation Checklist
+
+Before committing code, ensure:
+- [ ] No rule conflicts in implementation
+- [ ] Higher precedence rules respected
+- [ ] Type safety maintained
+- [ ] Business requirements satisfied
+- [ ] Design system consistency preserved
+- [ ] Performance implications considered
+- [ ] Accessibility standards met
+
+**Remember**: When in doubt, prioritize **type safety**, **business requirements**, and **maintainability** over convenience.
+

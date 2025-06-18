@@ -1,5 +1,451 @@
 ---
-description:
-globs:
+description: 
+globs: 
 alwaysApply: false
 ---
+# Accessibility & UX Rules
+
+## Rule Intent
+Guarantee WCAG 2.2 AA compliance and provide excellent user experience patterns for business websites. Ensure all interactive elements are accessible and user flows are optimized for conversions.
+
+## Trigger Conditions
+- Creation or modification of interactive elements (`button`, `input`, `nav`, `dialog`, `form`)
+- Navigation component development
+- Form component development
+- Modal or overlay component development
+- Business-critical user flows (contact, booking, purchasing)
+
+## Expected Behavior
+
+### WCAG 2.2 AA Compliance Requirements
+
+#### Keyboard Navigation
+All interactive elements must be keyboard accessible:
+
+```typescript
+// Good - Keyboard accessible component
+const Button: React.FC<ButtonProps> = ({ onClick, children, ...props }) => {
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      onClick?.(event);
+    }
+  };
+
+  return (
+    <button
+      onClick={onClick}
+      onKeyDown={handleKeyDown}
+      className={styles.button}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+};
+
+// Bad - Missing keyboard support
+const Button = ({ onClick, children }) => (
+  <div onClick={onClick} className={styles.button}>
+    {children}
+  </div>
+);
+```
+
+#### Focus Management
+Implement visible focus indicators and logical focus flow:
+
+```css
+/* Required focus styles */
+.button:focus,
+.input:focus,
+.link:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--border-radius);
+}
+
+/* Skip to main content link */
+.skipLink {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--color-primary);
+  color: var(--color-background);
+  padding: var(--spacing-sm);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  z-index: var(--z-index-modal);
+}
+
+.skipLink:focus {
+  top: 6px;
+}
+```
+
+#### Semantic HTML Structure
+Use proper HTML landmarks and structure:
+
+```typescript
+// Good - Semantic structure
+const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <>
+    <a href="#main" className={styles.skipLink}>
+      Skip to main content
+    </a>
+    <header role="banner">
+      <nav role="navigation" aria-label="Main navigation">
+        {/* Navigation items */}
+      </nav>
+    </header>
+    <main id="main" role="main">
+      {children}
+    </main>
+    <footer role="contentinfo">
+      {/* Footer content */}
+    </footer>
+  </>
+);
+
+// Bad - Non-semantic structure
+const Layout = ({ children }) => (
+  <div>
+    <div>{/* Navigation */}</div>
+    <div id="content">{children}</div>
+    <div>{/* Footer */}</div>
+  </div>
+);
+```
+
+#### ARIA Labels and Descriptions
+Provide proper ARIA attributes for complex components:
+
+```typescript
+// Form with proper ARIA
+const ContactForm: React.FC = () => {
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  return (
+    <form role="form" aria-labelledby="contact-form-title">
+      <h2 id="contact-form-title">Contact Us</h2>
+      
+      <div className={styles.field}>
+        <label htmlFor="name">Name *</label>
+        <input
+          id="name"
+          type="text"
+          required
+          aria-describedby={errors.name ? "name-error" : undefined}
+          aria-invalid={!!errors.name}
+        />
+        {errors.name && (
+          <span id="name-error" role="alert" className={styles.error}>
+            {errors.name}
+          </span>
+        )}
+      </div>
+
+      <button type="submit" aria-describedby="form-help">
+        Send Message
+      </button>
+      <p id="form-help" className={styles.helpText}>
+        We'll respond within 24 hours
+      </p>
+    </form>
+  );
+};
+```
+
+### Business-Specific UX Patterns
+
+#### Contact Forms
+Optimize for business lead generation:
+
+```typescript
+interface ContactFormProps {
+  businessType?: 'restaurant' | 'consulting' | 'retail' | 'service';
+  onSubmit: (data: ContactData) => void;
+}
+
+const ContactForm: React.FC<ContactFormProps> = ({ businessType, onSubmit }) => {
+  // Industry-specific field configurations
+  const getFormFields = () => {
+    switch (businessType) {
+      case 'restaurant':
+        return ['name', 'email', 'phone', 'partySize', 'preferredDate', 'message'];
+      case 'consulting':
+        return ['name', 'email', 'company', 'projectType', 'budget', 'timeline', 'message'];
+      default:
+        return ['name', 'email', 'phone', 'subject', 'message'];
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className={styles.contactForm}>
+      {/* Dynamic fields based on business type */}
+    </form>
+  );
+};
+```
+
+#### Navigation Patterns
+Implement business-friendly navigation:
+
+```typescript
+const Navigation: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+  return (
+    <nav role="navigation" aria-label="Main navigation">
+      {/* Mobile menu button */}
+      <button
+        className={styles.menuToggle}
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        aria-expanded={isMenuOpen}
+        aria-controls="main-menu"
+        aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+      >
+        <span className={styles.hamburger} />
+      </button>
+
+      {/* Navigation menu */}
+      <ul 
+        id="main-menu"
+        className={`${styles.menu} ${isMenuOpen ? styles.menuOpen : ''}`}
+        role="menubar"
+      >
+        <li role="none">
+          <a href="/" role="menuitem">Home</a>
+        </li>
+        <li role="none">
+          <a href="/services" role="menuitem">Services</a>
+        </li>
+        <li role="none">
+          <a href="/contact" role="menuitem">Contact</a>
+        </li>
+        
+        {/* Business-specific CTA */}
+        <li role="none" className={styles.ctaItem}>
+          <a 
+            href="tel:{businessInfo.contact.phone.link}" 
+            role="menuitem"
+            className={styles.ctaButton}
+            aria-label={`Call ${businessInfo.name}`}
+          >
+            Call Now
+          </a>
+        </li>
+      </ul>
+    </nav>
+  );
+};
+```
+
+### Error Handling & Feedback
+
+#### Form Validation
+Provide immediate, accessible feedback:
+
+```typescript
+const useFormValidation = (businessType: string) => {
+  const validateField = (name: string, value: string) => {
+    switch (name) {
+      case 'email':
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) 
+          ? '' 
+          : 'Please enter a valid email address';
+      case 'phone':
+        return /^\+?[\d\s\-\(\)]+$/.test(value) 
+          ? '' 
+          : 'Please enter a valid phone number';
+      case 'name':
+        return value.trim().length >= 2 
+          ? '' 
+          : 'Name must be at least 2 characters';
+      default:
+        return '';
+    }
+  };
+
+  return { validateField };
+};
+```
+
+#### Loading States
+Provide clear feedback for async operations:
+
+```typescript
+const SubmitButton: React.FC<{ isLoading: boolean }> = ({ isLoading }) => (
+  <button 
+    type="submit" 
+    disabled={isLoading}
+    aria-describedby="submit-status"
+    className={styles.submitButton}
+  >
+    {isLoading ? (
+      <>
+        <span className={styles.spinner} aria-hidden="true" />
+        Sending...
+      </>
+    ) : (
+      'Send Message'
+    )}
+  </button>
+);
+```
+
+### Mobile-First UX
+
+#### Touch-Friendly Design
+Ensure adequate touch targets:
+
+```css
+/* Minimum 44px touch targets */
+.button,
+.link,
+.input {
+  min-height: 44px;
+  min-width: 44px;
+  padding: var(--spacing-sm) var(--spacing-md);
+}
+
+/* Adequate spacing between interactive elements */
+.menuItem {
+  margin-bottom: var(--spacing-sm);
+}
+```
+
+#### Responsive Forms
+Optimize forms for mobile:
+
+```css
+.form {
+  /* Stack fields on mobile */
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .form {
+    /* Side-by-side fields on larger screens */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .fullWidth {
+    grid-column: 1 / -1;
+  }
+}
+```
+
+### Performance & Core Web Vitals
+
+#### Reduce Layout Shift
+Prevent cumulative layout shift:
+
+```css
+/* Reserve space for images */
+.image {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* Reserve space for dynamic content */
+.loadingContainer {
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+```
+
+#### Optimize Interactions
+Improve First Input Delay:
+
+```typescript
+// Debounce search inputs
+const useDebounce = (value: string, delay: number) => {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+
+    return () => clearTimeout(handler);
+  }, [value, delay]);
+
+  return debouncedValue;
+};
+```
+
+## Business Context Integration
+
+### Industry-Specific Patterns
+Apply UX patterns based on business type:
+
+**Restaurants**
+- One-click reservation buttons
+- Menu item accessibility (dietary info)
+- Location/directions prominence
+
+**Professional Services**
+- Clear service descriptions
+- Consultation scheduling
+- Credential/certification display
+
+**Retail**
+- Product image accessibility
+- Shopping cart accessibility
+- Checkout flow optimization
+
+### Call-to-Action Optimization
+Design CTAs for business conversion:
+
+```typescript
+const CTAButton: React.FC<{
+  variant: 'primary' | 'secondary';
+  businessType: string;
+  action: string;
+}> = ({ variant, businessType, action }) => {
+  const getCTAText = () => {
+    switch (`${businessType}-${action}`) {
+      case 'restaurant-contact':
+        return 'Make Reservation';
+      case 'consulting-contact':
+        return 'Schedule Consultation';
+      case 'retail-contact':
+        return 'Get Quote';
+      default:
+        return 'Contact Us';
+    }
+  };
+
+  return (
+    <button 
+      className={`${styles.cta} ${styles[variant]}`}
+      aria-label={`${getCTAText()} - Opens contact form`}
+    >
+      {getCTAText()}
+    </button>
+  );
+};
+```
+
+## Quality Metrics
+- Lighthouse accessibility score ≥ 95
+- WCAG 2.2 AA compliance validation passes
+- Keyboard navigation testing passes
+- Screen reader compatibility verified
+- Mobile usability score ≥ 90
+- Core Web Vitals within Google's "Good" thresholds
+
+## Testing Requirements
+- Automated accessibility testing with jest-axe
+- Keyboard navigation testing
+- Screen reader testing (at least NVDA/JAWS)
+- Mobile device testing
+- Performance testing for Core Web Vitals
+
