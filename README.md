@@ -1,155 +1,185 @@
-# React + Vite **Business Website Template**
-# Turbot 🤖 AI-Powered Business Website Suite
+# Turbot 🤖 AI-Enhanced Development Suite for Small Businesses
 
 [![Build Status](https://github.com/sevenzig/turbot/actions/workflows/ci.yml/badge.svg)](https://github.com/sevenzig/turbot/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/sevenzig/turbot?logo=github)](https://github.com/sevenzig/turbot/releases)
 [![License](https://img.shields.io/github/license/sevenzig/turbot?color=blue)](LICENSE)
 [![Cursor Ready](https://img.shields.io/badge/Cursor-AI%20Ready-00D4FF?logo=cursor)](https://cursor.sh)
-[![Stars](https://img.shields.io/github/stars/sevenzig/turbot?style=social)](https://github.com/sevenzig/turbot/stargazers)
 
-> 🤖 **AI-powered React development suite** — Template + intelligent rules for consistent, high-quality business websites  
-> React 19 • TypeScript • Vite • **AI Development Rules** • Automated setup & deploy
+> **Build professional business websites in minutes, not weeks**  
+> AI-powered React development suite specifically designed for small & medium businesses
 
-[**📺 Watch AI Demo →**](https://youtu.be/DEMO_VIDEO)  •  [**🌐 Live Preview**](https://sevenzig.github.io/turbot)  •  [**🤖 Try with Cursor**](cursor://clone?url=https://github.com/sevenzig/turbot)
-
-<p align="center">
-  <img src=".github/assets/demo.gif" alt="Animated preview" width="100%"/>
-</p>
+[**🚀 Get Started Now**](#-quick-start-30-seconds) • [**🌐 See Live Demo**](https://sevenzig.github.io/turbot) • [**📥 Download for Cursor**](cursor://clone?url=https://github.com/sevenzig/turbot)
 
 ---
 
-## 🤖 AI-Powered Quick Start
+## ⚡ Quick Start (30 Seconds)
 
-### Option&nbsp;1: Full AI Development Suite *(Recommended)*
+**Step 1:** Clone and setup
 ```bash
-# Clone with AI development rules
 git clone https://github.com/sevenzig/turbot my-business-site
 cd my-business-site
-
-# Interactive setup wizard + AI rules activation
 npm run init
+```
 
-# Open in Cursor for AI-powered development
+**Step 2:** Open in Cursor for AI-powered development
+```bash
 cursor .
 ```
 
-**🤖 What you get**
-- ✅ **AI Development Rules** — Cursor enforces style, patterns & best practices
-- ✅ **Intelligent Code Generation** — AI understands your business context
-- ✅ **Consistency Enforcement** — Automatic design-system & architecture adherence
-- ✅ **Context-Aware Suggestions** — AI knows your business type & requirements
-
-### Option&nbsp;2: Traditional Setup
+**Step 3:** Deploy instantly to Vercel
 ```bash
-npm run init --no-ai
-npm run dev
+npm run deploy:vercel
 ```
 
-**What just happened?**
-## 🤖 AI Development Features
+**🎉 Done!** Your professional business website is live with AI-powered development ready to go.
 
-### Intelligent Development Rules
+---
 
-| Feature | Description | Benefit |
-|---------|-------------|---------|
-| 🎨 **Design System Enforcement** | AI maintains consistent colors, spacing, typography | No style drift, professional appearance |
-| 🏗️ **Architecture Patterns** | AI follows component structure and naming conventions | Maintainable, predictable codebase |
-| 🔤 **Language & Tone** | AI keeps voice consistent across content | Professional brand presence |
-| 📱 **UX Guidelines** | AI suggests accessibility & usability fixes | Better user experience |
-| 🧩 **Component Patterns** | AI generates components following template standards | Faster dev, consistent quality |
+## 🎯 Perfect For Small Businesses
 
-### AI-Powered Business Context
-- **Business type detection** (restaurant, brewery, consulting…)
-- **Industry terminology** baked into suggestions
-- **Brand voice & messaging** alignment
-- **Target-audience awareness** for copy & UX
+### Why Turbot Exists
+Small businesses need **professional websites fast** without hiring expensive developers or spending months learning complex frameworks. Turbot gives you:
 
-### Smart Code Generation Examples
-```typescript
-// Ask: "Add a testimonials section for my brewery"
-// AI returns: <TestimonialsSection beerStyle="IPA" /> with sample copy
+- ✅ **Professional websites in hours, not weeks**
+- ✅ **AI that understands your business type** (restaurant, consulting, retail, services...)  
+- ✅ **Industry-appropriate content and terminology**
+- ✅ **One-click deployment** to Vercel, Netlify, or GitHub Pages
+- ✅ **No coding experience required** — AI handles the complexity
 
-// Ask: "Create a reservation form for my restaurant"
-// Gets date, time, party-size fields wired to form handler
+### Business Types We Excel At
+🍕 **Restaurants** — Menus, reservations, online ordering  
+🍺 **Breweries** — Beer lists, events, taproom info  
+💼 **Consulting** — Services, expertise, case studies  
+🛍️ **Retail** — Product catalogs, e-commerce integration  
+🔧 **Services** — Portfolios, booking systems, testimonials  
+🏠 **Local Businesses** — Hours, location, contact forms
+
+---
+
+## 🤖 AI-Enhanced Development
+
+### What Makes This Different
+Traditional templates give you generic code. **Turbot's AI understands your business** and generates contextually relevant content, components, and functionality.
+
+**Example:** Ask for a "testimonials section" and get:
+- **Restaurant:** Customer reviews about food quality, service, atmosphere
+- **Brewery:** Beer reviews, tasting notes, event feedback  
+- **Consulting:** Client results, ROI metrics, project outcomes
+
+### AI Development Features
+| Feature | Business Benefit | How It Works |
+|---------|-----------------|--------------|
+| 🎨 **Brand Consistency** | Professional appearance across all pages | AI enforces your design system automatically |
+| 📝 **Industry Copy** | Content that converts visitors to customers | AI writes in your industry's language |
+| 🏗️ **Smart Components** | Features that actually help your business | AI suggests booking forms, menus, galleries |
+| 📱 **Mobile-First** | Works perfectly on all devices | AI ensures responsive design patterns |
+| ⚡ **Fast Loading** | Better Google rankings, happy customers | AI optimizes performance automatically |
+
+---
+
+## 📦 What's Included
+
+### Core Business Components
+- **Hero sections** with strong calls-to-action
+- **Service/product showcases** with pricing
+- **About pages** that build trust and credibility  
+- **Contact forms** with spam protection
+- **Business hours & location** displays
+- **Testimonials & reviews** sections
+- **Image galleries** for portfolios/products
+
+### Technical Foundation
+- **React 19** + **TypeScript** + **Vite** for modern development
+- **CSS Modules** for maintainable styling
+- **Mobile-responsive** design system
+- **SEO optimized** out of the box
+- **Accessibility compliant** for all users
+- **Performance optimized** for fast loading
+
+### Deployment Options
+- **Vercel** (recommended) — Zero-config deployment
+- **Netlify** — Simple drag-and-drop
+- **GitHub Pages** — Free hosting for small sites
+
+---
+
+## 🚀 Deployment (Choose Your Speed)
+
+### Option 1: Instant Deploy to Vercel *(Recommended)*
+```bash
+npm run deploy:vercel
 ```
+**Result:** Live website in under 60 seconds
+
+### Option 2: One-Click Deploy to Netlify
+```bash
+npm run deploy:netlify
+```
+**Result:** Live website with drag-and-drop simplicity
+
+### Option 3: Free GitHub Pages
+```bash
+npm run deploy:pages
+```
+**Result:** Free hosting for small business sites
 
 ---
 
-## 📚 Documentation & AI Resources
+## 📋 Business Setup Checklist
 
-| Resource | Description | Link |
-|----------|-------------|------|
-| 🤖 AI Setup Guide | Configure Cursor with business-aware AI | [AI-Setup.md](docs/AI-Setup.md) |
-| ⚙️ Cursor Rules Reference | Full list of development rules | [Cursor-Rules.md](docs/Cursor-Rules.md) |
-| 💬 AI Prompts Library | Common tasks & ready-made prompts | [AI-Prompts.md](docs/AI-Prompts.md) |
-| 🎨 Design System | Tokens & patterns enforced by AI | [Design-System.md](docs/Design-System.md) |
-| 🏗️ Architecture Guide | Component & folder conventions | [Architecture.md](docs/Architecture.md) |
-| 🐛 Issues | Bug reports & feature requests | [Issues](https://github.com/sevenzig/turbot/issues) |
-| 💬 Discussions | Community Q&A & AI prompt sharing | [Discussions](https://github.com/sevenzig/turbot/discussions) |
-| 🔄 Changelog | Version history | [Releases](https://github.com/sevenzig/turbot/releases) |
+After running `npm run init`, you'll configure:
 
----
+- [ ] **Business Information** (name, description, contact details)
+- [ ] **Business Type** (restaurant, brewery, consulting, etc.)
+- [ ] **Brand Colors** (primary, secondary, accent)
+- [ ] **Business Hours** (automatically formats for display)
+- [ ] **Services/Products** (what you offer customers)
+- [ ] **Contact Methods** (phone, email, address, social media)
+- [ ] **Deployment Target** (Vercel, Netlify, or GitHub Pages)
 
-## 🌐 Live Demos (GitHub Pages)
-
-| Demo | URL | Branch |
-|------|-----|--------|
-| Generic Business | `https://sevenzig.github.io/turbot/` | `main` |
-| Brewery Example | `https://sevenzig.github.io/turbot/brewery/` | `example/brewery` |
-| Restaurant Example | `https://sevenzig.github.io/turbot/restaurant/` | `example/restaurant` |
-
-> **Tip:** Push to any `example/*` branch and GitHub Pages auto-publishes a demo.
+**Time Required:** 5-10 minutes for a complete business website setup.
 
 ---
 
-## 🔄 Quality Assurance
+## 🎨 Live Examples
 
-[![Tests](https://github.com/sevenzig/turbot/actions/workflows/ci.yml/badge.svg)](https://github.com/sevenzig/turbot/actions/workflows/ci.yml)
-[![Code Quality](https://sonarcloud.io/api/project_badges/measure?project=turbot&metric=alert_status)](https://sonarcloud.io/summary/overall?id=turbot)
+| Business Type | Live Demo | Industry Features |
+|---------------|-----------|-------------------|
+| **Generic Business** | [View Demo](https://sevenzig.github.io/turbot/) | Universal business template |
+| **Brewery** | [View Demo](https://sevenzig.github.io/turbot/brewery/) | Beer lists, events, taproom |
+| **Restaurant** | [View Demo](https://sevenzig.github.io/turbot/restaurant/) | Menus, reservations, reviews |
 
-- ✅ Vitest unit tests (>80 % coverage) on every commit
-- ✅ ESLint, Prettier & TypeScript strict mode
-- ✅ Automatic deploy preview for PRs (Vercel)
-
----
-
-## 🗺️ Features at a Glance
-
-| Category | Highlights |
-|----------|------------|
-| ⚙️ Tech Stack | React 19, TypeScript 5, Vite 6 |
-| 🛠️ DX | Path aliases, auto-chunked builds, hot-reload <50 ms |
-| 📦 CLI Wizard | `npm run init` → interactive/dry-run/config-file modes |
-| 🎨 Design | CSS Modules, accessible components, 5 breakpoints |
-| 🏢 Business | Hours-of-operation helper, contact data single-source |
-| 🚀 Deploy | Vercel, Netlify & GitHub Pages buttons |
+> **Want your industry?** The AI can adapt to any business type — just describe your needs during setup.
 
 ---
 
-## 🤝 Community & Contributing
+## 🔧 Advanced Features (For Developers)
 
-We ❤️ contributions! Feel free to:
+If you want to customize beyond the AI assistance:
 
-- ⭐ [Star](https://github.com/sevenzig/turbot/stargazers) to support the project
-- 🍴 [Fork](https://github.com/sevenzig/turbot/fork) and build your own
-- 🐛 [Report issues](https://github.com/sevenzig/turbot/issues/new)
-- 💡 [Request features](https://github.com/sevenzig/turbot/discussions/new?category=ideas)
-- 🔀 Submit PRs — read the [Contributing Guide](CONTRIBUTING.md)
+- **TypeScript strict mode** for type safety
+- **Vitest testing** framework included
+- **ESLint & Prettier** for code quality
+- **CSS custom properties** for easy theming
+- **Component-driven architecture** for maintainability
 
-Community guidelines: [Code of Conduct](CODE_OF_CONDUCT.md) • [Security Policy](SECURITY.md)
+Full technical documentation: [Architecture Guide](docs/Architecture.md)
 
 ---
 
-## 📈 Analytics & Optimisation
+## 🆘 Need Help?
 
-Monitor repository metrics via **Insights › Traffic** and **GitHub API**. Track star velocity, fork ratio and issue resolution time to improve onboarding. A/B test README sections by watching traffic sources.
+**Stuck? We've got you covered:**
+- 📖 **Documentation:** Browse the `docs/` folder for detailed guides
+- 🐛 **Issues:** [Report bugs](https://github.com/sevenzig/turbot/issues/new) 
+- 💡 **Ideas:** [Request features](https://github.com/sevenzig/turbot/discussions/new?category=ideas)
 
 ---
 
 ## 📜 License
 
-Distributed under the MIT License. See [LICENSE](LICENSE) for details.
+MIT License — Use for any business purpose. See [LICENSE](LICENSE) for details.
 
 ---
 
-> ✨ **Pro tip:** Hit `y` on your keyboard to freeze URLs to a specific commit when sharing code links on GitHub! 
+> **Ready to build your business website?** [Get started now](#-quick-start-30-seconds) — Professional results in minutes, not months.
