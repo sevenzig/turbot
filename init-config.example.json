@@ -1,7 +1,7 @@
 {
   "//": "=== REACT + VITE TEMPLATE CONFIGURATION ===",
   "//1": "Copy this file and customize with your project details",
-  "//2": "Usage: node init-template.js --config your-config.json",
+  "//2": "Usage: npm run init -- --config your-config.json",
   "//3": "All fields marked with [PLACEHOLDER] will be replaced in template files",
 
   "//REQUIRED": "=== REQUIRED FIELDS (Must be provided) ===",

@@ -1,6 +1,6 @@
 # .initignore - Files and directories excluded from template processing
 #
-# This file specifies which files should NOT be processed by the init-template.js script.
+# This file specifies which files should NOT be processed by the init-template.ts script.
 # Patterns follow .gitignore syntax:
 # - Lines starting with # are comments
 # - Use / for directory separators
@@ -8,7 +8,7 @@
 # - Use ! to negate patterns
 
 # Initialization system files
-init-template.js
+init-template.ts
 init-config.example.json
 INIT_README.md
 .initignore

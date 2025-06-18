@@ -16,7 +16,7 @@ This is a business website template built with **React 19, TypeScript 5, Vite 6*
 - `src/components/` – Reusable UI components with CSS Modules
 - `src/pages/` – Route-level page components
 - `src/styles/globals.css` – Design-system tokens and global styles
-- `init-template.js` – Interactive setup wizard for business customisation
+- `init-template.ts` – Interactive setup wizard for business customisation
 
 ### Business Context Awareness
 - Always consider the business type *(restaurant, brewery, consulting, retail, services…)*

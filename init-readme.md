@@ -8,7 +8,7 @@ configuration, business information, and preferred technologies.
 ### Interactive Mode (Recommended for first-time users)
 
 ```bash
-node init-template.js
+npm run init
 ```
 
 ### Configuration File Mode (Recommended for automation)
@@ -21,35 +21,35 @@ cp init-config.example.json [CONFIG_FILE_NAME].json
 # Customize [CONFIG_FILE_NAME].json with your project details
 
 # 3. Run initialization
-node init-template.js --config [CONFIG_FILE_NAME].json
+npm run init -- --config [CONFIG_FILE_NAME].json
 ```
 
 ### Preview Changes (Dry Run)
 
 ```bash
 # Preview what will be changed without applying
-node init-template.js --dry-run
+npm run init:dry-run
 
 # Preview with config file
-node init-template.js --config [CONFIG_FILE_NAME].json --dry-run
+npm run init:dry-run -- --config [CONFIG_FILE_NAME].json
 ```
 
 ## Command line options
 
-| Flag        | Short | Description                      | Example                                                  |
-| ----------- | ----- | -------------------------------- | -------------------------------------------------------- |
-| `--help`    | `-h`  | Show usage information           | `node init-template.js --help`                           |
-| `--dry-run` | `-d`  | Preview changes without applying | `node init-template.js --dry-run`                        |
-| `--config`  | `-c`  | Use configuration file           | `node init-template.js --config [CONFIG_FILE_NAME].json` |
+| Flag        | Short | Description                      | Example                                                         |
+| ----------- | ----- | -------------------------------- | --------------------------------------------------------------- |
+| `--help`    | `-h`  | Show usage information           | `npm run init:help`                                             |
+| `--dry-run` | `-d`  | Preview changes without applying | `npm run init:dry-run`                                          |
+| `--config`  | `-c`  | Use configuration file           | `npm run init -- --config [CONFIG_FILE_NAME].json`            |
 
 ### Flag Combinations
 
 ```bash
 # Interactive mode with preview
-node init-template.js --dry-run
+npm run init:dry-run
 
 # Config file with preview
-node init-template.js --config [CONFIG_FILE_NAME].json --dry-run
+npm run init:dry-run -- --config [CONFIG_FILE_NAME].json
 ```
 
 ## Configuration options
@@ -187,7 +187,7 @@ node init-template.js --config [CONFIG_FILE_NAME].json --dry-run
 
 ### Always removed
 
-- `init-template.js` - The initialization script itself
+- `init-template.ts` - The initialization script itself
 - Template documentation files
 - Backup files created during process
 
@@ -196,16 +196,16 @@ node init-template.js --config [CONFIG_FILE_NAME].json --dry-run
 Perfect for testing before applying changes:
 
 ```bash
-node init-template.js --dry-run
+npm run init:dry-run
 ```
 
-**Dry-run shows:**
+Shows exactly what would be changed without modifying any files.
 
-- ✅ All configuration changes that would be made
-- ✅ Files that would be modified/created/removed
-- ✅ Dependencies that would be added
-- ✅ Scripts that would be updated
-- ✅ Complete preview without any actual changes
+## Interactive mode walkthrough
+
+```bash
+npm run init
+```
 
 ## Troubleshooting
 
@@ -216,7 +216,7 @@ node init-template.js --dry-run
 ```bash
 # Install Node.js and npm first
 # Then try again
-node init-template.js
+npm run init
 ```
 
 **"Git not found" error:**
@@ -296,7 +296,7 @@ After initialization, check `SETUP_REPORT.md` for:
 
 If you need to re-run:
 
-1. Restore from Git history: `git checkout HEAD~1 -- init-template.js`
+1. Restore from Git history: `git checkout HEAD~1 -- init-template.ts`
 2. Or download fresh copy from template repository
 3. Run again with new configuration
 
