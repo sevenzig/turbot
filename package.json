@@ -5,9 +5,9 @@
   "type": "module",
   "description": "[DESCRIPTION]",
   "scripts": {
-    "init": "tsx init-template.ts",
-    "init:help": "tsx init-template.ts --help",
-    "init:dry-run": "tsx init-template.ts --dry-run",
+    "init": "npx tsx init-template.ts",
+    "init:help": "npx tsx init-template.ts --help",
+    "init:dry-run": "npx tsx init-template.ts --dry-run",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
