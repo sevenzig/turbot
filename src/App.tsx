@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
-import HomePage from '@pages/HomePage';
-import AboutPage from '@pages/AboutPage';
-import ContactPage from '@pages/ContactPage';
-import NotFoundPage from '@pages/NotFoundPage';
-import ErrorBoundary from '@components/ErrorBoundary/ErrorBoundary';
-import Layout from '@components/Layout/Layout';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
+import NotFoundPage from './pages/NotFoundPage';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
+import Layout from './components/Layout/Layout';
 import styles from './App.module.css';
 
 function App() {

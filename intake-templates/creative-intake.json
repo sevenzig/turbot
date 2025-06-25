@@ -1,0 +1,431 @@
+{
+  "//": "=== CREATIVE SERVICES BUSINESS CLIENT INTAKE TEMPLATE ===",
+  "//1": "Complete business information template for creative services company website generation",
+  "//2": "Fill out all sections with client's actual creative business details",
+  "//3": "Usage: npm run init -- --config [creative-agency]-intake.json",
+
+  "//SECTION_1": "=== PROJECT & DEVELOPER INFO ===",
+  "projectName": "CLIENT_CREATIVE_AGENCY_LOWERCASE_DASHED",
+  "authorName": "YOUR_NAME",
+  "authorEmail": "YOUR_EMAIL@DOMAIN.COM",
+  "githubUsername": "YOUR_GITHUB_USERNAME",
+  "description": "Professional creative services website for [CLIENT_AGENCY_NAME]",
+  "license": "MIT",
+  "repositoryUrl": "https://github.com/YOUR_GITHUB_USERNAME/CLIENT_PROJECT_NAME",
+
+  "//SECTION_2": "=== CORE BUSINESS INFORMATION ===",
+  "businessName": "FULL_CREATIVE_AGENCY_NAME",
+  "businessShortName": "SHORT_AGENCY_NAME",
+  "businessTagline": "AGENCY_TAGLINE_OR_CREATIVE_VISION",
+  "businessDescription": "DETAILED_AGENCY_DESCRIPTION_2_3_SENTENCES",
+  "businessShortDescription": "ONE_SENTENCE_AGENCY_SUMMARY",
+  "agencyType": "DESIGN_AGENCY_MARKETING_FIRM_DIGITAL_STUDIO_FREELANCE_COLLECTIVE",
+  "creativePhilosophy": "APPROACH_TO_CREATIVE_WORK",
+  "establishedYear": "YEAR_AGENCY_ESTABLISHED",
+  "teamSize": "NUMBER_OF_TEAM_MEMBERS",
+  "studioLocation": "STUDIO_WORKSPACE_TYPE",
+
+  "//SECTION_3": "=== CONTACT INFORMATION ===",
+  "businessPhone": "FORMATTED_PHONE_NUMBER",
+  "businessPhoneRaw": "DIGITS_ONLY_PHONE",
+  "businessEmail": "MAIN_AGENCY_EMAIL",
+  "projectsEmail": "PROJECT_INQUIRIES_EMAIL",
+  "portfolioEmail": "PORTFOLIO_REQUESTS_EMAIL",
+  "collaborationEmail": "COLLABORATION_OPPORTUNITIES_EMAIL",
+  "pressEmail": "PRESS_MEDIA_INQUIRIES_EMAIL",
+
+  "//SECTION_4": "=== STUDIO LOCATION ===",
+  "businessStreet": "STREET_ADDRESS",
+  "businessCity": "CITY_NAME",
+  "businessState": "STATE_OR_PROVINCE",
+  "businessZip": "ZIP_POSTAL_CODE",
+  "businessLatitude": 0.000000,
+  "businessLongitude": 0.000000,
+  "studioDescription": "STUDIO_WORKSPACE_DESCRIPTION",
+  "meetingSpaces": "CLIENT_MEETING_AREAS",
+  "remoteCapabilities": "REMOTE_WORK_OPTIONS",
+  "equipmentFacilities": "STUDIO_EQUIPMENT_AND_FACILITIES",
+
+  "//SECTION_5": "=== WEBSITE & BRANDING ===",
+  "websiteUrl": "https://DOMAIN.COM",
+  "primaryColor": "#1F2937",
+  "primaryColorHover": "#111827",
+  "primaryColorLight": "#F3F4F6",
+  "secondaryColor": "#3B82F6",
+  "secondaryColorHover": "#2563EB",
+  "secondaryColorLight": "#DBEAFE",
+  "logoUrl": "URL_TO_AGENCY_LOGO",
+  "faviconUrl": "URL_TO_FAVICON",
+  "brandGuidelineUrl": "URL_TO_BRAND_GUIDELINES",
+
+  "//SECTION_6": "=== SOCIAL MEDIA & ONLINE PRESENCE ===",
+  "socialInstagram": "INSTAGRAM_HANDLE",
+  "socialBehance": "BEHANCE_PROFILE_URL",
+  "socialDribbble": "DRIBBBLE_PROFILE_URL",
+  "socialLinkedin": "LINKEDIN_COMPANY_PAGE",
+  "socialTwitter": "TWITTER_HANDLE",
+  "socialFacebook": "FACEBOOK_PAGE_URL",
+  "socialYoutube": "YOUTUBE_CHANNEL",
+  "socialVimeo": "VIMEO_PORTFOLIO_URL",
+  "socialPinterest": "PINTEREST_PROFILE_URL",
+
+  "//SECTION_7": "=== BUSINESS HOURS ===",
+  "hoursMonday": "MONDAY_HOURS",
+  "hoursTuesday": "TUESDAY_HOURS",
+  "hoursWednesday": "WEDNESDAY_HOURS",
+  "hoursThursday": "THURSDAY_HOURS",
+  "hoursFriday": "FRIDAY_HOURS",
+  "hoursSaturday": "SATURDAY_HOURS",
+  "hoursSunday": "SUNDAY_HOURS",
+  "consultationHours": "CLIENT_CONSULTATION_HOURS",
+  "deadlinePolicy": "PROJECT_DEADLINE_APPROACH",
+
+  "//SECTION_8": "=== CREATIVE TEAM ===",
+  "creativeTeam": [
+    {
+      "name": "TEAM_MEMBER_NAME",
+      "title": "POSITION_TITLE",
+      "bio": "BACKGROUND_AND_EXPERIENCE",
+      "specializations": [
+        "SPECIALIZATION_1",
+        "SPECIALIZATION_2",
+        "SPECIALIZATION_3"
+      ],
+      "tools": [
+        "SOFTWARE_TOOL_1",
+        "SOFTWARE_TOOL_2",
+        "EQUIPMENT_TOOLS"
+      ],
+      "yearsExperience": "NUMBER_OF_YEARS",
+      "education": [
+        "DEGREE_CERTIFICATION",
+        "TRAINING_BACKGROUND",
+        "ADDITIONAL_SKILLS"
+      ],
+      "awards": [
+        "AWARD_1",
+        "RECOGNITION_2",
+        "ACHIEVEMENT_3"
+      ],
+      "portfolioUrl": "PERSONAL_PORTFOLIO_URL",
+      "photoUrl": "URL_TO_TEAM_MEMBER_PHOTO",
+      "email": "TEAM_MEMBER_EMAIL"
+    }
+  ],
+
+  "//SECTION_9": "=== SERVICES OFFERED ===",
+  "designServices": [
+    {
+      "serviceName": "DESIGN_SERVICE_NAME",
+      "description": "SERVICE_DESCRIPTION",
+      "process": ["STEP_1", "STEP_2", "STEP_3"],
+      "timeline": "TYPICAL_PROJECT_TIMELINE",
+      "deliverables": ["DELIVERABLE_1", "DELIVERABLE_2"],
+      "pricingModel": "HOURLY_PROJECT_RETAINER"
+    }
+  ],
+  "marketingServices": [
+    {
+      "serviceName": "MARKETING_SERVICE_NAME",
+      "description": "SERVICE_DESCRIPTION",
+      "specialties": ["SPECIALTY_1", "SPECIALTY_2"],
+      "platforms": ["PLATFORM_1", "PLATFORM_2"],
+      "metricsTracked": ["METRIC_1", "METRIC_2"]
+    }
+  ],
+  "digitalServices": [
+    "WEB_DESIGN",
+    "WEB_DEVELOPMENT",
+    "UX_UI_DESIGN",
+    "MOBILE_APP_DESIGN",
+    "E_COMMERCE_DEVELOPMENT"
+  ],
+  "brandingServices": [
+    "LOGO_DESIGN",
+    "BRAND_IDENTITY",
+    "BRAND_STRATEGY",
+    "BRAND_GUIDELINES",
+    "REBRANDING"
+  ],
+
+  "//SECTION_10": "=== SPECIALIZATIONS ===",
+  "serviceSpecializations": [
+    {
+      "specialtyName": "SPECIALTY_AREA",
+      "description": "SPECIALTY_DESCRIPTION",
+      "expertiseLevel": "EXPERTISE_LEVEL",
+      "toolsUsed": ["TOOL_1", "TOOL_2"],
+      "portfolioExamples": ["EXAMPLE_1", "EXAMPLE_2"],
+      "clientTypes": ["CLIENT_TYPE_1", "CLIENT_TYPE_2"]
+    }
+  ],
+  "industryFocus": [
+    "INDUSTRY_1",
+    "INDUSTRY_2",
+    "INDUSTRY_3"
+  ],
+  "projectTypes": [
+    "PROJECT_TYPE_1",
+    "PROJECT_TYPE_2",
+    "PROJECT_TYPE_3"
+  ],
+  "technicalSkills": [
+    "TECHNICAL_SKILL_1",
+    "TECHNICAL_SKILL_2",
+    "TECHNICAL_SKILL_3"
+  ],
+
+  "//SECTION_11": "=== TOOLS & TECHNOLOGY ===",
+  "designSoftware": [
+    {
+      "softwareName": "SOFTWARE_NAME",
+      "purpose": "PRIMARY_USE",
+      "expertiseLevel": "BEGINNER_INTERMEDIATE_ADVANCED_EXPERT",
+      "teamMembers": ["TEAM_MEMBER_1", "TEAM_MEMBER_2"]
+    }
+  ],
+  "developmentTools": [
+    "DEVELOPMENT_TOOL_1",
+    "DEVELOPMENT_TOOL_2",
+    "FRAMEWORK_1",
+    "FRAMEWORK_2"
+  ],
+  "equipmentUsed": [
+    "CAMERA_EQUIPMENT",
+    "LIGHTING_EQUIPMENT",
+    "COMPUTER_HARDWARE",
+    "STUDIO_EQUIPMENT"
+  ],
+  "cloudPlatforms": [
+    "CLOUD_PLATFORM_1",
+    "CLOUD_PLATFORM_2",
+    "COLLABORATION_TOOLS"
+  ],
+
+  "//SECTION_12": "=== CLIENT PORTFOLIO ===",
+  "portfolioProjects": [
+    {
+      "projectName": "PROJECT_NAME",
+      "clientName": "CLIENT_NAME",
+      "projectType": "PROJECT_CATEGORY",
+      "description": "PROJECT_DESCRIPTION",
+      "challenge": "PROJECT_CHALLENGE",
+      "solution": "CREATIVE_SOLUTION",
+      "results": "PROJECT_OUTCOMES",
+      "timeline": "PROJECT_DURATION",
+      "services": ["SERVICE_1", "SERVICE_2"],
+      "imageUrl": "PROJECT_IMAGE_URL",
+      "liveSiteUrl": "LIVE_PROJECT_URL"
+    }
+  ],
+  "clientTypes": [
+    "STARTUPS",
+    "SMALL_BUSINESSES",
+    "ENTERPRISE",
+    "NON_PROFITS",
+    "GOVERNMENT"
+  ],
+  "notableClients": [
+    "NOTABLE_CLIENT_1",
+    "NOTABLE_CLIENT_2",
+    "NOTABLE_CLIENT_3"
+  ],
+
+  "//SECTION_13": "=== CREATIVE PROCESS ===",
+  "designProcess": [
+    {
+      "phaseName": "PROCESS_PHASE_NAME",
+      "description": "PHASE_DESCRIPTION",
+      "duration": "TYPICAL_PHASE_DURATION",
+      "deliverables": ["DELIVERABLE_1", "DELIVERABLE_2"],
+      "clientInvolvement": "CLIENT_PARTICIPATION_LEVEL"
+    }
+  ],
+  "projectManagement": {
+    "methodology": "AGILE_WATERFALL_HYBRID",
+    "communicationFrequency": "COMMUNICATION_SCHEDULE",
+    "projectTracking": "PROJECT_TRACKING_TOOLS",
+    "clientPortal": "CLIENT_PORTAL_ACCESS"
+  },
+  "qualityAssurance": [
+    "QA_PROCESS_1",
+    "QA_PROCESS_2",
+    "TESTING_PROCEDURES"
+  ],
+
+  "//SECTION_14": "=== PRICING & PACKAGES ===",
+  "pricingStructure": [
+    {
+      "serviceType": "SERVICE_CATEGORY",
+      "pricingModel": "HOURLY_PROJECT_RETAINER",
+      "baseRate": "STARTING_PRICE",
+      "packageOptions": ["PACKAGE_1", "PACKAGE_2"],
+      "customQuoting": "CUSTOM_QUOTE_PROCESS"
+    }
+  ],
+  "servicePackages": [
+    {
+      "packageName": "PACKAGE_NAME",
+      "description": "PACKAGE_DESCRIPTION",
+      "includes": ["INCLUDED_SERVICE_1", "INCLUDED_SERVICE_2"],
+      "price": "PACKAGE_PRICE",
+      "timeline": "PACKAGE_TIMELINE"
+    }
+  ],
+  "consultationFees": "CONSULTATION_FEE_STRUCTURE",
+  "rushJobPolicies": "RUSH_JOB_PRICING_POLICY",
+
+  "//SECTION_15": "=== CLIENT SUCCESS STORIES ===",
+  "successStories": [
+    {
+      "clientIndustry": "CLIENT_INDUSTRY",
+      "challenge": "BUSINESS_CHALLENGE",
+      "creativeSolution": "CREATIVE_APPROACH_TAKEN",
+      "outcome": "MEASURABLE_RESULTS",
+      "timeframe": "PROJECT_DURATION",
+      "servicesProvided": ["SERVICE_1", "SERVICE_2"]
+    }
+  ],
+  "projectsCompleted": "TOTAL_PROJECTS_COMPLETED",
+  "averageProjectValue": "AVERAGE_PROJECT_VALUE",
+  "clientRetentionRate": "PERCENTAGE_REPEAT_CLIENTS",
+
+  "//SECTION_16": "=== CLIENT TESTIMONIALS ===",
+  "testimonials": [
+    {
+      "clientName": "CLIENT_NAME_OR_COMPANY",
+      "testimonial": "CLIENT_TESTIMONIAL_QUOTE",
+      "projectType": "PROJECT_CATEGORY",
+      "industry": "CLIENT_INDUSTRY",
+      "date": "MONTH_YEAR"
+    }
+  ],
+
+  "//SECTION_17": "=== AWARDS & RECOGNITION ===",
+  "awards": [
+    {
+      "awardName": "AWARD_NAME",
+      "organization": "AWARDING_ORGANIZATION",
+      "category": "AWARD_CATEGORY",
+      "year": "YEAR_RECEIVED",
+      "project": "WINNING_PROJECT_NAME"
+    }
+  ],
+  "certifications": [
+    "CERTIFICATION_1",
+    "CERTIFICATION_2",
+    "PROFESSIONAL_MEMBERSHIPS"
+  ],
+  "pressFeatures": [
+    "PUBLICATION_1",
+    "PUBLICATION_2",
+    "MEDIA_MENTIONS"
+  ],
+
+  "//SECTION_18": "=== COLLABORATION & PARTNERSHIPS ===",
+  "partnerships": [
+    {
+      "partnerName": "PARTNER_COMPANY_NAME",
+      "partnershipType": "STRATEGIC_VENDOR_REFERRAL",
+      "services": "COLLABORATIVE_SERVICES",
+      "description": "PARTNERSHIP_DESCRIPTION"
+    }
+  ],
+  "freelancerNetwork": [
+    "FREELANCER_SPECIALTY_1",
+    "FREELANCER_SPECIALTY_2",
+    "CONTRACTOR_SERVICES"
+  ],
+  "collaborationPreferences": "PREFERRED_COLLABORATION_STYLE",
+
+  "//SECTION_19": "=== CONTENT CUSTOMIZATION ===",
+  "heroTitlePrefix": "Creative",
+  "ctaPrimaryText": "Start Your Project",
+  "ctaSecondaryText": "View Portfolio",
+  "featuresSectionTitle": "Why Choose Our Agency?",
+  "featuresDescriptionTemplate": "CUSTOM_AGENCY_DESCRIPTION",
+  "servicesSectionTitle": "Creative Services",
+  "servicesSectionDescription": "CUSTOM_SERVICES_DESCRIPTION",
+  "servicesDescriptionTemplate": "CUSTOM_SERVICES_TEMPLATE",
+  "servicesCTAText": "Learn More",
+
+  "//SECTION_20": "=== PAGE CONTENT ===",
+  "aboutPageTitle": "About Our Agency",
+  "aboutFeaturesTitle": "Our Creative Vision",
+  "aboutServicesTitle": "Creative Services",
+  "portfolioPageTitle": "Our Work",
+  "portfolioPageDescription": "PORTFOLIO_PAGE_DESCRIPTION",
+  "contactPageTitle": "Let's Create Something Amazing",
+  "contactPageDescription": "CUSTOM_CONTACT_PAGE_DESCRIPTION",
+  "contactInfoTitle": "Get In Touch",
+  "contactFormTitle": "Project Inquiry",
+
+  "//SECTION_21": "=== FORM LABELS & MESSAGES ===",
+  "formNameLabel": "Full Name",
+  "formCompanyLabel": "Company Name",
+  "formEmailLabel": "Email",
+  "formPhoneLabel": "Phone Number",
+  "formProjectTypeLabel": "Project Type",
+  "formBudgetLabel": "Project Budget",
+  "formTimelineLabel": "Project Timeline",
+  "formServicesLabel": "Services Needed",
+  "formMessageLabel": "Tell us about your project vision",
+  "formSubmitText": "Start Project",
+  "formSendingText": "Submitting...",
+  "formSuccessMessage": "CUSTOM_SUCCESS_MESSAGE",
+  "formErrorMessage": "CUSTOM_ERROR_MESSAGE",
+
+  "//SECTION_22": "=== PROJECT DELIVERY ===",
+  "deliveryMethods": [
+    "CLOUD_DELIVERY",
+    "CLIENT_PORTAL",
+    "PHYSICAL_DELIVERY",
+    "DIRECT_UPLOAD"
+  ],
+  "fileFormats": [
+    "DESIGN_FILE_FORMATS",
+    "WEB_FILE_FORMATS",
+    "PRINT_FILE_FORMATS",
+    "VIDEO_FILE_FORMATS"
+  ],
+  "revisionPolicy": "REVISION_ROUNDS_POLICY",
+  "ownershipRights": "INTELLECTUAL_PROPERTY_TERMS",
+
+  "//SECTION_23": "=== TECHNICAL CONFIGURATION ===",
+  "deploymentPlatform": "vercel",
+  "includePWA": false,
+  "cssApproach": "css-modules",
+  "features": {
+    "analytics": true,
+    "seo": true,
+    "darkMode": true,
+    "contactForm": true,
+    "socialLinks": true,
+    "businessHours": true,
+    "testimonials": true,
+    "blog": true,
+    "portfolio": true,
+    "caseStudies": true,
+    "teamProfiles": true,
+    "projectEstimator": true,
+    "clientPortal": true,
+    "appointmentBooking": true
+  },
+
+  "//SECTION_24": "=== SEO & MARKETING ===",
+  "seoKeywords": [
+    "CREATIVE_SERVICE_KEYWORDS",
+    "DESIGN_KEYWORDS",
+    "LOCATION_KEYWORDS",
+    "INDUSTRY_KEYWORDS"
+  ],
+  "localSEO": {
+    "serviceAreas": [
+      "PRIMARY_CITY",
+      "SURROUNDING_CITIES",
+      "REGION_NAME"
+    ],
+    "businessCategory": "Creative Services",
+    "gmbCategory": "GOOGLE_MY_BUSINESS_CATEGORY"
+  }
+} 

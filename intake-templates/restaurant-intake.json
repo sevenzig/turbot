@@ -1,0 +1,280 @@
+{
+  "//": "=== RESTAURANT CLIENT INTAKE TEMPLATE ===",
+  "//1": "Complete business information template for restaurant website generation",
+  "//2": "Fill out all sections with client's actual restaurant details",
+  "//3": "Usage: npm run init -- --config [restaurant-name]-intake.json",
+
+  "//SECTION_1": "=== PROJECT & DEVELOPER INFO ===",
+  "projectName": "CLIENT_RESTAURANT_NAME_LOWERCASE_DASHED",
+  "authorName": "YOUR_NAME",
+  "authorEmail": "YOUR_EMAIL@DOMAIN.COM",
+  "githubUsername": "YOUR_GITHUB_USERNAME",
+  "description": "Modern restaurant website for [CLIENT_RESTAURANT_NAME]",
+  "license": "MIT",
+  "repositoryUrl": "https://github.com/YOUR_GITHUB_USERNAME/CLIENT_PROJECT_NAME",
+
+  "//SECTION_2": "=== CORE BUSINESS INFORMATION ===",
+  "businessName": "FULL_RESTAURANT_NAME",
+  "businessShortName": "SHORT_RESTAURANT_NAME",
+  "businessTagline": "RESTAURANT_TAGLINE_OR_MOTTO",
+  "businessDescription": "DETAILED_RESTAURANT_DESCRIPTION_2_3_SENTENCES",
+  "businessShortDescription": "ONE_SENTENCE_RESTAURANT_SUMMARY",
+  "cuisineType": "CUISINE_TYPE_PRIMARY",
+  "cuisineTypes": ["CUISINE_TYPE_1", "CUISINE_TYPE_2"],
+  "establishedYear": "YEAR_RESTAURANT_OPENED",
+  "ownerChef": "OWNER_OR_HEAD_CHEF_NAME",
+
+  "//SECTION_3": "=== CONTACT INFORMATION ===",
+  "businessPhone": "FORMATTED_PHONE_NUMBER",
+  "businessPhoneRaw": "DIGITS_ONLY_PHONE",
+  "businessEmail": "MAIN_RESTAURANT_EMAIL",
+  "reservationPhone": "RESERVATION_PHONE_NUMBER",
+  "reservationEmail": "RESERVATION_EMAIL",
+  "cateringPhone": "CATERING_PHONE_NUMBER",
+  "cateringEmail": "CATERING_EMAIL",
+
+  "//SECTION_4": "=== PHYSICAL ADDRESS & LOCATION ===",
+  "businessStreet": "STREET_ADDRESS",
+  "businessCity": "CITY_NAME",
+  "businessState": "STATE_OR_PROVINCE",
+  "businessZip": "ZIP_POSTAL_CODE",
+  "businessLatitude": 0.000000,
+  "businessLongitude": 0.000000,
+  "parkingInfo": "PARKING_INFORMATION_FOR_GUESTS",
+  "neighborhoodDescription": "NEIGHBORHOOD_OR_AREA_DESCRIPTION",
+  "landmarks": "NEARBY_LANDMARKS_OR_DIRECTIONS",
+
+  "//SECTION_5": "=== WEBSITE & BRANDING ===",
+  "websiteUrl": "https://DOMAIN.COM",
+  "primaryColor": "#DC2626",
+  "primaryColorHover": "#B91C1C",
+  "primaryColorLight": "#FEE2E2",
+  "secondaryColor": "#059669",
+  "secondaryColorHover": "#047857",
+  "secondaryColorLight": "#D1FAE5",
+  "logoUrl": "URL_TO_RESTAURANT_LOGO",
+  "faviconUrl": "URL_TO_FAVICON",
+
+  "//SECTION_6": "=== SOCIAL MEDIA & ONLINE PRESENCE ===",
+  "socialInstagram": "INSTAGRAM_HANDLE",
+  "socialFacebook": "FACEBOOK_PAGE_URL",
+  "socialTwitter": "TWITTER_HANDLE",
+  "socialYelp": "YELP_BUSINESS_URL",
+  "googleBusinessUrl": "GOOGLE_BUSINESS_PROFILE_URL",
+  "openTableUrl": "OPENTABLE_RESERVATION_URL",
+  "tripadvisorUrl": "TRIPADVISOR_URL",
+
+  "//SECTION_7": "=== BUSINESS HOURS ===",
+  "hoursMonday": "MONDAY_HOURS_OR_CLOSED",
+  "hoursTuesday": "TUESDAY_HOURS",
+  "hoursWednesday": "WEDNESDAY_HOURS",
+  "hoursThursday": "THURSDAY_HOURS",
+  "hoursFriday": "FRIDAY_HOURS",
+  "hoursSaturday": "SATURDAY_HOURS",
+  "hoursSunday": "SUNDAY_HOURS",
+  "kitchenHours": "KITCHEN_CLOSING_TIME_IF_DIFFERENT",
+  "happyHourTimes": "HAPPY_HOUR_SCHEDULE",
+  "specialEventHours": "HOLIDAY_OR_SPECIAL_EVENT_HOURS",
+
+  "//SECTION_8": "=== DINING EXPERIENCE ===",
+  "diningStyle": "CASUAL_FINE_FAST_CASUAL_ETC",
+  "atmosphereDescription": "RESTAURANT_AMBIANCE_DESCRIPTION",
+  "seatingCapacity": "NUMBER_OF_SEATS",
+  "privatePartyCapacity": "PRIVATE_EVENT_CAPACITY",
+  "outdoorSeating": "YES_NO_PATIO_DESCRIPTION",
+  "wheelchairAccessible": true,
+  "dressCode": "DRESS_CODE_IF_ANY",
+  "petPolicy": "PET_FRIENDLY_POLICY",
+  "musicStyle": "BACKGROUND_MUSIC_DESCRIPTION",
+
+  "//SECTION_9": "=== MENU & CULINARY INFO ===",
+  "menuHighlights": [
+    "SIGNATURE_DISH_1",
+    "SIGNATURE_DISH_2",
+    "SIGNATURE_DISH_3",
+    "SIGNATURE_DISH_4"
+  ],
+  "menuCategories": [
+    "APPETIZERS",
+    "ENTREES", 
+    "DESSERTS",
+    "BEVERAGES"
+  ],
+  "specialDiets": [
+    "VEGETARIAN_OPTIONS",
+    "VEGAN_OPTIONS",
+    "GLUTEN_FREE_OPTIONS",
+    "KETO_OPTIONS"
+  ],
+  "priceRange": "PRICE_RANGE_$_$$_$$$_$$$$",
+  "averageEntreePrice": "AVERAGE_ENTREE_COST",
+  "kidsFriendly": true,
+  "kidsMenuAvailable": true,
+  "groupMenusAvailable": true,
+
+  "//SECTION_10": "=== BEVERAGES & BAR ===",
+  "alcoholServed": true,
+  "beerSelection": "BEER_SELECTION_DESCRIPTION",
+  "wineProgram": "WINE_PROGRAM_DESCRIPTION",
+  "cocktailProgram": "COCKTAIL_PROGRAM_DESCRIPTION",
+  "happyHourSpecials": "HAPPY_HOUR_DRINK_SPECIALS",
+  "bartenderSpecialties": "SIGNATURE_COCKTAILS",
+  "nonAlcoholicSpecialties": "SPECIALTY_NON_ALCOHOLIC_DRINKS",
+
+  "//SECTION_11": "=== SERVICES OFFERED ===",
+  "dineInService": true,
+  "takeoutAvailable": true,
+  "deliveryAvailable": true,
+  "deliveryApps": ["DOORDASH", "UBEREATS", "GRUBHUB"],
+  "cateringAvailable": true,
+  "privateEventsAvailable": true,
+  "reservationsRequired": "REQUIRED_RECOMMENDED_WALK_IN",
+  "onlineOrderingAvailable": true,
+  "giftCardsAvailable": true,
+
+  "//SECTION_12": "=== STAFF & CREDENTIALS ===",
+  "headChef": {
+    "name": "HEAD_CHEF_NAME",
+    "bio": "CHEF_BACKGROUND_AND_EXPERIENCE",
+    "specialties": ["CULINARY_SPECIALTY_1", "CULINARY_SPECIALTY_2"],
+    "awards": ["CHEF_AWARDS_OR_RECOGNITION"],
+    "education": "CULINARY_EDUCATION_BACKGROUND"
+  },
+  "keyStaff": [
+    {
+      "name": "STAFF_MEMBER_NAME",
+      "role": "POSITION_TITLE",
+      "bio": "BRIEF_BACKGROUND",
+      "specialties": ["AREA_OF_EXPERTISE"]
+    }
+  ],
+
+  "//SECTION_13": "=== CUSTOMER TESTIMONIALS ===",
+  "testimonials": [
+    {
+      "customerName": "CUSTOMER_NAME_OR_INITIALS",
+      "review": "CUSTOMER_REVIEW_QUOTE",
+      "rating": "STAR_RATING_1_5",
+      "date": "MONTH_YEAR",
+      "platform": "GOOGLE_YELP_FACEBOOK_ETC"
+    }
+  ],
+
+  "//SECTION_14": "=== AWARDS & RECOGNITION ===",
+  "awards": [
+    "RESTAURANT_AWARDS",
+    "CULINARY_RECOGNITION",
+    "LOCAL_PRESS_MENTIONS"
+  ],
+  "pressFeatures": [
+    "NEWSPAPER_MAGAZINE_FEATURES",
+    "TV_APPEARANCES",
+    "FOOD_BLOG_MENTIONS"
+  ],
+  "certifications": [
+    "ORGANIC_CERTIFICATION",
+    "LOCAL_SOURCING_CERTIFICATIONS",
+    "SUSTAINABILITY_AWARDS"
+  ],
+
+  "//SECTION_15": "=== SPECIAL EVENTS & PROGRAMS ===",
+  "specialEvents": [
+    {
+      "eventName": "EVENT_NAME",
+      "description": "EVENT_DESCRIPTION",
+      "frequency": "WEEKLY_MONTHLY_SEASONAL",
+      "dayTime": "DAY_AND_TIME"
+    }
+  ],
+  "liveMusic": "LIVE_MUSIC_SCHEDULE_IF_ANY",
+  "triviaNights": "TRIVIA_OR_GAME_NIGHTS",
+  "wineClub": "WINE_CLUB_OR_TASTINGS",
+  "cookingClasses": "COOKING_CLASS_OFFERINGS",
+  "seasonalMenus": "SEASONAL_MENU_CHANGES",
+
+  "//SECTION_16": "=== RESERVATIONS & BOOKING ===",
+  "reservationSystem": "OPENTABLE_RESY_PHONE_ONLY",
+  "reservationPolicy": "RESERVATION_POLICY_DETAILS",
+  "cancellationPolicy": "CANCELLATION_POLICY",
+  "largePartyPolicy": "LARGE_GROUP_REQUIREMENTS",
+  "privateEventBooking": "PRIVATE_EVENT_PROCESS",
+  "holidayReservations": "HOLIDAY_BOOKING_POLICY",
+
+  "//SECTION_17": "=== CONTENT CUSTOMIZATION ===",
+  "heroTitlePrefix": "Welcome to",
+  "ctaPrimaryText": "Make Reservation",
+  "ctaSecondaryText": "View Menu",
+  "featuresSectionTitle": "Our Dining Experience",
+  "featuresDescriptionTemplate": "CUSTOM_DINING_EXPERIENCE_DESCRIPTION",
+  "servicesSectionTitle": "Our Offerings",
+  "servicesSectionDescription": "CUSTOM_SERVICES_DESCRIPTION",
+  "servicesDescriptionTemplate": "CUSTOM_SERVICES_TEMPLATE",
+  "servicesCTAText": "Learn More",
+
+  "//SECTION_18": "=== PAGE CONTENT ===",
+  "aboutPageTitle": "About Our Restaurant",
+  "aboutFeaturesTitle": "Our Story",
+  "aboutServicesTitle": "Dining Options",
+  "contactPageTitle": "Visit Our Restaurant",
+  "contactPageDescription": "CUSTOM_CONTACT_PAGE_DESCRIPTION",
+  "contactInfoTitle": "Restaurant Information",
+  "contactFormTitle": "Send us a Message",
+
+  "//SECTION_19": "=== FORM LABELS & MESSAGES ===",
+  "formNameLabel": "Name",
+  "formEmailLabel": "Email",
+  "formPhoneLabel": "Phone Number",
+  "formSubjectLabel": "Inquiry Type",
+  "formMessageLabel": "Message",
+  "formSubmitText": "Send Message",
+  "formSendingText": "Sending...",
+  "formSuccessMessage": "CUSTOM_SUCCESS_MESSAGE",
+  "formErrorMessage": "CUSTOM_ERROR_MESSAGE",
+
+  "//SECTION_20": "=== PAYMENT & POLICIES ===",
+  "paymentMethods": [
+    "CREDIT_CARDS_ACCEPTED",
+    "CASH_POLICY",
+    "MOBILE_PAYMENT_OPTIONS"
+  ],
+  "tippingPolicy": "TIPPING_POLICY_IF_ANY",
+  "corkageFee": "BYOB_OR_CORKAGE_POLICY",
+  "cakePolicy": "OUTSIDE_CAKE_POLICY",
+  "groupDepositPolicy": "LARGE_GROUP_DEPOSIT_REQUIREMENTS",
+
+  "//SECTION_21": "=== TECHNICAL CONFIGURATION ===",
+  "deploymentPlatform": "vercel",
+  "includePWA": false,
+  "cssApproach": "css-modules",
+  "features": {
+    "analytics": true,
+    "seo": true,
+    "darkMode": false,
+    "contactForm": true,
+    "socialLinks": true,
+    "businessHours": true,
+    "testimonials": true,
+    "blog": false,
+    "onlineMenu": true,
+    "reservationIntegration": true,
+    "photoGallery": true,
+    "eventCalendar": true
+  },
+
+  "//SECTION_22": "=== SEO & MARKETING ===",
+  "seoKeywords": [
+    "PRIMARY_CUISINE_KEYWORDS",
+    "LOCATION_KEYWORDS",
+    "RESTAURANT_TYPE_KEYWORDS",
+    "SPECIAL_DIET_KEYWORDS"
+  ],
+  "localSEO": {
+    "serviceAreas": [
+      "PRIMARY_CITY",
+      "SURROUNDING_AREAS",
+      "DELIVERY_ZONES"
+    ],
+    "businessCategory": "Restaurant",
+    "gmbCategory": "GOOGLE_MY_BUSINESS_CATEGORY"
+  }
+} 

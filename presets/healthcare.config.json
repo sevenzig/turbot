@@ -1,0 +1,107 @@
+{
+  "//": "=== HEALTHCARE/MEDICAL PRACTICE TEMPLATE CONFIGURATION ===",
+  "//1": "Preset configuration for medical practices, clinics, and healthcare providers",
+  "//2": "Usage: npm run init -- --config presets/healthcare.config.json",
+
+  "projectName": "medical-practice-website",
+  "authorName": "[AUTHOR_NAME]",
+  "authorEmail": "[AUTHOR_EMAIL]",
+  "githubUsername": "[GITHUB_USERNAME]",
+
+  "description": "A professional medical practice website with patient-focused features and HIPAA compliance considerations",
+  "license": "MIT",
+  "repositoryUrl": "[REPOSITORY_URL]",
+
+  "businessName": "[PRACTICE_NAME]",
+  "businessShortName": "[PRACTICE_SHORT_NAME]",
+  "businessTagline": "Compassionate care, expert treatment",
+  "businessDescription": "A dedicated medical practice committed to providing comprehensive, compassionate healthcare services. Our experienced team of medical professionals focuses on preventive care, accurate diagnosis, and effective treatment plans tailored to each patient's unique needs.",
+  "businessShortDescription": "Professional medical practice providing comprehensive healthcare with compassionate, patient-centered care",
+
+  "businessPhone": "[PHONE]",
+  "businessPhoneRaw": "[PHONE_RAW]",
+  "businessEmail": "[EMAIL]",
+
+  "businessStreet": "[STREET]",
+  "businessCity": "[CITY]",
+  "businessState": "[STATE]",
+  "businessZip": "[ZIP]",
+  "businessLatitude": 0,
+  "businessLongitude": 0,
+
+  "websiteUrl": "[WEBSITE]",
+  "primaryColor": "#0F766E",
+  "primaryColorHover": "#0D6B61",
+  "primaryColorLight": "#CCFBF1",
+  "secondaryColor": "#DC2626",
+  "secondaryColorHover": "#B91C1C",
+  "secondaryColorLight": "#FEE2E2",
+
+  "hoursMonday": "8:00 AM - 5:00 PM",
+  "hoursTuesday": "8:00 AM - 5:00 PM",
+  "hoursWednesday": "8:00 AM - 5:00 PM",
+  "hoursThursday": "8:00 AM - 5:00 PM",
+  "hoursFriday": "8:00 AM - 5:00 PM",
+  "hoursSaturday": "9:00 AM - 1:00 PM",
+  "hoursSunday": "Emergency Only",
+
+  "businessFeature1": "Experienced Medical Team",
+  "businessFeature2": "Comprehensive Care",
+  "businessFeature3": "Patient-Centered Approach",
+  "businessFeature4": "Modern Facilities",
+
+  "businessService1": "Primary Care",
+  "businessService2": "Preventive Medicine",
+  "businessService3": "Urgent Care",
+  "businessService4": "Specialized Treatment",
+
+  "heroTitlePrefix": "Welcome to",
+  "ctaPrimaryText": "Schedule Appointment",
+  "ctaSecondaryText": "Learn About Our Services",
+
+  "featuresSectionTitle": "Why Choose Our Practice?",
+  "featuresDescriptionTemplate": "Experience healthcare that puts you first with our comprehensive medical services and compassionate care.",
+
+  "servicesSectionTitle": "Our Medical Services",
+  "servicesSectionDescription": "Comprehensive healthcare services designed to meet your medical needs at every stage of life.",
+  "servicesDescriptionTemplate": "Expert medical care delivered with compassion and the latest medical advances.",
+  "servicesCTAText": "Learn More",
+
+  "aboutPageTitle": "About Our Practice",
+  "aboutFeaturesTitle": "Our Commitment to Care",
+  "aboutServicesTitle": "Medical Services",
+
+  "contactPageTitle": "Contact Our Practice",
+  "contactPageDescription": "Schedule an appointment or reach out with questions about our medical services.",
+  "contactInfoTitle": "Get In Touch",
+  "contactPhoneLabel": "Phone",
+  "contactEmailLabel": "Email",
+  "contactAddressLabel": "Address",
+  "contactDirectionsText": "Get Directions",
+  "contactHoursLabel": "Office Hours",
+
+  "contactFormTitle": "Request Appointment",
+  "formNameLabel": "Full Name",
+  "formEmailLabel": "Email",
+  "formSubjectLabel": "Type of Appointment",
+  "formMessageLabel": "Message or Special Requests",
+  "formSubmitText": "Request Appointment",
+  "formSendingText": "Submitting...",
+  "formSuccessMessage": "Appointment request submitted successfully! We'll contact you soon.",
+  "formErrorMessage": "Failed to submit request. Please call us directly.",
+
+  "deploymentPlatform": "vercel",
+  "includePWA": false,
+  "cssApproach": "css-modules",
+
+  "features": {
+    "analytics": true,
+    "seo": true,
+    "darkMode": false,
+    "contactForm": true,
+    "socialLinks": true,
+    "businessHours": true,
+    "testimonials": true,
+    "blog": false
+  }
+} 

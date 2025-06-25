@@ -1,0 +1,113 @@
+{
+  "//": "=== LAW FIRM TEMPLATE CONFIGURATION ===",
+  "//1": "Preset configuration for law firms, attorneys, and legal professionals",
+  "//2": "Usage: npm run init -- --config presets/law.config.json",
+
+  "projectName": "law-firm-website",
+  "authorName": "[AUTHOR_NAME]",
+  "authorEmail": "[AUTHOR_EMAIL]",
+  "githubUsername": "[GITHUB_USERNAME]",
+
+  "description": "A professional law firm website with legal services, attorney profiles, and client resources",
+  "license": "MIT",
+  "repositoryUrl": "[REPOSITORY_URL]",
+
+  "businessName": "[FIRM_NAME]",
+  "businessShortName": "[FIRM_SHORT_NAME]",
+  "businessTagline": "Experienced advocates for your legal needs",
+  "businessDescription": "A distinguished law firm providing comprehensive legal services with integrity, expertise, and unwavering commitment to our clients. Our experienced attorneys combine deep legal knowledge with personalized attention to achieve the best possible outcomes for every case we handle.",
+  "businessShortDescription": "Professional law firm providing expert legal representation and comprehensive legal services",
+
+  "businessPhone": "[PHONE]",
+  "businessPhoneRaw": "[PHONE_RAW]",
+  "businessEmail": "[EMAIL]",
+
+  "businessStreet": "[STREET]",
+  "businessCity": "[CITY]",
+  "businessState": "[STATE]",
+  "businessZip": "[ZIP]",
+  "businessLatitude": 0,
+  "businessLongitude": 0,
+
+  "websiteUrl": "[WEBSITE]",
+  "primaryColor": "#1F2937",
+  "primaryColorHover": "#111827",
+  "primaryColorLight": "#F3F4F6",
+  "secondaryColor": "#B91C1C",
+  "secondaryColorHover": "#991B1B",
+  "secondaryColorLight": "#FEE2E2",
+
+  "hoursMonday": "8:00 AM - 6:00 PM",
+  "hoursTuesday": "8:00 AM - 6:00 PM",
+  "hoursWednesday": "8:00 AM - 6:00 PM",
+  "hoursThursday": "8:00 AM - 6:00 PM",
+  "hoursFriday": "8:00 AM - 5:00 PM",
+  "hoursSaturday": "By Appointment",
+  "hoursSunday": "Emergency Only",
+
+  "businessFeature1": "Experienced Legal Team",
+  "businessFeature2": "Personalized Attention",
+  "businessFeature3": "Proven Track Record",
+  "businessFeature4": "Confidential Consultation",
+
+  "businessService1": "Corporate Law",
+  "businessService2": "Personal Injury",
+  "businessService3": "Family Law",
+  "businessService4": "Estate Planning",
+
+  "heroTitlePrefix": "The Law Offices of",
+  "ctaPrimaryText": "Schedule Consultation",
+  "ctaSecondaryText": "Learn About Our Practice",
+
+  "featuresSectionTitle": "Why Choose Our Firm?",
+  "featuresDescriptionTemplate": "Experience legal representation that combines expertise, integrity, and personalized attention to your case.",
+
+  "servicesSectionTitle": "Practice Areas",
+  "servicesSectionDescription": "Comprehensive legal services delivered with expertise, integrity, and unwavering commitment to our clients.",
+  "servicesDescriptionTemplate": "Expert legal representation tailored to your specific legal needs and circumstances.",
+  "servicesCTAText": "Learn More",
+
+  "aboutPageTitle": "About Our Firm",
+  "aboutFeaturesTitle": "Our Commitment",
+  "aboutServicesTitle": "Practice Areas",
+
+  "contactPageTitle": "Contact Our Firm",
+  "contactPageDescription": "Facing a legal matter? Contact us for experienced representation and confidential consultation.",
+  "contactInfoTitle": "Schedule Consultation",
+  "contactPhoneLabel": "Phone",
+  "contactEmailLabel": "Email",
+  "contactAddressLabel": "Office Address",
+  "contactDirectionsText": "Get Directions",
+  "contactHoursLabel": "Office Hours",
+
+  "contactFormTitle": "Request Legal Consultation",
+  "formNameLabel": "Full Name",
+  "formEmailLabel": "Email",
+  "formSubjectLabel": "Legal Matter Type",
+  "formMessageLabel": "Brief description of your legal matter",
+  "formSubmitText": "Request Consultation",
+  "formSendingText": "Submitting...",
+  "formSuccessMessage": "Consultation request received. We'll contact you within 24 hours to discuss your legal matter.",
+  "formErrorMessage": "Failed to submit request. Please call our office directly.",
+
+  "error404Code": "404",
+  "error404Title": "Page Not Found",
+  "error404Message": "The legal resource you're looking for may have been moved or is no longer available.",
+  "error404HomeButton": "Return to Home",
+  "error404BackButton": "Go Back",
+
+  "deploymentPlatform": "vercel",
+  "includePWA": false,
+  "cssApproach": "css-modules",
+
+  "features": {
+    "analytics": true,
+    "seo": true,
+    "darkMode": false,
+    "contactForm": true,
+    "socialLinks": true,
+    "businessHours": true,
+    "testimonials": true,
+    "blog": true
+  }
+} 

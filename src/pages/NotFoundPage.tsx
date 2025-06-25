@@ -6,18 +6,18 @@ const NotFoundPage: React.FC = () => {
   return (
     <div className={styles.notFoundPage}>
       <div className={styles.notFoundContent}>
-        <h1 className={styles.errorCode}>[ERROR_404_CODE]</h1>
-        <h2 className={styles.errorTitle}>[ERROR_404_TITLE]</h2>
-        <p className={styles.errorMessage}>[ERROR_404_MESSAGE]</p>
+        <h1 className={styles.errorCode}>404</h1>
+        <h2 className={styles.errorTitle}>Page Not Found</h2>
+        <p className={styles.errorMessage}>The legal resource you're looking for may have been moved or is no longer available.</p>
         <div className={styles.actions}>
           <Link to='/' className={styles.homeButton}>
-            [ERROR_404_HOME_BUTTON]
+            Return to Home
           </Link>
           <button
             className={styles.backButton}
             onClick={() => window.history.back()}
           >
-            [ERROR_404_BACK_BUTTON]
+            Go Back
           </button>
         </div>
       </div>

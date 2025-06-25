@@ -43,6 +43,28 @@
   gap: var(--spacing-lg);
 }
 
+.responseTime {
+  padding: var(--spacing-lg);
+  background: var(--gradient-card);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--color-border-light);
+  margin-bottom: var(--spacing-md);
+}
+
+.responseTitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.responseText {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
 .contactItem {
   padding: var(--spacing-lg);
   background: var(--color-surface);
@@ -66,6 +88,13 @@
 
 .contactValue:hover {
   color: var(--color-primary);
+}
+
+.contactNote {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  margin: var(--spacing-xs) 0 0 0;
+  font-style: italic;
 }
 
 .directionsLink {
@@ -110,9 +139,22 @@
   padding: var(--spacing-xl);
 }
 
+.formDescription {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-lg);
+  line-height: var(--line-height-relaxed);
+}
+
 .form {
   display: flex;
   flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr;
   gap: var(--spacing-lg);
 }
 
@@ -129,43 +171,52 @@
 }
 
 .formInput,
-.formTextarea {
+.formTextarea,
+.formSelect {
   padding: var(--spacing-md);
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--border-radius);
   font-size: var(--font-size-base);
   transition: border-color var(--transition-speed) var(--transition-timing);
   background: var(--color-background);
+  font-family: inherit;
 }
 
 .formInput:focus,
-.formTextarea:focus {
+.formTextarea:focus,
+.formSelect:focus {
   outline: none;
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px var(--color-primary-light);
 }
 
+.formSelect {
+  cursor: pointer;
+}
+
 .formTextarea {
   resize: vertical;
-  min-height: 120px;
-  font-family: inherit;
+  min-height: 140px;
 }
 
 .submitButton {
-  background: var(--color-primary);
+  background: var(--gradient-secondary);
   color: var(--color-text-light);
   border: none;
-  padding: var(--spacing-md) var(--spacing-lg);
-  border-radius: var(--border-radius);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-medium);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  border-radius: var(--border-radius-lg);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
   cursor: pointer;
   min-height: var(--touch-target-min);
-  transition: background-color var(--transition-speed) var(--transition-timing);
+  transition: all var(--transition-speed) var(--transition-timing);
+  box-shadow: var(--shadow-md);
 }
 
 .submitButton:hover {
-  background: var(--color-primary-hover);
+  background: var(--color-secondary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 .submitButton:focus {
@@ -174,20 +225,43 @@
 }
 
 .submitButton:disabled {
-  background-color: #ccc;
+  background: var(--color-border);
   cursor: not-allowed;
+  transform: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.successMessage,
+.errorMessage {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  text-align: left;
 }
 
 .successMessage {
-  margin-top: 1rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
   color: var(--color-success);
-  text-align: center;
 }
 
 .errorMessage {
-  margin-top: 1rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
   color: var(--color-error);
-  text-align: center;
+}
+
+.successMessage h4,
+.errorMessage h4 {
+  margin: 0 0 var(--spacing-sm) 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+.successMessage p,
+.errorMessage p {
+  margin: 0;
+  line-height: var(--line-height-relaxed);
 }
 
 /* Mobile Landscape / Small Tablet */
@@ -207,11 +281,25 @@
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-xxl);
   }
+
+  .formRow {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /* Desktop */
 @media (min-width: 1025px) {
   .contactContent {
     padding: 0 var(--container-padding-desktop);
+  }
+
+  .contactGrid {
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--spacing-xxl);
+    align-items: start;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr 1fr;
   }
 }

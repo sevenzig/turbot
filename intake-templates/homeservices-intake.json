@@ -1,0 +1,401 @@
+{
+  "//": "=== HOME SERVICES BUSINESS CLIENT INTAKE TEMPLATE ===",
+  "//1": "Complete business information template for home services company website generation",
+  "//2": "Fill out all sections with client's actual home services business details",
+  "//3": "Usage: npm run init -- --config [company-name]-intake.json",
+
+  "//SECTION_1": "=== PROJECT & DEVELOPER INFO ===",
+  "projectName": "CLIENT_HOMESERVICES_COMPANY_LOWERCASE_DASHED",
+  "authorName": "YOUR_NAME",
+  "authorEmail": "YOUR_EMAIL@DOMAIN.COM",
+  "githubUsername": "YOUR_GITHUB_USERNAME",
+  "description": "Professional home services company website for [CLIENT_COMPANY_NAME]",
+  "license": "MIT",
+  "repositoryUrl": "https://github.com/YOUR_GITHUB_USERNAME/CLIENT_PROJECT_NAME",
+
+  "//SECTION_2": "=== CORE BUSINESS INFORMATION ===",
+  "businessName": "FULL_HOME_SERVICES_COMPANY_NAME",
+  "businessShortName": "SHORT_COMPANY_NAME",
+  "businessTagline": "COMPANY_TAGLINE_OR_VALUE_PROPOSITION",
+  "businessDescription": "DETAILED_COMPANY_DESCRIPTION_2_3_SENTENCES",
+  "businessShortDescription": "ONE_SENTENCE_COMPANY_SUMMARY",
+  "serviceType": "HVAC_PLUMBING_ELECTRICAL_LANDSCAPING_CLEANING_HANDYMAN_GENERAL",
+  "servicePhilosophy": "APPROACH_TO_HOME_SERVICES",
+  "establishedYear": "YEAR_COMPANY_ESTABLISHED",
+  "numberOfEmployees": "NUMBER_OF_EMPLOYEES",
+  "serviceArea": "SERVICE_AREA_DESCRIPTION",
+
+  "//SECTION_3": "=== CONTACT INFORMATION ===",
+  "businessPhone": "FORMATTED_PHONE_NUMBER",
+  "businessPhoneRaw": "DIGITS_ONLY_PHONE",
+  "businessEmail": "MAIN_COMPANY_EMAIL",
+  "emergencyPhone": "24_7_EMERGENCY_NUMBER",
+  "emergencyEmail": "EMERGENCY_SERVICE_EMAIL",
+  "servicePhone": "SERVICE_SCHEDULING_PHONE",
+  "serviceEmail": "SERVICE_SCHEDULING_EMAIL",
+  "billingPhone": "BILLING_INQUIRIES_PHONE",
+  "billingEmail": "BILLING_INQUIRIES_EMAIL",
+
+  "//SECTION_4": "=== BUSINESS LOCATION ===",
+  "businessStreet": "STREET_ADDRESS",
+  "businessCity": "CITY_NAME",
+  "businessState": "STATE_OR_PROVINCE",
+  "businessZip": "ZIP_POSTAL_CODE",
+  "businessLatitude": 0.000000,
+  "businessLongitude": 0.000000,
+  "officeDescription": "OFFICE_SHOWROOM_WAREHOUSE_DESCRIPTION",
+  "serviceVehicles": "FLEET_DESCRIPTION",
+  "warehouseLocation": "WAREHOUSE_SUPPLY_LOCATION",
+  "showroomHours": "SHOWROOM_VISITING_HOURS",
+
+  "//SECTION_5": "=== WEBSITE & BRANDING ===",
+  "websiteUrl": "https://DOMAIN.COM",
+  "primaryColor": "#1F2937",
+  "primaryColorHover": "#111827",
+  "primaryColorLight": "#F3F4F6",
+  "secondaryColor": "#3B82F6",
+  "secondaryColorHover": "#2563EB",
+  "secondaryColorLight": "#DBEAFE",
+  "logoUrl": "URL_TO_COMPANY_LOGO",
+  "faviconUrl": "URL_TO_FAVICON",
+
+  "//SECTION_6": "=== SOCIAL MEDIA & ONLINE PRESENCE ===",
+  "socialFacebook": "FACEBOOK_PAGE_URL",
+  "socialInstagram": "INSTAGRAM_HANDLE",
+  "socialLinkedin": "LINKEDIN_COMPANY_PAGE",
+  "socialTwitter": "TWITTER_HANDLE",
+  "socialYoutube": "YOUTUBE_CHANNEL",
+  "googleBusinessUrl": "GOOGLE_BUSINESS_PROFILE_URL",
+  "bbbProfile": "BETTER_BUSINESS_BUREAU_URL",
+  "angiesListProfile": "ANGIES_LIST_PROFILE_URL",
+  "homeAdvisorProfile": "HOME_ADVISOR_PROFILE_URL",
+
+  "//SECTION_7": "=== BUSINESS HOURS ===",
+  "hoursMonday": "MONDAY_HOURS",
+  "hoursTuesday": "TUESDAY_HOURS",
+  "hoursWednesday": "WEDNESDAY_HOURS",
+  "hoursThursday": "THURSDAY_HOURS",
+  "hoursFriday": "FRIDAY_HOURS",
+  "hoursSaturday": "SATURDAY_HOURS",
+  "hoursSunday": "SUNDAY_HOURS",
+  "emergencyHours": "24_7_EMERGENCY_AVAILABILITY",
+  "seasonalHours": "SEASONAL_HOUR_CHANGES",
+
+  "//SECTION_8": "=== SERVICE TEAM ===",
+  "serviceTeam": [
+    {
+      "name": "TEAM_MEMBER_NAME",
+      "title": "POSITION_TITLE",
+      "bio": "BACKGROUND_AND_EXPERIENCE",
+      "specializations": [
+        "SPECIALTY_1",
+        "SPECIALTY_2",
+        "SPECIALTY_3"
+      ],
+      "certifications": [
+        "PROFESSIONAL_CERTIFICATION_1",
+        "LICENSE_TYPE",
+        "ADDITIONAL_CERTIFICATIONS"
+      ],
+      "yearsExperience": "NUMBER_OF_YEARS",
+      "trainingBackground": [
+        "TECHNICAL_TRAINING",
+        "APPRENTICESHIP_INFO",
+        "CONTINUING_EDUCATION"
+      ],
+      "serviceAreas": [
+        "PRIMARY_SERVICE_AREA_1",
+        "PRIMARY_SERVICE_AREA_2"
+      ],
+      "photoUrl": "URL_TO_TEAM_MEMBER_PHOTO",
+      "phone": "DIRECT_PHONE_IF_APPLICABLE"
+    }
+  ],
+
+  "//SECTION_9": "=== SERVICE AREAS ===",
+  "primaryServiceAreas": [
+    {
+      "areaName": "SERVICE_AREA_NAME",
+      "description": "AREA_DESCRIPTION",
+      "serviceRadius": "MILES_FROM_BASE",
+      "travelFee": "TRAVEL_FEE_IF_ANY",
+      "specialServices": ["AREA_SPECIFIC_SERVICES"],
+      "responseTime": "TYPICAL_RESPONSE_TIME"
+    }
+  ],
+  "serviceRadius": "TOTAL_MILES_COVERED",
+  "outOfAreaServices": "OUT_OF_AREA_SERVICE_POLICY",
+  "travelFees": "TRAVEL_FEE_STRUCTURE",
+
+  "//SECTION_10": "=== SERVICES OFFERED ===",
+  "primaryServices": [
+    {
+      "serviceName": "PRIMARY_SERVICE_NAME",
+      "description": "SERVICE_DESCRIPTION",
+      "serviceProcess": ["STEP_1", "STEP_2", "STEP_3"],
+      "averageDuration": "TYPICAL_SERVICE_TIME",
+      "warrantyInfo": "WARRANTY_COVERAGE",
+      "emergencyAvailable": true,
+      "seasonalService": false,
+      "requiresPermits": false
+    }
+  ],
+  "emergencyServices": [
+    "EMERGENCY_SERVICE_1",
+    "EMERGENCY_SERVICE_2",
+    "EMERGENCY_SERVICE_3"
+  ],
+  "maintenanceServices": [
+    "MAINTENANCE_SERVICE_1",
+    "MAINTENANCE_SERVICE_2",
+    "MAINTENANCE_SERVICE_3"
+  ],
+  "installationServices": [
+    "INSTALLATION_SERVICE_1",
+    "INSTALLATION_SERVICE_2",
+    "INSTALLATION_SERVICE_3"
+  ],
+  "repairServices": [
+    "REPAIR_SERVICE_1",
+    "REPAIR_SERVICE_2",
+    "REPAIR_SERVICE_3"
+  ],
+
+  "//SECTION_11": "=== SPECIALIZATIONS ===",
+  "serviceSpecializations": [
+    {
+      "specialtyName": "SPECIALTY_AREA",
+      "description": "SPECIALTY_DESCRIPTION",
+      "expertiseLevel": "EXPERTISE_LEVEL",
+      "certificationRequired": "REQUIRED_CERTIFICATIONS",
+      "equipmentUsed": "SPECIALIZED_EQUIPMENT",
+      "warrantyPeriod": "WARRANTY_LENGTH"
+    }
+  ],
+  "brandsCertified": [
+    "MANUFACTURER_CERTIFICATION_1",
+    "MANUFACTURER_CERTIFICATION_2",
+    "EQUIPMENT_BRAND_SPECIALTIES"
+  ],
+  "greenServices": [
+    "ECO_FRIENDLY_SERVICE_1",
+    "ENERGY_EFFICIENT_OPTIONS",
+    "SUSTAINABLE_PRACTICES"
+  ],
+
+  "//SECTION_12": "=== PRICING & ESTIMATES ===",
+  "pricingStructure": [
+    {
+      "serviceType": "SERVICE_CATEGORY",
+      "pricingMethod": "HOURLY_FLAT_RATE_PROJECT_BASED",
+      "baseRate": "STARTING_PRICE",
+      "estimateProcess": "HOW_ESTIMATES_ARE_PROVIDED",
+      "paymentTerms": "PAYMENT_TERMS"
+    }
+  ],
+  "freeServices": [
+    "FREE_ESTIMATES",
+    "FREE_CONSULTATIONS",
+    "FREE_INSPECTIONS"
+  ],
+  "diagnosticFees": "DIAGNOSTIC_FEE_POLICY",
+  "minimumCharges": "MINIMUM_SERVICE_CALL_FEE",
+
+  "//SECTION_13": "=== LICENSING & INSURANCE ===",
+  "businessLicense": "BUSINESS_LICENSE_NUMBER",
+  "contractorLicense": "CONTRACTOR_LICENSE_NUMBER",
+  "specialtyLicenses": [
+    "SPECIALTY_LICENSE_1",
+    "SPECIALTY_LICENSE_2",
+    "ADDITIONAL_PERMITS"
+  ],
+  "insuranceInfo": {
+    "generalLiability": "GENERAL_LIABILITY_COVERAGE",
+    "workersCompensation": "WORKERS_COMP_COVERAGE",
+    "bondingInfo": "BONDING_INFORMATION",
+    "vehicleInsurance": "COMMERCIAL_VEHICLE_INSURANCE"
+  },
+  "warrantyPolicy": "WARRANTY_TERMS_AND_CONDITIONS",
+
+  "//SECTION_14": "=== EQUIPMENT & TECHNOLOGY ===",
+  "equipmentUsed": [
+    {
+      "equipmentType": "EQUIPMENT_NAME",
+      "brandModel": "BRAND_AND_MODEL",
+      "purpose": "WHAT_ITS_USED_FOR",
+      "certificationLevel": "PROFESSIONAL_GRADE_LEVEL"
+    }
+  ],
+  "technologySystems": [
+    "DIAGNOSTIC_TOOLS",
+    "SCHEDULING_SOFTWARE",
+    "CUSTOMER_PORTAL",
+    "MOBILE_APPS"
+  ],
+  "qualityTools": [
+    "QUALITY_ASSURANCE_TOOLS",
+    "TESTING_EQUIPMENT",
+    "MEASUREMENT_DEVICES"
+  ],
+
+  "//SECTION_15": "=== CLIENT SUCCESS STORIES ===",
+  "successStories": [
+    {
+      "projectType": "PROJECT_CATEGORY",
+      "challenge": "CLIENT_CHALLENGE_DESCRIPTION",
+      "solution": "HOW_COMPANY_SOLVED_IT",
+      "outcome": "SUCCESSFUL_RESULT",
+      "timeframe": "PROJECT_DURATION",
+      "clientType": "RESIDENTIAL_COMMERCIAL"
+    }
+  ],
+  "projectsCompleted": "TOTAL_PROJECTS_COMPLETED",
+  "averageProjectTime": "TYPICAL_PROJECT_DURATION",
+  "customerRetentionRate": "PERCENTAGE_REPEAT_CUSTOMERS",
+
+  "//SECTION_16": "=== CLIENT TESTIMONIALS ===",
+  "testimonials": [
+    {
+      "clientName": "CLIENT_NAME_OR_INITIALS",
+      "testimonial": "CLIENT_TESTIMONIAL_QUOTE",
+      "serviceType": "SERVICE_PROVIDED",
+      "location": "GENERAL_AREA",
+      "date": "MONTH_YEAR"
+    }
+  ],
+
+  "//SECTION_17": "=== EMERGENCY SERVICES ===",
+  "emergencyInfo": {
+    "available24_7": true,
+    "emergencyTypes": [
+      "EMERGENCY_TYPE_1",
+      "EMERGENCY_TYPE_2",
+      "EMERGENCY_TYPE_3"
+    ],
+    "responseTime": "EMERGENCY_RESPONSE_TIME",
+    "emergencyFees": "EMERGENCY_SERVICE_FEES",
+    "emergencyProtocol": "EMERGENCY_RESPONSE_PROCESS"
+  },
+  "afterHoursContact": "AFTER_HOURS_CONTACT_METHOD",
+  "holidayServices": "HOLIDAY_SERVICE_AVAILABILITY",
+
+  "//SECTION_18": "=== MAINTENANCE PROGRAMS ===",
+  "maintenancePrograms": [
+    {
+      "programName": "MAINTENANCE_PROGRAM_NAME",
+      "description": "PROGRAM_DESCRIPTION",
+      "frequency": "SERVICE_FREQUENCY",
+      "pricing": "PROGRAM_PRICING",
+      "benefits": ["BENEFIT_1", "BENEFIT_2", "BENEFIT_3"],
+      "whatIsIncluded": ["INCLUDED_SERVICE_1", "INCLUDED_SERVICE_2"]
+    }
+  ],
+  "seasonalServices": [
+    "SPRING_SERVICES",
+    "SUMMER_SERVICES",
+    "FALL_SERVICES",
+    "WINTER_SERVICES"
+  ],
+
+  "//SECTION_19": "=== SAFETY & COMPLIANCE ===",
+  "safetyProtocols": [
+    "SAFETY_PROTOCOL_1",
+    "SAFETY_PROTOCOL_2",
+    "COVID_SAFETY_MEASURES"
+  ],
+  "complianceStandards": [
+    "INDUSTRY_STANDARD_1",
+    "REGULATORY_COMPLIANCE",
+    "CODE_REQUIREMENTS"
+  ],
+  "employeeBackground": "BACKGROUND_CHECK_POLICY",
+  "drugTesting": "DRUG_TESTING_POLICY",
+
+  "//SECTION_20": "=== CONTENT CUSTOMIZATION ===",
+  "heroTitlePrefix": "Professional",
+  "ctaPrimaryText": "Get Free Estimate",
+  "ctaSecondaryText": "Call Now",
+  "featuresSectionTitle": "Why Choose Us?",
+  "featuresDescriptionTemplate": "CUSTOM_COMPANY_DESCRIPTION",
+  "servicesSectionTitle": "Our Services",
+  "servicesSectionDescription": "CUSTOM_SERVICES_DESCRIPTION",
+  "servicesDescriptionTemplate": "CUSTOM_SERVICES_TEMPLATE",
+  "servicesCTAText": "Learn More",
+
+  "//SECTION_21": "=== PAGE CONTENT ===",
+  "aboutPageTitle": "About Our Company",
+  "aboutFeaturesTitle": "Our Commitment",
+  "aboutServicesTitle": "Professional Services",
+  "contactPageTitle": "Get Your Free Estimate",
+  "contactPageDescription": "CUSTOM_CONTACT_PAGE_DESCRIPTION",
+  "contactInfoTitle": "Contact Us Today",
+  "contactFormTitle": "Service Request",
+
+  "//SECTION_22": "=== FORM LABELS & MESSAGES ===",
+  "formNameLabel": "Full Name",
+  "formEmailLabel": "Email",
+  "formPhoneLabel": "Phone Number",
+  "formServiceTypeLabel": "Service Needed",
+  "formPropertyTypeLabel": "Property Type",
+  "formUrgencyLabel": "Urgency Level",
+  "formPreferredDateLabel": "Preferred Service Date",
+  "formAddressLabel": "Service Address",
+  "formMessageLabel": "Describe your service needs",
+  "formSubmitText": "Request Service",
+  "formSendingText": "Submitting...",
+  "formSuccessMessage": "CUSTOM_SUCCESS_MESSAGE",
+  "formErrorMessage": "CUSTOM_ERROR_MESSAGE",
+
+  "//SECTION_23": "=== PAYMENT & BILLING ===",
+  "paymentMethods": [
+    "CASH",
+    "CHECK",
+    "CREDIT_CARDS",
+    "FINANCING_OPTIONS"
+  ],
+  "financingOptions": [
+    "FINANCING_OPTION_1",
+    "FINANCING_OPTION_2",
+    "PAYMENT_PLANS"
+  ],
+  "billingPolicy": "BILLING_TERMS_AND_CONDITIONS",
+  "depositRequirements": "DEPOSIT_POLICY",
+
+  "//SECTION_24": "=== TECHNICAL CONFIGURATION ===",
+  "deploymentPlatform": "vercel",
+  "includePWA": false,
+  "cssApproach": "css-modules",
+  "features": {
+    "analytics": true,
+    "seo": true,
+    "darkMode": false,
+    "contactForm": true,
+    "socialLinks": true,
+    "businessHours": true,
+    "testimonials": true,
+    "blog": true,
+    "serviceAreas": true,
+    "emergencyServices": true,
+    "onlineBooking": true,
+    "estimateCalculator": true,
+    "maintenanceReminders": true,
+    "customerPortal": true
+  },
+
+  "//SECTION_25": "=== SEO & MARKETING ===",
+  "seoKeywords": [
+    "HOME_SERVICE_KEYWORDS",
+    "LOCATION_KEYWORDS",
+    "SERVICE_TYPE_KEYWORDS",
+    "EMERGENCY_KEYWORDS"
+  ],
+  "localSEO": {
+    "serviceAreas": [
+      "PRIMARY_CITY",
+      "SURROUNDING_CITIES",
+      "COUNTY_NAME"
+    ],
+    "businessCategory": "Home Services",
+    "gmbCategory": "GOOGLE_MY_BUSINESS_CATEGORY"
+  }
+} 

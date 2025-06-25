@@ -1,5 +1,5 @@
 import React from 'react';
-import { businessInfo } from '@data/businessInfo';
+import { businessInfo } from '../data/businessInfo';
 import styles from './AboutPage.module.css';
 
 const AboutPage: React.FC = () => {
@@ -7,11 +7,11 @@ const AboutPage: React.FC = () => {
     <div className={styles.aboutPage}>
       <section className={styles.aboutSection}>
         <div className={styles.aboutContent}>
-          <h1 className={styles.aboutTitle}>[ABOUT_PAGE_TITLE]</h1>
+          <h1 className={styles.aboutTitle}>About {businessInfo.name}</h1>
           <p className={styles.aboutDescription}>{businessInfo.description}</p>
 
           <div className={styles.featuresGrid}>
-            <h2 className={styles.sectionTitle}>[ABOUT_FEATURES_TITLE]</h2>
+            <h2 className={styles.sectionTitle}>Our Commitment to Excellence</h2>
             <div className={styles.featuresList}>
               {businessInfo.features.map((feature, index) => (
                 <div key={index} className={styles.featureItem}>
@@ -22,7 +22,7 @@ const AboutPage: React.FC = () => {
           </div>
 
           <div className={styles.servicesGrid}>
-            <h2 className={styles.sectionTitle}>[ABOUT_SERVICES_TITLE]</h2>
+            <h2 className={styles.sectionTitle}>Our Services</h2>
             <div className={styles.servicesList}>
               {businessInfo.services.map((service, index) => (
                 <div key={index} className={styles.serviceItem}>

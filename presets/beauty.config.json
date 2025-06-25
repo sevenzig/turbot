@@ -1,0 +1,107 @@
+{
+  "//": "=== BEAUTY SALON/SPA TEMPLATE CONFIGURATION ===",
+  "//1": "Preset configuration for beauty salons, spas, and wellness centers",
+  "//2": "Usage: npm run init -- --config presets/beauty.config.json",
+
+  "projectName": "beauty-salon-website",
+  "authorName": "[AUTHOR_NAME]",
+  "authorEmail": "[AUTHOR_EMAIL]",
+  "githubUsername": "[GITHUB_USERNAME]",
+
+  "description": "An elegant beauty salon and spa website with service booking, treatment menus, and wellness programs",
+  "license": "MIT",
+  "repositoryUrl": "[REPOSITORY_URL]",
+
+  "businessName": "[SALON_NAME]",
+  "businessShortName": "[SALON_SHORT_NAME]",
+  "businessTagline": "Enhance your natural beauty",
+  "businessDescription": "A luxurious beauty destination where artistry meets wellness. Our skilled professionals provide exceptional beauty treatments, spa services, and personalized care in a serene environment designed to restore, rejuvenate, and enhance your natural beauty.",
+  "businessShortDescription": "Luxury beauty salon and spa offering professional treatments and personalized wellness experiences",
+
+  "businessPhone": "[PHONE]",
+  "businessPhoneRaw": "[PHONE_RAW]",
+  "businessEmail": "[EMAIL]",
+
+  "businessStreet": "[STREET]",
+  "businessCity": "[CITY]",
+  "businessState": "[STATE]",
+  "businessZip": "[ZIP]",
+  "businessLatitude": 0,
+  "businessLongitude": 0,
+
+  "websiteUrl": "[WEBSITE]",
+  "primaryColor": "#EC4899",
+  "primaryColorHover": "#DB2777",
+  "primaryColorLight": "#FCE7F3",
+  "secondaryColor": "#A855F7",
+  "secondaryColorHover": "#9333EA",
+  "secondaryColorLight": "#F3E8FF",
+
+  "hoursMonday": "Closed",
+  "hoursTuesday": "9:00 AM - 7:00 PM",
+  "hoursWednesday": "9:00 AM - 7:00 PM",
+  "hoursThursday": "9:00 AM - 8:00 PM",
+  "hoursFriday": "9:00 AM - 8:00 PM",
+  "hoursSaturday": "8:00 AM - 6:00 PM",
+  "hoursSunday": "10:00 AM - 5:00 PM",
+
+  "businessFeature1": "Expert Beauty Professionals",
+  "businessFeature2": "Luxury Spa Environment",
+  "businessFeature3": "Premium Products",
+  "businessFeature4": "Personalized Service",
+
+  "businessService1": "Hair Styling",
+  "businessService2": "Skincare Treatments",
+  "businessService3": "Nail Services",
+  "businessService4": "Spa Packages",
+
+  "heroTitlePrefix": "Welcome to",
+  "ctaPrimaryText": "Book Appointment",
+  "ctaSecondaryText": "View Services",
+
+  "featuresSectionTitle": "Why Choose Our Salon?",
+  "featuresDescriptionTemplate": "Experience beauty and wellness services that enhance your natural radiance in our luxurious spa environment.",
+
+  "servicesSectionTitle": "Beauty & Wellness Services",
+  "servicesSectionDescription": "Comprehensive beauty treatments and spa services designed to pamper, rejuvenate, and enhance your natural beauty.",
+  "servicesDescriptionTemplate": "Professional beauty treatments delivered with expertise and personalized attention to your unique needs.",
+  "servicesCTAText": "Book Now",
+
+  "aboutPageTitle": "About Our Salon",
+  "aboutFeaturesTitle": "Our Beauty Philosophy",
+  "aboutServicesTitle": "Beauty Services",
+
+  "contactPageTitle": "Book Your Appointment",
+  "contactPageDescription": "Ready to indulge in luxury beauty treatments? Contact us to schedule your personalized service experience.",
+  "contactInfoTitle": "Schedule Service",
+  "contactPhoneLabel": "Phone",
+  "contactEmailLabel": "Email",
+  "contactAddressLabel": "Salon Address",
+  "contactDirectionsText": "Get Directions",
+  "contactHoursLabel": "Salon Hours",
+
+  "contactFormTitle": "Book Your Service",
+  "formNameLabel": "Full Name",
+  "formEmailLabel": "Email",
+  "formSubjectLabel": "Service Type",
+  "formMessageLabel": "Special requests or preferred appointment time",
+  "formSubmitText": "Request Booking",
+  "formSendingText": "Submitting...",
+  "formSuccessMessage": "Booking request received! We'll confirm your appointment within 24 hours.",
+  "formErrorMessage": "Failed to submit booking. Please call us directly to schedule.",
+
+  "deploymentPlatform": "vercel",
+  "includePWA": true,
+  "cssApproach": "css-modules",
+
+  "features": {
+    "analytics": true,
+    "seo": true,
+    "darkMode": false,
+    "contactForm": true,
+    "socialLinks": true,
+    "businessHours": true,
+    "testimonials": true,
+    "blog": false
+  }
+} 

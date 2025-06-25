@@ -1,0 +1,84 @@
+{
+  "//": "=== BASIC BUSINESS TEMPLATE CONFIGURATION ===",
+  "//1": "Generic preset configuration suitable for any business type",
+  "//2": "Usage: npm run init -- --config presets/basic.config.json",
+
+  "projectName": "business-website",
+  "authorName": "[AUTHOR_NAME]",
+  "authorEmail": "[AUTHOR_EMAIL]",
+  "githubUsername": "[GITHUB_USERNAME]",
+
+  "description": "A modern business website built with React and Vite",
+  "license": "MIT",
+  "repositoryUrl": "[REPOSITORY_URL]",
+
+  "businessName": "[BUSINESS_NAME]",
+  "businessShortName": "[BUSINESS_SHORT_NAME]",
+  "businessTagline": "Quality service you can trust",
+  "businessDescription": "A professional business committed to providing exceptional service and value to our clients. We pride ourselves on quality, reliability, and building lasting relationships with those we serve.",
+  "businessShortDescription": "Professional business providing quality service and exceptional value",
+
+  "businessPhone": "[PHONE]",
+  "businessPhoneRaw": "[PHONE_RAW]",
+  "businessEmail": "[EMAIL]",
+
+  "businessStreet": "[STREET]",
+  "businessCity": "[CITY]",
+  "businessState": "[STATE]",
+  "businessZip": "[ZIP]",
+  "businessLatitude": 0,
+  "businessLongitude": 0,
+
+  "websiteUrl": "[WEBSITE]",
+  "primaryColor": "#2563EB",
+  "primaryColorHover": "#1D4ED8",
+  "primaryColorLight": "#DBEAFE",
+  "secondaryColor": "#F59E0B",
+  "secondaryColorHover": "#D97706",
+  "secondaryColorLight": "#FEF3C7",
+
+  "hoursMonday": "9:00 AM - 5:00 PM",
+  "hoursTuesday": "9:00 AM - 5:00 PM",
+  "hoursWednesday": "9:00 AM - 5:00 PM",
+  "hoursThursday": "9:00 AM - 5:00 PM",
+  "hoursFriday": "9:00 AM - 5:00 PM",
+  "hoursSaturday": "10:00 AM - 4:00 PM",
+  "hoursSunday": "Closed",
+
+  "businessFeature1": "Professional Service",
+  "businessFeature2": "Expert Team",
+  "businessFeature3": "Quality Results",
+  "businessFeature4": "Customer Focused",
+
+  "businessService1": "Professional Services",
+  "businessService2": "Expert Consultation",
+  "businessService3": "Quality Solutions",
+  "businessService4": "Ongoing Support",
+
+  "heroTitlePrefix": "Welcome to",
+  "ctaPrimaryText": "Get Started",
+  "ctaSecondaryText": "Learn More",
+
+  "featuresSectionTitle": "Why Choose Us?",
+  "featuresDescriptionTemplate": "Discover what makes us different in delivering exceptional results for our clients.",
+
+  "servicesSectionTitle": "Our Services",
+  "servicesSectionDescription": "Explore what we offer to help you achieve your goals.",
+  "servicesDescriptionTemplate": "Professional service tailored to your specific needs and requirements.",
+  "servicesCTAText": "Learn More",
+
+  "deploymentPlatform": "vercel",
+  "includePWA": false,
+  "cssApproach": "css-modules",
+
+  "features": {
+    "analytics": false,
+    "seo": true,
+    "darkMode": false,
+    "contactForm": true,
+    "socialLinks": true,
+    "businessHours": true,
+    "testimonials": false,
+    "blog": false
+  }
+} 

@@ -1,0 +1,292 @@
+{
+  "//": "=== LAW FIRM CLIENT INTAKE TEMPLATE ===",
+  "//1": "Complete business information template for law firm website generation",
+  "//2": "Fill out all sections with client's actual business details",
+  "//3": "Usage: npm run init -- --config [this-file].json",
+
+  "//SECTION_1": "=== PROJECT & DEVELOPER INFO ===",
+  "projectName": "CLIENT_BUSINESS_NAME_LOWERCASE_DASHED",
+  "authorName": "YOUR_NAME",
+  "authorEmail": "YOUR_EMAIL@DOMAIN.COM",
+  "githubUsername": "YOUR_GITHUB_USERNAME",
+  "description": "Professional law firm website for [CLIENT_FIRM_NAME]",
+  "license": "MIT",
+  "repositoryUrl": "https://github.com/YOUR_GITHUB_USERNAME/CLIENT_PROJECT_NAME",
+
+  "//SECTION_2": "=== CORE BUSINESS INFORMATION ===",
+  "businessName": "FULL_LEGAL_FIRM_NAME",
+  "businessShortName": "SHORT_FIRM_NAME",
+  "businessTagline": "FIRM_TAGLINE_OR_MOTTO",
+  "businessDescription": "DETAILED_FIRM_DESCRIPTION_2_3_SENTENCES",
+  "businessShortDescription": "ONE_SENTENCE_FIRM_SUMMARY",
+
+  "//SECTION_3": "=== CONTACT INFORMATION ===",
+  "businessPhone": "FORMATTED_PHONE_NUMBER",
+  "businessPhoneRaw": "DIGITS_ONLY_PHONE",
+  "businessEmail": "MAIN_BUSINESS_EMAIL",
+  "emergencyPhone": "24_7_EMERGENCY_NUMBER",
+  "emergencyEmail": "EMERGENCY_CONTACT_EMAIL",
+
+  "//SECTION_4": "=== PHYSICAL ADDRESS ===",
+  "businessStreet": "STREET_ADDRESS",
+  "businessCity": "CITY_NAME",
+  "businessState": "STATE_OR_PROVINCE",
+  "businessZip": "ZIP_POSTAL_CODE",
+  "businessLatitude": 0.000000,
+  "businessLongitude": 0.000000,
+  "parkingInfo": "PARKING_INSTRUCTIONS_FOR_CLIENTS",
+  "buildingInfo": "SUITE_FLOOR_BUILDING_DETAILS",
+
+  "//SECTION_5": "=== WEBSITE & BRANDING ===",
+  "websiteUrl": "https://DOMAIN.COM",
+  "primaryColor": "#1F2937",
+  "primaryColorHover": "#111827",
+  "primaryColorLight": "#F3F4F6",
+  "secondaryColor": "#B91C1C",
+  "secondaryColorHover": "#991B1B",
+  "secondaryColorLight": "#FEE2E2",
+  "logoUrl": "URL_TO_FIRM_LOGO",
+  "faviconUrl": "URL_TO_FAVICON",
+
+  "//SECTION_6": "=== SOCIAL MEDIA & ONLINE PRESENCE ===",
+  "socialLinkedin": "LINKEDIN_PROFILE_URL",
+  "socialFacebook": "FACEBOOK_PAGE_URL",
+  "socialTwitter": "TWITTER_HANDLE",
+  "socialInstagram": "INSTAGRAM_HANDLE",
+  "googleBusinessUrl": "GOOGLE_BUSINESS_PROFILE_URL",
+  "barAssociationProfiles": ["URL_1", "URL_2"],
+
+  "//SECTION_7": "=== BUSINESS HOURS ===",
+  "hoursMonday": "8:00 AM - 6:00 PM",
+  "hoursTuesday": "8:00 AM - 6:00 PM",
+  "hoursWednesday": "8:00 AM - 6:00 PM",
+  "hoursThursday": "8:00 AM - 6:00 PM",
+  "hoursFriday": "8:00 AM - 5:00 PM",
+  "hoursSaturday": "By Appointment Only",
+  "hoursSunday": "Emergency Consultations Only",
+  "emergencyAvailability": "24/7 for urgent legal matters",
+  "consultationHours": "Monday-Friday 9:00 AM - 5:00 PM",
+
+  "//SECTION_8": "=== FIRM CREDENTIALS & TRUST SIGNALS ===",
+  "firmEstablished": "YEAR_FIRM_ESTABLISHED",
+  "yearsInPractice": "NUMBER_OF_YEARS",
+  "totalCasesHandled": "APPROXIMATE_NUMBER",
+  "successRate": "PERCENTAGE_IF_AVAILABLE",
+  "barAssociations": [
+    "STATE_BAR_ASSOCIATION",
+    "AMERICAN_BAR_ASSOCIATION",
+    "OTHER_PROFESSIONAL_ASSOCIATIONS"
+  ],
+  "certifications": [
+    "BOARD_CERTIFICATIONS",
+    "SPECIALIZATIONS",
+    "PROFESSIONAL_DESIGNATIONS"
+  ],
+  "awards": [
+    "LEGAL_AWARDS",
+    "RECOGNITION",
+    "PEER_REVIEWS"
+  ],
+  "publications": [
+    "LEGAL_PUBLICATIONS",
+    "ARTICLES",
+    "SPEAKING_ENGAGEMENTS"
+  ],
+
+  "//SECTION_9": "=== ATTORNEY INFORMATION ===",
+  "attorneys": [
+    {
+      "name": "ATTORNEY_FULL_NAME",
+      "title": "PARTNER_ASSOCIATE_TITLE",
+      "bio": "ATTORNEY_PROFESSIONAL_BIOGRAPHY",
+      "education": [
+        "LAW_SCHOOL_DEGREE_YEAR",
+        "UNDERGRADUATE_DEGREE_YEAR"
+      ],
+      "barAdmissions": [
+        "STATE_BAR_YEAR",
+        "FEDERAL_COURTS"
+      ],
+      "specializations": [
+        "PRACTICE_AREA_1",
+        "PRACTICE_AREA_2"
+      ],
+      "email": "ATTORNEY_EMAIL",
+      "phone": "DIRECT_PHONE_NUMBER",
+      "photoUrl": "URL_TO_PROFESSIONAL_PHOTO",
+      "yearsExperience": "NUMBER_OF_YEARS",
+      "notableAchievements": [
+        "MAJOR_CASES",
+        "AWARDS",
+        "RECOGNITION"
+      ]
+    }
+  ],
+
+  "//SECTION_10": "=== PRACTICE AREAS & SERVICES ===",
+  "practiceAreas": [
+    {
+      "name": "PRACTICE_AREA_NAME",
+      "description": "DETAILED_DESCRIPTION",
+      "urgencyLevel": "standard|urgent|emergency",
+      "keyServices": [
+        "SPECIFIC_SERVICE_1",
+        "SPECIFIC_SERVICE_2",
+        "SPECIFIC_SERVICE_3"
+      ],
+      "processSteps": [
+        "STEP_1_DESCRIPTION",
+        "STEP_2_DESCRIPTION",
+        "STEP_3_DESCRIPTION"
+      ],
+      "typicalTimeline": "EXPECTED_TIMEFRAME",
+      "feeStructure": "BILLING_APPROACH",
+      "commonQuestions": [
+        {
+          "question": "FREQUENTLY_ASKED_QUESTION",
+          "answer": "DETAILED_ANSWER"
+        }
+      ]
+    }
+  ],
+
+  "//SECTION_11": "=== CLIENT TESTIMONIALS ===",
+  "testimonials": [
+    {
+      "clientName": "CLIENT_NAME_OR_INITIALS",
+      "caseType": "PRACTICE_AREA",
+      "testimonial": "CLIENT_TESTIMONIAL_QUOTE",
+      "outcome": "CASE_RESULT_IF_APPROPRIATE",
+      "date": "MONTH_YEAR"
+    }
+  ],
+
+  "//SECTION_12": "=== CASE RESULTS & ACHIEVEMENTS ===",
+  "notableCaseResults": [
+    {
+      "caseType": "PRACTICE_AREA",
+      "result": "OUTCOME_ACHIEVED",
+      "description": "BRIEF_CASE_DESCRIPTION",
+      "year": "YEAR_RESOLVED"
+    }
+  ],
+
+  "//SECTION_13": "=== CONSULTATION & CONTACT PREFERENCES ===",
+  "consultationTypes": [
+    {
+      "type": "In-Person Consultation",
+      "duration": "60 minutes",
+      "fee": "FREE_OR_AMOUNT",
+      "description": "DESCRIPTION_OF_CONSULTATION"
+    },
+    {
+      "type": "Video Consultation",
+      "duration": "45 minutes", 
+      "fee": "FREE_OR_AMOUNT",
+      "description": "DESCRIPTION_OF_VIDEO_CONSULT"
+    },
+    {
+      "type": "Phone Consultation",
+      "duration": "30 minutes",
+      "fee": "FREE_OR_AMOUNT", 
+      "description": "DESCRIPTION_OF_PHONE_CONSULT"
+    }
+  ],
+  "emergencyConsultation": {
+    "available": true,
+    "phone": "EMERGENCY_PHONE_NUMBER",
+    "email": "EMERGENCY_EMAIL",
+    "responseTime": "EXPECTED_RESPONSE_TIME",
+    "description": "EMERGENCY_CONSULTATION_DETAILS"
+  },
+
+  "//SECTION_14": "=== CONTENT CUSTOMIZATION ===",
+  "heroTitlePrefix": "The Law Offices of",
+  "ctaPrimaryText": "Schedule Free Consultation",
+  "ctaSecondaryText": "Learn About Our Practice",
+  "featuresSectionTitle": "Why Choose Our Firm?",
+  "featuresDescriptionTemplate": "CUSTOM_FEATURES_DESCRIPTION",
+  "servicesSectionTitle": "Practice Areas",
+  "servicesSectionDescription": "CUSTOM_SERVICES_DESCRIPTION",
+  "servicesDescriptionTemplate": "CUSTOM_SERVICES_TEMPLATE",
+  "servicesCTAText": "Learn More",
+
+  "//SECTION_15": "=== PAGE CONTENT ===",
+  "aboutPageTitle": "About Our Firm",
+  "aboutFeaturesTitle": "Our Commitment",
+  "aboutServicesTitle": "Practice Areas",
+  "contactPageTitle": "Contact Our Firm",
+  "contactPageDescription": "CUSTOM_CONTACT_PAGE_DESCRIPTION",
+  "contactInfoTitle": "Schedule Consultation",
+  "contactFormTitle": "Request Legal Consultation",
+
+  "//SECTION_16": "=== FORM LABELS & MESSAGES ===",
+  "formNameLabel": "Full Name",
+  "formEmailLabel": "Email Address",
+  "formPhoneLabel": "Phone Number",
+  "formSubjectLabel": "Legal Matter Type",
+  "formMessageLabel": "Brief description of your legal matter",
+  "formSubmitText": "Request Consultation",
+  "formSendingText": "Submitting Request...",
+  "formSuccessMessage": "CUSTOM_SUCCESS_MESSAGE",
+  "formErrorMessage": "CUSTOM_ERROR_MESSAGE",
+
+  "//SECTION_17": "=== LEGAL DISCLAIMERS ===",
+  "attorneyClientPrivilege": "CUSTOM_PRIVILEGE_STATEMENT",
+  "confidentialityNotice": "CUSTOM_CONFIDENTIALITY_NOTICE",
+  "consultationDisclaimer": "CUSTOM_CONSULTATION_DISCLAIMER",
+  "websiteDisclaimer": "CUSTOM_WEBSITE_DISCLAIMER",
+
+  "//SECTION_18": "=== TECHNICAL CONFIGURATION ===",
+  "deploymentPlatform": "vercel",
+  "includePWA": false,
+  "cssApproach": "css-modules",
+  "features": {
+    "analytics": true,
+    "seo": true,
+    "darkMode": false,
+    "contactForm": true,
+    "socialLinks": true,
+    "businessHours": true,
+    "testimonials": true,
+    "blog": true,
+    "emergencyContact": true,
+    "attorneyProfiles": true,
+    "caseResults": true,
+    "multipleConsultationTypes": true
+  },
+
+  "//SECTION_19": "=== SEO & MARKETING ===",
+  "seoKeywords": [
+    "PRIMARY_KEYWORD_1",
+    "PRIMARY_KEYWORD_2", 
+    "LOCATION_KEYWORDS",
+    "PRACTICE_AREA_KEYWORDS"
+  ],
+  "localSEO": {
+    "serviceAreas": [
+      "PRIMARY_CITY",
+      "SURROUNDING_CITIES",
+      "COUNTY_NAME"
+    ],
+    "businessCategory": "Law Firm",
+    "gmbCategory": "GOOGLE_MY_BUSINESS_CATEGORY"
+  },
+
+  "//SECTION_20": "=== ADDITIONAL BUSINESS INFO ===",
+  "paymentOptions": [
+    "PAYMENT_METHOD_1",
+    "PAYMENT_METHOD_2",
+    "FINANCING_OPTIONS"
+  ],
+  "languages": [
+    "LANGUAGES_SPOKEN_BY_STAFF"
+  ],
+  "accessibility": {
+    "wheelchairAccessible": true,
+    "assistiveDevices": "AVAILABLE_ACCOMMODATIONS"
+  },
+  "insuranceAccepted": [
+    "INSURANCE_PLANS_IF_APPLICABLE"
+  ]
+} 

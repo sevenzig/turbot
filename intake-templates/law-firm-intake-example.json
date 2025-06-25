@@ -1,0 +1,377 @@
+{
+  "//": "=== LAW FIRM CLIENT INTAKE EXAMPLE ===",
+  "//1": "Example showing how to fill out the law firm intake template",
+  "//2": "This is filled with realistic sample data for reference",
+  "//3": "Usage: npm run init -- --config intake-templates/law-firm-intake-example.json",
+
+  "//SECTION_1": "=== PROJECT & DEVELOPER INFO ===",
+  "projectName": "davidson-law-group",
+  "authorName": "Your Name",
+  "authorEmail": "developer@yourcompany.com",
+  "githubUsername": "yourgithub",
+  "description": "Professional law firm website for Davidson Law Group",
+  "license": "MIT",
+  "repositoryUrl": "https://github.com/yourgithub/davidson-law-group",
+
+  "//SECTION_2": "=== CORE BUSINESS INFORMATION ===",
+  "businessName": "Davidson Law Group",
+  "businessShortName": "Davidson",
+  "businessTagline": "Protecting Your Rights, Securing Your Future",
+  "businessDescription": "Davidson Law Group has been serving the Chicago metropolitan area for over 25 years, providing exceptional legal representation in personal injury, family law, and estate planning. Our experienced attorneys combine deep legal expertise with personalized attention to achieve the best possible outcomes for our clients.",
+  "businessShortDescription": "Chicago law firm specializing in personal injury, family law, and estate planning with over 25 years of experience",
+
+  "//SECTION_3": "=== CONTACT INFORMATION ===",
+  "businessPhone": "(312) 555-0123",
+  "businessPhoneRaw": "3125550123",
+  "businessEmail": "info@davidsonlawgroup.com",
+  "emergencyPhone": "(312) 555-0199",
+  "emergencyEmail": "emergency@davidsonlawgroup.com",
+
+  "//SECTION_4": "=== PHYSICAL ADDRESS ===",
+  "businessStreet": "150 N Michigan Avenue, Suite 2800",
+  "businessCity": "Chicago",
+  "businessState": "Illinois",
+  "businessZip": "60601",
+  "businessLatitude": 41.8851,
+  "businessLongitude": -87.6244,
+  "parkingInfo": "Valet parking available in building lobby. Street parking and nearby parking garages also available.",
+  "buildingInfo": "28th floor of the Michigan Avenue Tower. Reception desk located at Suite 2800.",
+
+  "//SECTION_5": "=== WEBSITE & BRANDING ===",
+  "websiteUrl": "https://www.davidsonlawgroup.com",
+  "primaryColor": "#1F2937",
+  "primaryColorHover": "#111827",
+  "primaryColorLight": "#F3F4F6",
+  "secondaryColor": "#B91C1C",
+  "secondaryColorHover": "#991B1B",
+  "secondaryColorLight": "#FEE2E2",
+  "logoUrl": "https://www.davidsonlawgroup.com/assets/logo.png",
+  "faviconUrl": "https://www.davidsonlawgroup.com/assets/favicon.ico",
+
+  "//SECTION_6": "=== SOCIAL MEDIA & ONLINE PRESENCE ===",
+  "socialLinkedin": "https://linkedin.com/company/davidson-law-group",
+  "socialFacebook": "https://facebook.com/davidsonlawgroup",
+  "socialTwitter": "",
+  "socialInstagram": "",
+  "googleBusinessUrl": "https://goo.gl/maps/davidsonlawgroup",
+  "barAssociationProfiles": [
+    "https://www.isba.org/members/davidson",
+    "https://www.americanbar.org/members/davidson"
+  ],
+
+  "//SECTION_7": "=== BUSINESS HOURS ===",
+  "hoursMonday": "8:00 AM - 6:00 PM",
+  "hoursTuesday": "8:00 AM - 6:00 PM",
+  "hoursWednesday": "8:00 AM - 6:00 PM",
+  "hoursThursday": "8:00 AM - 6:00 PM",
+  "hoursFriday": "8:00 AM - 5:00 PM",
+  "hoursSaturday": "By Appointment Only",
+  "hoursSunday": "Emergency Consultations Only",
+  "emergencyAvailability": "24/7 for urgent legal matters and existing clients",
+  "consultationHours": "Monday-Friday 9:00 AM - 5:00 PM, Saturday by appointment",
+
+  "//SECTION_8": "=== FIRM CREDENTIALS & TRUST SIGNALS ===",
+  "firmEstablished": "1998",
+  "yearsInPractice": "25+",
+  "totalCasesHandled": "2,500+",
+  "successRate": "95%",
+  "barAssociations": [
+    "Illinois State Bar Association",
+    "American Bar Association",
+    "Chicago Bar Association",
+    "Illinois Trial Lawyers Association"
+  ],
+  "certifications": [
+    "Board Certified Personal Injury Attorney",
+    "Certified Family Law Specialist",
+    "Estate Planning Specialist"
+  ],
+  "awards": [
+    "Super Lawyers Rising Stars (2019-2023)",
+    "Best Lawyers in America (2020-2023)",
+    "Top 40 Under 40 - Illinois Trial Lawyers",
+    "AV Preeminent Martindale-Hubbell Rating"
+  ],
+  "publications": [
+    "Illinois Personal Injury Law Quarterly - Contributing Author",
+    "Family Law Today Magazine - Guest Speaker",
+    "Chicago Legal News - Monthly Columnist"
+  ],
+
+  "//SECTION_9": "=== ATTORNEY INFORMATION ===",
+  "attorneys": [
+    {
+      "name": "Michael Davidson",
+      "title": "Managing Partner",
+      "bio": "Michael Davidson founded Davidson Law Group in 1998 with a commitment to providing exceptional legal representation to individuals and families throughout Illinois. With over 25 years of experience, he has successfully handled thousands of personal injury, family law, and estate planning cases.",
+      "education": [
+        "Northwestern University School of Law, J.D., 1995",
+        "University of Illinois, B.A. Political Science, 1992"
+      ],
+      "barAdmissions": [
+        "Illinois State Bar, 1995",
+        "U.S. District Court Northern District of Illinois, 1996"
+      ],
+      "specializations": [
+        "Personal Injury",
+        "Medical Malpractice",
+        "Estate Planning"
+      ],
+      "email": "mdavidson@davidsonlawgroup.com",
+      "phone": "(312) 555-0124",
+      "photoUrl": "https://www.davidsonlawgroup.com/assets/attorneys/michael-davidson.jpg",
+      "yearsExperience": "25+",
+      "notableAchievements": [
+        "$2.3M settlement in medical malpractice case",
+        "Named to Illinois Super Lawyers for 5 consecutive years",
+        "Successfully argued before Illinois Supreme Court"
+      ]
+    },
+    {
+      "name": "Sarah Chen",
+      "title": "Senior Associate",
+      "bio": "Sarah Chen joins Davidson Law Group with extensive experience in family law and estate planning. She is known for her compassionate approach to sensitive family matters and her meticulous attention to detail in estate planning.",
+      "education": [
+        "University of Chicago Law School, J.D., 2010",
+        "Northwestern University, B.A. Economics, 2007"
+      ],
+      "barAdmissions": [
+        "Illinois State Bar, 2010",
+        "U.S. District Court Northern District of Illinois, 2011"
+      ],
+      "specializations": [
+        "Family Law",
+        "Estate Planning",
+        "Probate Administration"
+      ],
+      "email": "schen@davidsonlawgroup.com",
+      "phone": "(312) 555-0125",
+      "photoUrl": "https://www.davidsonlawgroup.com/assets/attorneys/sarah-chen.jpg",
+      "yearsExperience": "13",
+      "notableAchievements": [
+        "Rising Stars Super Lawyers recognition",
+        "Chicago Bar Association Family Law Committee Chair",
+        "Certified Estate Planning Specialist"
+      ]
+    }
+  ],
+
+  "//SECTION_10": "=== PRACTICE AREAS & SERVICES ===",
+  "practiceAreas": [
+    {
+      "name": "Personal Injury",
+      "description": "We represent clients injured due to the negligence of others, including auto accidents, slip and falls, medical malpractice, and workplace injuries. Our goal is to secure maximum compensation for your injuries and losses.",
+      "urgencyLevel": "urgent",
+      "keyServices": [
+        "Auto Accident Claims",
+        "Medical Malpractice",
+        "Slip and Fall Cases",
+        "Workers' Compensation",
+        "Wrongful Death Claims"
+      ],
+      "processSteps": [
+        "Free initial consultation to evaluate your case",
+        "Investigation and evidence gathering",
+        "Negotiation with insurance companies",
+        "Trial representation if necessary"
+      ],
+      "typicalTimeline": "6 months to 2 years depending on case complexity",
+      "feeStructure": "Contingency fee - no fee unless we win",
+      "commonQuestions": [
+        {
+          "question": "How much does it cost to hire a personal injury attorney?",
+          "answer": "We work on a contingency fee basis, which means you pay no attorney fees unless we recover compensation for you. We advance all case expenses and are only reimbursed if we win your case."
+        },
+        {
+          "question": "How long do I have to file a personal injury claim?",
+          "answer": "In Illinois, the statute of limitations for most personal injury claims is 2 years from the date of injury. However, there are exceptions, so it's important to consult with an attorney as soon as possible."
+        }
+      ]
+    },
+    {
+      "name": "Family Law",
+      "description": "Our family law practice handles divorce, child custody, adoption, and other family-related legal matters with sensitivity and expertise. We understand that family legal issues are emotionally challenging and work to achieve favorable outcomes while minimizing stress.",
+      "urgencyLevel": "standard",
+      "keyServices": [
+        "Divorce and Legal Separation",
+        "Child Custody and Support",
+        "Adoption Proceedings",
+        "Prenuptial Agreements",
+        "Domestic Violence Protection"
+      ],
+      "processSteps": [
+        "Confidential consultation to understand your situation",
+        "Development of legal strategy tailored to your goals",
+        "Filing of necessary court documents",
+        "Negotiation and mediation when possible",
+        "Court representation if trial is necessary"
+      ],
+      "typicalTimeline": "3 months to 1 year depending on complexity and cooperation",
+      "feeStructure": "Hourly billing with detailed monthly statements",
+      "commonQuestions": [
+        {
+          "question": "How is child custody determined in Illinois?",
+          "answer": "Illinois courts make custody decisions based on the best interests of the child, considering factors such as the child's wishes, each parent's ability to provide care, and the child's relationship with each parent."
+        }
+      ]
+    }
+  ],
+
+  "//SECTION_11": "=== CLIENT TESTIMONIALS ===",
+  "testimonials": [
+    {
+      "clientName": "J.S.",
+      "caseType": "Personal Injury",
+      "testimonial": "Michael Davidson and his team were incredible during my car accident case. They handled everything while I focused on recovery, and secured a settlement that exceeded my expectations.",
+      "outcome": "Successful settlement",
+      "date": "March 2023"
+    },
+    {
+      "clientName": "M.R.",
+      "caseType": "Family Law",
+      "testimonial": "Sarah Chen helped me through a difficult divorce with professionalism and compassion. She kept me informed throughout the process and achieved a fair outcome for my children and me.",
+      "outcome": "Favorable divorce settlement",
+      "date": "January 2023"
+    }
+  ],
+
+  "//SECTION_12": "=== CASE RESULTS & ACHIEVEMENTS ===",
+  "notableCaseResults": [
+    {
+      "caseType": "Medical Malpractice",
+      "result": "$2.3 million settlement",
+      "description": "Birth injury case resulting in cerebral palsy due to medical negligence",
+      "year": "2022"
+    },
+    {
+      "caseType": "Auto Accident",
+      "result": "$850,000 verdict",
+      "description": "Multi-vehicle accident with traumatic brain injury",
+      "year": "2023"
+    }
+  ],
+
+  "//SECTION_13": "=== CONSULTATION & CONTACT PREFERENCES ===",
+  "consultationTypes": [
+    {
+      "type": "In-Person Consultation",
+      "duration": "60 minutes",
+      "fee": "FREE",
+      "description": "Meet with our attorneys in our downtown Chicago office to discuss your case in detail and review relevant documents."
+    },
+    {
+      "type": "Video Consultation",
+      "duration": "45 minutes",
+      "fee": "FREE",
+      "description": "Convenient video consultation via Zoom or phone for clients who cannot visit our office in person."
+    },
+    {
+      "type": "Phone Consultation",
+      "duration": "30 minutes",
+      "fee": "FREE",
+      "description": "Initial phone consultation to discuss your legal matter and determine if we can assist you."
+    }
+  ],
+  "emergencyConsultation": {
+    "available": true,
+    "phone": "(312) 555-0199",
+    "email": "emergency@davidsonlawgroup.com",
+    "responseTime": "Within 2 hours during business hours, within 24 hours on weekends",
+    "description": "Emergency consultation available for urgent legal matters such as arrest, restraining orders, or time-sensitive legal issues."
+  },
+
+  "//SECTION_14": "=== CONTENT CUSTOMIZATION ===",
+  "heroTitlePrefix": "Davidson Law Group",
+  "ctaPrimaryText": "Schedule Free Consultation",
+  "ctaSecondaryText": "Learn About Our Practice",
+  "featuresSectionTitle": "Why Choose Davidson Law Group?",
+  "featuresDescriptionTemplate": "Over 25 years of legal excellence serving Chicago families with integrity, expertise, and personalized attention.",
+  "servicesSectionTitle": "Practice Areas",
+  "servicesSectionDescription": "Comprehensive legal services delivered with expertise, integrity, and unwavering commitment to our clients.",
+  "servicesDescriptionTemplate": "Expert legal representation tailored to your specific needs and circumstances.",
+  "servicesCTAText": "Learn More",
+
+  "//SECTION_15": "=== PAGE CONTENT ===",
+  "aboutPageTitle": "About Davidson Law Group",
+  "aboutFeaturesTitle": "Our Commitment to Excellence",
+  "aboutServicesTitle": "Practice Areas",
+  "contactPageTitle": "Contact Davidson Law Group",
+  "contactPageDescription": "Facing a legal matter? Contact us for experienced representation and confidential consultation. We're here to protect your rights and secure your future.",
+  "contactInfoTitle": "Schedule Your Free Consultation",
+  "contactFormTitle": "Request Legal Consultation",
+
+  "//SECTION_16": "=== FORM LABELS & MESSAGES ===",
+  "formNameLabel": "Full Name",
+  "formEmailLabel": "Email Address",
+  "formPhoneLabel": "Phone Number",
+  "formSubjectLabel": "Legal Matter Type",
+  "formMessageLabel": "Brief description of your legal matter (all communications are confidential)",
+  "formSubmitText": "Request Consultation",
+  "formSendingText": "Submitting Request...",
+  "formSuccessMessage": "Thank you for contacting Davidson Law Group. We will review your information and contact you within 24 hours to schedule your free consultation.",
+  "formErrorMessage": "There was an error submitting your request. Please call our office directly at (312) 555-0123 or try again later.",
+
+  "//SECTION_17": "=== LEGAL DISCLAIMERS ===",
+  "attorneyClientPrivilege": "All communications with Davidson Law Group are protected by attorney-client privilege and treated as strictly confidential.",
+  "confidentialityNotice": "Your privacy is important to us. All consultations and communications are kept strictly confidential under attorney-client privilege.",
+  "consultationDisclaimer": "A consultation does not create an attorney-client relationship. Representation begins only upon signing a written retainer agreement.",
+  "websiteDisclaimer": "This website is for informational purposes only and does not constitute legal advice. Reading this website does not create an attorney-client relationship.",
+
+  "//SECTION_18": "=== TECHNICAL CONFIGURATION ===",
+  "deploymentPlatform": "vercel",
+  "includePWA": false,
+  "cssApproach": "css-modules",
+  "features": {
+    "analytics": true,
+    "seo": true,
+    "darkMode": false,
+    "contactForm": true,
+    "socialLinks": true,
+    "businessHours": true,
+    "testimonials": true,
+    "blog": true,
+    "emergencyContact": true,
+    "attorneyProfiles": true,
+    "caseResults": true,
+    "multipleConsultationTypes": true
+  },
+
+  "//SECTION_19": "=== SEO & MARKETING ===",
+  "seoKeywords": [
+    "Chicago personal injury lawyer",
+    "Illinois family law attorney",
+    "estate planning lawyer Chicago",
+    "auto accident attorney Illinois"
+  ],
+  "localSEO": {
+    "serviceAreas": [
+      "Chicago",
+      "Evanston",
+      "Oak Park",
+      "Schaumburg",
+      "Cook County"
+    ],
+    "businessCategory": "Law Firm",
+    "gmbCategory": "Personal Injury Attorney"
+  },
+
+  "//SECTION_20": "=== ADDITIONAL BUSINESS INFO ===",
+  "paymentOptions": [
+    "Contingency fee for personal injury cases",
+    "Hourly billing for family law and estate planning",
+    "Payment plans available",
+    "Major credit cards accepted"
+  ],
+  "languages": [
+    "English",
+    "Spanish",
+    "Mandarin Chinese"
+  ],
+  "accessibility": {
+    "wheelchairAccessible": true,
+    "assistiveDevices": "ADA compliant office with wheelchair access and assistive listening devices available"
+  },
+  "insuranceAccepted": [
+    "Most major insurance companies for workers' compensation cases"
+  ]
+} 

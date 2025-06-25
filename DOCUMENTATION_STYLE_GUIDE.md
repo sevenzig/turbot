@@ -9,7 +9,7 @@ for both developers and AI assistants.
 - **Convention:** All documentation files must use `kebab-case`.
 - **Examples:**
   - `README.md`
-  - `template-usage.md`
+  - `docs/template-usage.md`
   - `style-guide.md`
   - `contributing-guide.md`
 
@@ -55,12 +55,12 @@ for both developers and AI assistants.
 ## 6. Links
 
 - **Internal Links:** Use relative paths for internal links to other documentation files.
-  - **Example:** `[See the usage guide](./template-usage.md) for more details.`
+  - **Example:** `[See the usage guide](./docs/template-usage.md) for more details.`
 - **External Links:** Use full URLs for external links.
 
 ## 7. Document Purpose
 
-- **User-Facing Documentation:** Files like `README.md` and `template-usage.md` should be written
+- **User-Facing Documentation:** Files like `README.md` and `docs/template-usage.md` should be written
   for a developer using the template. The language should be clear, helpful, and focused on
   practical application.
 - **Example Implementations:** Specific use cases (like the "Brewery Website") should be framed as

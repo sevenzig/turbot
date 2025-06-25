@@ -1,0 +1,317 @@
+{
+  "//": "=== BEAUTY SALON/SPA CLIENT INTAKE TEMPLATE ===",
+  "//1": "Complete business information template for beauty business website generation",
+  "//2": "Fill out all sections with client's actual beauty business details",
+  "//3": "Usage: npm run init -- --config [beauty-business]-intake.json",
+
+  "//SECTION_1": "=== PROJECT & DEVELOPER INFO ===",
+  "projectName": "CLIENT_BEAUTY_BUSINESS_LOWERCASE_DASHED",
+  "authorName": "YOUR_NAME",
+  "authorEmail": "YOUR_EMAIL@DOMAIN.COM",
+  "githubUsername": "YOUR_GITHUB_USERNAME",
+  "description": "Elegant beauty salon website for [CLIENT_BEAUTY_BUSINESS]",
+  "license": "MIT",
+  "repositoryUrl": "https://github.com/YOUR_GITHUB_USERNAME/CLIENT_PROJECT_NAME",
+
+  "//SECTION_2": "=== CORE BUSINESS INFORMATION ===",
+  "businessName": "FULL_BEAUTY_BUSINESS_NAME",
+  "businessShortName": "SHORT_BEAUTY_NAME",
+  "businessTagline": "BEAUTY_TAGLINE_OR_MOTTO",
+  "businessDescription": "DETAILED_BEAUTY_DESCRIPTION_2_3_SENTENCES",
+  "businessShortDescription": "ONE_SENTENCE_BEAUTY_SUMMARY",
+  "businessType": "SALON_SPA_MEDISPA_BARBERSHOP_ETC",
+  "beautyPhilosophy": "BEAUTY_PHILOSOPHY_OR_APPROACH",
+  "establishedYear": "YEAR_BUSINESS_ESTABLISHED",
+  "salonSize": "NUMBER_OF_STATIONS_OR_ROOMS",
+
+  "//SECTION_3": "=== CONTACT INFORMATION ===",
+  "businessPhone": "FORMATTED_PHONE_NUMBER",
+  "businessPhoneRaw": "DIGITS_ONLY_PHONE",
+  "businessEmail": "MAIN_SALON_EMAIL",
+  "bookingPhone": "APPOINTMENT_BOOKING_PHONE",
+  "bookingEmail": "APPOINTMENT_BOOKING_EMAIL",
+  "weddingPhone": "BRIDAL_SERVICES_PHONE",
+  "weddingEmail": "BRIDAL_SERVICES_EMAIL",
+
+  "//SECTION_4": "=== SALON LOCATION ===",
+  "businessStreet": "STREET_ADDRESS",
+  "businessCity": "CITY_NAME",
+  "businessState": "STATE_OR_PROVINCE",
+  "businessZip": "ZIP_POSTAL_CODE",
+  "businessLatitude": 0.000000,
+  "businessLongitude": 0.000000,
+  "parkingInfo": "PARKING_INFORMATION_FOR_CLIENTS",
+  "salonAmbiance": "SALON_ATMOSPHERE_DESCRIPTION",
+  "wheelchairAccessible": true,
+  "privateRooms": "PRIVATE_TREATMENT_ROOM_AVAILABILITY",
+
+  "//SECTION_5": "=== WEBSITE & BRANDING ===",
+  "websiteUrl": "https://DOMAIN.COM",
+  "primaryColor": "#EC4899",
+  "primaryColorHover": "#DB2777",
+  "primaryColorLight": "#FCE7F3",
+  "secondaryColor": "#8B5CF6",
+  "secondaryColorHover": "#7C3AED",
+  "secondaryColorLight": "#EDE9FE",
+  "logoUrl": "URL_TO_SALON_LOGO",
+  "faviconUrl": "URL_TO_FAVICON",
+
+  "//SECTION_6": "=== SOCIAL MEDIA & ONLINE PRESENCE ===",
+  "socialInstagram": "INSTAGRAM_HANDLE",
+  "socialFacebook": "FACEBOOK_PAGE_URL",
+  "socialPinterest": "PINTEREST_PROFILE",
+  "socialTiktok": "TIKTOK_HANDLE",
+  "socialYoutube": "YOUTUBE_CHANNEL",
+  "googleBusinessUrl": "GOOGLE_BUSINESS_PROFILE_URL",
+  "bookingPlatforms": ["SCHEDULICITY", "SALON_IRIS", "SQUARE_APPOINTMENTS"],
+
+  "//SECTION_7": "=== BUSINESS HOURS ===",
+  "hoursMonday": "MONDAY_HOURS_OR_CLOSED",
+  "hoursTuesday": "TUESDAY_HOURS",
+  "hoursWednesday": "WEDNESDAY_HOURS",
+  "hoursThursday": "THURSDAY_HOURS",
+  "hoursFriday": "FRIDAY_HOURS",
+  "hoursSaturday": "SATURDAY_HOURS",
+  "hoursSunday": "SUNDAY_HOURS",
+  "extendedHours": "SPECIAL_EVENT_EXTENDED_HOURS",
+  "holidayHours": "HOLIDAY_SCHEDULE",
+
+  "//SECTION_8": "=== BEAUTY SERVICES ===",
+  "hairServices": [
+    {
+      "serviceName": "HAIR_SERVICE_NAME",
+      "description": "SERVICE_DESCRIPTION",
+      "duration": "SERVICE_DURATION_MINUTES",
+      "price": "SERVICE_PRICE_RANGE",
+      "includes": ["WHAT_SERVICE_INCLUDES"]
+    }
+  ],
+  "nailServices": [
+    {
+      "serviceName": "NAIL_SERVICE_NAME",
+      "description": "SERVICE_DESCRIPTION",
+      "duration": "SERVICE_DURATION_MINUTES",
+      "price": "SERVICE_PRICE_RANGE"
+    }
+  ],
+  "skinCareServices": [
+    {
+      "serviceName": "SKINCARE_SERVICE_NAME",
+      "description": "SERVICE_DESCRIPTION",
+      "duration": "SERVICE_DURATION_MINUTES",
+      "price": "SERVICE_PRICE_RANGE",
+      "skinTypes": ["SUITABLE_SKIN_TYPES"]
+    }
+  ],
+  "specialtyServices": [
+    "MICROBLADING",
+    "LASH_EXTENSIONS",
+    "PERMANENT_MAKEUP",
+    "MASSAGE_THERAPY"
+  ],
+
+  "//SECTION_9": "=== STAFF & SPECIALISTS ===",
+  "beautyProfessionals": [
+    {
+      "name": "PROFESSIONAL_FULL_NAME",
+      "title": "STYLIST_ESTHETICIAN_NAIL_TECH_ETC",
+      "bio": "PROFESSIONAL_BACKGROUND_AND_EXPERIENCE",
+      "specialties": [
+        "SPECIALTY_SERVICE_1",
+        "SPECIALTY_SERVICE_2"
+      ],
+      "certifications": [
+        "LICENSE_OR_CERTIFICATION_1",
+        "LICENSE_OR_CERTIFICATION_2"
+      ],
+      "yearsExperience": "NUMBER_OF_YEARS",
+      "education": [
+        "BEAUTY_SCHOOL_OR_TRAINING"
+      ],
+      "photoUrl": "URL_TO_PROFESSIONAL_PHOTO",
+      "availableDays": ["MONDAY", "TUESDAY", "WEDNESDAY"],
+      "bookingAvailable": true
+    }
+  ],
+
+  "//SECTION_10": "=== PRODUCT LINES ===",
+  "productBrands": [
+    "HAIR_PRODUCT_BRAND_1",
+    "HAIR_PRODUCT_BRAND_2",
+    "SKINCARE_BRAND_1",
+    "SKINCARE_BRAND_2"
+  ],
+  "retailProducts": [
+    {
+      "productType": "PRODUCT_CATEGORY",
+      "brands": ["BRAND_1", "BRAND_2"],
+      "priceRange": "PRICE_RANGE",
+      "description": "PRODUCT_CATEGORY_DESCRIPTION"
+    }
+  ],
+  "organicProducts": "ORGANIC_NATURAL_PRODUCT_AVAILABILITY",
+  "professionalProducts": "PROFESSIONAL_GRADE_PRODUCTS",
+  "giftCertificates": "GIFT_CERTIFICATE_AVAILABILITY",
+
+  "//SECTION_11": "=== PRICING & PACKAGES ===",
+  "servicePricing": "GENERAL_PRICING_STRUCTURE",
+  "packageDeals": [
+    {
+      "packageName": "PACKAGE_NAME",
+      "description": "PACKAGE_DESCRIPTION",
+      "services": ["SERVICE_1", "SERVICE_2"],
+      "price": "PACKAGE_PRICE",
+      "savings": "AMOUNT_SAVED"
+    }
+  ],
+  "membershipPrograms": "LOYALTY_MEMBERSHIP_PROGRAMS",
+  "studentDiscounts": "STUDENT_DISCOUNT_POLICY",
+  "seniorDiscounts": "SENIOR_DISCOUNT_POLICY",
+  "firstTimeDiscounts": "NEW_CLIENT_PROMOTIONS",
+
+  "//SECTION_12": "=== APPOINTMENT POLICIES ===",
+  "bookingPolicy": "APPOINTMENT_BOOKING_POLICY",
+  "cancellationPolicy": "APPOINTMENT_CANCELLATION_POLICY",
+  "noShowPolicy": "NO_SHOW_FEE_POLICY",
+  "lateArrivalPolicy": "LATE_ARRIVAL_POLICY",
+  "consultationPolicy": "CONSULTATION_REQUIREMENTS",
+  "walkInPolicy": "WALK_IN_AVAILABILITY",
+  "groupBookings": "GROUP_APPOINTMENT_POLICY",
+
+  "//SECTION_13": "=== SPECIAL SERVICES ===",
+  "bridalServices": [
+    "BRIDAL_HAIR_STYLING",
+    "BRIDAL_MAKEUP",
+    "BRIDAL_PARTY_SERVICES",
+    "TRIAL_RUNS"
+  ],
+  "specialEventServices": [
+    "PROM_STYLING",
+    "PHOTO_SHOOT_PREP",
+    "SPECIAL_OCCASION_MAKEUP"
+  ],
+  "mobileServices": "ON_LOCATION_SERVICE_AVAILABILITY",
+  "partyServices": "SALON_PARTY_PACKAGES",
+
+  "//SECTION_14": "=== PAYMENT & POLICIES ===",
+  "paymentMethods": [
+    "CASH",
+    "CREDIT_CARDS",
+    "DEBIT_CARDS",
+    "GIFT_CARDS",
+    "MOBILE_PAYMENTS"
+  ],
+  "tipPolicy": "GRATUITY_POLICY",
+  "depositPolicy": "APPOINTMENT_DEPOSIT_REQUIREMENTS",
+  "refundPolicy": "SERVICE_REFUND_POLICY",
+  "priceChangePolicy": "PRICE_CHANGE_NOTIFICATION_POLICY",
+
+  "//SECTION_15": "=== CLIENT TESTIMONIALS ===",
+  "testimonials": [
+    {
+      "clientName": "CLIENT_NAME_OR_INITIALS",
+      "testimonial": "CLIENT_TESTIMONIAL_QUOTE",
+      "serviceReceived": "SERVICE_OR_TREATMENT",
+      "rating": "STAR_RATING_1_5",
+      "date": "MONTH_YEAR"
+    }
+  ],
+
+  "//SECTION_16": "=== HEALTH & SAFETY ===",
+  "sanitationProtocols": "HEALTH_SAFETY_PROTOCOLS",
+  "allergyPolicy": "ALLERGY_SENSITIVITY_POLICY",
+  "pregnancyPolicy": "PREGNANCY_SERVICE_RESTRICTIONS",
+  "licenseInformation": "STATE_LICENSE_INFORMATION",
+  "insuranceInfo": "LIABILITY_INSURANCE_INFO",
+
+  "//SECTION_17": "=== EVENTS & PROMOTIONS ===",
+  "monthlyPromotions": [
+    {
+      "promotionName": "PROMOTION_NAME",
+      "description": "PROMOTION_DETAILS",
+      "validDates": "PROMOTION_PERIOD",
+      "discount": "DISCOUNT_AMOUNT_OR_PERCENTAGE"
+    }
+  ],
+  "seasonalServices": [
+    "SUMMER_TREATMENTS",
+    "HOLIDAY_PACKAGES",
+    "SPRING_SPECIALS"
+  ],
+  "beautyEvents": [
+    "MAKEUP_WORKSHOPS",
+    "PRODUCT_LAUNCHES",
+    "BEAUTY_CLASSES"
+  ],
+
+  "//SECTION_18": "=== CONTENT CUSTOMIZATION ===",
+  "heroTitlePrefix": "Experience Beauty at",
+  "ctaPrimaryText": "Book Your Appointment",
+  "ctaSecondaryText": "View Our Services",
+  "featuresSectionTitle": "Why Choose Our Salon?",
+  "featuresDescriptionTemplate": "CUSTOM_BEAUTY_EXPERIENCE_DESCRIPTION",
+  "servicesSectionTitle": "Beauty Services",
+  "servicesSectionDescription": "CUSTOM_SERVICES_DESCRIPTION",
+  "servicesDescriptionTemplate": "CUSTOM_SERVICES_TEMPLATE",
+  "servicesCTAText": "Learn More",
+
+  "//SECTION_19": "=== PAGE CONTENT ===",
+  "aboutPageTitle": "About Our Salon",
+  "aboutFeaturesTitle": "Our Beauty Philosophy",
+  "aboutServicesTitle": "Services & Treatments",
+  "contactPageTitle": "Book Your Appointment",
+  "contactPageDescription": "CUSTOM_CONTACT_PAGE_DESCRIPTION",
+  "contactInfoTitle": "Visit Our Salon",
+  "contactFormTitle": "Schedule Consultation",
+
+  "//SECTION_20": "=== FORM LABELS & MESSAGES ===",
+  "formNameLabel": "Full Name",
+  "formEmailLabel": "Email",
+  "formPhoneLabel": "Phone Number",
+  "formServiceLabel": "Desired Service",
+  "formDateLabel": "Preferred Date",
+  "formTimeLabel": "Preferred Time",
+  "formProfessionalLabel": "Preferred Professional",
+  "formMessageLabel": "Special Requests or Allergies",
+  "formSubmitText": "Request Appointment",
+  "formSendingText": "Submitting...",
+  "formSuccessMessage": "CUSTOM_SUCCESS_MESSAGE",
+  "formErrorMessage": "CUSTOM_ERROR_MESSAGE",
+
+  "//SECTION_21": "=== TECHNICAL CONFIGURATION ===",
+  "deploymentPlatform": "vercel",
+  "includePWA": false,
+  "cssApproach": "css-modules",
+  "features": {
+    "analytics": true,
+    "seo": true,
+    "darkMode": false,
+    "contactForm": true,
+    "socialLinks": true,
+    "businessHours": true,
+    "testimonials": true,
+    "blog": false,
+    "onlineBooking": true,
+    "serviceMenu": true,
+    "staffProfiles": true,
+    "portfolioGallery": true,
+    "promotions": true
+  },
+
+  "//SECTION_22": "=== SEO & MARKETING ===",
+  "seoKeywords": [
+    "BEAUTY_SERVICE_KEYWORDS",
+    "LOCATION_KEYWORDS",
+    "TREATMENT_KEYWORDS",
+    "SALON_SPA_KEYWORDS"
+  ],
+  "localSEO": {
+    "serviceAreas": [
+      "PRIMARY_CITY",
+      "SURROUNDING_AREAS",
+      "SERVICE_REGION"
+    ],
+    "businessCategory": "Beauty Salon",
+    "gmbCategory": "GOOGLE_MY_BUSINESS_CATEGORY"
+  }
+} 

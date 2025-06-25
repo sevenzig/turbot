@@ -1,0 +1,329 @@
+{
+  "//": "=== FITNESS STUDIO/GYM CLIENT INTAKE TEMPLATE ===",
+  "//1": "Complete business information template for fitness business website generation",
+  "//2": "Fill out all sections with client's actual fitness business details",
+  "//3": "Usage: npm run init -- --config [fitness-business]-intake.json",
+
+  "//SECTION_1": "=== PROJECT & DEVELOPER INFO ===",
+  "projectName": "CLIENT_FITNESS_BUSINESS_LOWERCASE_DASHED",
+  "authorName": "YOUR_NAME",
+  "authorEmail": "YOUR_EMAIL@DOMAIN.COM",
+  "githubUsername": "YOUR_GITHUB_USERNAME",
+  "description": "Modern fitness studio website for [CLIENT_FITNESS_BUSINESS]",
+  "license": "MIT",
+  "repositoryUrl": "https://github.com/YOUR_GITHUB_USERNAME/CLIENT_PROJECT_NAME",
+
+  "//SECTION_2": "=== CORE BUSINESS INFORMATION ===",
+  "businessName": "FULL_FITNESS_BUSINESS_NAME",
+  "businessShortName": "SHORT_FITNESS_NAME",
+  "businessTagline": "FITNESS_TAGLINE_OR_MOTTO",
+  "businessDescription": "DETAILED_FITNESS_DESCRIPTION_2_3_SENTENCES",
+  "businessShortDescription": "ONE_SENTENCE_FITNESS_SUMMARY",
+  "fitnessType": "GYM_STUDIO_CROSSFIT_YOGA_PILATES_ETC",
+  "fitnessPhilosophy": "FITNESS_PHILOSOPHY_OR_APPROACH",
+  "establishedYear": "YEAR_BUSINESS_ESTABLISHED",
+  "facilitySize": "SQUARE_FOOTAGE_OR_SIZE",
+
+  "//SECTION_3": "=== CONTACT INFORMATION ===",
+  "businessPhone": "FORMATTED_PHONE_NUMBER",
+  "businessPhoneRaw": "DIGITS_ONLY_PHONE",
+  "businessEmail": "MAIN_FITNESS_EMAIL",
+  "membershipPhone": "MEMBERSHIP_INQUIRIES_PHONE",
+  "membershipEmail": "MEMBERSHIP_EMAIL",
+  "personalTrainingPhone": "PERSONAL_TRAINING_PHONE",
+  "personalTrainingEmail": "PERSONAL_TRAINING_EMAIL",
+
+  "//SECTION_4": "=== FACILITY LOCATION ===",
+  "businessStreet": "STREET_ADDRESS",
+  "businessCity": "CITY_NAME",
+  "businessState": "STATE_OR_PROVINCE",
+  "businessZip": "ZIP_POSTAL_CODE",
+  "businessLatitude": 0.000000,
+  "businessLongitude": 0.000000,
+  "parkingInfo": "PARKING_INFORMATION_FOR_MEMBERS",
+  "publicTransit": "PUBLIC_TRANSPORTATION_ACCESS",
+  "lockerRooms": "LOCKER_ROOM_AMENITIES",
+  "wheelchairAccessible": true,
+
+  "//SECTION_5": "=== WEBSITE & BRANDING ===",
+  "websiteUrl": "https://DOMAIN.COM",
+  "primaryColor": "#059669",
+  "primaryColorHover": "#047857",
+  "primaryColorLight": "#D1FAE5",
+  "secondaryColor": "#DC2626",
+  "secondaryColorHover": "#B91C1C",
+  "secondaryColorLight": "#FEE2E2",
+  "logoUrl": "URL_TO_FITNESS_LOGO",
+  "faviconUrl": "URL_TO_FAVICON",
+
+  "//SECTION_6": "=== SOCIAL MEDIA & ONLINE PRESENCE ===",
+  "socialInstagram": "INSTAGRAM_HANDLE",
+  "socialFacebook": "FACEBOOK_PAGE_URL",
+  "socialTwitter": "TWITTER_HANDLE",
+  "socialYoutube": "YOUTUBE_CHANNEL",
+  "socialTiktok": "TIKTOK_HANDLE",
+  "googleBusinessUrl": "GOOGLE_BUSINESS_PROFILE_URL",
+  "fitnessApps": ["MINDBODY", "CLASSPASS", "OTHER_FITNESS_APPS"],
+
+  "//SECTION_7": "=== FACILITY HOURS ===",
+  "hoursMonday": "MONDAY_HOURS",
+  "hoursTuesday": "TUESDAY_HOURS",
+  "hoursWednesday": "WEDNESDAY_HOURS",
+  "hoursThursday": "THURSDAY_HOURS",
+  "hoursFriday": "FRIDAY_HOURS",
+  "hoursSaturday": "SATURDAY_HOURS",
+  "hoursSunday": "SUNDAY_HOURS",
+  "classScheduleHours": "CLASS_SCHEDULE_HOURS",
+  "personalTrainingHours": "PERSONAL_TRAINING_HOURS",
+  "holidayHours": "HOLIDAY_SCHEDULE",
+
+  "//SECTION_8": "=== EQUIPMENT & FACILITIES ===",
+  "gymEquipment": [
+    "CARDIO_EQUIPMENT_LIST",
+    "STRENGTH_EQUIPMENT_LIST",
+    "FREE_WEIGHTS_EQUIPMENT",
+    "FUNCTIONAL_FITNESS_EQUIPMENT"
+  ],
+  "specialtyEquipment": [
+    "SPECIALTY_EQUIPMENT_1",
+    "SPECIALTY_EQUIPMENT_2"
+  ],
+  "amenities": [
+    "LOCKER_ROOMS",
+    "SHOWERS",
+    "SAUNA_STEAM_ROOM",
+    "JUICE_BAR",
+    "CHILD_CARE"
+  ],
+  "studioSpaces": [
+    "GROUP_FITNESS_STUDIO",
+    "YOGA_STUDIO",
+    "CYCLING_ROOM",
+    "PRIVATE_TRAINING_ROOMS"
+  ],
+
+  "//SECTION_9": "=== CLASSES & PROGRAMS ===",
+  "groupClasses": [
+    {
+      "className": "CLASS_NAME",
+      "description": "CLASS_DESCRIPTION",
+      "duration": "CLASS_DURATION_MINUTES",
+      "intensity": "BEGINNER_INTERMEDIATE_ADVANCED",
+      "maxCapacity": "MAX_PARTICIPANTS",
+      "equipment": "EQUIPMENT_NEEDED"
+    }
+  ],
+  "classTypes": [
+    "YOGA",
+    "PILATES",
+    "CYCLING",
+    "HIIT",
+    "STRENGTH_TRAINING"
+  ],
+  "specialPrograms": [
+    "WEIGHT_LOSS_PROGRAM",
+    "STRENGTH_BUILDING",
+    "REHABILITATION",
+    "SENIOR_FITNESS"
+  ],
+  "virtualClasses": "ONLINE_CLASS_AVAILABILITY",
+
+  "//SECTION_10": "=== TRAINERS & STAFF ===",
+  "trainers": [
+    {
+      "name": "TRAINER_FULL_NAME",
+      "title": "PERSONAL_TRAINER_GROUP_INSTRUCTOR_ETC",
+      "bio": "TRAINER_BACKGROUND_AND_EXPERIENCE",
+      "certifications": [
+        "FITNESS_CERTIFICATION_1",
+        "FITNESS_CERTIFICATION_2"
+      ],
+      "specialties": [
+        "TRAINING_SPECIALTY_1",
+        "TRAINING_SPECIALTY_2"
+      ],
+      "yearsExperience": "NUMBER_OF_YEARS",
+      "photoUrl": "URL_TO_TRAINER_PHOTO",
+      "classesOffered": ["CLASSES_THEY_TEACH"],
+      "availableForPersonalTraining": true
+    }
+  ],
+
+  "//SECTION_11": "=== MEMBERSHIP OPTIONS ===",
+  "membershipTypes": [
+    {
+      "membershipName": "MEMBERSHIP_TYPE_NAME",
+      "description": "MEMBERSHIP_DESCRIPTION",
+      "monthlyPrice": "MONTHLY_COST",
+      "annualPrice": "ANNUAL_COST_IF_AVAILABLE",
+      "benefits": [
+        "BENEFIT_1",
+        "BENEFIT_2",
+        "BENEFIT_3"
+      ],
+      "restrictions": "ANY_RESTRICTIONS_OR_LIMITATIONS"
+    }
+  ],
+  "dropInRates": "DROP_IN_CLASS_PRICING",
+  "classPackages": "CLASS_PACKAGE_OPTIONS",
+  "studentDiscounts": "STUDENT_DISCOUNT_POLICY",
+  "seniorDiscounts": "SENIOR_DISCOUNT_POLICY",
+  "corporateRates": "CORPORATE_MEMBERSHIP_OPTIONS",
+
+  "//SECTION_12": "=== PERSONAL TRAINING ===",
+  "personalTrainingAvailable": true,
+  "personalTrainingRates": "PERSONAL_TRAINING_PRICING",
+  "sessionDurations": ["30_MINUTES", "45_MINUTES", "60_MINUTES"],
+  "packageDeals": "PERSONAL_TRAINING_PACKAGES",
+  "specialtyTraining": [
+    "WEIGHT_LOSS",
+    "STRENGTH_BUILDING",
+    "SPORTS_SPECIFIC",
+    "INJURY_REHABILITATION"
+  ],
+  "nutritionCoaching": "NUTRITION_COACHING_AVAILABILITY",
+
+  "//SECTION_13": "=== POLICIES & PROCEDURES ===",
+  "membershipContract": "MEMBERSHIP_CONTRACT_TERMS",
+  "cancellationPolicy": "MEMBERSHIP_CANCELLATION_POLICY",
+  "freezePolicy": "MEMBERSHIP_FREEZE_POLICY",
+  "classBookingPolicy": "CLASS_RESERVATION_POLICY",
+  "classCancellationPolicy": "CLASS_CANCELLATION_POLICY",
+  "guestPolicy": "GUEST_PASS_POLICY",
+  "ageRestrictions": "MINIMUM_AGE_REQUIREMENTS",
+
+  "//SECTION_14": "=== PAYMENT & BILLING ===",
+  "paymentMethods": [
+    "CREDIT_CARDS",
+    "DEBIT_CARDS",
+    "BANK_TRANSFER",
+    "CASH"
+  ],
+  "billingFrequency": "MONTHLY_ANNUAL_OPTIONS",
+  "paymentProcessing": "AUTOMATIC_BILLING_SETUP",
+  "membershipFees": "JOINING_FEE_STRUCTURE",
+  "lateFeePolicy": "LATE_PAYMENT_FEE_POLICY",
+
+  "//SECTION_15": "=== HEALTH & SAFETY ===",
+  "healthScreening": "HEALTH_SCREENING_REQUIREMENTS",
+  "waiverRequired": "LIABILITY_WAIVER_POLICY",
+  "emergencyProcedures": "EMERGENCY_RESPONSE_PROCEDURES",
+  "cleaningProtocols": "FACILITY_CLEANING_STANDARDS",
+  "equipmentMaintenance": "EQUIPMENT_MAINTENANCE_SCHEDULE",
+  "firstAidAvailable": "FIRST_AID_STAFF_AVAILABILITY",
+
+  "//SECTION_16": "=== MEMBER TESTIMONIALS ===",
+  "testimonials": [
+    {
+      "memberName": "MEMBER_NAME_OR_INITIALS",
+      "testimonial": "MEMBER_TESTIMONIAL_QUOTE",
+      "achievement": "FITNESS_GOAL_ACHIEVED",
+      "membershipType": "MEMBERSHIP_LEVEL",
+      "date": "MONTH_YEAR"
+    }
+  ],
+
+  "//SECTION_17": "=== SPECIAL EVENTS & CHALLENGES ===",
+  "fitnessEvents": [
+    {
+      "eventName": "EVENT_NAME",
+      "description": "EVENT_DESCRIPTION",
+      "frequency": "WEEKLY_MONTHLY_ANNUAL",
+      "targetAudience": "EVENT_TARGET_AUDIENCE"
+    }
+  ],
+  "fitnessChallenges": [
+    "30_DAY_CHALLENGE",
+    "WEIGHT_LOSS_CHALLENGE",
+    "STRENGTH_CHALLENGE"
+  ],
+  "workshops": [
+    "NUTRITION_WORKSHOP",
+    "FORM_TECHNIQUE_WORKSHOP",
+    "GOAL_SETTING_WORKSHOP"
+  ],
+
+  "//SECTION_18": "=== NUTRITION & WELLNESS ===",
+  "nutritionServices": "NUTRITION_COUNSELING_AVAILABLE",
+  "supplementSales": "SUPPLEMENT_RETAIL_AVAILABLE",
+  "juiceBar": "JUICE_BAR_SMOOTHIE_BAR",
+  "wellnessPrograms": [
+    "WELLNESS_PROGRAM_1",
+    "WELLNESS_PROGRAM_2"
+  ],
+  "recoveryServices": [
+    "MASSAGE_THERAPY",
+    "STRETCHING_SESSIONS",
+    "RECOVERY_EQUIPMENT"
+  ],
+
+  "//SECTION_19": "=== CONTENT CUSTOMIZATION ===",
+  "heroTitlePrefix": "Transform Your Fitness at",
+  "ctaPrimaryText": "Start Your Fitness Journey",
+  "ctaSecondaryText": "View Class Schedule",
+  "featuresSectionTitle": "Why Choose Our Fitness Studio?",
+  "featuresDescriptionTemplate": "CUSTOM_FITNESS_EXPERIENCE_DESCRIPTION",
+  "servicesSectionTitle": "Fitness Programs",
+  "servicesSectionDescription": "CUSTOM_PROGRAMS_DESCRIPTION",
+  "servicesDescriptionTemplate": "CUSTOM_SERVICES_TEMPLATE",
+  "servicesCTAText": "Learn More",
+
+  "//SECTION_20": "=== PAGE CONTENT ===",
+  "aboutPageTitle": "About Our Fitness Studio",
+  "aboutFeaturesTitle": "Our Fitness Philosophy",
+  "aboutServicesTitle": "Programs & Classes",
+  "contactPageTitle": "Start Your Fitness Journey",
+  "contactPageDescription": "CUSTOM_CONTACT_PAGE_DESCRIPTION",
+  "contactInfoTitle": "Visit Our Studio",
+  "contactFormTitle": "Get Started Today",
+
+  "//SECTION_21": "=== FORM LABELS & MESSAGES ===",
+  "formNameLabel": "Full Name",
+  "formEmailLabel": "Email",
+  "formPhoneLabel": "Phone Number",
+  "formGoalsLabel": "Fitness Goals",
+  "formExperienceLabel": "Fitness Experience Level",
+  "formInterestsLabel": "Program Interests",
+  "formMessageLabel": "Questions or Special Needs",
+  "formSubmitText": "Start My Journey",
+  "formSendingText": "Submitting...",
+  "formSuccessMessage": "CUSTOM_SUCCESS_MESSAGE",
+  "formErrorMessage": "CUSTOM_ERROR_MESSAGE",
+
+  "//SECTION_22": "=== TECHNICAL CONFIGURATION ===",
+  "deploymentPlatform": "vercel",
+  "includePWA": false,
+  "cssApproach": "css-modules",
+  "features": {
+    "analytics": true,
+    "seo": true,
+    "darkMode": false,
+    "contactForm": true,
+    "socialLinks": true,
+    "businessHours": true,
+    "testimonials": true,
+    "blog": false,
+    "classSchedule": true,
+    "membershipRegistration": true,
+    "trainerProfiles": true,
+    "fitnessPrograms": true,
+    "eventCalendar": true
+  },
+
+  "//SECTION_23": "=== SEO & MARKETING ===",
+  "seoKeywords": [
+    "FITNESS_TYPE_KEYWORDS",
+    "LOCATION_KEYWORDS",
+    "WORKOUT_KEYWORDS",
+    "WELLNESS_KEYWORDS"
+  ],
+  "localSEO": {
+    "serviceAreas": [
+      "PRIMARY_CITY",
+      "SURROUNDING_NEIGHBORHOODS",
+      "SERVICE_AREA"
+    ],
+    "businessCategory": "Fitness Studio",
+    "gmbCategory": "GOOGLE_MY_BUSINESS_CATEGORY"
+  }
+} 

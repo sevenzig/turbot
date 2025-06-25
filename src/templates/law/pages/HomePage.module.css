@@ -1,0 +1,69 @@
+/**
+ * Law Firm Homepage Styles
+ * Professional layout for legal practice homepage
+ */
+
+.lawHomePage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-background);
+}
+
+/* Section spacing and transitions */
+.lawHomePage > section {
+  transition: all var(--transition-speed) var(--transition-timing);
+}
+
+.lawHomePage > section:nth-child(even) {
+  background: var(--color-background-secondary);
+}
+
+.lawHomePage > section:nth-child(odd) {
+  background: var(--color-background);
+}
+
+/* Ensure proper spacing between sections */
+.lawHomePage > section + section {
+  border-top: 1px solid transparent;
+}
+
+/* Professional section dividers */
+.lawHomePage > section:not(:first-child)::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: linear-gradient(
+    90deg, 
+    transparent 0%, 
+    var(--color-border-light) 20%, 
+    var(--color-border) 50%, 
+    var(--color-border-light) 80%, 
+    transparent 100%
+  );
+  margin: 0 auto;
+  width: 90%;
+  max-width: var(--container-max-width);
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .lawHomePage {
+    overflow-x: hidden;
+  }
+}
+
+/* Smooth scrolling for navigation */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Print styles */
+@media print {
+  .lawHomePage {
+    color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+} 

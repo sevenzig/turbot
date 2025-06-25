@@ -1,0 +1,84 @@
+{
+  "//": "=== BREWERY TEMPLATE CONFIGURATION ===",
+  "//1": "Preset configuration for brewery businesses",
+  "//2": "Usage: npm run init -- --config presets/brewery.config.json",
+
+  "projectName": "brewery-website",
+  "authorName": "[AUTHOR_NAME]",
+  "authorEmail": "[AUTHOR_EMAIL]",
+  "githubUsername": "[GITHUB_USERNAME]",
+
+  "description": "A modern brewery website showcasing craft beer, taproom, and events",
+  "license": "MIT",
+  "repositoryUrl": "[REPOSITORY_URL]",
+
+  "businessName": "[BREWERY_NAME]",
+  "businessShortName": "[BREWERY_SHORT_NAME]",
+  "businessTagline": "Crafting exceptional beer since [YEAR]",
+  "businessDescription": "A craft brewery dedicated to creating unique, high-quality beers using traditional methods and innovative techniques. Our taproom offers a welcoming space to enjoy fresh beer, local food, and community events.",
+  "businessShortDescription": "Craft brewery offering fresh beer, taproom experience, and community events",
+
+  "businessPhone": "[PHONE]",
+  "businessPhoneRaw": "[PHONE_RAW]",
+  "businessEmail": "[EMAIL]",
+
+  "businessStreet": "[STREET]",
+  "businessCity": "[CITY]",
+  "businessState": "[STATE]",
+  "businessZip": "[ZIP]",
+  "businessLatitude": 0,
+  "businessLongitude": 0,
+
+  "websiteUrl": "[WEBSITE]",
+  "primaryColor": "#8B4513",
+  "primaryColorHover": "#7A3E11",
+  "primaryColorLight": "#D2B48C",
+  "secondaryColor": "#DAA520",
+  "secondaryColorHover": "#B8860B",
+  "secondaryColorLight": "#F5DEB3",
+
+  "hoursMonday": "Closed",
+  "hoursTuesday": "4:00 PM - 10:00 PM",
+  "hoursWednesday": "4:00 PM - 10:00 PM",
+  "hoursThursday": "4:00 PM - 10:00 PM",
+  "hoursFriday": "3:00 PM - 11:00 PM",
+  "hoursSaturday": "12:00 PM - 11:00 PM",
+  "hoursSunday": "12:00 PM - 8:00 PM",
+
+  "businessFeature1": "Fresh Craft Beer",
+  "businessFeature2": "Welcoming Taproom",
+  "businessFeature3": "Local Community Focus",
+  "businessFeature4": "Expert Brewing",
+
+  "businessService1": "Craft Beer on Tap",
+  "businessService2": "Beer To-Go",
+  "businessService3": "Private Events",
+  "businessService4": "Brewery Tours",
+
+  "heroTitlePrefix": "Welcome to",
+  "ctaPrimaryText": "Visit Our Taproom",
+  "ctaSecondaryText": "View Our Beers",
+
+  "featuresSectionTitle": "Why Choose Our Brewery?",
+  "featuresDescriptionTemplate": "Experience the difference of locally crafted beer in our welcoming taproom atmosphere.",
+
+  "servicesSectionTitle": "What We Offer",
+  "servicesSectionDescription": "From fresh pints to special events, discover all the ways to enjoy our craft beer.",
+  "servicesDescriptionTemplate": "Premium craft beer experience with local ingredients and community focus.",
+  "servicesCTAText": "Learn More",
+
+  "deploymentPlatform": "vercel",
+  "includePWA": false,
+  "cssApproach": "css-modules",
+
+  "features": {
+    "analytics": true,
+    "seo": true,
+    "darkMode": false,
+    "contactForm": true,
+    "socialLinks": true,
+    "businessHours": true,
+    "testimonials": true,
+    "blog": false
+  }
+} 

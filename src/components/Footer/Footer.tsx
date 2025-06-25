@@ -1,5 +1,5 @@
 import React from 'react';
-import { businessInfo } from '@data/businessInfo';
+import { businessInfo } from '../../data/businessInfo';
 import styles from './Footer.module.css';
 
 const Footer: React.FC = () => {
@@ -12,9 +12,9 @@ const Footer: React.FC = () => {
           {/* Business Info */}
           <div className={styles.footerSection}>
             <h3 className={styles.footerTitle}>{businessInfo.name}</h3>
-            <p className={styles.footerDescription}>
-              {businessInfo.shortDescription}
-            </p>
+                    <p className={styles.footerDescription}>
+          {businessInfo.shortDescription}
+        </p>
           </div>
 
           {/* Contact Info */}

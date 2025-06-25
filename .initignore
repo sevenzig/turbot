@@ -9,8 +9,8 @@
 
 # Initialization system files
 init-template.ts
-init-config.example.json
-INIT_README.md
+examples/configs/init-config.example.json
+docs/setup/INIT_README.md
 .initignore
 
 # Node.js and package management

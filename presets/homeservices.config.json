@@ -1,0 +1,107 @@
+{
+  "//": "=== HOME SERVICES TEMPLATE CONFIGURATION ===",
+  "//1": "Preset configuration for home services, contractors, and maintenance professionals",
+  "//2": "Usage: npm run init -- --config presets/homeservices.config.json",
+
+  "projectName": "home-services-website",
+  "authorName": "[AUTHOR_NAME]",
+  "authorEmail": "[AUTHOR_EMAIL]",
+  "githubUsername": "[GITHUB_USERNAME]",
+
+  "description": "A professional home services website with service areas, emergency contact, and project galleries",
+  "license": "MIT",
+  "repositoryUrl": "[REPOSITORY_URL]",
+
+  "businessName": "[COMPANY_NAME]",
+  "businessShortName": "[COMPANY_SHORT_NAME]",
+  "businessTagline": "Professional home solutions you can trust",
+  "businessDescription": "A reliable home services company providing comprehensive solutions for your property maintenance and improvement needs. Our licensed professionals deliver quality workmanship, prompt service, and fair pricing for everything from routine maintenance to emergency repairs.",
+  "businessShortDescription": "Professional home services company providing reliable maintenance, repairs, and improvement solutions",
+
+  "businessPhone": "[PHONE]",
+  "businessPhoneRaw": "[PHONE_RAW]",
+  "businessEmail": "[EMAIL]",
+
+  "businessStreet": "[STREET]",
+  "businessCity": "[CITY]",
+  "businessState": "[STATE]",
+  "businessZip": "[ZIP]",
+  "businessLatitude": 0,
+  "businessLongitude": 0,
+
+  "websiteUrl": "[WEBSITE]",
+  "primaryColor": "#059669",
+  "primaryColorHover": "#047857",
+  "primaryColorLight": "#D1FAE5",
+  "secondaryColor": "#DC2626",
+  "secondaryColorHover": "#B91C1C",
+  "secondaryColorLight": "#FEE2E2",
+
+  "hoursMonday": "7:00 AM - 7:00 PM",
+  "hoursTuesday": "7:00 AM - 7:00 PM",
+  "hoursWednesday": "7:00 AM - 7:00 PM",
+  "hoursThursday": "7:00 AM - 7:00 PM",
+  "hoursFriday": "7:00 AM - 7:00 PM",
+  "hoursSaturday": "8:00 AM - 6:00 PM",
+  "hoursSunday": "Emergency Only",
+
+  "businessFeature1": "Licensed Professionals",
+  "businessFeature2": "Quality Workmanship",
+  "businessFeature3": "Emergency Service",
+  "businessFeature4": "Fair Pricing",
+
+  "businessService1": "Plumbing",
+  "businessService2": "Electrical",
+  "businessService3": "HVAC",
+  "businessService4": "Emergency Repairs",
+
+  "heroTitlePrefix": "Welcome to",
+  "ctaPrimaryText": "Get Free Estimate",
+  "ctaSecondaryText": "Emergency Service",
+
+  "featuresSectionTitle": "Why Choose Our Services?",
+  "featuresDescriptionTemplate": "Experience reliable home services with our licensed professionals and commitment to quality workmanship.",
+
+  "servicesSectionTitle": "Home Services",
+  "servicesSectionDescription": "Comprehensive home maintenance and repair services to keep your property safe, comfortable, and efficient.",
+  "servicesDescriptionTemplate": "Professional home services delivered with quality workmanship and reliable customer care.",
+  "servicesCTAText": "Get Quote",
+
+  "aboutPageTitle": "About Our Company",
+  "aboutFeaturesTitle": "Our Service Promise",
+  "aboutServicesTitle": "Home Services",
+
+  "contactPageTitle": "Contact Our Team",
+  "contactPageDescription": "Need home services or emergency repair? Contact us for prompt, professional service you can trust.",
+  "contactInfoTitle": "Get Service Today",
+  "contactPhoneLabel": "Phone",
+  "contactEmailLabel": "Email",
+  "contactAddressLabel": "Service Address",
+  "contactDirectionsText": "Get Directions",
+  "contactHoursLabel": "Service Hours",
+
+  "contactFormTitle": "Request Service Estimate",
+  "formNameLabel": "Full Name",
+  "formEmailLabel": "Email",
+  "formSubjectLabel": "Service Needed",
+  "formMessageLabel": "Describe your home service needs",
+  "formSubmitText": "Request Estimate",
+  "formSendingText": "Submitting...",
+  "formSuccessMessage": "Service request submitted! We'll contact you soon with an estimate.",
+  "formErrorMessage": "Failed to submit request. Please call us directly for service.",
+
+  "deploymentPlatform": "vercel",
+  "includePWA": false,
+  "cssApproach": "css-modules",
+
+  "features": {
+    "analytics": true,
+    "seo": true,
+    "darkMode": false,
+    "contactForm": true,
+    "socialLinks": true,
+    "businessHours": true,
+    "testimonials": true,
+    "blog": false
+  }
+} 

@@ -1,0 +1,107 @@
+{
+  "//": "=== AUTO REPAIR/SERVICE TEMPLATE CONFIGURATION ===",
+  "//1": "Preset configuration for auto repair shops, automotive services, and mechanics",
+  "//2": "Usage: npm run init -- --config presets/autorepair.config.json",
+
+  "projectName": "auto-repair-website",
+  "authorName": "[AUTHOR_NAME]",
+  "authorEmail": "[AUTHOR_EMAIL]",
+  "githubUsername": "[GITHUB_USERNAME]",
+
+  "description": "A professional auto repair website with service information, estimates, and customer trust features",
+  "license": "MIT",
+  "repositoryUrl": "[REPOSITORY_URL]",
+
+  "businessName": "[SHOP_NAME]",
+  "businessShortName": "[SHOP_SHORT_NAME]",
+  "businessTagline": "Reliable service, honest repairs",
+  "businessDescription": "A trusted automotive service center providing comprehensive car care with honest pricing, expert technicians, and quality parts. We're committed to keeping your vehicle running safely and efficiently with transparent service and reliable repairs you can count on.",
+  "businessShortDescription": "Professional auto repair shop providing reliable automotive services with honest pricing and expert care",
+
+  "businessPhone": "[PHONE]",
+  "businessPhoneRaw": "[PHONE_RAW]",
+  "businessEmail": "[EMAIL]",
+
+  "businessStreet": "[STREET]",
+  "businessCity": "[CITY]",
+  "businessState": "[STATE]",
+  "businessZip": "[ZIP]",
+  "businessLatitude": 0,
+  "businessLongitude": 0,
+
+  "websiteUrl": "[WEBSITE]",
+  "primaryColor": "#0F172A",
+  "primaryColorHover": "#020617",
+  "primaryColorLight": "#F1F5F9",
+  "secondaryColor": "#EAB308",
+  "secondaryColorHover": "#CA8A04",
+  "secondaryColorLight": "#FEF3C7",
+
+  "hoursMonday": "7:00 AM - 6:00 PM",
+  "hoursTuesday": "7:00 AM - 6:00 PM",
+  "hoursWednesday": "7:00 AM - 6:00 PM",
+  "hoursThursday": "7:00 AM - 6:00 PM",
+  "hoursFriday": "7:00 AM - 6:00 PM",
+  "hoursSaturday": "8:00 AM - 5:00 PM",
+  "hoursSunday": "Closed",
+
+  "businessFeature1": "Certified Technicians",
+  "businessFeature2": "Quality Parts & Service",
+  "businessFeature3": "Honest Pricing",
+  "businessFeature4": "Service Warranties",
+
+  "businessService1": "General Repairs",
+  "businessService2": "Oil Changes",
+  "businessService3": "Brake Service",
+  "businessService4": "Diagnostic Testing",
+
+  "heroTitlePrefix": "Welcome to",
+  "ctaPrimaryText": "Schedule Service",
+  "ctaSecondaryText": "Get Estimate",
+
+  "featuresSectionTitle": "Why Choose Our Shop?",
+  "featuresDescriptionTemplate": "Experience automotive service you can trust with our certified technicians and commitment to honest, reliable repairs.",
+
+  "servicesSectionTitle": "Automotive Services",
+  "servicesSectionDescription": "Comprehensive auto repair and maintenance services to keep your vehicle running safely and efficiently.",
+  "servicesDescriptionTemplate": "Professional automotive service with quality parts, expert technicians, and honest pricing.",
+  "servicesCTAText": "Learn More",
+
+  "aboutPageTitle": "About Our Shop",
+  "aboutFeaturesTitle": "Our Commitment",
+  "aboutServicesTitle": "Auto Services",
+
+  "contactPageTitle": "Contact Our Shop",
+  "contactPageDescription": "Need automotive service? Contact us for reliable repairs, maintenance, or emergency assistance.",
+  "contactInfoTitle": "Schedule Service",
+  "contactPhoneLabel": "Phone",
+  "contactEmailLabel": "Email",
+  "contactAddressLabel": "Shop Address",
+  "contactDirectionsText": "Get Directions",
+  "contactHoursLabel": "Service Hours",
+
+  "contactFormTitle": "Request Service Estimate",
+  "formNameLabel": "Full Name",
+  "formEmailLabel": "Email",
+  "formSubjectLabel": "Service Type",
+  "formMessageLabel": "Describe your vehicle's issue or service needs",
+  "formSubmitText": "Request Estimate",
+  "formSendingText": "Submitting...",
+  "formSuccessMessage": "Service request received! We'll contact you with an estimate soon.",
+  "formErrorMessage": "Failed to submit request. Please call our shop directly.",
+
+  "deploymentPlatform": "vercel",
+  "includePWA": false,
+  "cssApproach": "css-modules",
+
+  "features": {
+    "analytics": true,
+    "seo": true,
+    "darkMode": false,
+    "contactForm": true,
+    "socialLinks": true,
+    "businessHours": true,
+    "testimonials": true,
+    "blog": false
+  }
+} 

@@ -1,0 +1,107 @@
+{
+  "//": "=== RETAIL STORE TEMPLATE CONFIGURATION ===",
+  "//1": "Preset configuration for retail stores, boutiques, and product-based businesses",
+  "//2": "Usage: npm run init -- --config presets/retail.config.json",
+
+  "projectName": "retail-store-website",
+  "authorName": "[AUTHOR_NAME]",
+  "authorEmail": "[AUTHOR_EMAIL]",
+  "githubUsername": "[GITHUB_USERNAME]",
+
+  "description": "A modern retail store website with product showcase, online ordering, and customer experience features",
+  "license": "MIT",
+  "repositoryUrl": "[REPOSITORY_URL]",
+
+  "businessName": "[STORE_NAME]",
+  "businessShortName": "[STORE_SHORT_NAME]",
+  "businessTagline": "Quality products, exceptional value",
+  "businessDescription": "A premier retail destination offering carefully curated products that combine quality, style, and value. We pride ourselves on exceptional customer service and creating shopping experiences that delight our customers both in-store and online.",
+  "businessShortDescription": "Quality retail store offering curated products with exceptional customer service and value",
+
+  "businessPhone": "[PHONE]",
+  "businessPhoneRaw": "[PHONE_RAW]",
+  "businessEmail": "[EMAIL]",
+
+  "businessStreet": "[STREET]",
+  "businessCity": "[CITY]",
+  "businessState": "[STATE]",
+  "businessZip": "[ZIP]",
+  "businessLatitude": 0,
+  "businessLongitude": 0,
+
+  "websiteUrl": "[WEBSITE]",
+  "primaryColor": "#7C3AED",
+  "primaryColorHover": "#6D28D9",
+  "primaryColorLight": "#EDE9FE",
+  "secondaryColor": "#F59E0B",
+  "secondaryColorHover": "#D97706",
+  "secondaryColorLight": "#FEF3C7",
+
+  "hoursMonday": "10:00 AM - 8:00 PM",
+  "hoursTuesday": "10:00 AM - 8:00 PM",
+  "hoursWednesday": "10:00 AM - 8:00 PM",
+  "hoursThursday": "10:00 AM - 8:00 PM",
+  "hoursFriday": "10:00 AM - 9:00 PM",
+  "hoursSaturday": "9:00 AM - 9:00 PM",
+  "hoursSunday": "11:00 AM - 6:00 PM",
+
+  "businessFeature1": "Curated Product Selection",
+  "businessFeature2": "Expert Customer Service",
+  "businessFeature3": "Quality Guarantee",
+  "businessFeature4": "Easy Returns & Exchanges",
+
+  "businessService1": "In-Store Shopping",
+  "businessService2": "Online Ordering",
+  "businessService3": "Custom Orders",
+  "businessService4": "Gift Services",
+
+  "heroTitlePrefix": "Shop at",
+  "ctaPrimaryText": "Shop Now",
+  "ctaSecondaryText": "View Products",
+
+  "featuresSectionTitle": "Why Shop With Us?",
+  "featuresDescriptionTemplate": "Experience exceptional retail service with our carefully curated products and customer-first approach.",
+
+  "servicesSectionTitle": "Shopping Options",
+  "servicesSectionDescription": "Flexible shopping experiences designed to meet your needs, whether in-store or online.",
+  "servicesDescriptionTemplate": "Convenient shopping options with quality products and exceptional customer service.",
+  "servicesCTAText": "Learn More",
+
+  "aboutPageTitle": "About Our Store",
+  "aboutFeaturesTitle": "What Makes Us Special",
+  "aboutServicesTitle": "Shopping Services",
+
+  "contactPageTitle": "Contact Our Store",
+  "contactPageDescription": "Get in touch with questions about products, orders, or visit our store location.",
+  "contactInfoTitle": "Store Information",
+  "contactPhoneLabel": "Phone",
+  "contactEmailLabel": "Email",
+  "contactAddressLabel": "Store Address",
+  "contactDirectionsText": "Get Directions",
+  "contactHoursLabel": "Store Hours",
+
+  "contactFormTitle": "Send us a Message",
+  "formNameLabel": "Name",
+  "formEmailLabel": "Email",
+  "formSubjectLabel": "Subject",
+  "formMessageLabel": "Message",
+  "formSubmitText": "Send Message",
+  "formSendingText": "Sending...",
+  "formSuccessMessage": "Message sent successfully! We'll respond soon.",
+  "formErrorMessage": "Failed to send message. Please call or visit our store.",
+
+  "deploymentPlatform": "vercel",
+  "includePWA": true,
+  "cssApproach": "css-modules",
+
+  "features": {
+    "analytics": true,
+    "seo": true,
+    "darkMode": false,
+    "contactForm": true,
+    "socialLinks": true,
+    "businessHours": true,
+    "testimonials": true,
+    "blog": false
+  }
+} 

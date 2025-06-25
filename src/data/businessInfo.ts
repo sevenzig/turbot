@@ -1,6 +1,6 @@
 /**
- * Business information template
- * Replace all placeholder values with your actual business information
+ * Generic Business Information Template
+ * This serves as the default business template before industry-specific templates are applied
  */
 
 export interface BusinessInfo {
@@ -9,7 +9,7 @@ export interface BusinessInfo {
   tagline: string;
   description: string;
   shortDescription: string;
-
+  
   address: {
     street: string;
     city: string;
@@ -21,7 +21,7 @@ export interface BusinessInfo {
       longitude: number;
     };
   };
-
+  
   contact: {
     phone: {
       raw: string;
@@ -30,20 +30,19 @@ export interface BusinessInfo {
     };
     email: string;
   };
-
+  
   social: {
     facebook?: string;
     instagram?: string;
     twitter?: string;
     linkedin?: string;
-    youtube?: string;
   };
-
+  
   website: {
     domain: string;
     baseUrl: string;
   };
-
+  
   hours: {
     monday: string;
     tuesday: string;
@@ -53,155 +52,106 @@ export interface BusinessInfo {
     saturday: string;
     sunday: string;
   };
-
+  
   features: string[];
   services: string[];
 }
 
+// Professional web development business information
 export const businessInfo: BusinessInfo = {
-  // Basic Information - REPLACE WITH YOUR BUSINESS INFO
-  name: 'Your Business Name',
-  shortName: 'Business',
-  tagline: 'Professional Services & Solutions',
-  description: 'We provide exceptional services tailored to meet your unique needs. Our experienced team is dedicated to delivering high-quality solutions that drive results for your business.',
-  shortDescription: 'Professional services & solutions tailored to your business needs.',
+  // Basic business information
+  name: 'Elite Web Solutions',
+  shortName: 'EWS',
+  tagline: 'Secure, Fast, Mobile-Optimized Websites That Drive Business Results',
+  description: 'With 25 years of web development experience, I create secure, fast-loading, mobile-optimized websites that help established businesses succeed online. From custom development to ongoing optimization, I deliver complete web solutions in just 4 weeks with transparent processes and proven results.',
+  shortDescription: 'Expert web developer with 25 years of experience creating secure, fast, mobile-optimized websites for established businesses',
 
-  // Address Information - REPLACE WITH YOUR ACTUAL ADDRESS
+  // Address information
   address: {
-    street: '123 Main Street',
-    city: 'Your City',
-    state: 'State',
-    zip: '12345',
-    full: '123 Main Street, Your City, State 12345',
+    street: '456 Tech Innovation Drive',
+    city: 'Austin',
+    state: 'TX',
+    zip: '78701',
+    full: '456 Tech Innovation Drive, Austin, TX 78701',
     coordinates: {
-      latitude: 40.7128, // Replace with your actual coordinates
-      longitude: -74.006, // Replace with your actual coordinates
-    },
+      latitude: 30.2672,
+      longitude: -97.7431
+    }
   },
 
-  // Contact Information - REPLACE WITH YOUR CONTACT INFO
+  // Contact information
   contact: {
     phone: {
-      raw: '555-123-4567',
-      formatted: '(555) 123-4567',
-      link: 'tel:+15551234567',
+      raw: '512-555-0199',
+      formatted: '(512) 555-0199',
+      link: 'tel:+15125550199'
     },
-    email: 'info@yourbusiness.com',
+    email: 'hello@elitewebsolutions.com'
   },
 
-  // Social Media - ADD YOUR SOCIAL MEDIA LINKS
+  // Social media
   social: {
-    facebook: 'https://facebook.com/yourbusiness',
-    instagram: 'https://instagram.com/yourbusiness',
-    twitter: 'https://twitter.com/yourbusiness',
-    linkedin: 'https://linkedin.com/company/yourbusiness',
-    // Remove any platforms you don't use
+    linkedin: 'https://linkedin.com/in/elite-web-developer',
+    twitter: 'https://twitter.com/elitewebsolutions'
   },
 
-  // Website Information - UPDATE WITH YOUR DOMAIN
+  // Website information
   website: {
-    domain: 'yourbusiness.com',
-    baseUrl: 'https://yourbusiness.com',
+    domain: 'elitewebsolutions.com',
+    baseUrl: 'https://elitewebsolutions.com'
   },
 
-  // Business Hours - UPDATE WITH YOUR ACTUAL HOURS
+  // Business hours
   hours: {
-    monday: '9:00 AM - 5:00 PM',
-    tuesday: '9:00 AM - 5:00 PM',
-    wednesday: '9:00 AM - 5:00 PM',
-    thursday: '9:00 AM - 5:00 PM',
+    monday: '9:00 AM - 6:00 PM',
+    tuesday: '9:00 AM - 6:00 PM',
+    wednesday: '9:00 AM - 6:00 PM',
+    thursday: '9:00 AM - 6:00 PM',
     friday: '9:00 AM - 5:00 PM',
-    saturday: '10:00 AM - 3:00 PM',
-    sunday: 'Closed',
+    saturday: 'By Appointment',
+    sunday: 'Emergency Support Available'
   },
 
-  // Business Features - CUSTOMIZE FOR YOUR BUSINESS
+  // Key features highlighting technical excellence and business value
   features: [
-    'Professional Expertise',
-    'Reliable Service',
-    'Customer-First Approach',
-    '24/7 Support Available',
+    'Secure & Protected',
+    'Lightning Fast',
+    'Mobile Optimized',
+    '25 Years Experience'
   ],
-
-  // Services Offered - CUSTOMIZE FOR YOUR BUSINESS
+  
+  // Core service offerings
   services: [
-    'Consulting Services',
-    'Project Management',
-    'Custom Solutions',
-    'Support & Maintenance',
-  ],
+    'Custom Website Development',
+    'WordPress Development',
+    'SEO & Optimization',
+    'Hosting & Maintenance'
+  ]
 };
 
-// Business Hours Utility Functions
+// Utility functions for business data
 export function getCurrentBusinessStatus() {
   const now = new Date();
   const currentHour = now.getHours();
-
-  // This is a basic implementation - customize based on your needs
-  const isWeekend = now.getDay() === 0 || now.getDay() === 6;
-  const isBusinessHours = currentHour >= 9 && currentHour < 17;
-
-  const isOpen = !isWeekend && isBusinessHours;
-
-  if (isOpen) {
-    return {
-      isOpen: true,
-      message: 'Open today until 5:00 PM',
-      status: 'open',
-    };
-  } else if (isWeekend) {
-    return {
-      isOpen: false,
-      message: 'Closed - Opens Monday at 9:00 AM',
-      status: 'closed',
-    };
-  } else {
-    return {
-      isOpen: false,
-      message: 'Closed - Opens tomorrow at 9:00 AM',
-      status: 'closed',
-    };
+  const currentDay = now.toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase();
+  
+  const todayHours = businessInfo.hours[currentDay as keyof typeof businessInfo.hours];
+  
+  if (todayHours === 'Closed' || todayHours === 'By Appointment') {
+    return { isOpen: false, status: 'Closed', nextOpen: 'Monday 9:00 AM' };
   }
-}
-
-export function getFormattedAddress(): string {
-  return businessInfo.address.full;
+  
+  // Simple check for business hours (9 AM - 5 PM on weekdays)
+  if (currentHour >= 9 && currentHour < 17) {
+    return { isOpen: true, status: 'Open', closesAt: '5:00 PM' };
+  }
+  
+  return { isOpen: false, status: 'Closed', nextOpen: 'Tomorrow 9:00 AM' };
 }
 
 export function getGoogleMapsUrl(): string {
-  const { latitude, longitude } = businessInfo.address.coordinates;
-  if (latitude === 0 && longitude === 0) {
-    // Fallback to address search if coordinates not set
-    return `https://maps.google.com/maps?q=${encodeURIComponent(businessInfo.address.full)}`;
-  }
-  return `https://maps.google.com/maps?q=${latitude},${longitude}`;
+  return `https://maps.google.com/maps?q=${encodeURIComponent(businessInfo.address.full)}`;
 }
 
-export function getDirectionsText(): string {
-  return `Get directions to ${businessInfo.address.full}`;
-}
-
-// SEO Data Generation
-export function generateSEOData(pageTitle?: string) {
-  const title = pageTitle
-    ? `${pageTitle} | ${businessInfo.name}`
-    : `${businessInfo.name} - ${businessInfo.tagline}`;
-
-  return {
-    title,
-    description: businessInfo.shortDescription,
-    keywords: [
-      businessInfo.name,
-      businessInfo.shortName,
-      ...businessInfo.services,
-      businessInfo.address.city,
-      businessInfo.address.state,
-    ].join(', '),
-    ogTitle: title,
-    ogDescription: businessInfo.shortDescription,
-    ogUrl: businessInfo.website.baseUrl,
-    ogImage: `${businessInfo.website.baseUrl}/images/og-image.jpg`,
-  };
-}
-
-export default businessInfo;
+// Export for use in components
+export default businessInfo; 

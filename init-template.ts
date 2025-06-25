@@ -791,10 +791,336 @@ async function processFile(filePath: string, config: BusinessConfig): Promise<bo
   }
 }
 
-// Continue with remaining functions...
-// [The rest of the functions would follow the same pattern - I'll continue if you'd like the complete conversion]
+async function selectTemplate(): Promise<string | null> {
+  const templateChoices = [
+    {
+      name: 'Interactive Setup (Custom Configuration)',
+      value: 'interactive',
+      description: 'Walk through setup questions to create a custom configuration'
+    },
+    {
+      name: 'Basic Business Template',
+      value: 'basic',
+      description: 'Generic business template suitable for any industry'
+    },
+    {
+      name: 'Healthcare/Medical Practice',
+      value: 'healthcare',
+      description: 'Medical practice with patient-focused features and HIPAA considerations'
+    },
+    {
+      name: 'Retail Store',
+      value: 'retail',
+      description: 'Retail business with product showcase and e-commerce features'
+    },
+    {
+      name: 'Real Estate Agency',
+      value: 'realestate',
+      description: 'Real estate agency with property listings and market analysis'
+    },
+    {
+      name: 'Fitness Studio/Gym',
+      value: 'fitness',
+      description: 'Fitness studio with class scheduling and membership management'
+    },
+    {
+      name: 'Law Firm',
+      value: 'law',
+      description: 'Legal practice with attorney profiles and consultation booking'
+    },
+    {
+      name: 'Beauty Salon/Spa',
+      value: 'beauty',
+      description: 'Beauty salon with service booking and treatment menus'
+    },
+    {
+      name: 'Auto Repair Shop',
+      value: 'autorepair',
+      description: 'Automotive service with repair estimates and trust features'
+    },
+    {
+      name: 'Creative Agency',
+      value: 'creative',
+      description: 'Design agency with portfolio showcase and creative services'
+    },
+    {
+      name: 'Home Services',
+      value: 'homeservices',
+      description: 'Home maintenance with service areas and emergency contact'
+    },
+    {
+      name: 'Brewery Template',
+      value: 'brewery',
+      description: 'Craft brewery with taproom, beer services, and events'
+    },
+    {
+      name: 'Restaurant Template',
+      value: 'restaurant',
+      description: 'Restaurant with dining, catering, and reservation focus'
+    },
+    {
+      name: 'Consulting Firm Template',
+      value: 'consulting',
+      description: 'Professional consulting with services and expertise focus'
+    }
+  ];
+
+  const templateAnswer = await inquirer.prompt([
+    {
+      type: 'list',
+      name: 'template',
+      message: 'Choose a template to get started:',
+      choices: templateChoices,
+      pageSize: 10
+    }
+  ]);
+
+  if (templateAnswer.template === 'interactive') {
+    return null; // Continue with interactive setup
+  }
+
+  return templateAnswer.template;
+}
+
+async function loadPresetConfig(templateName: string): Promise<BusinessConfig> {
+  const presetPath = path.join(process.cwd(), 'presets', `${templateName}.config.json`);
+  
+  try {
+    const presetContent = await fs.readFile(presetPath, 'utf-8');
+    const presetConfig = JSON.parse(presetContent) as Partial<BusinessConfig>;
+    
+    console.log(chalk.green(`✓ Loaded ${templateName} template`));
+    
+    // Still need to collect the dynamic values that are marked with placeholders
+    return await collectPresetOverrides(presetConfig);
+  } catch (error) {
+    console.error(chalk.red(`Failed to load preset ${templateName}:`), error);
+    throw error;
+  }
+}
+
+async function collectPresetOverrides(presetConfig: Partial<BusinessConfig>): Promise<BusinessConfig> {
+  console.log(chalk.blue('\nPlease provide the following information to customize your template:\n'));
+  
+  const overrides = await inquirer.prompt([
+    {
+      type: 'input',
+      name: 'authorName',
+      message: 'Your name:',
+      validate: (input: string) => input.trim() !== '' || 'Author name is required'
+    },
+    {
+      type: 'input',
+      name: 'authorEmail',
+      message: 'Your email:',
+      validate: (input: string) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(input) || 'Please enter a valid email address';
+      }
+    },
+    {
+      type: 'input',
+      name: 'githubUsername',
+      message: 'Your GitHub username:',
+      validate: (input: string) => input.trim() !== '' || 'GitHub username is required'
+    },
+    {
+      type: 'input',
+      name: 'businessName',
+      message: 'Business name:',
+      validate: (input: string) => input.trim() !== '' || 'Business name is required'
+    },
+    {
+      type: 'input',
+      name: 'businessPhone',
+      message: 'Business phone:',
+      validate: (input: string) => input.trim() !== '' || 'Business phone is required'
+    },
+    {
+      type: 'input',
+      name: 'businessEmail',
+      message: 'Business email:',
+      validate: (input: string) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(input) || 'Please enter a valid email address';
+      }
+    },
+    {
+      type: 'input',
+      name: 'businessStreet',
+      message: 'Business street address:'
+    },
+    {
+      type: 'input',
+      name: 'businessCity',
+      message: 'Business city:'
+    },
+    {
+      type: 'input',
+      name: 'businessState',
+      message: 'Business state/province:'
+    },
+    {
+      type: 'input',
+      name: 'businessZip',
+      message: 'Business ZIP/postal code:'
+    },
+    {
+      type: 'input',
+      name: 'websiteUrl',
+      message: 'Website URL (e.g., https://yourbusiness.com):',
+      validate: (input: string) => {
+        try {
+          new URL(input);
+          return true;
+        } catch {
+          return 'Please enter a valid URL starting with http:// or https://';
+        }
+      }
+    }
+  ]);
+
+  // Generate derived values
+  const businessShortName = overrides.businessName.split(' ')[0];
+  const businessPhoneRaw = overrides.businessPhone.replace(/\D/g, '');
+  const businessPhoneFormatted = overrides.businessPhone;
+  const businessPhoneLink = `tel:+1${businessPhoneRaw}`;
+  const businessAddress = `${overrides.businessStreet}, ${overrides.businessCity}, ${overrides.businessState} ${overrides.businessZip}`;
+  const projectName = overrides.businessName.toLowerCase().replace(/[^a-z0-9]/g, '-');
+  const repositoryUrl = `https://github.com/${overrides.githubUsername}/${projectName}`;
+
+  // Merge preset with overrides and derived values
+  return {
+    ...presetConfig,
+    ...overrides,
+    businessShortName,
+    businessPhoneRaw,
+    businessPhoneFormatted,
+    businessPhoneLink,
+    businessAddress,
+    businessAddressFull: businessAddress,
+    projectName,
+    repositoryUrl,
+    websiteDomain: new URL(overrides.websiteUrl).hostname,
+    siteTitle: `${overrides.businessName} - ${presetConfig.businessTagline || 'Quality Service'}`,
+    siteDescription: presetConfig.businessShortDescription || `Professional ${overrides.businessName} services`
+  } as BusinessConfig;
+}
 
 // Execute the script
+// Function to copy industry-specific templates
+async function copyIndustryTemplates(config: BusinessConfig, flags: CommandLineFlags): Promise<void> {
+  // Determine if this is a law firm based on config
+  const isLawFirm = config.projectName?.includes('law') || 
+                   config.businessName?.toLowerCase().includes('law') ||
+                   config.businessDescription?.toLowerCase().includes('legal') ||
+                   config.businessDescription?.toLowerCase().includes('attorney') ||
+                   config.businessDescription?.toLowerCase().includes('lawyer');
+
+  if (!isLawFirm) {
+    return; // Only handle law firm templates for now
+  }
+
+  console.log(chalk.blue('📋 Copying law firm specific templates...\n'));
+
+  try {
+    const templatePath = path.join(process.cwd(), 'src', 'templates', 'law');
+    
+    // Check if law templates exist
+    const lawTemplatesExist = await fs.access(templatePath).then(() => true).catch(() => false);
+    if (!lawTemplatesExist) {
+      console.log(chalk.yellow('⚠️  Law firm templates not found, using default layout'));
+      return;
+    }
+
+    if (flags.dryRun) {
+      console.log(chalk.yellow('🔍 DRY RUN: Would copy law firm templates'));
+      return;
+    }
+
+    // Copy law firm business data and types
+    const lawBusinessData = path.join(templatePath, 'data', 'businessInfo.ts');
+    const targetBusinessData = path.join(process.cwd(), 'src', 'data', 'businessInfo.ts');
+    
+    if (await fs.access(lawBusinessData).then(() => true).catch(() => false)) {
+      const lawBusinessContent = await fs.readFile(lawBusinessData, 'utf8');
+      await fs.writeFile(targetBusinessData, lawBusinessContent);
+      console.log(chalk.green('✓ Copied law firm business data'));
+    }
+
+    // Copy law firm types
+    const lawTypesDir = path.join(templatePath, 'types');
+    const targetTypesDir = path.join(process.cwd(), 'src', 'types');
+    
+    if (await fs.access(lawTypesDir).then(() => true).catch(() => false)) {
+      await fs.mkdir(targetTypesDir, { recursive: true });
+      const typeFiles = await fs.readdir(lawTypesDir);
+      
+      for (const file of typeFiles) {
+        const sourceFile = path.join(lawTypesDir, file);
+        const targetFile = path.join(targetTypesDir, file);
+        const typeContent = await fs.readFile(sourceFile, 'utf8');
+        await fs.writeFile(targetFile, typeContent);
+      }
+      console.log(chalk.green('✓ Copied law firm types'));
+    }
+
+    // Copy law firm HomePage
+    const lawHomePage = path.join(templatePath, 'pages', 'HomePage.tsx');
+    const targetHomePage = path.join(process.cwd(), 'src', 'pages', 'HomePage.tsx');
+    
+    if (await fs.access(lawHomePage).then(() => true).catch(() => false)) {
+      const lawHomeContent = await fs.readFile(lawHomePage, 'utf8');
+      await fs.writeFile(targetHomePage, lawHomeContent);
+      console.log(chalk.green('✓ Copied law firm HomePage'));
+    }
+
+    // Copy law firm HomePage CSS
+    const lawHomeCSS = path.join(templatePath, 'pages', 'HomePage.module.css');
+    const targetHomeCSS = path.join(process.cwd(), 'src', 'pages', 'HomePage.module.css');
+    
+    if (await fs.access(lawHomeCSS).then(() => true).catch(() => false)) {
+      const lawHomeCSSContent = await fs.readFile(lawHomeCSS, 'utf8');
+      await fs.writeFile(targetHomeCSS, lawHomeCSSContent);
+      console.log(chalk.green('✓ Copied law firm HomePage CSS'));
+    }
+
+    // Copy law firm specific components
+    const lawComponentsPath = path.join(templatePath, 'components');
+    const targetComponentsPath = path.join(process.cwd(), 'src', 'components');
+
+    if (await fs.access(lawComponentsPath).then(() => true).catch(() => false)) {
+      const componentDirs = await fs.readdir(lawComponentsPath, { withFileTypes: true });
+      
+      for (const dir of componentDirs) {
+        if (dir.isDirectory()) {
+          const sourceDir = path.join(lawComponentsPath, dir.name);
+          const targetDir = path.join(targetComponentsPath, dir.name);
+          
+          // Create target directory
+          await fs.mkdir(targetDir, { recursive: true });
+          
+          // Copy all files in the component directory
+          const files = await fs.readdir(sourceDir);
+          for (const file of files) {
+            const sourceFile = path.join(sourceDir, file);
+            const targetFile = path.join(targetDir, file);
+            const fileContent = await fs.readFile(sourceFile, 'utf8');
+            await fs.writeFile(targetFile, fileContent);
+          }
+          
+          console.log(chalk.green(`✓ Copied law component: ${dir.name}`));
+        }
+      }
+    }
+
+    console.log(chalk.green('🎯 Law firm templates copied successfully!\n'));
+
+  } catch (error) {
+    console.error(chalk.red('❌ Failed to copy law firm templates:'), error);
+  }
+}
+
 async function main(): Promise<void> {
   try {
     // Parse command line arguments
@@ -811,7 +1137,7 @@ async function main(): Promise<void> {
       console.log(chalk.yellow('🔍 DRY RUN MODE - No changes will be applied'));
     }
 
-    console.log(chalk.blue('Starting template initialization...'));
+    console.log(chalk.blue('🚀 Business Website Template Initializer\n'));
 
     let config: BusinessConfig;
 
@@ -819,13 +1145,82 @@ async function main(): Promise<void> {
     if (flags.config) {
       config = await loadConfigFile(flags.config);
     } else {
-      // Interactive configuration collection would go here
-      // For brevity, using default config
-      config = DEFAULT_CONFIG;
+      // Template selection process
+      const selectedTemplate = await selectTemplate();
+      
+      if (selectedTemplate) {
+        // Load preset configuration
+        config = await loadPresetConfig(selectedTemplate);
+      } else {
+        // Continue with full interactive setup
+        // This would call the existing interactive collection function
+        throw new Error('Interactive setup not yet implemented in this version');
+      }
     }
 
-    // Continue with the rest of the initialization process...
-    console.log(chalk.green('✅ Template initialization completed!'));
+    // Copy industry-specific templates if applicable
+    await copyIndustryTemplates(config, flags);
+    
+    // Process all template files
+    console.log(chalk.blue('\n📁 Processing template files...\n'));
+    
+    const results: ProcessingResults = {
+      total: 0,
+      successful: 0,
+      failed: 0,
+      skipped: 0,
+      details: []
+    };
+
+    // Process each target file
+    for (const filePath of FILE_TARGETS) {
+      results.total++;
+      
+      if (flags.dryRun) {
+        console.log(chalk.yellow(`🔍 DRY RUN: Would process ${filePath}`));
+        results.skipped++;
+        results.details.push({
+          file: filePath,
+          status: 'skipped'
+        });
+      } else {
+        const success = await processFile(filePath, config);
+        if (success) {
+          results.successful++;
+          results.details.push({
+            file: filePath,
+            status: 'success'
+          });
+        } else {
+          results.failed++;
+          results.details.push({
+            file: filePath,
+            status: 'failed'
+          });
+        }
+      }
+    }
+
+    // Show results summary
+    console.log(chalk.blue('\n📊 Processing Summary:'));
+    console.log(chalk.gray(`  • Total files: ${results.total}`));
+    console.log(chalk.green(`  • Successful: ${results.successful}`));
+    if (results.failed > 0) {
+      console.log(chalk.red(`  • Failed: ${results.failed}`));
+    }
+    if (results.skipped > 0) {
+      console.log(chalk.yellow(`  • Skipped: ${results.skipped}`));
+    }
+
+    if (flags.dryRun) {
+      console.log(chalk.yellow('\n🔍 DRY RUN completed - no files were modified'));
+    } else {
+      console.log(chalk.green('\n✅ Template initialization completed successfully!'));
+      console.log(chalk.blue('\n🚀 Next steps:'));
+      console.log(chalk.gray('  1. Run "npm run dev" to start the development server'));
+      console.log(chalk.gray('  2. Open http://localhost:5173 to view your website'));
+      console.log(chalk.gray('  3. Customize components and content as needed'));
+    }
   } catch (error) {
     console.error(
       chalk.red('❌ Template initialization failed:'),

@@ -1,0 +1,107 @@
+{
+  "//": "=== FITNESS STUDIO/GYM TEMPLATE CONFIGURATION ===",
+  "//1": "Preset configuration for fitness studios, gyms, and wellness centers",
+  "//2": "Usage: npm run init -- --config presets/fitness.config.json",
+
+  "projectName": "fitness-studio-website",
+  "authorName": "[AUTHOR_NAME]",
+  "authorEmail": "[AUTHOR_EMAIL]",
+  "githubUsername": "[GITHUB_USERNAME]",
+
+  "description": "A dynamic fitness studio website with class schedules, membership options, and wellness programs",
+  "license": "MIT",
+  "repositoryUrl": "[REPOSITORY_URL]",
+
+  "businessName": "[STUDIO_NAME]",
+  "businessShortName": "[STUDIO_SHORT_NAME]",
+  "businessTagline": "Transform your body, elevate your life",
+  "businessDescription": "A premier fitness destination dedicated to helping you achieve your health and wellness goals. Our expert trainers, state-of-the-art equipment, and diverse class offerings create an environment where fitness meets community, and every workout brings you closer to your best self.",
+  "businessShortDescription": "Modern fitness studio offering personal training, group classes, and comprehensive wellness programs",
+
+  "businessPhone": "[PHONE]",
+  "businessPhoneRaw": "[PHONE_RAW]",
+  "businessEmail": "[EMAIL]",
+
+  "businessStreet": "[STREET]",
+  "businessCity": "[CITY]",
+  "businessState": "[STATE]",
+  "businessZip": "[ZIP]",
+  "businessLatitude": 0,
+  "businessLongitude": 0,
+
+  "websiteUrl": "[WEBSITE]",
+  "primaryColor": "#DC2626",
+  "primaryColorHover": "#B91C1C",
+  "primaryColorLight": "#FEE2E2",
+  "secondaryColor": "#1F2937",
+  "secondaryColorHover": "#111827",
+  "secondaryColorLight": "#F3F4F6",
+
+  "hoursMonday": "5:00 AM - 10:00 PM",
+  "hoursTuesday": "5:00 AM - 10:00 PM",
+  "hoursWednesday": "5:00 AM - 10:00 PM",
+  "hoursThursday": "5:00 AM - 10:00 PM",
+  "hoursFriday": "5:00 AM - 9:00 PM",
+  "hoursSaturday": "6:00 AM - 8:00 PM",
+  "hoursSunday": "7:00 AM - 7:00 PM",
+
+  "businessFeature1": "Expert Personal Trainers",
+  "businessFeature2": "State-of-the-Art Equipment",
+  "businessFeature3": "Diverse Class Options",
+  "businessFeature4": "Supportive Community",
+
+  "businessService1": "Personal Training",
+  "businessService2": "Group Classes",
+  "businessService3": "Nutrition Coaching",
+  "businessService4": "Membership Plans",
+
+  "heroTitlePrefix": "Welcome to",
+  "ctaPrimaryText": "Start Your Journey",
+  "ctaSecondaryText": "View Classes",
+
+  "featuresSectionTitle": "Why Train With Us?",
+  "featuresDescriptionTemplate": "Experience fitness that transforms your body and mind with our expert trainers and supportive community.",
+
+  "servicesSectionTitle": "Fitness Programs",
+  "servicesSectionDescription": "Comprehensive fitness solutions designed to help you reach your health and wellness goals.",
+  "servicesDescriptionTemplate": "Professional fitness programs tailored to your goals, fitness level, and lifestyle.",
+  "servicesCTAText": "Learn More",
+
+  "aboutPageTitle": "About Our Studio",
+  "aboutFeaturesTitle": "What Sets Us Apart",
+  "aboutServicesTitle": "Fitness Programs",
+
+  "contactPageTitle": "Join Our Community",
+  "contactPageDescription": "Ready to start your fitness journey? Get in touch to learn about our programs and membership options.",
+  "contactInfoTitle": "Get Started",
+  "contactPhoneLabel": "Phone",
+  "contactEmailLabel": "Email",
+  "contactAddressLabel": "Studio Address",
+  "contactDirectionsText": "Get Directions",
+  "contactHoursLabel": "Studio Hours",
+
+  "contactFormTitle": "Start Your Fitness Journey",
+  "formNameLabel": "Full Name",
+  "formEmailLabel": "Email",
+  "formSubjectLabel": "Program Interest",
+  "formMessageLabel": "Tell us about your fitness goals",
+  "formSubmitText": "Get Started",
+  "formSendingText": "Submitting...",
+  "formSuccessMessage": "Welcome! We'll contact you soon to discuss your fitness goals.",
+  "formErrorMessage": "Failed to submit form. Please call or visit our studio.",
+
+  "deploymentPlatform": "vercel",
+  "includePWA": true,
+  "cssApproach": "css-modules",
+
+  "features": {
+    "analytics": true,
+    "seo": true,
+    "darkMode": false,
+    "contactForm": true,
+    "socialLinks": true,
+    "businessHours": true,
+    "testimonials": true,
+    "blog": false
+  }
+} 

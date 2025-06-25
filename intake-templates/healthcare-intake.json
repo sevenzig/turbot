@@ -1,0 +1,301 @@
+{
+  "//": "=== HEALTHCARE/MEDICAL PRACTICE CLIENT INTAKE TEMPLATE ===",
+  "//1": "Complete business information template for medical practice website generation",
+  "//2": "Fill out all sections with client's actual medical practice details",
+  "//3": "Usage: npm run init -- --config [practice-name]-intake.json",
+
+  "//SECTION_1": "=== PROJECT & DEVELOPER INFO ===",
+  "projectName": "CLIENT_PRACTICE_NAME_LOWERCASE_DASHED",
+  "authorName": "YOUR_NAME",
+  "authorEmail": "YOUR_EMAIL@DOMAIN.COM",
+  "githubUsername": "YOUR_GITHUB_USERNAME",
+  "description": "Professional medical practice website for [CLIENT_PRACTICE_NAME]",
+  "license": "MIT",
+  "repositoryUrl": "https://github.com/YOUR_GITHUB_USERNAME/CLIENT_PROJECT_NAME",
+
+  "//SECTION_2": "=== CORE BUSINESS INFORMATION ===",
+  "businessName": "FULL_PRACTICE_NAME",
+  "businessShortName": "SHORT_PRACTICE_NAME",
+  "businessTagline": "PRACTICE_TAGLINE_OR_MOTTO",
+  "businessDescription": "DETAILED_PRACTICE_DESCRIPTION_2_3_SENTENCES",
+  "businessShortDescription": "ONE_SENTENCE_PRACTICE_SUMMARY",
+  "practiceType": "PRIMARY_CARE_SPECIALTY_URGENT_CARE_ETC",
+  "specialties": ["MEDICAL_SPECIALTY_1", "MEDICAL_SPECIALTY_2"],
+  "establishedYear": "YEAR_PRACTICE_ESTABLISHED",
+  "affiliatedHospitals": ["HOSPITAL_1", "HOSPITAL_2"],
+
+  "//SECTION_3": "=== CONTACT INFORMATION ===",
+  "businessPhone": "FORMATTED_PHONE_NUMBER",
+  "businessPhoneRaw": "DIGITS_ONLY_PHONE",
+  "businessEmail": "MAIN_PRACTICE_EMAIL",
+  "appointmentPhone": "APPOINTMENT_SCHEDULING_PHONE",
+  "emergencyPhone": "AFTER_HOURS_EMERGENCY_PHONE",
+  "billingPhone": "BILLING_DEPARTMENT_PHONE",
+  "billingEmail": "BILLING_EMAIL",
+  "nurseLinePhone": "NURSE_ADVICE_LINE_PHONE",
+
+  "//SECTION_4": "=== PHYSICAL ADDRESS & FACILITIES ===",
+  "businessStreet": "STREET_ADDRESS",
+  "businessCity": "CITY_NAME",
+  "businessState": "STATE_OR_PROVINCE",
+  "businessZip": "ZIP_POSTAL_CODE",
+  "businessLatitude": 0.000000,
+  "businessLongitude": 0.000000,
+  "parkingInfo": "PARKING_INFORMATION_FOR_PATIENTS",
+  "buildingInfo": "SUITE_FLOOR_BUILDING_DETAILS",
+  "wheelchairAccessible": true,
+  "publicTransportation": "PUBLIC_TRANSIT_ACCESS_INFO",
+
+  "//SECTION_5": "=== WEBSITE & BRANDING ===",
+  "websiteUrl": "https://DOMAIN.COM",
+  "primaryColor": "#0F766E",
+  "primaryColorHover": "#0D6B61",
+  "primaryColorLight": "#CCFBF1",
+  "secondaryColor": "#DC2626",
+  "secondaryColorHover": "#B91C1C",
+  "secondaryColorLight": "#FEE2E2",
+  "logoUrl": "URL_TO_PRACTICE_LOGO",
+  "faviconUrl": "URL_TO_FAVICON",
+
+  "//SECTION_6": "=== SOCIAL MEDIA & ONLINE PRESENCE ===",
+  "socialFacebook": "FACEBOOK_PAGE_URL",
+  "socialLinkedin": "LINKEDIN_PRACTICE_URL",
+  "socialTwitter": "TWITTER_HANDLE",
+  "googleBusinessUrl": "GOOGLE_BUSINESS_PROFILE_URL",
+  "healthgradesUrl": "HEALTHGRADES_PROFILE_URL",
+  "zocdocUrl": "ZOCDOC_PROFILE_URL",
+  "webmdUrl": "WEBMD_PROFILE_URL",
+
+  "//SECTION_7": "=== BUSINESS HOURS ===",
+  "hoursMonday": "MONDAY_HOURS",
+  "hoursTuesday": "TUESDAY_HOURS",
+  "hoursWednesday": "WEDNESDAY_HOURS",
+  "hoursThursday": "THURSDAY_HOURS",
+  "hoursFriday": "FRIDAY_HOURS",
+  "hoursSaturday": "SATURDAY_HOURS_OR_CLOSED",
+  "hoursSunday": "SUNDAY_HOURS_OR_CLOSED",
+  "afterHoursPolicy": "AFTER_HOURS_CARE_POLICY",
+  "emergencyHours": "EMERGENCY_AVAILABILITY",
+  "phoneHours": "PHONE_CONSULTATION_HOURS",
+
+  "//SECTION_8": "=== MEDICAL STAFF ===",
+  "physicians": [
+    {
+      "name": "DOCTOR_FULL_NAME",
+      "title": "MD_DO_NP_PA_ETC",
+      "specialty": "MEDICAL_SPECIALTY",
+      "bio": "PHYSICIAN_BACKGROUND_AND_EXPERIENCE",
+      "education": [
+        "MEDICAL_SCHOOL_DEGREE_YEAR",
+        "RESIDENCY_PROGRAM_YEAR",
+        "FELLOWSHIP_IF_APPLICABLE"
+      ],
+      "boardCertifications": [
+        "BOARD_CERTIFICATION_1",
+        "BOARD_CERTIFICATION_2"
+      ],
+      "languages": ["ENGLISH", "OTHER_LANGUAGES"],
+      "yearsExperience": "NUMBER_OF_YEARS",
+      "hospitalAffiliations": ["HOSPITAL_1", "HOSPITAL_2"],
+      "specialInterests": ["CLINICAL_INTEREST_1", "CLINICAL_INTEREST_2"],
+      "photoUrl": "URL_TO_PROFESSIONAL_PHOTO",
+      "email": "DOCTOR_EMAIL_IF_PUBLIC",
+      "acceptingNewPatients": true
+    }
+  ],
+
+  "//SECTION_9": "=== MEDICAL SERVICES ===",
+  "medicalServices": [
+    {
+      "serviceName": "MEDICAL_SERVICE_NAME",
+      "description": "DETAILED_SERVICE_DESCRIPTION",
+      "duration": "TYPICAL_APPOINTMENT_TIME",
+      "preparation": "PATIENT_PREPARATION_INSTRUCTIONS",
+      "coverage": "INSURANCE_COVERAGE_INFO",
+      "frequency": "HOW_OFTEN_NEEDED"
+    }
+  ],
+  "primaryCareServices": [
+    "ANNUAL_PHYSICALS",
+    "PREVENTIVE_CARE",
+    "CHRONIC_DISEASE_MANAGEMENT",
+    "IMMUNIZATIONS"
+  ],
+  "diagnosticServices": [
+    "LAB_WORK",
+    "IMAGING_SERVICES",
+    "DIAGNOSTIC_TESTS"
+  ],
+  "specialtyServices": [
+    "SPECIALTY_SERVICE_1",
+    "SPECIALTY_SERVICE_2"
+  ],
+
+  "//SECTION_10": "=== INSURANCE & BILLING ===",
+  "insuranceAccepted": [
+    "INSURANCE_PLAN_1",
+    "INSURANCE_PLAN_2",
+    "INSURANCE_PLAN_3",
+    "MEDICARE",
+    "MEDICAID"
+  ],
+  "insuranceVerification": "INSURANCE_VERIFICATION_PROCESS",
+  "paymentOptions": [
+    "CASH",
+    "CREDIT_CARDS",
+    "PAYMENT_PLANS",
+    "HSA_FSA"
+  ],
+  "billingPolicies": "BILLING_AND_PAYMENT_POLICIES",
+  "copayPolicy": "COPAY_COLLECTION_POLICY",
+  "financialAssistance": "FINANCIAL_ASSISTANCE_PROGRAMS",
+
+  "//SECTION_11": "=== PATIENT CARE POLICIES ===",
+  "appointmentPolicy": "APPOINTMENT_SCHEDULING_POLICY",
+  "cancellationPolicy": "APPOINTMENT_CANCELLATION_POLICY",
+  "noShowPolicy": "NO_SHOW_POLICY_AND_FEES",
+  "lateArrivalPolicy": "LATE_ARRIVAL_POLICY",
+  "referralPolicy": "REFERRAL_PROCESS_AND_POLICY",
+  "prescriptionPolicy": "PRESCRIPTION_REFILL_POLICY",
+  "testResultsPolicy": "LAB_RESULT_COMMUNICATION_POLICY",
+
+  "//SECTION_12": "=== TECHNOLOGY & PATIENT PORTAL ===",
+  "patientPortalAvailable": true,
+  "patientPortalName": "PATIENT_PORTAL_SYSTEM_NAME",
+  "onlineAppointmentScheduling": true,
+  "telemedicineAvailable": true,
+  "telemedicineServices": [
+    "VIDEO_CONSULTATIONS",
+    "REMOTE_MONITORING",
+    "FOLLOW_UP_VISITS"
+  ],
+  "electronicRecords": "EMR_SYSTEM_USED",
+  "onlineBillPay": true,
+
+  "//SECTION_13": "=== PATIENT TESTIMONIALS ===",
+  "testimonials": [
+    {
+      "patientInitials": "PATIENT_INITIALS",
+      "testimonial": "PATIENT_TESTIMONIAL_QUOTE",
+      "condition": "GENERAL_CONDITION_TREATED",
+      "date": "MONTH_YEAR",
+      "rating": "STAR_RATING_1_5"
+    }
+  ],
+
+  "//SECTION_14": "=== CREDENTIALS & CERTIFICATIONS ===",
+  "accreditations": [
+    "PRACTICE_ACCREDITATIONS",
+    "QUALITY_CERTIFICATIONS",
+    "SAFETY_CERTIFICATIONS"
+  ],
+  "awards": [
+    "MEDICAL_AWARDS",
+    "PATIENT_SATISFACTION_AWARDS",
+    "QUALITY_RECOGNITION"
+  ],
+  "memberships": [
+    "MEDICAL_ASSOCIATIONS",
+    "PROFESSIONAL_ORGANIZATIONS"
+  ],
+
+  "//SECTION_15": "=== EMERGENCY & URGENT CARE ===",
+  "emergencyProtocol": "MEDICAL_EMERGENCY_INSTRUCTIONS",
+  "urgentCareHours": "URGENT_CARE_AVAILABILITY",
+  "afterHoursProvider": "AFTER_HOURS_CARE_PROVIDER",
+  "hospitalPreference": "PREFERRED_EMERGENCY_HOSPITAL",
+  "onCallSchedule": "ON_CALL_PHYSICIAN_SCHEDULE",
+
+  "//SECTION_16": "=== PATIENT EDUCATION ===",
+  "healthEducationResources": [
+    "EDUCATIONAL_MATERIALS_PROVIDED",
+    "HEALTH_SCREENING_PROGRAMS",
+    "WELLNESS_PROGRAMS"
+  ],
+  "languageServices": "INTERPRETER_SERVICES_AVAILABLE",
+  "patientEducationTopics": [
+    "DIABETES_MANAGEMENT",
+    "HEART_HEALTH",
+    "PREVENTIVE_CARE"
+  ],
+
+  "//SECTION_17": "=== CONTENT CUSTOMIZATION ===",
+  "heroTitlePrefix": "Welcome to",
+  "ctaPrimaryText": "Schedule Appointment",
+  "ctaSecondaryText": "Learn About Our Services",
+  "featuresSectionTitle": "Why Choose Our Practice?",
+  "featuresDescriptionTemplate": "CUSTOM_PRACTICE_DESCRIPTION",
+  "servicesSectionTitle": "Our Medical Services",
+  "servicesSectionDescription": "CUSTOM_SERVICES_DESCRIPTION",
+  "servicesDescriptionTemplate": "CUSTOM_SERVICES_TEMPLATE",
+  "servicesCTAText": "Learn More",
+
+  "//SECTION_18": "=== PAGE CONTENT ===",
+  "aboutPageTitle": "About Our Practice",
+  "aboutFeaturesTitle": "Our Commitment to Care",
+  "aboutServicesTitle": "Medical Services",
+  "contactPageTitle": "Contact Our Practice",
+  "contactPageDescription": "CUSTOM_CONTACT_PAGE_DESCRIPTION",
+  "contactInfoTitle": "Practice Information",
+  "contactFormTitle": "Request Appointment",
+
+  "//SECTION_19": "=== FORM LABELS & MESSAGES ===",
+  "formNameLabel": "Full Name",
+  "formEmailLabel": "Email",
+  "formPhoneLabel": "Phone Number",
+  "formSubjectLabel": "Type of Appointment",
+  "formMessageLabel": "Message or Special Requests",
+  "formSubmitText": "Request Appointment",
+  "formSendingText": "Submitting...",
+  "formSuccessMessage": "CUSTOM_SUCCESS_MESSAGE",
+  "formErrorMessage": "CUSTOM_ERROR_MESSAGE",
+
+  "//SECTION_20": "=== HIPAA & COMPLIANCE ===",
+  "hipaaNotice": "HIPAA_PRIVACY_NOTICE_TEXT",
+  "privacyPolicy": "PATIENT_PRIVACY_POLICY",
+  "consentForms": [
+    "TREATMENT_CONSENT",
+    "FINANCIAL_RESPONSIBILITY",
+    "HIPAA_ACKNOWLEDGMENT"
+  ],
+  "complianceCertifications": [
+    "HIPAA_COMPLIANCE",
+    "QUALITY_CERTIFICATIONS"
+  ],
+
+  "//SECTION_21": "=== TECHNICAL CONFIGURATION ===",
+  "deploymentPlatform": "vercel",
+  "includePWA": false,
+  "cssApproach": "css-modules",
+  "features": {
+    "analytics": true,
+    "seo": true,
+    "darkMode": false,
+    "contactForm": true,
+    "socialLinks": true,
+    "businessHours": true,
+    "testimonials": true,
+    "blog": false,
+    "appointmentScheduling": true,
+    "patientPortalIntegration": true,
+    "telemedicine": true,
+    "insuranceVerification": true
+  },
+
+  "//SECTION_22": "=== SEO & MARKETING ===",
+  "seoKeywords": [
+    "MEDICAL_SPECIALTY_KEYWORDS",
+    "LOCATION_KEYWORDS",
+    "CONDITION_TREATMENT_KEYWORDS",
+    "DOCTOR_NAME_KEYWORDS"
+  ],
+  "localSEO": {
+    "serviceAreas": [
+      "PRIMARY_CITY",
+      "SURROUNDING_CITIES",
+      "COUNTY_NAME"
+    ],
+    "businessCategory": "Medical Practice",
+    "gmbCategory": "GOOGLE_MY_BUSINESS_CATEGORY"
+  }
+} 

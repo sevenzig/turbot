@@ -1,0 +1,107 @@
+{
+  "//": "=== CREATIVE AGENCY TEMPLATE CONFIGURATION ===",
+  "//1": "Preset configuration for creative agencies, design studios, and marketing firms",
+  "//2": "Usage: npm run init -- --config presets/creative.config.json",
+
+  "projectName": "creative-agency-website",
+  "authorName": "[AUTHOR_NAME]",
+  "authorEmail": "[AUTHOR_EMAIL]",
+  "githubUsername": "[GITHUB_USERNAME]",
+
+  "description": "A dynamic creative agency website showcasing portfolio, services, and innovative design solutions",
+  "license": "MIT",
+  "repositoryUrl": "[REPOSITORY_URL]",
+
+  "businessName": "[AGENCY_NAME]",
+  "businessShortName": "[AGENCY_SHORT_NAME]",
+  "businessTagline": "Creative solutions that inspire",
+  "businessDescription": "An innovative creative agency that transforms ideas into compelling visual experiences. We partner with brands to create meaningful connections through strategic design, innovative marketing, and creative solutions that drive results and inspire audiences.",
+  "businessShortDescription": "Creative agency specializing in brand design, digital marketing, and innovative visual solutions",
+
+  "businessPhone": "[PHONE]",
+  "businessPhoneRaw": "[PHONE_RAW]",
+  "businessEmail": "[EMAIL]",
+
+  "businessStreet": "[STREET]",
+  "businessCity": "[CITY]",
+  "businessState": "[STATE]",
+  "businessZip": "[ZIP]",
+  "businessLatitude": 0,
+  "businessLongitude": 0,
+
+  "websiteUrl": "[WEBSITE]",
+  "primaryColor": "#7C3AED",
+  "primaryColorHover": "#6D28D9",
+  "primaryColorLight": "#EDE9FE",
+  "secondaryColor": "#F59E0B",
+  "secondaryColorHover": "#D97706",
+  "secondaryColorLight": "#FEF3C7",
+
+  "hoursMonday": "9:00 AM - 6:00 PM",
+  "hoursTuesday": "9:00 AM - 6:00 PM",
+  "hoursWednesday": "9:00 AM - 6:00 PM",
+  "hoursThursday": "9:00 AM - 6:00 PM",
+  "hoursFriday": "9:00 AM - 5:00 PM",
+  "hoursSaturday": "By Appointment",
+  "hoursSunday": "Closed",
+
+  "businessFeature1": "Award-Winning Design",
+  "businessFeature2": "Strategic Thinking",
+  "businessFeature3": "Creative Innovation",
+  "businessFeature4": "Results-Driven",
+
+  "businessService1": "Brand Design",
+  "businessService2": "Web Development",
+  "businessService3": "Marketing Strategy",
+  "businessService4": "Content Creation",
+
+  "heroTitlePrefix": "Welcome to",
+  "ctaPrimaryText": "Start Your Project",
+  "ctaSecondaryText": "View Portfolio",
+
+  "featuresSectionTitle": "Why Choose Our Agency?",
+  "featuresDescriptionTemplate": "Experience creative excellence that drives results with our strategic approach to design and marketing.",
+
+  "servicesSectionTitle": "Creative Services",
+  "servicesSectionDescription": "Comprehensive creative solutions designed to elevate your brand and connect with your audience.",
+  "servicesDescriptionTemplate": "Innovative creative services that combine strategic thinking with exceptional design execution.",
+  "servicesCTAText": "Learn More",
+
+  "aboutPageTitle": "About Our Agency",
+  "aboutFeaturesTitle": "Our Creative Philosophy",
+  "aboutServicesTitle": "Creative Services",
+
+  "contactPageTitle": "Start Your Project",
+  "contactPageDescription": "Ready to bring your creative vision to life? Let's discuss how we can help your brand stand out.",
+  "contactInfoTitle": "Let's Create Together",
+  "contactPhoneLabel": "Phone",
+  "contactEmailLabel": "Email",
+  "contactAddressLabel": "Studio Address",
+  "contactDirectionsText": "Get Directions",
+  "contactHoursLabel": "Studio Hours",
+
+  "contactFormTitle": "Tell Us About Your Project",
+  "formNameLabel": "Full Name",
+  "formEmailLabel": "Email",
+  "formSubjectLabel": "Project Type",
+  "formMessageLabel": "Describe your creative project or goals",
+  "formSubmitText": "Start Conversation",
+  "formSendingText": "Submitting...",
+  "formSuccessMessage": "Project inquiry received! We'll be in touch soon to discuss your creative needs.",
+  "formErrorMessage": "Failed to submit inquiry. Please call or email us directly.",
+
+  "deploymentPlatform": "vercel",
+  "includePWA": true,
+  "cssApproach": "css-modules",
+
+  "features": {
+    "analytics": true,
+    "seo": true,
+    "darkMode": false,
+    "contactForm": true,
+    "socialLinks": true,
+    "businessHours": true,
+    "testimonials": true,
+    "blog": true
+  }
+} 

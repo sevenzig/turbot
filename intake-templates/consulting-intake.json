@@ -1,0 +1,330 @@
+{
+  "//": "=== CONSULTING FIRM CLIENT INTAKE TEMPLATE ===",
+  "//1": "Complete business information template for consulting firm website generation",
+  "//2": "Fill out all sections with client's actual consulting business details",
+  "//3": "Usage: npm run init -- --config [consulting-firm]-intake.json",
+
+  "//SECTION_1": "=== PROJECT & DEVELOPER INFO ===",
+  "projectName": "CLIENT_FIRM_NAME_LOWERCASE_DASHED",
+  "authorName": "YOUR_NAME",
+  "authorEmail": "YOUR_EMAIL@DOMAIN.COM",
+  "githubUsername": "YOUR_GITHUB_USERNAME",
+  "description": "Professional consulting firm website for [CLIENT_FIRM_NAME]",
+  "license": "MIT",
+  "repositoryUrl": "https://github.com/YOUR_GITHUB_USERNAME/CLIENT_PROJECT_NAME",
+
+  "//SECTION_2": "=== CORE BUSINESS INFORMATION ===",
+  "businessName": "FULL_CONSULTING_FIRM_NAME",
+  "businessShortName": "SHORT_FIRM_NAME",
+  "businessTagline": "FIRM_TAGLINE_OR_VALUE_PROPOSITION",
+  "businessDescription": "DETAILED_FIRM_DESCRIPTION_2_3_SENTENCES",
+  "businessShortDescription": "ONE_SENTENCE_FIRM_SUMMARY",
+  "consultingType": "MANAGEMENT_IT_STRATEGY_FINANCIAL_ETC",
+  "industries": ["INDUSTRY_1", "INDUSTRY_2", "INDUSTRY_3"],
+  "establishedYear": "YEAR_FIRM_ESTABLISHED",
+  "firmSize": "NUMBER_OF_CONSULTANTS",
+
+  "//SECTION_3": "=== CONTACT INFORMATION ===",
+  "businessPhone": "FORMATTED_PHONE_NUMBER",
+  "businessPhoneRaw": "DIGITS_ONLY_PHONE",
+  "businessEmail": "MAIN_FIRM_EMAIL",
+  "salesPhone": "BUSINESS_DEVELOPMENT_PHONE",
+  "salesEmail": "SALES_INQUIRIES_EMAIL",
+  "partnershipEmail": "PARTNERSHIP_OPPORTUNITIES_EMAIL",
+  "mediaEmail": "MEDIA_PRESS_INQUIRIES_EMAIL",
+
+  "//SECTION_4": "=== OFFICE LOCATIONS ===",
+  "businessStreet": "MAIN_OFFICE_STREET_ADDRESS",
+  "businessCity": "CITY_NAME",
+  "businessState": "STATE_OR_PROVINCE",
+  "businessZip": "ZIP_POSTAL_CODE",
+  "businessLatitude": 0.000000,
+  "businessLongitude": 0.000000,
+  "additionalOffices": [
+    {
+      "location": "ADDITIONAL_OFFICE_CITY",
+      "address": "FULL_ADDRESS",
+      "phone": "OFFICE_PHONE",
+      "services": ["SERVICES_AT_THIS_LOCATION"]
+    }
+  ],
+  "remoteServices": "REMOTE_CONSULTING_AVAILABILITY",
+
+  "//SECTION_5": "=== WEBSITE & BRANDING ===",
+  "websiteUrl": "https://DOMAIN.COM",
+  "primaryColor": "#1F2937",
+  "primaryColorHover": "#111827",
+  "primaryColorLight": "#F3F4F6",
+  "secondaryColor": "#3B82F6",
+  "secondaryColorHover": "#2563EB",
+  "secondaryColorLight": "#DBEAFE",
+  "logoUrl": "URL_TO_FIRM_LOGO",
+  "faviconUrl": "URL_TO_FAVICON",
+
+  "//SECTION_6": "=== SOCIAL MEDIA & PROFESSIONAL PRESENCE ===",
+  "socialLinkedin": "LINKEDIN_COMPANY_PAGE",
+  "socialTwitter": "TWITTER_HANDLE",
+  "socialFacebook": "FACEBOOK_PAGE_URL",
+  "socialYoutube": "YOUTUBE_CHANNEL",
+  "googleBusinessUrl": "GOOGLE_BUSINESS_PROFILE",
+  "industryProfiles": [
+    "INDUSTRY_ASSOCIATION_PROFILES",
+    "PROFESSIONAL_DIRECTORIES"
+  ],
+
+  "//SECTION_7": "=== BUSINESS HOURS ===",
+  "hoursMonday": "MONDAY_HOURS",
+  "hoursTuesday": "TUESDAY_HOURS",
+  "hoursWednesday": "WEDNESDAY_HOURS",
+  "hoursThursday": "THURSDAY_HOURS",
+  "hoursFriday": "FRIDAY_HOURS",
+  "hoursSaturday": "SATURDAY_AVAILABILITY",
+  "hoursSunday": "SUNDAY_AVAILABILITY",
+  "timeZones": "PRIMARY_TIME_ZONES_SERVED",
+  "emergencyConsultation": "EMERGENCY_CONSULTATION_AVAILABILITY",
+
+  "//SECTION_8": "=== CONSULTING SERVICES ===",
+  "consultingServices": [
+    {
+      "serviceName": "CONSULTING_SERVICE_NAME",
+      "description": "DETAILED_SERVICE_DESCRIPTION",
+      "approach": "METHODOLOGY_OR_APPROACH",
+      "duration": "TYPICAL_ENGAGEMENT_LENGTH",
+      "deliverables": ["DELIVERABLE_1", "DELIVERABLE_2"],
+      "industries": ["RELEVANT_INDUSTRIES"],
+      "caseStudyAvailable": true
+    }
+  ],
+  "coreServices": [
+    "CORE_SERVICE_1",
+    "CORE_SERVICE_2", 
+    "CORE_SERVICE_3",
+    "CORE_SERVICE_4"
+  ],
+  "specializations": [
+    "SPECIALIZATION_1",
+    "SPECIALIZATION_2"
+  ],
+  "processMethodology": "CONSULTING_PROCESS_METHODOLOGY",
+
+  "//SECTION_9": "=== TEAM & EXPERTISE ===",
+  "consultants": [
+    {
+      "name": "CONSULTANT_FULL_NAME",
+      "title": "PARTNER_PRINCIPAL_SENIOR_CONSULTANT_ETC",
+      "bio": "CONSULTANT_BACKGROUND_AND_EXPERIENCE",
+      "education": [
+        "DEGREE_UNIVERSITY_YEAR",
+        "ADVANCED_DEGREE_IF_APPLICABLE"
+      ],
+      "certifications": [
+        "PROFESSIONAL_CERTIFICATION_1",
+        "PROFESSIONAL_CERTIFICATION_2"
+      ],
+      "specialties": [
+        "AREA_OF_EXPERTISE_1",
+        "AREA_OF_EXPERTISE_2"
+      ],
+      "industries": ["INDUSTRY_EXPERIENCE"],
+      "yearsExperience": "NUMBER_OF_YEARS",
+      "previousRoles": [
+        "PREVIOUS_POSITION_COMPANY",
+        "PREVIOUS_POSITION_COMPANY"
+      ],
+      "publications": [
+        "ARTICLES_OR_BOOKS_PUBLISHED"
+      ],
+      "speakingEngagements": [
+        "CONFERENCE_SPEAKING_EXPERIENCE"
+      ],
+      "photoUrl": "URL_TO_PROFESSIONAL_PHOTO",
+      "email": "CONSULTANT_EMAIL_IF_PUBLIC",
+      "linkedinUrl": "LINKEDIN_PROFILE_URL"
+    }
+  ],
+
+  "//SECTION_10": "=== CLIENT SUCCESS & CASE STUDIES ===",
+  "caseStudies": [
+    {
+      "title": "CASE_STUDY_TITLE",
+      "industry": "CLIENT_INDUSTRY",
+      "challenge": "BUSINESS_CHALLENGE_DESCRIPTION",
+      "solution": "CONSULTING_SOLUTION_PROVIDED",
+      "results": "QUANTIFIABLE_RESULTS_ACHIEVED",
+      "duration": "PROJECT_DURATION",
+      "teamSize": "CONSULTING_TEAM_SIZE",
+      "clientSize": "CLIENT_COMPANY_SIZE"
+    }
+  ],
+  "clientTypes": [
+    "FORTUNE_500",
+    "STARTUPS",
+    "GOVERNMENT",
+    "NON_PROFIT"
+  ],
+  "successMetrics": [
+    "TYPICAL_ROI_ACHIEVED",
+    "PROCESS_IMPROVEMENTS",
+    "COST_SAVINGS"
+  ],
+
+  "//SECTION_11": "=== CLIENT TESTIMONIALS ===",
+  "testimonials": [
+    {
+      "clientName": "CLIENT_NAME_OR_COMPANY",
+      "clientTitle": "CLIENT_TITLE",
+      "testimonial": "CLIENT_TESTIMONIAL_QUOTE",
+      "project": "PROJECT_TYPE_OR_FOCUS",
+      "results": "RESULTS_ACHIEVED",
+      "date": "MONTH_YEAR"
+    }
+  ],
+
+  "//SECTION_12": "=== INDUSTRIES SERVED ===",
+  "primaryIndustries": [
+    {
+      "industryName": "INDUSTRY_NAME",
+      "description": "INDUSTRY_FOCUS_DESCRIPTION",
+      "services": ["SERVICES_FOR_THIS_INDUSTRY"],
+      "experience": "YEARS_OF_EXPERIENCE_IN_INDUSTRY",
+      "notableClients": ["NOTABLE_CLIENT_TYPES"]
+    }
+  ],
+  "emergingIndustries": [
+    "NEW_INDUSTRY_FOCUS_1",
+    "NEW_INDUSTRY_FOCUS_2"
+  ],
+
+  "//SECTION_13": "=== ENGAGEMENT PROCESS ===",
+  "engagementProcess": [
+    {
+      "phase": "PHASE_NAME",
+      "description": "PHASE_DESCRIPTION",
+      "duration": "TYPICAL_DURATION",
+      "deliverables": ["PHASE_DELIVERABLES"]
+    }
+  ],
+  "initialConsultation": "FREE_PAID_CONSULTATION_POLICY",
+  "proposalProcess": "PROPOSAL_DEVELOPMENT_PROCESS",
+  "contractTerms": "TYPICAL_CONTRACT_TERMS",
+  "paymentTerms": "PAYMENT_SCHEDULE_TERMS",
+
+  "//SECTION_14": "=== PRICING & BILLING ===",
+  "pricingModel": "HOURLY_PROJECT_RETAINER_VALUE_BASED",
+  "hourlyRates": "HOURLY_RATE_RANGES_BY_LEVEL",
+  "projectRanges": "TYPICAL_PROJECT_VALUE_RANGES",
+  "retainerOptions": "RETAINER_ARRANGEMENT_OPTIONS",
+  "paymentMethods": [
+    "WIRE_TRANSFER",
+    "ACH",
+    "CHECK",
+    "CREDIT_CARD"
+  ],
+  "expensePolicy": "EXPENSE_REIMBURSEMENT_POLICY",
+
+  "//SECTION_15": "=== THOUGHT LEADERSHIP ===",
+  "publications": [
+    "WHITEPAPERS_PUBLISHED",
+    "INDUSTRY_ARTICLES",
+    "RESEARCH_STUDIES"
+  ],
+  "speakingEngagements": [
+    "CONFERENCE_PRESENTATIONS",
+    "WEBINAR_HOSTING",
+    "PANEL_DISCUSSIONS"
+  ],
+  "mediaAppearances": [
+    "TV_INTERVIEWS",
+    "PODCAST_APPEARANCES",
+    "INDUSTRY_QUOTES"
+  ],
+  "thoughtLeadershipTopics": [
+    "EXPERTISE_TOPIC_1",
+    "EXPERTISE_TOPIC_2"
+  ],
+
+  "//SECTION_16": "=== PARTNERSHIPS & ALLIANCES ===",
+  "strategicPartners": [
+    "PARTNER_ORGANIZATION_1",
+    "PARTNER_ORGANIZATION_2"
+  ],
+  "technologyPartners": [
+    "TECHNOLOGY_VENDOR_1", 
+    "TECHNOLOGY_VENDOR_2"
+  ],
+  "networkMemberships": [
+    "CONSULTING_NETWORKS",
+    "PROFESSIONAL_ASSOCIATIONS"
+  ],
+
+  "//SECTION_17": "=== CONTENT CUSTOMIZATION ===",
+  "heroTitlePrefix": "Welcome to",
+  "ctaPrimaryText": "Start Your Project",
+  "ctaSecondaryText": "Learn About Our Services",
+  "featuresSectionTitle": "Why Choose Our Firm?",
+  "featuresDescriptionTemplate": "CUSTOM_FIRM_DESCRIPTION",
+  "servicesSectionTitle": "Our Consulting Services",
+  "servicesSectionDescription": "CUSTOM_SERVICES_DESCRIPTION",
+  "servicesDescriptionTemplate": "CUSTOM_SERVICES_TEMPLATE",
+  "servicesCTAText": "Learn More",
+
+  "//SECTION_18": "=== PAGE CONTENT ===",
+  "aboutPageTitle": "About Our Firm",
+  "aboutFeaturesTitle": "Our Approach",
+  "aboutServicesTitle": "Consulting Services",
+  "contactPageTitle": "Start Your Project",
+  "contactPageDescription": "CUSTOM_CONTACT_PAGE_DESCRIPTION",
+  "contactInfoTitle": "Get In Touch",
+  "contactFormTitle": "Project Inquiry",
+
+  "//SECTION_19": "=== FORM LABELS & MESSAGES ===",
+  "formNameLabel": "Name",
+  "formEmailLabel": "Email",
+  "formCompanyLabel": "Company",
+  "formTitleLabel": "Title",
+  "formPhoneLabel": "Phone Number",
+  "formSubjectLabel": "Project Type",
+  "formMessageLabel": "Project Description",
+  "formBudgetLabel": "Project Budget Range",
+  "formTimelineLabel": "Desired Timeline",
+  "formSubmitText": "Submit Inquiry",
+  "formSendingText": "Submitting...",
+  "formSuccessMessage": "CUSTOM_SUCCESS_MESSAGE",
+  "formErrorMessage": "CUSTOM_ERROR_MESSAGE",
+
+  "//SECTION_20": "=== TECHNICAL CONFIGURATION ===",
+  "deploymentPlatform": "vercel",
+  "includePWA": false,
+  "cssApproach": "css-modules",
+  "features": {
+    "analytics": true,
+    "seo": true,
+    "darkMode": false,
+    "contactForm": true,
+    "socialLinks": true,
+    "businessHours": true,
+    "testimonials": true,
+    "blog": true,
+    "caseStudies": true,
+    "teamProfiles": true,
+    "thoughtLeadership": true,
+    "projectInquiry": true
+  },
+
+  "//SECTION_21": "=== SEO & MARKETING ===",
+  "seoKeywords": [
+    "CONSULTING_SERVICE_KEYWORDS",
+    "INDUSTRY_KEYWORDS",
+    "LOCATION_KEYWORDS",
+    "EXPERTISE_KEYWORDS"
+  ],
+  "localSEO": {
+    "serviceAreas": [
+      "PRIMARY_CITY",
+      "REGIONAL_MARKETS",
+      "NATIONAL_GLOBAL"
+    ],
+    "businessCategory": "Consulting Firm",
+    "gmbCategory": "GOOGLE_MY_BUSINESS_CATEGORY"
+  }
+} 

@@ -1,0 +1,421 @@
+{
+  "//": "=== AUTO REPAIR SHOP CLIENT INTAKE TEMPLATE ===",
+  "//1": "Complete business information template for auto repair shop website generation",
+  "//2": "Fill out all sections with client's actual auto repair business details",
+  "//3": "Usage: npm run init -- --config [shop-name]-intake.json",
+
+  "//SECTION_1": "=== PROJECT & DEVELOPER INFO ===",
+  "projectName": "CLIENT_AUTOREPAIR_SHOP_LOWERCASE_DASHED",
+  "authorName": "YOUR_NAME",
+  "authorEmail": "YOUR_EMAIL@DOMAIN.COM",
+  "githubUsername": "YOUR_GITHUB_USERNAME",
+  "description": "Professional auto repair shop website for [CLIENT_SHOP_NAME]",
+  "license": "MIT",
+  "repositoryUrl": "https://github.com/YOUR_GITHUB_USERNAME/CLIENT_PROJECT_NAME",
+
+  "//SECTION_2": "=== CORE BUSINESS INFORMATION ===",
+  "businessName": "FULL_AUTO_REPAIR_SHOP_NAME",
+  "businessShortName": "SHORT_SHOP_NAME",
+  "businessTagline": "SHOP_TAGLINE_OR_VALUE_PROPOSITION",
+  "businessDescription": "DETAILED_SHOP_DESCRIPTION_2_3_SENTENCES",
+  "businessShortDescription": "ONE_SENTENCE_SHOP_SUMMARY",
+  "shopType": "GENERAL_REPAIR_SPECIALTY_DEALERSHIP_CHAIN_INDEPENDENT",
+  "servicePhilosophy": "APPROACH_TO_AUTO_REPAIR",
+  "establishedYear": "YEAR_SHOP_ESTABLISHED",
+  "numberOfBays": "NUMBER_OF_SERVICE_BAYS",
+  "numberOfTechnicians": "NUMBER_OF_TECHNICIANS",
+
+  "//SECTION_3": "=== CONTACT INFORMATION ===",
+  "businessPhone": "FORMATTED_PHONE_NUMBER",
+  "businessPhoneRaw": "DIGITS_ONLY_PHONE",
+  "businessEmail": "MAIN_SHOP_EMAIL",
+  "servicePhone": "SERVICE_APPOINTMENT_PHONE",
+  "serviceEmail": "SERVICE_APPOINTMENT_EMAIL",
+  "partsPhone": "PARTS_DEPARTMENT_PHONE",
+  "partsEmail": "PARTS_DEPARTMENT_EMAIL",
+  "towingPhone": "TOWING_SERVICE_PHONE",
+  "emergencyPhone": "AFTER_HOURS_EMERGENCY_NUMBER",
+
+  "//SECTION_4": "=== SHOP LOCATION ===",
+  "businessStreet": "STREET_ADDRESS",
+  "businessCity": "CITY_NAME",
+  "businessState": "STATE_OR_PROVINCE",
+  "businessZip": "ZIP_POSTAL_CODE",
+  "businessLatitude": 0.000000,
+  "businessLongitude": 0.000000,
+  "shopDescription": "SHOP_FACILITY_DESCRIPTION",
+  "customerWaitingArea": "WAITING_AREA_AMENITIES",
+  "parkingInfo": "CUSTOMER_PARKING_INFORMATION",
+  "dropOffInstructions": "VEHICLE_DROP_OFF_INSTRUCTIONS",
+
+  "//SECTION_5": "=== WEBSITE & BRANDING ===",
+  "websiteUrl": "https://DOMAIN.COM",
+  "primaryColor": "#1F2937",
+  "primaryColorHover": "#111827",
+  "primaryColorLight": "#F3F4F6",
+  "secondaryColor": "#3B82F6",
+  "secondaryColorHover": "#2563EB",
+  "secondaryColorLight": "#DBEAFE",
+  "logoUrl": "URL_TO_SHOP_LOGO",
+  "faviconUrl": "URL_TO_FAVICON",
+
+  "//SECTION_6": "=== SOCIAL MEDIA & ONLINE PRESENCE ===",
+  "socialFacebook": "FACEBOOK_PAGE_URL",
+  "socialInstagram": "INSTAGRAM_HANDLE",
+  "socialLinkedin": "LINKEDIN_COMPANY_PAGE",
+  "socialTwitter": "TWITTER_HANDLE",
+  "socialYoutube": "YOUTUBE_CHANNEL",
+  "googleBusinessUrl": "GOOGLE_BUSINESS_PROFILE_URL",
+  "bbbProfile": "BETTER_BUSINESS_BUREAU_URL",
+  "yelpProfile": "YELP_BUSINESS_PROFILE_URL",
+
+  "//SECTION_7": "=== BUSINESS HOURS ===",
+  "hoursMonday": "MONDAY_HOURS",
+  "hoursTuesday": "TUESDAY_HOURS",
+  "hoursWednesday": "WEDNESDAY_HOURS",
+  "hoursThursday": "THURSDAY_HOURS",
+  "hoursFriday": "FRIDAY_HOURS",
+  "hoursSaturday": "SATURDAY_HOURS",
+  "hoursSunday": "SUNDAY_HOURS",
+  "dropOffHours": "VEHICLE_DROP_OFF_HOURS",
+  "pickUpHours": "VEHICLE_PICK_UP_HOURS",
+  "afterHoursServices": "AFTER_HOURS_SERVICE_AVAILABILITY",
+
+  "//SECTION_8": "=== TECHNICIAN TEAM ===",
+  "technicianTeam": [
+    {
+      "name": "TECHNICIAN_NAME",
+      "title": "POSITION_TITLE",
+      "bio": "BACKGROUND_AND_EXPERIENCE",
+      "specializations": [
+        "ENGINE_REPAIR",
+        "TRANSMISSION",
+        "ELECTRICAL_SYSTEMS",
+        "BRAKE_SYSTEMS"
+      ],
+      "certifications": [
+        "ASE_CERTIFICATION_1",
+        "ASE_CERTIFICATION_2",
+        "MANUFACTURER_CERTIFICATIONS"
+      ],
+      "yearsExperience": "NUMBER_OF_YEARS",
+      "trainingBackground": [
+        "TECHNICAL_EDUCATION",
+        "APPRENTICESHIP_INFO",
+        "CONTINUING_EDUCATION"
+      ],
+      "vehicleSpecialties": [
+        "MAKE_SPECIALTY_1",
+        "MAKE_SPECIALTY_2",
+        "VEHICLE_TYPE_SPECIALTY"
+      ],
+      "photoUrl": "URL_TO_TECHNICIAN_PHOTO"
+    }
+  ],
+
+  "//SECTION_9": "=== SERVICE AREAS ===",
+  "serviceAreas": [
+    {
+      "areaName": "SERVICE_AREA_NAME",
+      "description": "AREA_DESCRIPTION",
+      "serviceRadius": "MILES_FROM_SHOP",
+      "towingAvailable": true,
+      "mobileService": false,
+      "pickupDelivery": true
+    }
+  ],
+  "serviceRadius": "TOTAL_MILES_COVERED",
+  "towingServices": "TOWING_SERVICE_DETAILS",
+  "mobileServices": "MOBILE_REPAIR_SERVICES",
+  "pickupDeliveryService": "PICKUP_DELIVERY_DETAILS",
+
+  "//SECTION_10": "=== SERVICES OFFERED ===",
+  "repairServices": [
+    {
+      "serviceName": "REPAIR_SERVICE_NAME",
+      "description": "SERVICE_DESCRIPTION",
+      "averageDuration": "TYPICAL_SERVICE_TIME",
+      "warrantyInfo": "WARRANTY_COVERAGE",
+      "certificationRequired": "REQUIRED_CERTIFICATIONS",
+      "diagnosticRequired": true
+    }
+  ],
+  "maintenanceServices": [
+    "OIL_CHANGES",
+    "BRAKE_SERVICE",
+    "TIRE_ROTATION",
+    "TUNE_UPS",
+    "FLUID_CHECKS"
+  ],
+  "diagnosticServices": [
+    "ENGINE_DIAGNOSTICS",
+    "ELECTRICAL_DIAGNOSTICS",
+    "COMPUTER_DIAGNOSTICS",
+    "EMISSION_TESTING"
+  ],
+  "emergencyServices": [
+    "ROADSIDE_ASSISTANCE",
+    "JUMP_STARTS",
+    "LOCKOUT_SERVICE",
+    "FLAT_TIRE_REPAIR"
+  ],
+
+  "//SECTION_11": "=== VEHICLE SPECIALIZATIONS ===",
+  "vehicleMakes": [
+    {
+      "makeName": "VEHICLE_MAKE",
+      "expertiseLevel": "SPECIALIZATION_LEVEL",
+      "certifications": ["MANUFACTURER_CERTIFICATIONS"],
+      "commonServices": ["COMMON_SERVICE_1", "COMMON_SERVICE_2"],
+      "diagnosticTools": ["DIAGNOSTIC_TOOL_1", "DIAGNOSTIC_TOOL_2"]
+    }
+  ],
+  "vehicleTypes": [
+    "CARS",
+    "TRUCKS",
+    "SUVs",
+    "MOTORCYCLES",
+    "COMMERCIAL_VEHICLES"
+  ],
+  "engineTypes": [
+    "GASOLINE",
+    "DIESEL",
+    "HYBRID",
+    "ELECTRIC"
+  ],
+  "transmissionTypes": [
+    "MANUAL",
+    "AUTOMATIC",
+    "CVT"
+  ],
+
+  "//SECTION_12": "=== CERTIFICATIONS & QUALIFICATIONS ===",
+  "shopCertifications": [
+    "AAA_APPROVED",
+    "ASE_BLUE_SEAL",
+    "NAPA_AUTOCARE",
+    "BOSCH_AUTHORIZED"
+  ],
+  "technicianCertifications": [
+    "ASE_CERTIFIED_TECHNICIANS",
+    "MANUFACTURER_TRAINED",
+    "CONTINUING_EDUCATION_PROGRAMS"
+  ],
+  "equipmentCertifications": [
+    "HUNTER_ALIGNMENT",
+    "SNAP_ON_DIAGNOSTICS",
+    "BOSCH_SERVICE_SOLUTIONS"
+  ],
+  "qualityStandards": [
+    "QUALITY_STANDARD_1",
+    "QUALITY_STANDARD_2",
+    "INDUSTRY_COMPLIANCE"
+  ],
+
+  "//SECTION_13": "=== EQUIPMENT & TECHNOLOGY ===",
+  "diagnosticEquipment": [
+    {
+      "equipmentName": "DIAGNOSTIC_TOOL_NAME",
+      "manufacturer": "EQUIPMENT_MANUFACTURER",
+      "capabilities": ["CAPABILITY_1", "CAPABILITY_2"],
+      "vehicleCompatibility": ["COMPATIBLE_MAKES"]
+    }
+  ],
+  "shopEquipment": [
+    "VEHICLE_LIFTS",
+    "TIRE_MACHINES",
+    "ALIGNMENT_EQUIPMENT",
+    "BRAKE_LATHES"
+  ],
+  "computerSystems": [
+    "SHOP_MANAGEMENT_SOFTWARE",
+    "PARTS_ORDERING_SYSTEM",
+    "CUSTOMER_PORTAL",
+    "DIAGNOSTIC_SOFTWARE"
+  ],
+
+  "//SECTION_14": "=== PARTS & INVENTORY ===",
+  "partsSuppliers": [
+    {
+      "supplierName": "PARTS_SUPPLIER_NAME",
+      "supplierType": "OEM_AFTERMARKET_GENUINE",
+      "brandsFocused": ["BRAND_1", "BRAND_2"],
+      "deliveryOptions": "DELIVERY_SPEED_OPTIONS"
+    }
+  ],
+  "partsWarranty": [
+    {
+      "partType": "PART_CATEGORY",
+      "warrantyPeriod": "WARRANTY_LENGTH",
+      "warrantyTerms": "WARRANTY_CONDITIONS",
+      "nationalWarranty": true
+    }
+  ],
+  "inventoryManagement": "PARTS_INVENTORY_SYSTEM",
+  "specialOrdering": "SPECIAL_ORDER_PROCESS",
+
+  "//SECTION_15": "=== PRICING & ESTIMATES ===",
+  "pricingStructure": [
+    {
+      "serviceType": "SERVICE_CATEGORY",
+      "laborRate": "HOURLY_LABOR_RATE",
+      "estimateProcess": "HOW_ESTIMATES_ARE_PROVIDED",
+      "guaranteePolicy": "PRICE_GUARANTEE_POLICY"
+    }
+  ],
+  "freeServices": [
+    "FREE_ESTIMATES",
+    "FREE_INSPECTIONS",
+    "FREE_BATTERY_TESTING",
+    "FREE_DIAGNOSTICS_WITH_REPAIR"
+  ],
+  "diagnosticFees": "DIAGNOSTIC_FEE_STRUCTURE",
+  "minimumCharges": "MINIMUM_SERVICE_CHARGES",
+
+  "//SECTION_16": "=== WARRANTY & GUARANTEES ===",
+  "laborWarranty": {
+    "warrantyPeriod": "LABOR_WARRANTY_LENGTH",
+    "coverageDetails": "WHAT_IS_COVERED",
+    "nationalWarranty": true,
+    "transferable": false
+  },
+  "partsWarrantyDetails": "PARTS_WARRANTY_INFORMATION",
+  "satisfactionGuarantee": "CUSTOMER_SATISFACTION_POLICY",
+  "warrantyTerms": "FULL_WARRANTY_TERMS_AND_CONDITIONS",
+
+  "//SECTION_17": "=== CLIENT SUCCESS STORIES ===",
+  "successStories": [
+    {
+      "vehicleType": "VEHICLE_MAKE_MODEL_YEAR",
+      "problem": "PROBLEM_DESCRIPTION",
+      "solution": "HOW_SHOP_SOLVED_IT",
+      "outcome": "SUCCESSFUL_RESULT",
+      "timeframe": "REPAIR_DURATION",
+      "customerSatisfaction": "CUSTOMER_FEEDBACK"
+    }
+  ],
+  "vehiclesServiced": "TOTAL_VEHICLES_SERVICED",
+  "averageRepairTime": "TYPICAL_REPAIR_DURATION",
+  "customerRetentionRate": "PERCENTAGE_REPEAT_CUSTOMERS",
+
+  "//SECTION_18": "=== CLIENT TESTIMONIALS ===",
+  "testimonials": [
+    {
+      "clientName": "CLIENT_NAME_OR_INITIALS",
+      "testimonial": "CLIENT_TESTIMONIAL_QUOTE",
+      "serviceType": "SERVICE_PROVIDED",
+      "vehicleInfo": "VEHICLE_MAKE_MODEL",
+      "date": "MONTH_YEAR"
+    }
+  ],
+
+  "//SECTION_19": "=== CUSTOMER SERVICES ===",
+  "customerAmenities": [
+    "FREE_WIFI",
+    "COMFORTABLE_WAITING_AREA",
+    "COFFEE_BEVERAGES",
+    "SHUTTLE_SERVICE",
+    "LOANER_VEHICLES"
+  ],
+  "additionalServices": [
+    "VEHICLE_INSPECTIONS",
+    "EMISSION_TESTING",
+    "TITLE_TRANSFERS",
+    "INSURANCE_CLAIMS"
+  ],
+  "communicationMethods": [
+    "TEXT_UPDATES",
+    "EMAIL_NOTIFICATIONS",
+    "PHONE_CALLS",
+    "CUSTOMER_PORTAL"
+  ],
+
+  "//SECTION_20": "=== PAYMENT & FINANCING ===",
+  "paymentMethods": [
+    "CASH",
+    "CHECK",
+    "CREDIT_CARDS",
+    "FLEET_ACCOUNTS"
+  ],
+  "financingOptions": [
+    "FINANCING_OPTION_1",
+    "FINANCING_OPTION_2",
+    "PAYMENT_PLANS"
+  ],
+  "insuranceWork": "INSURANCE_CLAIM_HANDLING",
+  "fleetServices": "FLEET_ACCOUNT_SERVICES",
+
+  "//SECTION_21": "=== CONTENT CUSTOMIZATION ===",
+  "heroTitlePrefix": "Trusted",
+  "ctaPrimaryText": "Schedule Service",
+  "ctaSecondaryText": "Get Estimate",
+  "featuresSectionTitle": "Why Choose Our Shop?",
+  "featuresDescriptionTemplate": "CUSTOM_SHOP_DESCRIPTION",
+  "servicesSectionTitle": "Auto Repair Services",
+  "servicesSectionDescription": "CUSTOM_SERVICES_DESCRIPTION",
+  "servicesDescriptionTemplate": "CUSTOM_SERVICES_TEMPLATE",
+  "servicesCTAText": "Learn More",
+
+  "//SECTION_22": "=== PAGE CONTENT ===",
+  "aboutPageTitle": "About Our Shop",
+  "aboutFeaturesTitle": "Our Commitment",
+  "aboutServicesTitle": "Automotive Services",
+  "contactPageTitle": "Schedule Your Service",
+  "contactPageDescription": "CUSTOM_CONTACT_PAGE_DESCRIPTION",
+  "contactInfoTitle": "Contact Our Shop",
+  "contactFormTitle": "Service Appointment",
+
+  "//SECTION_23": "=== FORM LABELS & MESSAGES ===",
+  "formNameLabel": "Full Name",
+  "formEmailLabel": "Email",
+  "formPhoneLabel": "Phone Number",
+  "formVehicleYearLabel": "Vehicle Year",
+  "formVehicleMakeLabel": "Vehicle Make",
+  "formVehicleModelLabel": "Vehicle Model",
+  "formMileageLabel": "Current Mileage",
+  "formServiceTypeLabel": "Service Needed",
+  "formPreferredDateLabel": "Preferred Date",
+  "formMessageLabel": "Describe the problem or service needed",
+  "formSubmitText": "Schedule Service",
+  "formSendingText": "Scheduling...",
+  "formSuccessMessage": "CUSTOM_SUCCESS_MESSAGE",
+  "formErrorMessage": "CUSTOM_ERROR_MESSAGE",
+
+  "//SECTION_24": "=== TECHNICAL CONFIGURATION ===",
+  "deploymentPlatform": "vercel",
+  "includePWA": false,
+  "cssApproach": "css-modules",
+  "features": {
+    "analytics": true,
+    "seo": true,
+    "darkMode": false,
+    "contactForm": true,
+    "socialLinks": true,
+    "businessHours": true,
+    "testimonials": true,
+    "blog": true,
+    "onlineBooking": true,
+    "serviceReminders": true,
+    "vehicleHistory": true,
+    "estimateCalculator": true,
+    "warrantyLookup": true,
+    "partsOrdering": true
+  },
+
+  "//SECTION_25": "=== SEO & MARKETING ===",
+  "seoKeywords": [
+    "AUTO_REPAIR_KEYWORDS",
+    "LOCATION_KEYWORDS",
+    "SERVICE_TYPE_KEYWORDS",
+    "VEHICLE_MAKE_KEYWORDS"
+  ],
+  "localSEO": {
+    "serviceAreas": [
+      "PRIMARY_CITY",
+      "SURROUNDING_CITIES",
+      "COUNTY_NAME"
+    ],
+    "businessCategory": "Auto Repair Shop",
+    "gmbCategory": "GOOGLE_MY_BUSINESS_CATEGORY"
+  }
+} 

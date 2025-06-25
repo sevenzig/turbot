@@ -1,0 +1,309 @@
+{
+  "//": "=== RETAIL STORE CLIENT INTAKE TEMPLATE ===",
+  "//1": "Complete business information template for retail store website generation",
+  "//2": "Fill out all sections with client's actual retail business details",
+  "//3": "Usage: npm run init -- --config [store-name]-intake.json",
+
+  "//SECTION_1": "=== PROJECT & DEVELOPER INFO ===",
+  "projectName": "CLIENT_STORE_NAME_LOWERCASE_DASHED",
+  "authorName": "YOUR_NAME",
+  "authorEmail": "YOUR_EMAIL@DOMAIN.COM",
+  "githubUsername": "YOUR_GITHUB_USERNAME",
+  "description": "Modern retail store website for [CLIENT_STORE_NAME]",
+  "license": "MIT",
+  "repositoryUrl": "https://github.com/YOUR_GITHUB_USERNAME/CLIENT_PROJECT_NAME",
+
+  "//SECTION_2": "=== CORE BUSINESS INFORMATION ===",
+  "businessName": "FULL_STORE_NAME",
+  "businessShortName": "SHORT_STORE_NAME",
+  "businessTagline": "STORE_TAGLINE_OR_MOTTO",
+  "businessDescription": "DETAILED_STORE_DESCRIPTION_2_3_SENTENCES",
+  "businessShortDescription": "ONE_SENTENCE_STORE_SUMMARY",
+  "storeType": "BOUTIQUE_DEPARTMENT_SPECIALTY_ETC",
+  "targetMarket": "TARGET_CUSTOMER_DEMOGRAPHIC",
+  "establishedYear": "YEAR_STORE_OPENED",
+  "brandPhilosophy": "BRAND_MISSION_AND_VALUES",
+
+  "//SECTION_3": "=== CONTACT INFORMATION ===",
+  "businessPhone": "FORMATTED_PHONE_NUMBER",
+  "businessPhoneRaw": "DIGITS_ONLY_PHONE",
+  "businessEmail": "MAIN_STORE_EMAIL",
+  "customerServicePhone": "CUSTOMER_SERVICE_PHONE",
+  "customerServiceEmail": "CUSTOMER_SERVICE_EMAIL",
+  "ordersEmail": "ONLINE_ORDERS_EMAIL",
+  "returnsEmail": "RETURNS_EXCHANGES_EMAIL",
+
+  "//SECTION_4": "=== PHYSICAL LOCATION ===",
+  "businessStreet": "STREET_ADDRESS",
+  "businessCity": "CITY_NAME",
+  "businessState": "STATE_OR_PROVINCE",
+  "businessZip": "ZIP_POSTAL_CODE",
+  "businessLatitude": 0.000000,
+  "businessLongitude": 0.000000,
+  "storeSize": "SQUARE_FOOTAGE_OR_SIZE_DESCRIPTION",
+  "parkingInfo": "PARKING_INFORMATION_FOR_CUSTOMERS",
+  "neighborhoodDescription": "SHOPPING_AREA_DESCRIPTION",
+  "wheelchairAccessible": true,
+
+  "//SECTION_5": "=== WEBSITE & BRANDING ===",
+  "websiteUrl": "https://DOMAIN.COM",
+  "primaryColor": "#7C3AED",
+  "primaryColorHover": "#6D28D9",
+  "primaryColorLight": "#EDE9FE",
+  "secondaryColor": "#F59E0B",
+  "secondaryColorHover": "#D97706",
+  "secondaryColorLight": "#FEF3C7",
+  "logoUrl": "URL_TO_STORE_LOGO",
+  "faviconUrl": "URL_TO_FAVICON",
+  "brandColors": ["PRIMARY_BRAND_COLOR", "SECONDARY_BRAND_COLOR"],
+
+  "//SECTION_6": "=== SOCIAL MEDIA & ONLINE PRESENCE ===",
+  "socialInstagram": "INSTAGRAM_HANDLE",
+  "socialFacebook": "FACEBOOK_PAGE_URL",
+  "socialTwitter": "TWITTER_HANDLE",
+  "socialPinterest": "PINTEREST_PROFILE",
+  "socialTiktok": "TIKTOK_HANDLE",
+  "socialYoutube": "YOUTUBE_CHANNEL",
+  "googleBusinessUrl": "GOOGLE_BUSINESS_PROFILE_URL",
+  "yelpUrl": "YELP_BUSINESS_URL",
+
+  "//SECTION_7": "=== BUSINESS HOURS ===",
+  "hoursMonday": "MONDAY_HOURS",
+  "hoursTuesday": "TUESDAY_HOURS",
+  "hoursWednesday": "WEDNESDAY_HOURS",
+  "hoursThursday": "THURSDAY_HOURS",
+  "hoursFriday": "FRIDAY_HOURS",
+  "hoursSaturday": "SATURDAY_HOURS",
+  "hoursSunday": "SUNDAY_HOURS",
+  "holidayHours": "HOLIDAY_SCHEDULE",
+  "specialEventHours": "SALE_OR_EVENT_HOURS",
+  "extendedHours": "BLACK_FRIDAY_CHRISTMAS_ETC",
+
+  "//SECTION_8": "=== PRODUCT CATEGORIES ===",
+  "productCategories": [
+    {
+      "categoryName": "PRODUCT_CATEGORY_NAME",
+      "description": "CATEGORY_DESCRIPTION",
+      "keyProducts": ["PRODUCT_1", "PRODUCT_2", "PRODUCT_3"],
+      "priceRange": "PRICE_RANGE_FOR_CATEGORY",
+      "popularItems": ["BESTSELLER_1", "BESTSELLER_2"]
+    }
+  ],
+  "primaryProducts": [
+    "MAIN_PRODUCT_TYPE_1",
+    "MAIN_PRODUCT_TYPE_2",
+    "MAIN_PRODUCT_TYPE_3"
+  ],
+  "featuredBrands": [
+    "BRAND_1",
+    "BRAND_2",
+    "BRAND_3"
+  ],
+  "exclusiveProducts": [
+    "EXCLUSIVE_ITEM_1",
+    "EXCLUSIVE_ITEM_2"
+  ],
+
+  "//SECTION_9": "=== PRICING & VALUE ===",
+  "priceRange": "OVERALL_PRICE_RANGE_$_$$_$$$",
+  "averagePrice": "AVERAGE_ITEM_PRICE",
+  "budgetOptions": "BUDGET_FRIENDLY_OPTIONS_AVAILABLE",
+  "luxuryOptions": "HIGH_END_OPTIONS_AVAILABLE",
+  "salesFrequency": "HOW_OFTEN_SALES_OCCUR",
+  "membershipDiscounts": "LOYALTY_PROGRAM_DISCOUNTS",
+  "studentDiscounts": "STUDENT_DISCOUNT_POLICY",
+  "seniorDiscounts": "SENIOR_DISCOUNT_POLICY",
+
+  "//SECTION_10": "=== SERVICES OFFERED ===",
+  "inStoreServices": [
+    "PERSONAL_SHOPPING",
+    "STYLING_CONSULTATION",
+    "ALTERATIONS",
+    "GIFT_WRAPPING"
+  ],
+  "onlineServices": [
+    "ONLINE_ORDERING",
+    "CURBSIDE_PICKUP",
+    "HOME_DELIVERY",
+    "VIRTUAL_SHOPPING"
+  ],
+  "customerServices": [
+    "CUSTOMER_SERVICE_TYPE_1",
+    "CUSTOMER_SERVICE_TYPE_2"
+  ],
+  "specialServices": [
+    "SPECIAL_SERVICE_1",
+    "SPECIAL_SERVICE_2"
+  ],
+
+  "//SECTION_11": "=== E-COMMERCE & ORDERING ===",
+  "onlineStoreAvailable": true,
+  "ecommerceplatform": "SHOPIFY_SQUARE_WOOCOMMERCE_ETC",
+  "onlineInventory": "FULL_PARTIAL_EXCLUSIVE_ONLINE",
+  "shippingOptions": [
+    "STANDARD_SHIPPING",
+    "EXPRESS_SHIPPING",
+    "OVERNIGHT_SHIPPING",
+    "FREE_SHIPPING_THRESHOLD"
+  ],
+  "shippingAreas": [
+    "LOCAL_DELIVERY_AREA",
+    "REGIONAL_SHIPPING",
+    "NATIONAL_SHIPPING"
+  ],
+  "pickupOptions": [
+    "IN_STORE_PICKUP",
+    "CURBSIDE_PICKUP",
+    "LOCKER_PICKUP"
+  ],
+
+  "//SECTION_12": "=== INVENTORY & SOURCING ===",
+  "inventorySize": "APPROXIMATE_NUMBER_OF_ITEMS",
+  "newArrivals": "HOW_OFTEN_NEW_PRODUCTS_ARRIVE",
+  "seasonalItems": "SEASONAL_PRODUCT_ROTATION",
+  "limitedEditions": "LIMITED_EDITION_AVAILABILITY",
+  "customOrders": "CUSTOM_ORDER_CAPABILITY",
+  "sourcingInfo": [
+    "LOCAL_SOURCING",
+    "INTERNATIONAL_BRANDS",
+    "ARTISAN_PRODUCTS"
+  ],
+
+  "//SECTION_13": "=== CUSTOMER POLICIES ===",
+  "returnPolicy": "RETURN_POLICY_DETAILS",
+  "exchangePolicy": "EXCHANGE_POLICY_DETAILS",
+  "warrantyPolicy": "WARRANTY_INFORMATION",
+  "layawayPolicy": "LAYAWAY_AVAILABILITY",
+  "priceMatchPolicy": "PRICE_MATCHING_POLICY",
+  "damagePolicy": "DAMAGED_ITEM_POLICY",
+
+  "//SECTION_14": "=== PAYMENT OPTIONS ===",
+  "paymentMethods": [
+    "CASH",
+    "CREDIT_CARDS_ACCEPTED",
+    "DEBIT_CARDS",
+    "DIGITAL_WALLETS",
+    "BUY_NOW_PAY_LATER"
+  ],
+  "financingOptions": [
+    "STORE_CREDIT",
+    "PAYMENT_PLANS",
+    "FINANCING_PROGRAMS"
+  ],
+  "giftCards": "GIFT_CARD_AVAILABILITY",
+  "loyaltyProgram": "LOYALTY_REWARDS_PROGRAM",
+
+  "//SECTION_15": "=== CUSTOMER TESTIMONIALS ===",
+  "testimonials": [
+    {
+      "customerName": "CUSTOMER_NAME_OR_INITIALS",
+      "review": "CUSTOMER_REVIEW_QUOTE",
+      "productPurchased": "PRODUCT_OR_CATEGORY",
+      "rating": "STAR_RATING_1_5",
+      "date": "MONTH_YEAR"
+    }
+  ],
+
+  "//SECTION_16": "=== STAFF & EXPERTISE ===",
+  "keyStaff": [
+    {
+      "name": "STAFF_MEMBER_NAME",
+      "role": "POSITION_TITLE",
+      "expertise": "AREA_OF_EXPERTISE",
+      "bio": "BRIEF_BACKGROUND",
+      "certifications": ["RELEVANT_CERTIFICATIONS"]
+    }
+  ],
+  "personalShoppers": "PERSONAL_SHOPPING_SERVICE_AVAILABLE",
+  "styleConsultants": "STYLE_CONSULTATION_AVAILABLE",
+
+  "//SECTION_17": "=== SPECIAL EVENTS & PROMOTIONS ===",
+  "regularPromotions": [
+    {
+      "promotionName": "PROMOTION_NAME",
+      "description": "PROMOTION_DETAILS",
+      "frequency": "WEEKLY_MONTHLY_SEASONAL",
+      "discount": "DISCOUNT_PERCENTAGE_OR_AMOUNT"
+    }
+  ],
+  "specialEvents": [
+    "TRUNK_SHOWS",
+    "FASHION_SHOWS",
+    "PRIVATE_SALES",
+    "VIP_NIGHTS"
+  ],
+  "seasonalSales": [
+    "SPRING_SALE",
+    "SUMMER_CLEARANCE",
+    "FALL_FASHION",
+    "HOLIDAY_SALES"
+  ],
+
+  "//SECTION_18": "=== CONTENT CUSTOMIZATION ===",
+  "heroTitlePrefix": "Shop at",
+  "ctaPrimaryText": "Shop Now",
+  "ctaSecondaryText": "View Collections",
+  "featuresSectionTitle": "Why Shop With Us?",
+  "featuresDescriptionTemplate": "CUSTOM_SHOPPING_EXPERIENCE_DESCRIPTION",
+  "servicesSectionTitle": "Shopping Options",
+  "servicesSectionDescription": "CUSTOM_SERVICES_DESCRIPTION",
+  "servicesDescriptionTemplate": "CUSTOM_SERVICES_TEMPLATE",
+  "servicesCTAText": "Learn More",
+
+  "//SECTION_19": "=== PAGE CONTENT ===",
+  "aboutPageTitle": "About Our Store",
+  "aboutFeaturesTitle": "What Makes Us Special",
+  "aboutServicesTitle": "Shopping Services",
+  "contactPageTitle": "Visit Our Store",
+  "contactPageDescription": "CUSTOM_CONTACT_PAGE_DESCRIPTION",
+  "contactInfoTitle": "Store Information",
+  "contactFormTitle": "Send us a Message",
+
+  "//SECTION_20": "=== FORM LABELS & MESSAGES ===",
+  "formNameLabel": "Name",
+  "formEmailLabel": "Email",
+  "formPhoneLabel": "Phone Number",
+  "formSubjectLabel": "Inquiry Type",
+  "formMessageLabel": "Message",
+  "formSubmitText": "Send Message",
+  "formSendingText": "Sending...",
+  "formSuccessMessage": "CUSTOM_SUCCESS_MESSAGE",
+  "formErrorMessage": "CUSTOM_ERROR_MESSAGE",
+
+  "//SECTION_21": "=== TECHNICAL CONFIGURATION ===",
+  "deploymentPlatform": "vercel",
+  "includePWA": true,
+  "cssApproach": "css-modules",
+  "features": {
+    "analytics": true,
+    "seo": true,
+    "darkMode": false,
+    "contactForm": true,
+    "socialLinks": true,
+    "businessHours": true,
+    "testimonials": true,
+    "blog": false,
+    "ecommerce": true,
+    "productCatalog": true,
+    "wishlist": true,
+    "shoppingCart": true,
+    "inventoryManagement": true
+  },
+
+  "//SECTION_22": "=== SEO & MARKETING ===",
+  "seoKeywords": [
+    "PRODUCT_CATEGORY_KEYWORDS",
+    "BRAND_KEYWORDS",
+    "LOCATION_KEYWORDS",
+    "SHOPPING_KEYWORDS"
+  ],
+  "localSEO": {
+    "serviceAreas": [
+      "PRIMARY_CITY",
+      "SURROUNDING_CITIES",
+      "DELIVERY_AREAS"
+    ],
+    "businessCategory": "Retail Store",
+    "gmbCategory": "GOOGLE_MY_BUSINESS_CATEGORY"
+  }
+} 

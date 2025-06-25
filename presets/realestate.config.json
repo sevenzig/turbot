@@ -1,0 +1,107 @@
+{
+  "//": "=== REAL ESTATE AGENCY TEMPLATE CONFIGURATION ===",
+  "//1": "Preset configuration for real estate agencies, agents, and property professionals",
+  "//2": "Usage: npm run init -- --config presets/realestate.config.json",
+
+  "projectName": "real-estate-website",
+  "authorName": "[AUTHOR_NAME]",
+  "authorEmail": "[AUTHOR_EMAIL]",
+  "githubUsername": "[GITHUB_USERNAME]",
+
+  "description": "A professional real estate website with property listings, market insights, and client services",
+  "license": "MIT",
+  "repositoryUrl": "[REPOSITORY_URL]",
+
+  "businessName": "[AGENCY_NAME]",
+  "businessShortName": "[AGENCY_SHORT_NAME]",
+  "businessTagline": "Your trusted partner in real estate",
+  "businessDescription": "A full-service real estate agency dedicated to helping clients navigate the complexities of buying, selling, and investing in property. With deep local market knowledge and a commitment to exceptional service, we guide our clients through every step of their real estate journey.",
+  "businessShortDescription": "Professional real estate agency specializing in residential and commercial property transactions",
+
+  "businessPhone": "[PHONE]",
+  "businessPhoneRaw": "[PHONE_RAW]",
+  "businessEmail": "[EMAIL]",
+
+  "businessStreet": "[STREET]",
+  "businessCity": "[CITY]",
+  "businessState": "[STATE]",
+  "businessZip": "[ZIP]",
+  "businessLatitude": 0,
+  "businessLongitude": 0,
+
+  "websiteUrl": "[WEBSITE]",
+  "primaryColor": "#1E40AF",
+  "primaryColorHover": "#1D4ED8",
+  "primaryColorLight": "#DBEAFE",
+  "secondaryColor": "#059669",
+  "secondaryColorHover": "#047857",
+  "secondaryColorLight": "#D1FAE5",
+
+  "hoursMonday": "8:00 AM - 7:00 PM",
+  "hoursTuesday": "8:00 AM - 7:00 PM",
+  "hoursWednesday": "8:00 AM - 7:00 PM",
+  "hoursThursday": "8:00 AM - 7:00 PM",
+  "hoursFriday": "8:00 AM - 7:00 PM",
+  "hoursSaturday": "9:00 AM - 6:00 PM",
+  "hoursSunday": "10:00 AM - 5:00 PM",
+
+  "businessFeature1": "Local Market Expertise",
+  "businessFeature2": "Professional Guidance",
+  "businessFeature3": "Proven Track Record",
+  "businessFeature4": "Client-First Approach",
+
+  "businessService1": "Home Buying",
+  "businessService2": "Home Selling",
+  "businessService3": "Market Analysis",
+  "businessService4": "Investment Properties",
+
+  "heroTitlePrefix": "Partner with",
+  "ctaPrimaryText": "Schedule Consultation",
+  "ctaSecondaryText": "View Properties",
+
+  "featuresSectionTitle": "Why Choose Our Agency?",
+  "featuresDescriptionTemplate": "Experience real estate expertise that delivers results with our local market knowledge and proven track record.",
+
+  "servicesSectionTitle": "Our Real Estate Services",
+  "servicesSectionDescription": "Comprehensive real estate services to help you achieve your property goals with confidence.",
+  "servicesDescriptionTemplate": "Expert real estate guidance tailored to your unique property needs and investment goals.",
+  "servicesCTAText": "Learn More",
+
+  "aboutPageTitle": "About Our Agency",
+  "aboutFeaturesTitle": "Our Expertise",
+  "aboutServicesTitle": "Real Estate Services",
+
+  "contactPageTitle": "Contact Our Agency",
+  "contactPageDescription": "Ready to buy, sell, or invest? Get in touch for expert real estate guidance.",
+  "contactInfoTitle": "Get In Touch",
+  "contactPhoneLabel": "Phone",
+  "contactEmailLabel": "Email",
+  "contactAddressLabel": "Office Address",
+  "contactDirectionsText": "Get Directions",
+  "contactHoursLabel": "Office Hours",
+
+  "contactFormTitle": "Request Consultation",
+  "formNameLabel": "Full Name",
+  "formEmailLabel": "Email",
+  "formSubjectLabel": "Service Interest",
+  "formMessageLabel": "Tell us about your real estate needs",
+  "formSubmitText": "Request Consultation",
+  "formSendingText": "Submitting...",
+  "formSuccessMessage": "Consultation request submitted! We'll contact you within 24 hours.",
+  "formErrorMessage": "Failed to submit request. Please call us directly.",
+
+  "deploymentPlatform": "vercel",
+  "includePWA": false,
+  "cssApproach": "css-modules",
+
+  "features": {
+    "analytics": true,
+    "seo": true,
+    "darkMode": false,
+    "contactForm": true,
+    "socialLinks": true,
+    "businessHours": true,
+    "testimonials": true,
+    "blog": true
+  }
+} 

@@ -1,0 +1,84 @@
+{
+  "//": "=== CONSULTING BUSINESS TEMPLATE CONFIGURATION ===",
+  "//1": "Preset configuration for consulting businesses",
+  "//2": "Usage: npm run init -- --config presets/consulting.config.json",
+
+  "projectName": "consulting-website",
+  "authorName": "[AUTHOR_NAME]",
+  "authorEmail": "[AUTHOR_EMAIL]",
+  "githubUsername": "[GITHUB_USERNAME]",
+
+  "description": "A professional consulting website showcasing expertise, services, and client success",
+  "license": "MIT",
+  "repositoryUrl": "[REPOSITORY_URL]",
+
+  "businessName": "[CONSULTING_FIRM_NAME]",
+  "businessShortName": "[CONSULTING_SHORT_NAME]",
+  "businessTagline": "Strategic solutions for sustainable growth",
+  "businessDescription": "A professional consulting firm specializing in strategic planning, operational excellence, and business transformation. We partner with organizations to achieve sustainable growth through data-driven insights and proven methodologies.",
+  "businessShortDescription": "Strategic consulting firm focused on sustainable business growth and transformation",
+
+  "businessPhone": "[PHONE]",
+  "businessPhoneRaw": "[PHONE_RAW]",
+  "businessEmail": "[EMAIL]",
+
+  "businessStreet": "[STREET]",
+  "businessCity": "[CITY]",
+  "businessState": "[STATE]",
+  "businessZip": "[ZIP]",
+  "businessLatitude": 0,
+  "businessLongitude": 0,
+
+  "websiteUrl": "[WEBSITE]",
+  "primaryColor": "#1E40AF",
+  "primaryColorHover": "#1D4ED8",
+  "primaryColorLight": "#DBEAFE",
+  "secondaryColor": "#059669",
+  "secondaryColorHover": "#047857",
+  "secondaryColorLight": "#D1FAE5",
+
+  "hoursMonday": "8:00 AM - 6:00 PM",
+  "hoursTuesday": "8:00 AM - 6:00 PM",
+  "hoursWednesday": "8:00 AM - 6:00 PM",
+  "hoursThursday": "8:00 AM - 6:00 PM",
+  "hoursFriday": "8:00 AM - 5:00 PM",
+  "hoursSaturday": "By Appointment",
+  "hoursSunday": "Closed",
+
+  "businessFeature1": "Strategic Expertise",
+  "businessFeature2": "Proven Results",
+  "businessFeature3": "Industry Knowledge",
+  "businessFeature4": "Client Partnership",
+
+  "businessService1": "Strategic Planning",
+  "businessService2": "Process Optimization",
+  "businessService3": "Change Management",
+  "businessService4": "Performance Analytics",
+
+  "heroTitlePrefix": "Partner with",
+  "ctaPrimaryText": "Schedule Consultation",
+  "ctaSecondaryText": "Learn More",
+
+  "featuresSectionTitle": "Why Choose Our Firm?",
+  "featuresDescriptionTemplate": "Partner with experienced consultants who deliver measurable results and sustainable growth.",
+
+  "servicesSectionTitle": "Our Services",
+  "servicesSectionDescription": "Comprehensive consulting services designed to drive your business forward.",
+  "servicesDescriptionTemplate": "Expert consulting services tailored to your unique business challenges and opportunities.",
+  "servicesCTAText": "Learn More",
+
+  "deploymentPlatform": "vercel",
+  "includePWA": false,
+  "cssApproach": "css-modules",
+
+  "features": {
+    "analytics": true,
+    "seo": true,
+    "darkMode": false,
+    "contactForm": true,
+    "socialLinks": true,
+    "businessHours": true,
+    "testimonials": true,
+    "blog": true
+  }
+} 

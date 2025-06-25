@@ -1,4 +1,27 @@
+/**
+ * Generic Business Homepage Styles
+ * Clean, professional layout for any business type
+ */
+
 .homePage {
-  /* HomePage specific styles */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.homePage > * {
+  flex: 0 0 auto;
+}
+
+/* Ensure sections stack properly */
+.homePage section {
   width: 100%;
 }
+
+/* Print optimization */
+@media print {
+  .homePage {
+    color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+} 

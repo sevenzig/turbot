@@ -1,0 +1,84 @@
+{
+  "//": "=== RESTAURANT TEMPLATE CONFIGURATION ===",
+  "//1": "Preset configuration for restaurant businesses",
+  "//2": "Usage: npm run init -- --config presets/restaurant.config.json",
+
+  "projectName": "restaurant-website",
+  "authorName": "[AUTHOR_NAME]",
+  "authorEmail": "[AUTHOR_EMAIL]",
+  "githubUsername": "[GITHUB_USERNAME]",
+
+  "description": "A modern restaurant website featuring menu, reservations, and dining experience",
+  "license": "MIT",
+  "repositoryUrl": "[REPOSITORY_URL]",
+
+  "businessName": "[RESTAURANT_NAME]",
+  "businessShortName": "[RESTAURANT_SHORT_NAME]",
+  "businessTagline": "Fresh ingredients, exceptional flavors",
+  "businessDescription": "A culinary destination offering fresh, locally-sourced ingredients prepared with passion and creativity. Our warm atmosphere and exceptional service create memorable dining experiences for every guest.",
+  "businessShortDescription": "Fine dining restaurant with fresh, local ingredients and exceptional service",
+
+  "businessPhone": "[PHONE]",
+  "businessPhoneRaw": "[PHONE_RAW]",
+  "businessEmail": "[EMAIL]",
+
+  "businessStreet": "[STREET]",
+  "businessCity": "[CITY]",
+  "businessState": "[STATE]",
+  "businessZip": "[ZIP]",
+  "businessLatitude": 0,
+  "businessLongitude": 0,
+
+  "websiteUrl": "[WEBSITE]",
+  "primaryColor": "#DC2626",
+  "primaryColorHover": "#B91C1C",
+  "primaryColorLight": "#FEE2E2",
+  "secondaryColor": "#059669",
+  "secondaryColorHover": "#047857",
+  "secondaryColorLight": "#D1FAE5",
+
+  "hoursMonday": "Closed",
+  "hoursTuesday": "5:00 PM - 9:00 PM",
+  "hoursWednesday": "5:00 PM - 9:00 PM",
+  "hoursThursday": "5:00 PM - 9:00 PM",
+  "hoursFriday": "5:00 PM - 10:00 PM",
+  "hoursSaturday": "4:00 PM - 10:00 PM",
+  "hoursSunday": "4:00 PM - 9:00 PM",
+
+  "businessFeature1": "Fresh Local Ingredients",
+  "businessFeature2": "Expert Culinary Team",
+  "businessFeature3": "Warm Atmosphere",
+  "businessFeature4": "Exceptional Service",
+
+  "businessService1": "Fine Dining",
+  "businessService2": "Private Events",
+  "businessService3": "Catering",
+  "businessService4": "Wine Selection",
+
+  "heroTitlePrefix": "Welcome to",
+  "ctaPrimaryText": "Make Reservation",
+  "ctaSecondaryText": "View Menu",
+
+  "featuresSectionTitle": "Our Dining Experience",
+  "featuresDescriptionTemplate": "Experience culinary excellence with fresh ingredients and exceptional service.",
+
+  "servicesSectionTitle": "Our Offerings",
+  "servicesSectionDescription": "From intimate dinners to special celebrations, we provide memorable culinary experiences.",
+  "servicesDescriptionTemplate": "Exceptional dining experience with fresh ingredients and professional service.",
+  "servicesCTAText": "Learn More",
+
+  "deploymentPlatform": "vercel",
+  "includePWA": false,
+  "cssApproach": "css-modules",
+
+  "features": {
+    "analytics": true,
+    "seo": true,
+    "darkMode": false,
+    "contactForm": true,
+    "socialLinks": true,
+    "businessHours": true,
+    "testimonials": true,
+    "blog": false
+  }
+} 

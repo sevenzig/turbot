@@ -1,0 +1,105 @@
+/**
+ * Generic Business Information Template
+ * This is the default business template that gets replaced by industry-specific templates
+ */
+
+import type { BusinessInfo } from '../types/businessInfo';
+
+// Generic business information
+export const businessInfo: BusinessInfo = {
+  // Basic business information
+  name: '[BUSINESS_NAME]',
+  shortName: '[BUSINESS_SHORT_NAME]',
+  tagline: '[BUSINESS_TAGLINE]',
+  description: '[BUSINESS_DESCRIPTION]',
+  shortDescription: '[BUSINESS_SHORT_DESCRIPTION]',
+
+  // Address information
+  address: {
+    street: '[BUSINESS_STREET]',
+    city: '[BUSINESS_CITY]',
+    state: '[BUSINESS_STATE]',
+    zip: '[BUSINESS_ZIP]',
+    full: '[BUSINESS_ADDRESS_FULL]',
+    coordinates: {
+      latitude: 0,
+      longitude: 0
+    }
+  },
+
+  // Contact information
+  contact: {
+    phone: {
+      raw: '[BUSINESS_PHONE_RAW]',
+      formatted: '[BUSINESS_PHONE_FORMATTED]',
+      link: '[BUSINESS_PHONE_LINK]'
+    },
+    email: '[BUSINESS_EMAIL]'
+  },
+
+  // Social media
+  social: {
+    linkedin: '[SOCIAL_LINKEDIN]',
+    facebook: '[SOCIAL_FACEBOOK]',
+    twitter: '[SOCIAL_TWITTER]',
+    instagram: '[SOCIAL_INSTAGRAM]'
+  },
+
+  // Website information
+  website: {
+    domain: '[WEBSITE_DOMAIN]',
+    baseUrl: '[WEBSITE_URL]'
+  },
+
+  // Business hours
+  hours: {
+    monday: '[HOURS_MONDAY]',
+    tuesday: '[HOURS_TUESDAY]',
+    wednesday: '[HOURS_WEDNESDAY]',
+    thursday: '[HOURS_THURSDAY]',
+    friday: '[HOURS_FRIDAY]',
+    saturday: '[HOURS_SATURDAY]',
+    sunday: '[HOURS_SUNDAY]'
+  },
+
+  // Basic features and services
+  features: [
+    '[BUSINESS_FEATURE_1]',
+    '[BUSINESS_FEATURE_2]',
+    '[BUSINESS_FEATURE_3]',
+    '[BUSINESS_FEATURE_4]'
+  ],
+  services: [
+    '[BUSINESS_SERVICE_1]',
+    '[BUSINESS_SERVICE_2]',
+    '[BUSINESS_SERVICE_3]',
+    '[BUSINESS_SERVICE_4]'
+  ]
+};
+
+// Utility functions for generic business data
+export function getCurrentBusinessStatus() {
+  const now = new Date();
+  const currentHour = now.getHours();
+  const currentDay = now.toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase();
+  
+  const todayHours = businessInfo.hours[currentDay as keyof typeof businessInfo.hours];
+  
+  if (todayHours === 'Closed' || todayHours === '[HOURS_SUNDAY]') {
+    return { isOpen: false, status: 'Closed', nextOpen: 'Monday 9:00 AM' };
+  }
+  
+  // Simple check for business hours (9 AM - 5 PM on weekdays)
+  if (currentHour >= 9 && currentHour < 17) {
+    return { isOpen: true, status: 'Open', closesAt: '5:00 PM' };
+  }
+  
+  return { isOpen: false, status: 'Closed', nextOpen: 'Tomorrow 9:00 AM' };
+}
+
+export function getGoogleMapsUrl(): string {
+  return `https://maps.google.com/maps?q=${encodeURIComponent(businessInfo.address.full)}`;
+}
+
+// Export for use in components
+export default businessInfo; 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { businessInfo, getCurrentBusinessStatus } from '@data/businessInfo';
+import { businessInfo, getCurrentBusinessStatus } from '../../data/businessInfo';
 import styles from './Header.module.css';
 
 const Header: React.FC = () => {
@@ -76,17 +76,17 @@ const Header: React.FC = () => {
             <span
               className={`${styles.statusText} ${businessStatus.isOpen ? styles.open : styles.closed}`}
             >
-              {businessStatus.message}
+              {businessStatus.status}
             </span>
           </div>
           <div className={styles.directions}>
             <a
-              href={`https://maps.google.com/maps?q=${encodeURIComponent(businessInfo.address.full)}`}
-              target='_blank'
-              rel='noopener noreferrer'
-              className={styles.directionsLink}
-            >
-              Get directions to {businessInfo.address.full}
+                          href={`https://maps.google.com/maps?q=${encodeURIComponent(businessInfo.address.full)}`}
+            target='_blank'
+            rel='noopener noreferrer'
+            className={styles.directionsLink}
+          >
+            Get directions to {businessInfo.address.full}
             </a>
           </div>
         </div>

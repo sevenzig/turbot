@@ -1,0 +1,351 @@
+{
+  "//": "=== REAL ESTATE AGENCY CLIENT INTAKE TEMPLATE ===",
+  "//1": "Complete business information template for real estate agency website generation",
+  "//2": "Fill out all sections with client's actual real estate business details",
+  "//3": "Usage: npm run init -- --config [realestate-agency]-intake.json",
+
+  "//SECTION_1": "=== PROJECT & DEVELOPER INFO ===",
+  "projectName": "CLIENT_REALESTATE_AGENCY_LOWERCASE_DASHED",
+  "authorName": "YOUR_NAME",
+  "authorEmail": "YOUR_EMAIL@DOMAIN.COM",
+  "githubUsername": "YOUR_GITHUB_USERNAME",
+  "description": "Professional real estate agency website for [CLIENT_AGENCY_NAME]",
+  "license": "MIT",
+  "repositoryUrl": "https://github.com/YOUR_GITHUB_USERNAME/CLIENT_PROJECT_NAME",
+
+  "//SECTION_2": "=== CORE BUSINESS INFORMATION ===",
+  "businessName": "FULL_REAL_ESTATE_AGENCY_NAME",
+  "businessShortName": "SHORT_AGENCY_NAME",
+  "businessTagline": "AGENCY_TAGLINE_OR_VALUE_PROPOSITION",
+  "businessDescription": "DETAILED_AGENCY_DESCRIPTION_2_3_SENTENCES",
+  "businessShortDescription": "ONE_SENTENCE_AGENCY_SUMMARY",
+  "agencyType": "INDEPENDENT_FRANCHISE_BOUTIQUE_LUXURY_ETC",
+  "realEstatePhilosophy": "AGENCY_APPROACH_TO_REAL_ESTATE",
+  "establishedYear": "YEAR_AGENCY_ESTABLISHED",
+  "numberOfAgents": "NUMBER_OF_AGENTS_IN_OFFICE",
+
+  "//SECTION_3": "=== CONTACT INFORMATION ===",
+  "businessPhone": "FORMATTED_PHONE_NUMBER",
+  "businessPhoneRaw": "DIGITS_ONLY_PHONE",
+  "businessEmail": "MAIN_AGENCY_EMAIL",
+  "buyerServicesPhone": "BUYER_SERVICES_PHONE",
+  "buyerServicesEmail": "BUYER_SERVICES_EMAIL",
+  "sellerServicesPhone": "SELLER_SERVICES_PHONE",
+  "sellerServicesEmail": "SELLER_SERVICES_EMAIL",
+  "investorServicesPhone": "INVESTOR_SERVICES_PHONE",
+  "investorServicesEmail": "INVESTOR_SERVICES_EMAIL",
+
+  "//SECTION_4": "=== OFFICE LOCATION ===",
+  "businessStreet": "STREET_ADDRESS",
+  "businessCity": "CITY_NAME",
+  "businessState": "STATE_OR_PROVINCE",
+  "businessZip": "ZIP_POSTAL_CODE",
+  "businessLatitude": 0.000000,
+  "businessLongitude": 0.000000,
+  "officeDescription": "OFFICE_ENVIRONMENT_DESCRIPTION",
+  "parkingInfo": "PARKING_INFORMATION_FOR_CLIENTS",
+  "conferenceRooms": "MEETING_ROOM_AVAILABILITY",
+  "wheelchairAccessible": true,
+
+  "//SECTION_5": "=== WEBSITE & BRANDING ===",
+  "websiteUrl": "https://DOMAIN.COM",
+  "primaryColor": "#1F2937",
+  "primaryColorHover": "#111827",
+  "primaryColorLight": "#F3F4F6",
+  "secondaryColor": "#3B82F6",
+  "secondaryColorHover": "#2563EB",
+  "secondaryColorLight": "#DBEAFE",
+  "logoUrl": "URL_TO_AGENCY_LOGO",
+  "faviconUrl": "URL_TO_FAVICON",
+
+  "//SECTION_6": "=== SOCIAL MEDIA & ONLINE PRESENCE ===",
+  "socialFacebook": "FACEBOOK_PAGE_URL",
+  "socialInstagram": "INSTAGRAM_HANDLE",
+  "socialLinkedin": "LINKEDIN_COMPANY_PAGE",
+  "socialTwitter": "TWITTER_HANDLE",
+  "socialYoutube": "YOUTUBE_CHANNEL",
+  "googleBusinessUrl": "GOOGLE_BUSINESS_PROFILE_URL",
+  "zillowProfile": "ZILLOW_AGENT_PROFILE_URL",
+  "realtor.comProfile": "REALTOR_COM_PROFILE_URL",
+
+  "//SECTION_7": "=== BUSINESS HOURS ===",
+  "hoursMonday": "MONDAY_HOURS",
+  "hoursTuesday": "TUESDAY_HOURS",
+  "hoursWednesday": "WEDNESDAY_HOURS",
+  "hoursThursday": "THURSDAY_HOURS",
+  "hoursFriday": "FRIDAY_HOURS",
+  "hoursSaturday": "SATURDAY_HOURS",
+  "hoursSunday": "SUNDAY_HOURS",
+  "showingAvailability": "PROPERTY_SHOWING_HOURS",
+  "emergencyContact": "AFTER_HOURS_EMERGENCY_CONTACT",
+
+  "//SECTION_8": "=== REAL ESTATE AGENTS ===",
+  "realEstateAgents": [
+    {
+      "name": "AGENT_FULL_NAME",
+      "title": "BROKER_AGENT_ASSOCIATE_ETC",
+      "bio": "AGENT_BACKGROUND_AND_EXPERIENCE",
+      "specializations": [
+        "RESIDENTIAL",
+        "COMMERCIAL",
+        "LUXURY_HOMES",
+        "FIRST_TIME_BUYERS"
+      ],
+      "licenses": [
+        "REAL_ESTATE_LICENSE_NUMBER",
+        "ADDITIONAL_CERTIFICATIONS"
+      ],
+      "yearsExperience": "NUMBER_OF_YEARS",
+      "educationBackground": [
+        "REAL_ESTATE_EDUCATION",
+        "OTHER_RELEVANT_EDUCATION"
+      ],
+      "achievements": [
+        "SALES_AWARDS",
+        "RECOGNITION",
+        "DESIGNATIONS"
+      ],
+      "serviceAreas": [
+        "PRIMARY_SERVICE_AREA_1",
+        "PRIMARY_SERVICE_AREA_2"
+      ],
+      "languages": ["ENGLISH", "OTHER_LANGUAGES"],
+      "photoUrl": "URL_TO_AGENT_PHOTO",
+      "email": "AGENT_EMAIL",
+      "phone": "AGENT_DIRECT_PHONE",
+      "socialLinkedin": "AGENT_LINKEDIN_PROFILE"
+    }
+  ],
+
+  "//SECTION_9": "=== SERVICE AREAS ===",
+  "primaryServiceAreas": [
+    {
+      "areaName": "SERVICE_AREA_NAME",
+      "description": "AREA_DESCRIPTION",
+      "averageHomePrice": "AVERAGE_PRICE_RANGE",
+      "marketTrends": "CURRENT_MARKET_CONDITIONS",
+      "neighborhoods": ["NEIGHBORHOOD_1", "NEIGHBORHOOD_2"],
+      "keyFeatures": ["AREA_HIGHLIGHT_1", "AREA_HIGHLIGHT_2"]
+    }
+  ],
+  "serviceRadius": "MILES_OR_AREAS_COVERED",
+  "outOfAreaServices": "OUT_OF_AREA_SERVICE_POLICY",
+
+  "//SECTION_10": "=== SERVICES OFFERED ===",
+  "buyerServices": [
+    {
+      "serviceName": "BUYER_SERVICE_NAME",
+      "description": "SERVICE_DESCRIPTION",
+      "process": ["STEP_1", "STEP_2", "STEP_3"],
+      "timeline": "TYPICAL_TIMELINE",
+      "commission": "COMMISSION_STRUCTURE"
+    }
+  ],
+  "sellerServices": [
+    {
+      "serviceName": "SELLER_SERVICE_NAME",
+      "description": "SERVICE_DESCRIPTION",
+      "process": ["STEP_1", "STEP_2", "STEP_3"],
+      "marketingPlan": "MARKETING_STRATEGY",
+      "commission": "COMMISSION_STRUCTURE"
+    }
+  ],
+  "additionalServices": [
+    "HOME_STAGING",
+    "MARKET_ANALYSIS",
+    "INVESTMENT_CONSULTING",
+    "RELOCATION_ASSISTANCE"
+  ],
+
+  "//SECTION_11": "=== PROPERTY TYPES ===",
+  "propertyTypes": [
+    {
+      "type": "PROPERTY_TYPE",
+      "description": "PROPERTY_TYPE_DESCRIPTION",
+      "expertise": "EXPERTISE_LEVEL",
+      "averageDaysOnMarket": "TYPICAL_SALE_TIME",
+      "specialConsiderations": "UNIQUE_ASPECTS"
+    }
+  ],
+  "residentialSpecialties": [
+    "SINGLE_FAMILY_HOMES",
+    "CONDOS_TOWNHOMES",
+    "LUXURY_PROPERTIES",
+    "STARTER_HOMES"
+  ],
+  "commercialSpecialties": [
+    "OFFICE_BUILDINGS",
+    "RETAIL_SPACES",
+    "INVESTMENT_PROPERTIES",
+    "LAND_DEVELOPMENT"
+  ],
+
+  "//SECTION_12": "=== MARKET EXPERTISE ===",
+  "marketStatistics": [
+    {
+      "metric": "MARKET_METRIC_NAME",
+      "value": "CURRENT_VALUE",
+      "trend": "INCREASING_DECREASING_STABLE",
+      "timeframe": "TIME_PERIOD"
+    }
+  ],
+  "marketReports": "MARKET_REPORT_AVAILABILITY",
+  "priceAnalysis": "COMPARATIVE_MARKET_ANALYSIS_PROCESS",
+  "marketPredictions": "FUTURE_MARKET_OUTLOOK",
+
+  "//SECTION_13": "=== CLIENT SUCCESS STORIES ===",
+  "successStories": [
+    {
+      "clientType": "BUYER_SELLER_INVESTOR",
+      "challenge": "CLIENT_CHALLENGE_DESCRIPTION",
+      "solution": "HOW_AGENT_HELPED",
+      "outcome": "SUCCESSFUL_RESULT",
+      "timeframe": "HOW_LONG_IT_TOOK",
+      "propertyType": "TYPE_OF_PROPERTY"
+    }
+  ],
+  "salesVolume": "ANNUAL_SALES_VOLUME",
+  "transactionCount": "NUMBER_OF_TRANSACTIONS_ANNUALLY",
+  "averageTimeOnMarket": "AVERAGE_DAYS_TO_SELL",
+
+  "//SECTION_14": "=== CLIENT TESTIMONIALS ===",
+  "testimonials": [
+    {
+      "clientName": "CLIENT_NAME_OR_INITIALS",
+      "testimonial": "CLIENT_TESTIMONIAL_QUOTE",
+      "transactionType": "BOUGHT_SOLD_BOTH",
+      "propertyLocation": "GENERAL_AREA",
+      "date": "MONTH_YEAR"
+    }
+  ],
+
+  "//SECTION_15": "=== MARKETING & TECHNOLOGY ===",
+  "marketingTools": [
+    "PROFESSIONAL_PHOTOGRAPHY",
+    "VIRTUAL_TOURS",
+    "DRONE_PHOTOGRAPHY",
+    "3D_WALKTHROUGHS"
+  ],
+  "technologyPlatforms": [
+    "MLS_SYSTEM_USED",
+    "CRM_PLATFORM",
+    "TRANSACTION_MANAGEMENT",
+    "CLIENT_PORTAL"
+  ],
+  "onlinePresence": [
+    "LISTING_WEBSITES",
+    "SOCIAL_MEDIA_MARKETING",
+    "EMAIL_CAMPAIGNS",
+    "VIRTUAL_SHOWINGS"
+  ],
+
+  "//SECTION_16": "=== COMMISSION & FEES ===",
+  "commissionStructure": "COMMISSION_PERCENTAGE_STRUCTURE",
+  "buyerCommission": "BUYER_AGENT_COMMISSION",
+  "sellerCommission": "LISTING_AGENT_COMMISSION",
+  "additionalFees": [
+    "TRANSACTION_FEES",
+    "MARKETING_FEES",
+    "ADMINISTRATIVE_FEES"
+  ],
+  "paymentTerms": "COMMISSION_PAYMENT_TERMS",
+
+  "//SECTION_17": "=== LEGAL & COMPLIANCE ===",
+  "realEstateLicense": "LICENSE_NUMBER_AND_STATE",
+  "brokerageAffiliation": "BROKERAGE_COMPANY_NAME",
+  "professionalAssociations": [
+    "NAR_MEMBERSHIP",
+    "LOCAL_REALTOR_ASSOCIATIONS",
+    "SPECIALTY_ORGANIZATIONS"
+  ],
+  "insuranceInfo": "ERRORS_OMISSIONS_INSURANCE",
+  "legalDisclosures": "REQUIRED_LEGAL_DISCLOSURES",
+
+  "//SECTION_18": "=== EDUCATION & RESOURCES ===",
+  "buyerEducation": [
+    "FIRST_TIME_BUYER_RESOURCES",
+    "FINANCING_GUIDANCE",
+    "HOME_INSPECTION_INFO"
+  ],
+  "sellerEducation": [
+    "HOME_PREPARATION_TIPS",
+    "PRICING_STRATEGIES",
+    "NEGOTIATION_GUIDANCE"
+  ],
+  "marketEducation": [
+    "MARKET_REPORTS",
+    "TREND_ANALYSIS",
+    "INVESTMENT_ADVICE"
+  ],
+
+  "//SECTION_19": "=== CONTENT CUSTOMIZATION ===",
+  "heroTitlePrefix": "Your Trusted",
+  "ctaPrimaryText": "Find Your Dream Home",
+  "ctaSecondaryText": "Get Market Analysis",
+  "featuresSectionTitle": "Why Choose Our Agency?",
+  "featuresDescriptionTemplate": "CUSTOM_AGENCY_DESCRIPTION",
+  "servicesSectionTitle": "Real Estate Services",
+  "servicesSectionDescription": "CUSTOM_SERVICES_DESCRIPTION",
+  "servicesDescriptionTemplate": "CUSTOM_SERVICES_TEMPLATE",
+  "servicesCTAText": "Learn More",
+
+  "//SECTION_20": "=== PAGE CONTENT ===",
+  "aboutPageTitle": "About Our Agency",
+  "aboutFeaturesTitle": "Our Commitment",
+  "aboutServicesTitle": "Real Estate Services",
+  "contactPageTitle": "Start Your Real Estate Journey",
+  "contactPageDescription": "CUSTOM_CONTACT_PAGE_DESCRIPTION",
+  "contactInfoTitle": "Contact Our Team",
+  "contactFormTitle": "Property Inquiry",
+
+  "//SECTION_21": "=== FORM LABELS & MESSAGES ===",
+  "formNameLabel": "Full Name",
+  "formEmailLabel": "Email",
+  "formPhoneLabel": "Phone Number",
+  "formPropertyTypeLabel": "Property Type Interest",
+  "formPriceBudgetLabel": "Price Range/Budget",
+  "formTimeframeLabel": "Buying/Selling Timeframe",
+  "formLocationLabel": "Preferred Location",
+  "formMessageLabel": "Tell us about your real estate needs",
+  "formSubmitText": "Get Started",
+  "formSendingText": "Submitting...",
+  "formSuccessMessage": "CUSTOM_SUCCESS_MESSAGE",
+  "formErrorMessage": "CUSTOM_ERROR_MESSAGE",
+
+  "//SECTION_22": "=== TECHNICAL CONFIGURATION ===",
+  "deploymentPlatform": "vercel",
+  "includePWA": false,
+  "cssApproach": "css-modules",
+  "features": {
+    "analytics": true,
+    "seo": true,
+    "darkMode": false,
+    "contactForm": true,
+    "socialLinks": true,
+    "businessHours": true,
+    "testimonials": true,
+    "blog": true,
+    "propertySearch": true,
+    "agentProfiles": true,
+    "marketReports": true,
+    "propertyValuation": true,
+    "virtualTours": true
+  },
+
+  "//SECTION_23": "=== SEO & MARKETING ===",
+  "seoKeywords": [
+    "REAL_ESTATE_KEYWORDS",
+    "LOCATION_KEYWORDS",
+    "PROPERTY_TYPE_KEYWORDS",
+    "MARKET_KEYWORDS"
+  ],
+  "localSEO": {
+    "serviceAreas": [
+      "PRIMARY_CITY",
+      "SURROUNDING_CITIES",
+      "COUNTY_NAME"
+    ],
+    "businessCategory": "Real Estate Agency",
+    "gmbCategory": "GOOGLE_MY_BUSINESS_CATEGORY"
+  }
+} 
